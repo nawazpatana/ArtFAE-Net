@@ -1,0 +1,6 @@
+# User supplied October 23 and a full two-day booking.
+# Local timezone taken from the client context: Asia/Taipei.
+booking_start: '2026-10-23T00:00:00+08:00'
+booking_end: '2026-10-25T00:00:00+08:00'
+timezone: Asia/Taipei
+basis: 'October 23 start date, two full days, interpreted as calendar days in client timezone'

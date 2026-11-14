@@ -1,0 +1,10 @@
+{
+  "status": "draft",
+  "selection_split": "val",
+  "emotions": ["amusement", "awe", "contentment", "excitement", "anger", "disgust", "fear", "sadness", "something_else"],
+  "checkpoint_sha256": "REPLACE_AFTER_EXPERIMENTS_AND_MODEL_SELECTION",
+  "validation_evidence": {"path": "REPLACE_WITH_SELECTED_RUN_VALIDATION_METRICS", "sha256": "REPLACE_WITH_HASH"},
+  "manifest_sha256": {"train": "REPLACE_WITH_HASH", "val": "REPLACE_WITH_HASH", "test": "REPLACE_WITH_HASH"},
+  "selection_rationale": "",
+  "limitations": ""
+}

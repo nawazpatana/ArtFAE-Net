@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "artfae"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = ["torch", "torchvision", "transformers", "numpy", "pillow", "scikit-learn", "PyYAML", "tqdm", "matplotlib"]
+[project.optional-dependencies]
+notebooks = ["ipykernel>=6,<8", "nbformat>=5,<6", "nbclient>=0.10,<1", "pandas"]
+[tool.setuptools.packages.find]
+where = ["src"]
