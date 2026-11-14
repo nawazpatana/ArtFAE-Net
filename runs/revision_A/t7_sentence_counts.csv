@@ -1,0 +1,28 @@
+sentence,train 43K,train paper 14K,val,test
+"Low overall brightness, low luminance contrast, and predominantly warm colors.",1218,379,64,84
+"Low overall brightness, low luminance contrast, and predominantly cool colors.",239,60,14,10
+"Low overall brightness, low luminance contrast, and mixed or neutral colors.",127,31,5,9
+"Low overall brightness, moderate luminance contrast, and predominantly warm colors.",6100,2110,456,482
+"Low overall brightness, moderate luminance contrast, and predominantly cool colors.",837,271,73,44
+"Low overall brightness, moderate luminance contrast, and mixed or neutral colors.",525,184,34,37
+"Low overall brightness, high luminance contrast, and predominantly warm colors.",374,120,31,14
+"Low overall brightness, high luminance contrast, and predominantly cool colors.",65,10,2,4
+"Low overall brightness, high luminance contrast, and mixed or neutral colors.",80,23,7,5
+"Moderate overall brightness, low luminance contrast, and predominantly warm colors.",1112,322,75,71
+"Moderate overall brightness, low luminance contrast, and predominantly cool colors.",310,71,11,20
+"Moderate overall brightness, low luminance contrast, and mixed or neutral colors.",224,68,20,14
+"Moderate overall brightness, moderate luminance contrast, and predominantly warm colors.",15237,5154,1105,1112
+"Moderate overall brightness, moderate luminance contrast, and predominantly cool colors.",2580,833,180,179
+"Moderate overall brightness, moderate luminance contrast, and mixed or neutral colors.",2693,884,202,198
+"Moderate overall brightness, high luminance contrast, and predominantly warm colors.",3641,1185,226,242
+"Moderate overall brightness, high luminance contrast, and predominantly cool colors.",700,208,43,37
+"Moderate overall brightness, high luminance contrast, and mixed or neutral colors.",1068,347,72,77
+"High overall brightness, low luminance contrast, and predominantly warm colors.",736,223,43,44
+"High overall brightness, low luminance contrast, and predominantly cool colors.",53,12,2,2
+"High overall brightness, low luminance contrast, and mixed or neutral colors.",716,189,44,34
+"High overall brightness, moderate luminance contrast, and predominantly warm colors.",1971,644,129,118
+"High overall brightness, moderate luminance contrast, and predominantly cool colors.",244,66,15,12
+"High overall brightness, moderate luminance contrast, and mixed or neutral colors.",1373,392,93,107
+"High overall brightness, high luminance contrast, and predominantly warm colors.",349,97,28,15
+"High overall brightness, high luminance contrast, and predominantly cool colors.",71,6,3,3
+"High overall brightness, high luminance contrast, and mixed or neutral colors.",369,111,23,25

@@ -1,0 +1,92 @@
+[
+ {
+  "epoch": 1,
+  "train_loss": 1.8753000838716873,
+  "val_macro_f1": 0.3143350056459783,
+  "val_accuracy": 0.5011145786892555,
+  "val_soft_ce": 1.8126401094017857,
+  "amp_skipped_steps": 0,
+  "seconds": 2.544734235998476
+ },
+ {
+  "epoch": 2,
+  "train_loss": 1.8221562157716682,
+  "val_macro_f1": 0.33145595724096366,
+  "val_accuracy": 0.5091395452518948,
+  "val_soft_ce": 1.8130247598900466,
+  "amp_skipped_steps": 0,
+  "seconds": 4.772076792993175
+ },
+ {
+  "epoch": 3,
+  "train_loss": 1.8008651378198435,
+  "val_macro_f1": 0.31334777706330674,
+  "val_accuracy": 0.5109228711547035,
+  "val_soft_ce": 1.8073551087275572,
+  "amp_skipped_steps": 1,
+  "seconds": 7.039173388999188
+ },
+ {
+  "epoch": 4,
+  "train_loss": 1.7824625354206507,
+  "val_macro_f1": 0.315781492021588,
+  "val_accuracy": 0.5118145341061079,
+  "val_soft_ce": 1.8189357595897506,
+  "amp_skipped_steps": 0,
+  "seconds": 9.278577693999978
+ },
+ {
+  "epoch": 5,
+  "train_loss": 1.768414353521704,
+  "val_macro_f1": 0.3413500861326522,
+  "val_accuracy": 0.5033437360677664,
+  "val_soft_ce": 1.8308511696366756,
+  "amp_skipped_steps": 1,
+  "seconds": 11.491023112997937
+ },
+ {
+  "epoch": 6,
+  "train_loss": 1.7458765171388577,
+  "val_macro_f1": 0.3379772281413012,
+  "val_accuracy": 0.5064645563976817,
+  "val_soft_ce": 1.8364618193223745,
+  "amp_skipped_steps": 0,
+  "seconds": 13.708571002993267
+ },
+ {
+  "epoch": 7,
+  "train_loss": 1.7248956208715525,
+  "val_macro_f1": 0.33388784293331564,
+  "val_accuracy": 0.49843958983504233,
+  "val_soft_ce": 1.8473853727216043,
+  "amp_skipped_steps": 1,
+  "seconds": 15.991393513999355
+ },
+ {
+  "epoch": 8,
+  "train_loss": 1.7095408365913383,
+  "val_macro_f1": 0.311519340863595,
+  "val_accuracy": 0.48016049933125277,
+  "val_soft_ce": 1.864832896084658,
+  "amp_skipped_steps": 0,
+  "seconds": 18.435736393999832
+ },
+ {
+  "epoch": 9,
+  "train_loss": 1.6910742249010353,
+  "val_macro_f1": 0.3156590787819403,
+  "val_accuracy": 0.4743646901471244,
+  "val_soft_ce": 1.8831226263679488,
+  "amp_skipped_steps": 1,
+  "seconds": 20.736091536993627
+ },
+ {
+  "epoch": 10,
+  "train_loss": 1.680166450930808,
+  "val_macro_f1": 0.3323709160920728,
+  "val_accuracy": 0.4881854658938921,
+  "val_soft_ce": 1.8732609726941691,
+  "amp_skipped_steps": 0,
+  "seconds": 23.190538975999516
+ }
+]

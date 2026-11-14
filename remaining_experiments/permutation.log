@@ -1,0 +1,28 @@
+Permutation seed complete: 42
+Permutation seed complete: 43
+Permutation seed complete: 44
+Permutation seed complete: 45
+Permutation seed complete: 46
+{
+  "same_template_fraction_after_pair_permutation": 0.17811666666666667,
+  "scope": "EXPLORATORY development validation; five fixed checkpoints, 20 paired derangements; no encoder, training or holdout inference",
+  "baseline": {
+    "softCE": 1.7547468057920006,
+    "macroF1": 0.3576472639988014
+  },
+  "paired_permuted": {
+    "softCE": 1.7605926237838616,
+    "macroF1": 0.35204031272386255,
+    "top1_flip_fraction": 0.06713333333333332,
+    "mean_total_variation": 0.03762914253297253
+  },
+  "delta_softCE": 0.005845818145965501,
+  "delta_softCE_paired_artwork_CI95": [
+    0.004410098179547378,
+    0.007290444907728912
+  ],
+  "delta_macroF1": -0.005606951274938876,
+  "max_original_saved_logit_difference": 9.5367431640625e-07,
+  "CI_scope": "Conditional on these five checkpoints and 20 fixed permutations; not training-seed or permutation-population uncertainty",
+  "protocol_sha256": "82d041be51241d31cd8e05b7d3452956f8046803f102231a771c28de56c23a32"
+}

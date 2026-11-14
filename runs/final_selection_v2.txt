@@ -1,0 +1,266 @@
+{
+ "evaluation": "third and last test evaluation; no tuning",
+ "selected_at_utc": "2026-11-02T22:44:13.383467+00:00",
+ "seeds": [
+  42,
+  43,
+  44,
+  45,
+  46
+ ],
+ "primary_model": "R3   L/14@336 [corrected] = L/14 R3 (lambda 0.3) + prior correction log(val_prior) - log(train_prior)",
+ "secondary_models": [
+  "R1   L/14@336 [raw]",
+  "R1   L/14@336 [corrected]",
+  "R3   L/14@336 [raw]"
+ ],
+ "context_models": [
+  "R0n  B/32 paper 14K [raw]",
+  "R0n  B/32 paper 14K [corrected]",
+  "R1   B/32 [raw]",
+  "R1   B/32 [corrected]",
+  "R3   B/32 [raw]",
+  "R3   B/32 [corrected]",
+  "R4b  B/32 [raw]",
+  "R4b  B/32 [corrected]",
+  "B/32 test logits reused from runs/final_eval (existing)"
+ ],
+ "run_prefixes": {
+  "R0n": "R0n_paper14k",
+  "B32_R1": "R1",
+  "B32_R3": "R3_lam0.3",
+  "B32_R4b": "R4b_textq_gate",
+  "L14_R1": "L14_R1",
+  "L14_R3": "L14_R3_lam0.3"
+ },
+ "comparisons": [
+  {
+   "name": "(a) L/14 R3c \u2212 R0n",
+   "A": "R3   L/14@336 [corrected]",
+   "B": "R0n  B/32 paper 14K [raw]"
+  },
+  {
+   "name": "(b) L/14 R1 \u2212 B/32 R1",
+   "A": "R1   L/14@336 [raw]",
+   "B": "R1   B/32 [raw]"
+  },
+  {
+   "name": "(c) L/14 R3 \u2212 L/14 R1",
+   "A": "R3   L/14@336 [raw]",
+   "B": "R1   L/14@336 [raw]"
+  },
+  {
+   "name": "(d) L/14 R3c \u2212 L/14 R3",
+   "A": "R3   L/14@336 [corrected]",
+   "B": "R3   L/14@336 [raw]"
+  }
+ ],
+ "bootstrap": {
+  "metrics": [
+   "macro-F1",
+   "mean anger+fear AP",
+   "neg-sentiment F1",
+   "softCE(T)"
+  ],
+  "resamples": 2000,
+  "rng_seed": 0,
+  "probabilities": "seed-averaged softmax over 5 seeds",
+  "p_value": "two-sided, min(1, 2*min(#d<=0 + 1, #d>=0 + 1)/(n + 1))",
+  "multiplicity": "Holm across the 4 comparisons, separately per metric",
+  "softCE(T)": "one T per ensemble, fitted on val on log(mean val probs)"
+ },
+ "definitions": "(fixed here, recorded in the selection file):\n  prior correction  logits + log(val_prior) - log(train_prior); val_prior = mean val p_*, train_prior =\n                    mean p_* of the run's own train manifest. Same constant on val and test.\n  softCE(T)/Brier(T) per seed: T fitted on val logits of that seed and that kind (raw / corrected).\n  ensemble          mean over seeds of softmax(logits [+ delta]). Its T is fitted on val on\n                    log(mean val probs) and applied to log(mean test probs) for softCE(T).\n  macro-F1, acc, balAcc, disgust F1   unique-top artworks (artfae_balance.evaluate).\n  anger/fear AP, anger AUROC          presence (any annotator), all artworks.\n  sentiment         positive = amusement+awe+contentment+excitement, negative = anger+disgust+fear+sadness,\n                    something_else; F1 on artworks with a unique top sentiment.\n  bootstrap         paired, 2,000 resamples of test artworks, rng seed 0, seed-averaged probabilities;\n                    d = A - B; 95% percentile CI; two-sided p = min(1, 2 min((#d<=0 + 1), (#d>=0 + 1)) / (n + 1));\n                    Holm adjustment across the 4 comparisons separately for each metric.",
+ "val_mean": {
+  "R0n  B/32 paper 14K [raw]": {
+   "macro-F1": 0.338923,
+   "mean anger+fear AP": 0.380393,
+   "neg-sentiment F1": 0.534224
+  },
+  "R0n  B/32 paper 14K [corrected]": {
+   "macro-F1": 0.336444,
+   "mean anger+fear AP": 0.380672,
+   "neg-sentiment F1": 0.531882
+  },
+  "R1   B/32 [raw]": {
+   "macro-F1": 0.320549,
+   "mean anger+fear AP": 0.395793,
+   "neg-sentiment F1": 0.517191
+  },
+  "R1   B/32 [corrected]": {
+   "macro-F1": 0.326207,
+   "mean anger+fear AP": 0.395,
+   "neg-sentiment F1": 0.535894
+  },
+  "R3   B/32 [raw]": {
+   "macro-F1": 0.341843,
+   "mean anger+fear AP": 0.385832,
+   "neg-sentiment F1": 0.558165
+  },
+  "R3   B/32 [corrected]": {
+   "macro-F1": 0.343559,
+   "mean anger+fear AP": 0.385276,
+   "neg-sentiment F1": 0.575103
+  },
+  "R4b  B/32 [raw]": {
+   "macro-F1": 0.354632,
+   "mean anger+fear AP": 0.386461,
+   "neg-sentiment F1": 0.562624
+  },
+  "R4b  B/32 [corrected]": {
+   "macro-F1": 0.357816,
+   "mean anger+fear AP": 0.385706,
+   "neg-sentiment F1": 0.573993
+  },
+  "R1   L/14@336 [raw]": {
+   "macro-F1": 0.375701,
+   "mean anger+fear AP": 0.444028,
+   "neg-sentiment F1": 0.592796
+  },
+  "R1   L/14@336 [corrected]": {
+   "macro-F1": 0.380162,
+   "mean anger+fear AP": 0.443289,
+   "neg-sentiment F1": 0.613399
+  },
+  "R3   L/14@336 [raw]": {
+   "macro-F1": 0.384497,
+   "mean anger+fear AP": 0.430748,
+   "neg-sentiment F1": 0.625708
+  },
+  "R3   L/14@336 [corrected]": {
+   "macro-F1": 0.382459,
+   "mean anger+fear AP": 0.429951,
+   "neg-sentiment F1": 0.637548
+  }
+ },
+ "code_sha256": {
+  "scripts/final_eval_v2.py": "cd593a2b3c457e9d9b3260a776f2ba9af5f9c84af27c5557ff8dc86f320ed380",
+  "scripts/run_l14_ladder.sh": "b9b21c61a81d3057bb72d0597400f256fb9bc9348411b7a60fca569e73b35490",
+  "scripts/run_l14_ladder_s45_46.sh": "278ea925e026d4bd52e85a9792d74b32c45724c94c9c93149a9ade06a71a82d9",
+  "scripts/run_extract_l14.sh": "d7d56ac521516ee3e1504782f96fe4c0d0e489f82cf5b7ade0f46a334c213cdd",
+  "scripts/val_prior_table.py": "15649c6e3ada880df573b54c712a2f9feb33ae52c8f053d13a0f6f8f4956d4d1",
+  "scripts/final_eval.py": "88ac2cfbc65079830faf60a2070b9dd520a60eb63cb50d05495976c15781ffd0",
+  "scripts/baseline_eval.py": "a0afe7becd0687f7a25e49c8bb0b716c56fcb0e354395dc74d14c7b861ffa1c0",
+  "scripts/run_ladder.sh": "1722c4278c03d204a8f15f2f235c0194863e8accce8a71d9a67074c005b14bec",
+  "scripts/m1_paper_logits.py": "fdb7361599e1b374727b57a9f4ec890792d9a425a8f303cefb78376f2cb485b2",
+  "artfae_balance/train_backbone.py": "50d18ad1569966ebff135c9b72e281e8e0724ecdca4a0de2f53d0fc9b0a594ac",
+  "artfae_balance/extract_features_backbone.py": "4b4a6d01fc4da6667e9dfd861acfaecafa8520e66b6e399fce8974af79995814",
+  "artfae_balance/train.py": "d1fd3cb684bbb2fe2ea0bb845bdaca543c7e89121a931c925d2b4ea8da11c7e5",
+  "artfae_balance/model.py": "46c962fe59bd07f76b8c9d24e962b07cd151e97738d2825a8ddf465d88407e2d",
+  "artfae_balance/heads.py": "173badd6376476024a6ea9456d5e548aeb6fe312f29c2f8f2f73ff2089e706a6",
+  "artfae_balance/losses.py": "7bdcdfa6ee0a568b05454489849ebdfb532c472e199850efc0a7a905c3f4037e",
+  "artfae_balance/data.py": "b73fd85c7e42d9af0f5c2b9a689b1b3da0d9e05c915c0b96d9310c696ba750f6",
+  "artfae_balance/evaluate.py": "712ae845a973ec6a1685cb907358e9d35a86dc223c1a86de5c6ee627ce76cb7d",
+  "artfae_balance/extract_features.py": "414f1de068e349da3bee87ced4474e8a45c4bbeec47a115055165ebbf10492c1",
+  "src/artfae/models/network.py": "04278a69c83599501d7821da4d1dc1d06a6aa18391ff82f847e8eff67ba32faa",
+  "src/artfae/evaluation/metrics.py": "6b8f33fe784ee343fd128f22dd71cfa4939e741e7b9c37062a89d0b1cca20eea",
+  "src/artfae/features/aesthetic.py": "55477737083a621367d461ba50b92a9f5ed1aa0051f249220055f15609c33173"
+ },
+ "artifact_sha256": {
+  "runs/R0n_paper14k_s42/val_logits.npy": "0224719afa03b946f92af559b15d8480e8e7dbc386207ac0ce648c0e6a8ac3a5",
+  "runs/R0n_paper14k_s42/config.json": "15b902a6847ef7b6d44d81e072b12c61ffb4b955d296957604f1893755703b84",
+  "runs/final_eval/baseline_test/R0n_s42_test_logits.npy": "a197d14c92a47f48d8305eb84a5f0d5e87b4dbd6f8d48321eb3e5878121cc5e3",
+  "runs/R0n_paper14k_s43/val_logits.npy": "676047f95f101df357a6a3a0170726e50899840df4d91e07c9b6b9e1a67d1239",
+  "runs/R0n_paper14k_s43/config.json": "8ad2824d7899e41ae466dcf8b84900b74c4211837d57d5f8a2b1683bf00226c0",
+  "runs/final_eval/baseline_test/R0n_s43_test_logits.npy": "2e5231899d61a7ac8a1665110e6787824a7e9e6ee4f58d3459932502318f34f1",
+  "runs/R0n_paper14k_s44/val_logits.npy": "6caf2d05c6adb63115cc181d0e7c57e31992e6f58127fa47c111da21289c7c75",
+  "runs/R0n_paper14k_s44/config.json": "f081dc0b651dd5f03d111509388c671cdec5e06bdc6184bed520444c92ccf830",
+  "runs/final_eval/baseline_test/R0n_s44_test_logits.npy": "63f970b3582c5617c2d2b44ddea48c8f765d5f4c790d297388cfd067ffa16a61",
+  "runs/R0n_paper14k_s45/val_logits.npy": "90993ffedfcbb629c6d015be6ffd0d14f1c32e046198ec389a246187d4e6c258",
+  "runs/R0n_paper14k_s45/config.json": "411b0e3b0aa34fd6178fdc3a2d6d0f68a095dd31f88afa4219b5d01e8d6158c0",
+  "runs/final_eval/baseline_test/R0n_s45_test_logits.npy": "da175118cf532fe00e123527633b17a96efc62a2f3cdd520667f778f944fff3e",
+  "runs/R0n_paper14k_s46/val_logits.npy": "4cb6f125ff9eeb587aa23e794525dc541b5990e6985709b5dfb8be58a9cc9981",
+  "runs/R0n_paper14k_s46/config.json": "e3aaa7369c2f6dace7db2452d8a7b06889d67e8011787dac362562a12e278b58",
+  "runs/final_eval/baseline_test/R0n_s46_test_logits.npy": "30e980f967c3dca0af7d6eef15c6635637290d4035e7b55239d6302a06294e24",
+  "runs/R1_s42/val_logits.npy": "00325f20f5b09bd28e710b5797aa24d88587d7754cdfef5689d4d5ccfded5fa8",
+  "runs/R1_s42/config.json": "a98dd172bd93a70c10618eea6e2ad5680f7e129545ee10efd7fca50d0cc81ced",
+  "runs/final_eval/test/R1_s42_test_logits.npy": "3c6f891aaded537c23aecaadf0bf9ed2a10fa1b4146a8e7482b185d17d8dd2d4",
+  "runs/R1_s43/val_logits.npy": "8965a80a5ffac7180b27bdd72bd82ab0531f2df80449813d3b2b07f6e1631f86",
+  "runs/R1_s43/config.json": "d350e945f4cf6b559be4c8f288e3368887e502c46e403a460f0b00f73e561b8e",
+  "runs/final_eval/test/R1_s43_test_logits.npy": "b362eed97b3263690fad568856630632d36506e8f064ae68012526b1c0eb257b",
+  "runs/R1_s44/val_logits.npy": "6074adc8abc8f54cf9cc81a2a72bb47bd2b0aa14c42916bd965b0de13f4b2540",
+  "runs/R1_s44/config.json": "6f5dc56c42f4cfb89779617fad1abfb0d795b10804c59fa2d7a571c9ebb7fd0c",
+  "runs/final_eval/test/R1_s44_test_logits.npy": "9883feb56deb6d957a1ce8f74e6b86d3bf9e3edb4a07c3d01d788d3392831cb9",
+  "runs/R1_s45/val_logits.npy": "a9649d8bf198b3e5ce170dfa6820d6817548bcb23227018e917fbe25b145a757",
+  "runs/R1_s45/config.json": "d2a8116759aec921645a3814aa2face13fb72b41b50f8812dd56e1d1b87a3736",
+  "runs/final_eval/test/R1_s45_test_logits.npy": "f0f2cf313c664bff6d152fd483ff89ab0a7f89d66ebc7b0dd7af97743d49bf60",
+  "runs/R1_s46/val_logits.npy": "2dd79f86bd444016849908a8fc4e3948fde45dca0c319a85c48f1f3f83a02a26",
+  "runs/R1_s46/config.json": "6849a59d30b365f87272c5da358dbc65169cad46dde79f21eb1ff550ca2def7a",
+  "runs/final_eval/test/R1_s46_test_logits.npy": "b39254c62908a18c9aa0ce092bc8820efadd85d7ae2cfba9d56fb2ec73ed205c",
+  "runs/R3_lam0.3_s42/val_logits.npy": "1d59a00df2846500bbf404fd19e559cc9dd9ad488f10e1c9b74c63c5a34fbcb6",
+  "runs/R3_lam0.3_s42/config.json": "21e69bd055144836e2bd602e909c416d2a187cbee706ae0f711d92ae4764504a",
+  "runs/final_eval/test/R3_s42_test_logits.npy": "407de6831a952da77d5e9180b0900a6915b7e9c120502c186a2c4b742cababc9",
+  "runs/R3_lam0.3_s43/val_logits.npy": "d871ce35c88aa9f05075a17e9b4d2597c790a1aa6c239bea445474ca4ed09a7f",
+  "runs/R3_lam0.3_s43/config.json": "725564d8b03ba8494d6b55b3d6dd21de6b0139a1759c1a827fb186ab259272b1",
+  "runs/final_eval/test/R3_s43_test_logits.npy": "ffe72b0b9c0e257e32d4d9496aea16210356b6eb7ec47c02cfd7787c1aa71a91",
+  "runs/R3_lam0.3_s44/val_logits.npy": "5e4ae5c58490b83bcb6653198735cb81dd25ab4b715de94c89578e02f2eb0388",
+  "runs/R3_lam0.3_s44/config.json": "2c196045a2531d1679436b133f22b7205d92563e455c83c32bc3d8f94fef6060",
+  "runs/final_eval/test/R3_s44_test_logits.npy": "00ad0434f7f5e0c8f614ad46fe937e011f26f4b59656b0e2bee3a20e4e6113df",
+  "runs/R3_lam0.3_s45/val_logits.npy": "fa5a838e91a8d5eb0fc52b5d1c58977ce0f0e2f2b4a1afeade87b49eeacf8b9a",
+  "runs/R3_lam0.3_s45/config.json": "0fc1d11f2f48420308e737a56640e8d455705e243a3dbc1044f04fc1cdb0a6a4",
+  "runs/final_eval/test/R3_s45_test_logits.npy": "3d049faf86f17f9c4de93840540174b7ad37c1bc1318f80b7e2b339c7476e99e",
+  "runs/R3_lam0.3_s46/val_logits.npy": "02895283f6e41ea27c9a2d58617bb4ed7e57651bd15328c8eb3ce5eceb9376ee",
+  "runs/R3_lam0.3_s46/config.json": "0057466ba13d29bf34303f85a7b4bff39fe82b5972784ecddaad90194d48e8b3",
+  "runs/final_eval/test/R3_s46_test_logits.npy": "09529b7741d109a098d00e53e4c01e9fcdda2bd680a5d80c1383bccc87cce8bb",
+  "runs/R4b_textq_gate_s42/val_logits.npy": "5cd89be0092b3cd1898ea30699ac90160b219d3ad7388504527970c6fbd2f604",
+  "runs/R4b_textq_gate_s42/config.json": "16975d0259981217394c75fccc4528aeb6946fa31b4c97f34069dec64d7a999b",
+  "runs/final_eval/test/R4b_s42_test_logits.npy": "ebf312bd61e166e4b478067bdd56c5f6146e5a8d09361bd0b3e265b22f836aa1",
+  "runs/R4b_textq_gate_s43/val_logits.npy": "0de4df0d95dd8dcc1363f3edcea6c3da028b74507839dc6f14956a0ebf0f22b3",
+  "runs/R4b_textq_gate_s43/config.json": "7220f0dbbd0f79b27a28cffc443ed261461a161d654ed473b2bd5c78f68e520a",
+  "runs/final_eval/test/R4b_s43_test_logits.npy": "11e0db3c48e1785f75d925b78a2c5fd6a847c006b39f8a79baa3b29a7c350b54",
+  "runs/R4b_textq_gate_s44/val_logits.npy": "ddf1de5fdeb2cb45239ab34d9c415512609f02bcb774be600f9d32ebe6429dbc",
+  "runs/R4b_textq_gate_s44/config.json": "605d195ecef509497f2e17d891cb560603e10e62bab7f209869fe52df4cd9498",
+  "runs/final_eval/test/R4b_s44_test_logits.npy": "ac6d9aa9267f4995d2c111254536de670735c614d3c25d7a6d34bfa35aa3e7ad",
+  "runs/R4b_textq_gate_s45/val_logits.npy": "9810f16a59947d8733b8e7d6895af2f26d9f1e351208e855107c0b53782adb4c",
+  "runs/R4b_textq_gate_s45/config.json": "5404ced007c08e5bab1c5918de9d4557e4865b4733e33ec742f60208011f8dd7",
+  "runs/final_eval/test/R4b_s45_test_logits.npy": "a47d55509bab058b04ffb90144fb8b76aa0ada2742f9fcf8ac4e26736547d8c7",
+  "runs/R4b_textq_gate_s46/val_logits.npy": "67c3ea2b5c71459bf8e5874fd8126697fdbeb5abd2356330274e2ab819a64adb",
+  "runs/R4b_textq_gate_s46/config.json": "66ba8231d49849983088f1cb34cf3ca26d683f7e8cdfc09cd8fdc18683332b13",
+  "runs/final_eval/test/R4b_s46_test_logits.npy": "7186af35ea2d5af8f44737b4c7b0bb9412061fba878478408b8118e3ea6e714f",
+  "runs/L14_R1_s42/val_logits.npy": "14811087eac562e1e8197eecc1a5f8a331edf263be6b54469ef713be320c7f21",
+  "runs/L14_R1_s42/config.json": "a98dd172bd93a70c10618eea6e2ad5680f7e129545ee10efd7fca50d0cc81ced",
+  "runs/L14_R1_s42/best.pt": "bdf2dcc9e1e4226f078c53d73b6d6c8c93c050613c947eea8037b561b0c6fe48",
+  "runs/L14_R1_s42/dims.json": "a1d6eaeedfd2ad5667a13c469653d74178506f02f9e1be4714b20ec7d87486d0",
+  "runs/L14_R1_s43/val_logits.npy": "616150431ac64114775011ada1c1b42ffcd181e2a30d1e89f09c3071a59c651e",
+  "runs/L14_R1_s43/config.json": "d350e945f4cf6b559be4c8f288e3368887e502c46e403a460f0b00f73e561b8e",
+  "runs/L14_R1_s43/best.pt": "0c22c9f1f72a1b13368f3ab9417b064cabf99572821e5e2a4761730b1c78df0a",
+  "runs/L14_R1_s43/dims.json": "a1d6eaeedfd2ad5667a13c469653d74178506f02f9e1be4714b20ec7d87486d0",
+  "runs/L14_R1_s44/val_logits.npy": "0d84ef94ac2de0d4ff867be11b5216a4fa254cf1b363ff0cae00a34455bb7cc7",
+  "runs/L14_R1_s44/config.json": "6f5dc56c42f4cfb89779617fad1abfb0d795b10804c59fa2d7a571c9ebb7fd0c",
+  "runs/L14_R1_s44/best.pt": "b3a56bb8f75c0a0d49a14b7395f8c04166dfa16872dde982c51a3aeac3489bae",
+  "runs/L14_R1_s44/dims.json": "a1d6eaeedfd2ad5667a13c469653d74178506f02f9e1be4714b20ec7d87486d0",
+  "runs/L14_R1_s45/val_logits.npy": "45544facedd1a721dc146155780078912d309b3fd6d0971367e66032113322d6",
+  "runs/L14_R1_s45/config.json": "d2a8116759aec921645a3814aa2face13fb72b41b50f8812dd56e1d1b87a3736",
+  "runs/L14_R1_s45/best.pt": "105626d6f9db8cea7602533b36031622cafef9b17f4bab2575555dede49e4789",
+  "runs/L14_R1_s45/dims.json": "a1d6eaeedfd2ad5667a13c469653d74178506f02f9e1be4714b20ec7d87486d0",
+  "runs/L14_R1_s46/val_logits.npy": "d1caf2d94836af5c3d34dbe26b6973736c72104b9183c4c20faad791a24cc9c8",
+  "runs/L14_R1_s46/config.json": "6849a59d30b365f87272c5da358dbc65169cad46dde79f21eb1ff550ca2def7a",
+  "runs/L14_R1_s46/best.pt": "7e4214ce825b8e4af251bf03e9b5fb8b2fb5d57636041841a5ba3fa235308cfb",
+  "runs/L14_R1_s46/dims.json": "a1d6eaeedfd2ad5667a13c469653d74178506f02f9e1be4714b20ec7d87486d0",
+  "runs/L14_R3_lam0.3_s42/val_logits.npy": "2d479e07e95120a4429548244badc3268aaae0b22461a1b7fc761b3bcc9fd238",
+  "runs/L14_R3_lam0.3_s42/config.json": "21e69bd055144836e2bd602e909c416d2a187cbee706ae0f711d92ae4764504a",
+  "runs/L14_R3_lam0.3_s42/best.pt": "841009042f2d4e5ef326238b1a985adc4aa3646ae48ab77104a5c09edf57d3d4",
+  "runs/L14_R3_lam0.3_s42/dims.json": "a1d6eaeedfd2ad5667a13c469653d74178506f02f9e1be4714b20ec7d87486d0",
+  "runs/L14_R3_lam0.3_s43/val_logits.npy": "8de7a9edf43fb1d0a49bda60ecf086de63a5a14953dcc7c4e4f038c917521f54",
+  "runs/L14_R3_lam0.3_s43/config.json": "725564d8b03ba8494d6b55b3d6dd21de6b0139a1759c1a827fb186ab259272b1",
+  "runs/L14_R3_lam0.3_s43/best.pt": "d372f191553f86d863a10e7b4cb75f5949793a7284e993e0bbf3298f629fb05f",
+  "runs/L14_R3_lam0.3_s43/dims.json": "a1d6eaeedfd2ad5667a13c469653d74178506f02f9e1be4714b20ec7d87486d0",
+  "runs/L14_R3_lam0.3_s44/val_logits.npy": "b7ec34db12266d9c95da658217e1e70d5edae300730653f83002b4a8edfdb99d",
+  "runs/L14_R3_lam0.3_s44/config.json": "2c196045a2531d1679436b133f22b7205d92563e455c83c32bc3d8f94fef6060",
+  "runs/L14_R3_lam0.3_s44/best.pt": "f75b9cf972397cd10cc72b983614690081321b182932c592657d25cad81aba53",
+  "runs/L14_R3_lam0.3_s44/dims.json": "a1d6eaeedfd2ad5667a13c469653d74178506f02f9e1be4714b20ec7d87486d0",
+  "runs/L14_R3_lam0.3_s45/val_logits.npy": "51caeb7dd13271ab7b4eed6b38db154fa40eebd5d6caf74801a3e91d4a3fdcf1",
+  "runs/L14_R3_lam0.3_s45/config.json": "0fc1d11f2f48420308e737a56640e8d455705e243a3dbc1044f04fc1cdb0a6a4",
+  "runs/L14_R3_lam0.3_s45/best.pt": "926a307b3f483c90ec88135ea11933134dfb80164359cb0cd9ab668da0ef72e1",
+  "runs/L14_R3_lam0.3_s45/dims.json": "a1d6eaeedfd2ad5667a13c469653d74178506f02f9e1be4714b20ec7d87486d0",
+  "runs/L14_R3_lam0.3_s46/val_logits.npy": "4a9691aea6c23dd357d65f657fdd3b4474287653f34f9e4937bb028a07b16d31",
+  "runs/L14_R3_lam0.3_s46/config.json": "0057466ba13d29bf34303f85a7b4bff39fe82b5972784ecddaad90194d48e8b3",
+  "runs/L14_R3_lam0.3_s46/best.pt": "ef9d8378fd799929c4f03f7d4c37f416690d455a54ea75495a7176a382357825",
+  "runs/L14_R3_lam0.3_s46/dims.json": "a1d6eaeedfd2ad5667a13c469653d74178506f02f9e1be4714b20ec7d87486d0",
+  "features_l14/test/global.npy": "12527038794b7b4c177f39f1405a1f1a824cbb9a36ccba480e0d6edcf9b04885",
+  "features_l14/test/attributes.npy": "7d871af7981683812dd7e86bae8b6ba1ca4d584604f69bc1d98d7c9d5c833fad",
+  "features_l14/test/attr_text.npy": "5fb028d4ab7d0589a2ee8e9cbbe206ca2782eaf2ef7d439c9227e7dd138cd30c",
+  "features_l14/test/patches.npy": "1db799d9366ae8d5b41f3232bd37236e2a3837a47094ddbc5bbd77cb8d394dfe",
+  "data/artemis_balanced/val.csv": "f42b8b2ec7b0b01a58247e2fda3fb05c4e1342f7171cc290f52e75e3427f8076",
+  "data/artemis_balanced/test.csv": "9ef9be2f99b4de067a593a8e0f6b130e9995c53d9d665072e88760ee18fbbef1"
+ }
+}

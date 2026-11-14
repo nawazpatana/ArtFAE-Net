@@ -1,0 +1,10 @@
+PASSED tests/test_inference.py::test_description_table_is_complete
+PASSED tests/test_inference.py::test_i18n_parity
+PASSED tests/test_inference.py::test_smoke
+PASSED tests/test_inference.py::test_app_ui[r1-en]
+PASSED tests/test_inference.py::test_app_ui[r1-zh]
+PASSED tests/test_inference.py::test_app_ui[r3-en]
+PASSED tests/test_inference.py::test_app_ui[r3-zh]
+SKIPPED [3] tests/test_inference.py:96: research data not shipped in the bundle
+SKIPPED [1] tests/test_inference.py:126: research data not shipped in the bundle
+7 passed, 4 skipped in 5.38s

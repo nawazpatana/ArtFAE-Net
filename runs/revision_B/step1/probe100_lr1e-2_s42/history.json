@@ -1,0 +1,184 @@
+[
+ {
+  "epoch": 1,
+  "train_loss": 1.7709026286117113,
+  "sel_soft_ce": 1.7658782005310059,
+  "amp_skipped_steps": 0,
+  "seconds": 0.6971614170033718
+ },
+ {
+  "epoch": 2,
+  "train_loss": 1.7397391298344265,
+  "sel_soft_ce": 1.7648301124572754,
+  "amp_skipped_steps": 0,
+  "seconds": 1.3928649709996535
+ },
+ {
+  "epoch": 3,
+  "train_loss": 1.7367865675428928,
+  "sel_soft_ce": 1.7724074125289917,
+  "amp_skipped_steps": 0,
+  "seconds": 2.0951758720038924
+ },
+ {
+  "epoch": 4,
+  "train_loss": 1.734047673884452,
+  "sel_soft_ce": 1.7604347467422485,
+  "amp_skipped_steps": 0,
+  "seconds": 2.780647282997961
+ },
+ {
+  "epoch": 5,
+  "train_loss": 1.7330028194832623,
+  "sel_soft_ce": 1.762894868850708,
+  "amp_skipped_steps": 1,
+  "seconds": 3.4670357029972365
+ },
+ {
+  "epoch": 6,
+  "train_loss": 1.732585718085641,
+  "sel_soft_ce": 1.7671173810958862,
+  "amp_skipped_steps": 1,
+  "seconds": 4.153096430993173
+ },
+ {
+  "epoch": 7,
+  "train_loss": 1.7321124675827537,
+  "sel_soft_ce": 1.7601583003997803,
+  "amp_skipped_steps": 0,
+  "seconds": 4.84378929399827
+ },
+ {
+  "epoch": 8,
+  "train_loss": 1.7310087285706535,
+  "sel_soft_ce": 1.7611321210861206,
+  "amp_skipped_steps": 1,
+  "seconds": 5.529366517002927
+ },
+ {
+  "epoch": 9,
+  "train_loss": 1.7315012275102826,
+  "sel_soft_ce": 1.7634764909744263,
+  "amp_skipped_steps": 0,
+  "seconds": 6.220294472994283
+ },
+ {
+  "epoch": 10,
+  "train_loss": 1.7310460280188071,
+  "sel_soft_ce": 1.7657034397125244,
+  "amp_skipped_steps": 1,
+  "seconds": 6.914287648993195
+ },
+ {
+  "epoch": 11,
+  "train_loss": 1.730695927984535,
+  "sel_soft_ce": 1.765145182609558,
+  "amp_skipped_steps": 1,
+  "seconds": 7.603196315001696
+ },
+ {
+  "epoch": 12,
+  "train_loss": 1.7311300144720596,
+  "sel_soft_ce": 1.7661502361297607,
+  "amp_skipped_steps": 0,
+  "seconds": 8.290322062995983
+ },
+ {
+  "epoch": 13,
+  "train_loss": 1.7308881540226624,
+  "sel_soft_ce": 1.764822244644165,
+  "amp_skipped_steps": 1,
+  "seconds": 8.977828764996957
+ },
+ {
+  "epoch": 14,
+  "train_loss": 1.7309489715579365,
+  "sel_soft_ce": 1.7677375078201294,
+  "amp_skipped_steps": 1,
+  "seconds": 9.675899622001452
+ },
+ {
+  "epoch": 15,
+  "train_loss": 1.7305809370608682,
+  "sel_soft_ce": 1.772692084312439,
+  "amp_skipped_steps": 0,
+  "seconds": 10.365385393000906
+ },
+ {
+  "epoch": 16,
+  "train_loss": 1.7302842690292142,
+  "sel_soft_ce": 1.7599629163742065,
+  "amp_skipped_steps": 1,
+  "seconds": 11.047742273993208
+ },
+ {
+  "epoch": 17,
+  "train_loss": 1.7299676132259796,
+  "sel_soft_ce": 1.7656168937683105,
+  "amp_skipped_steps": 1,
+  "seconds": 11.727905413004919
+ },
+ {
+  "epoch": 18,
+  "train_loss": 1.7303105953359874,
+  "sel_soft_ce": 1.7658156156539917,
+  "amp_skipped_steps": 1,
+  "seconds": 12.415189721999923
+ },
+ {
+  "epoch": 19,
+  "train_loss": 1.7300172718826432,
+  "sel_soft_ce": 1.7635109424591064,
+  "amp_skipped_steps": 0,
+  "seconds": 13.101644194000983
+ },
+ {
+  "epoch": 20,
+  "train_loss": 1.7299916073077115,
+  "sel_soft_ce": 1.762794852256775,
+  "amp_skipped_steps": 0,
+  "seconds": 13.788195635992452
+ },
+ {
+  "epoch": 21,
+  "train_loss": 1.7300042540242393,
+  "sel_soft_ce": 1.765590786933899,
+  "amp_skipped_steps": 0,
+  "seconds": 14.474208793006255
+ },
+ {
+  "epoch": 22,
+  "train_loss": 1.728813008797354,
+  "sel_soft_ce": 1.763058066368103,
+  "amp_skipped_steps": 1,
+  "seconds": 15.162926226999843
+ },
+ {
+  "epoch": 23,
+  "train_loss": 1.7292997883961032,
+  "sel_soft_ce": 1.7662900686264038,
+  "amp_skipped_steps": 1,
+  "seconds": 15.850568220004789
+ },
+ {
+  "epoch": 24,
+  "train_loss": 1.7296128547614003,
+  "sel_soft_ce": 1.763319969177246,
+  "amp_skipped_steps": 0,
+  "seconds": 16.534775369000272
+ },
+ {
+  "epoch": 25,
+  "train_loss": 1.7285854582519162,
+  "sel_soft_ce": 1.7659858465194702,
+  "amp_skipped_steps": 1,
+  "seconds": 17.225724884992815
+ },
+ {
+  "epoch": 26,
+  "train_loss": 1.7287664780403462,
+  "sel_soft_ce": 1.7634882926940918,
+  "amp_skipped_steps": 1,
+  "seconds": 17.908713122000336
+ }
+]

@@ -1,0 +1,389 @@
+{
+ "checkpoints": [
+  {
+   "seed": 42,
+   "app_path": "app/assets/models/s42/best.pt",
+   "sha256": "841009042f2d4e5ef326238b1a985adc4aa3646ae48ab77104a5c09edf57d3d4",
+   "registry_entry": "runs/L14_R3_lam0.3_s42/best.pt",
+   "matches_R3_MF1_registry": true,
+   "config_matches_registry": true,
+   "saved_epoch": 3,
+   "epoch_max_val_macroF1": 3,
+   "val_macroF1_at_saved": 0.3939,
+   "val_softCE_at_saved": 1.7726,
+   "epoch_min_val_softCE": 1,
+   "min_val_softCE": 1.7711,
+   "n_epochs_run": 8
+  },
+  {
+   "seed": 43,
+   "app_path": "app/assets/models/s43/best.pt",
+   "sha256": "d372f191553f86d863a10e7b4cb75f5949793a7284e993e0bbf3298f629fb05f",
+   "registry_entry": "runs/L14_R3_lam0.3_s43/best.pt",
+   "matches_R3_MF1_registry": true,
+   "config_matches_registry": true,
+   "saved_epoch": 2,
+   "epoch_max_val_macroF1": 2,
+   "val_macroF1_at_saved": 0.3837,
+   "val_softCE_at_saved": 1.7729,
+   "epoch_min_val_softCE": 1,
+   "min_val_softCE": 1.7723,
+   "n_epochs_run": 7
+  },
+  {
+   "seed": 44,
+   "app_path": "app/assets/models/s44/best.pt",
+   "sha256": "f75b9cf972397cd10cc72b983614690081321b182932c592657d25cad81aba53",
+   "registry_entry": "runs/L14_R3_lam0.3_s44/best.pt",
+   "matches_R3_MF1_registry": true,
+   "config_matches_registry": true,
+   "saved_epoch": 2,
+   "epoch_max_val_macroF1": 2,
+   "val_macroF1_at_saved": 0.3947,
+   "val_softCE_at_saved": 1.7732,
+   "epoch_min_val_softCE": 1,
+   "min_val_softCE": 1.7691,
+   "n_epochs_run": 7
+  },
+  {
+   "seed": 45,
+   "app_path": "app/assets/models/s45/best.pt",
+   "sha256": "926a307b3f483c90ec88135ea11933134dfb80164359cb0cd9ab668da0ef72e1",
+   "registry_entry": "runs/L14_R3_lam0.3_s45/best.pt",
+   "matches_R3_MF1_registry": true,
+   "config_matches_registry": true,
+   "saved_epoch": 1,
+   "epoch_max_val_macroF1": 1,
+   "val_macroF1_at_saved": 0.368,
+   "val_softCE_at_saved": 1.7655,
+   "epoch_min_val_softCE": 1,
+   "min_val_softCE": 1.7655,
+   "n_epochs_run": 6
+  },
+  {
+   "seed": 46,
+   "app_path": "app/assets/models/s46/best.pt",
+   "sha256": "ef9d8378fd799929c4f03f7d4c37f416690d455a54ea75495a7176a382357825",
+   "registry_entry": "runs/L14_R3_lam0.3_s46/best.pt",
+   "matches_R3_MF1_registry": true,
+   "config_matches_registry": true,
+   "saved_epoch": 3,
+   "epoch_max_val_macroF1": 3,
+   "val_macroF1_at_saved": 0.3822,
+   "val_softCE_at_saved": 1.7764,
+   "epoch_min_val_softCE": 2,
+   "min_val_softCE": 1.7687,
+   "n_epochs_run": 8
+  }
+ ],
+ "selection_rule": {
+  "registry_model": "R3_MF1",
+  "registry_label": "L/14 R3, existing macro-F1-selected runs (descriptive only; different protocol)",
+  "checkpoint_selection": "max val macro-F1 (existing runs)"
+ },
+ "config_identical_across_seeds_except_seed": true,
+ "config_seed42": {
+  "epochs": 20,
+  "batch_size": 32,
+  "lr": 0.0003,
+  "weight_decay": 0.01,
+  "patience": 5,
+  "accumulation": 1,
+  "clip_grad": 1.0,
+  "mixed_precision": true,
+  "architecture": {
+   "hidden": 128,
+   "gated": true,
+   "spatial": true,
+   "numerical": true,
+   "text": true
+  },
+  "seed": 42,
+  "sampler": true,
+  "tau_train": 0.0,
+  "lambda_present": 0.3,
+  "text_queries": false,
+  "regional_gate": null,
+  "train_manifest": "data/artemis_balanced/train.csv",
+  "val_manifest": "data/artemis_balanced/val.csv",
+  "model_class": "ArtFAENetPlus"
+ },
+ "dims": {
+  "visual_dim": 768,
+  "attribute_dim": 28,
+  "text_dim": 768,
+  "patch_dim": 1024
+ },
+ "normalizer_sha256_all_seeds": [
+  "61bca80da530cc79fc32d727243606a87a63f5aeb356253c6ada713cd2b2b675"
+ ],
+ "loss": "soft CE (tau_train 0 -> artfae.training.losses.soft_cross_entropy, no logit adjustment) + 0.3 * PresenceBCE(pos_weight = (1-rate)/rate, clamp 20)",
+ "sampler": "WeightedRandomSampler(train.csv sampler_weight = inverse dominant-class frequency, replacement)",
+ "class_weights_in_loss": "none (no class-weighted CE); only the presence BCE pos_weight",
+ "presence_pos_weight": {
+  "amusement": 1.7489999532699585,
+  "awe": 0.7870000004768372,
+  "contentment": 0.38999998569488525,
+  "excitement": 1.9179999828338623,
+  "anger": 14.532999992370605,
+  "disgust": 4.479000091552734,
+  "fear": 2.5829999446868896,
+  "sadness": 1.9910000562667847,
+  "something_else": 1.184000015258789
+ },
+ "priors": {
+  "emotions": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "train_prior": {
+   "amusement": 0.10144,
+   "awe": 0.16752,
+   "contentment": 0.29307,
+   "excitement": 0.08488,
+   "anger": 0.01274,
+   "disgust": 0.04077,
+   "fear": 0.0825,
+   "sadness": 0.09937,
+   "something_else": 0.11771
+  },
+  "val_prior": {
+   "amusement": 0.09858,
+   "awe": 0.17494,
+   "contentment": 0.29026,
+   "excitement": 0.07718,
+   "anger": 0.0189,
+   "disgust": 0.05071,
+   "fear": 0.08624,
+   "sadness": 0.10012,
+   "something_else": 0.10307
+  },
+  "sampler_effective_prior": {
+   "amusement": 0.10382,
+   "awe": 0.15008,
+   "contentment": 0.22249,
+   "excitement": 0.09533,
+   "anger": 0.02268,
+   "disgust": 0.0579,
+   "fear": 0.10122,
+   "sadness": 0.11424,
+   "something_else": 0.13224
+  },
+  "delta_app": {
+   "amusement": -0.0285,
+   "awe": 0.0433,
+   "contentment": -0.0096,
+   "excitement": -0.0951,
+   "anger": 0.3943,
+   "disgust": 0.2183,
+   "fear": 0.0443,
+   "sadness": 0.0075,
+   "something_else": -0.1328
+  },
+  "delta_recomputed_max_abs_diff": 0.0,
+  "odds_multiplier_exp_delta": {
+   "amusement": 0.972,
+   "awe": 1.044,
+   "contentment": 0.99,
+   "excitement": 0.909,
+   "anger": 1.483,
+   "disgust": 1.244,
+   "fear": 1.045,
+   "sadness": 1.008,
+   "something_else": 0.876
+  },
+  "delta_if_sampler_prior_used": {
+   "amusement": -0.0517,
+   "awe": 0.1532,
+   "contentment": 0.2659,
+   "excitement": -0.2112,
+   "anger": -0.1821,
+   "disgust": -0.1325,
+   "fear": -0.1602,
+   "sadness": -0.132,
+   "something_else": -0.2492
+  }
+ },
+ "ensemble": "per seed: softmax(raw_logits + delta); then arithmetic mean of the 5 probability vectors (probability averaging, not logit averaging). Presence: mean of the 5 sigmoids.",
+ "clip": {
+  "model": "openai/clip-vit-large-patch14-336",
+  "revision": "ce19dc912ca5cd21c8a653c79e251e808ccabcd1",
+  "dtype": "fp32",
+  "processor": "CLIPProcessor use_fast=False",
+  "pool_grid": 7
+ },
+ "val_logit_reproduction": {
+  "runs/L14_R3_lam0.3_s42": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 1.0132789611816406e-06,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/L14_R3_lam0.3_s43": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 9.5367431640625e-07,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/L14_R3_lam0.3_s44": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 9.5367431640625e-07,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/L14_R3_lam0.3_s45": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 7.152557373046875e-07,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/L14_R3_lam0.3_s46": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 1.430511474609375e-06,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/R3_s42": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 7.152557373046875e-07,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/R3_s43": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 9.5367431640625e-07,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/R3_s44": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 9.5367431640625e-07,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/R3_s45": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 7.152557373046875e-07,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/R3_s46": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 1.0132789611816406e-06,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/R1_s42": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 9.5367431640625e-07,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/R1_s43": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 7.152557373046875e-07,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/R1_s44": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 7.152557373046875e-07,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/R1_s45": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 7.152557373046875e-07,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/R1_s46": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 9.5367431640625e-07,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/probe100_lr1e-3_s42": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 0.0,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/probe100_lr1e-3_s43": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 0.0,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/probe100_lr1e-3_s44": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 0.0,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/probe100_lr1e-3_s45": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 0.0,
+   "val_logits_sha_matches_registry": true
+  },
+  "runs/revision_B/step1/probe100_lr1e-3_s46": {
+   "shape": [
+    3000,
+    9
+   ],
+   "max_abs_diff": 0.0,
+   "val_logits_sha_matches_registry": true
+  }
+ },
+ "s45_note": {
+  "val_logits_identical": true,
+  "weights_identical": true,
+  "mf1_saved_epoch": 1
+ }
+}

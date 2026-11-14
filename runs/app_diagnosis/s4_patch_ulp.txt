@@ -1,0 +1,2 @@
+row 369: differing 4.86%; max abs diff 0.00781; all within 1 fp16 ULP + 1e-4: False; max diff where |x|<0.05: 1.53e-04; max relative diff 3.15e-02; patch value range [-12.25, 17.23]
+row 1428: differing 4.15%; max abs diff 0.00195; all within 1 fp16 ULP + 1e-4: True; max diff where |x|<0.05: 6.10e-05; max relative diff 2.37e-02; patch value range [-11.95, 12.04]

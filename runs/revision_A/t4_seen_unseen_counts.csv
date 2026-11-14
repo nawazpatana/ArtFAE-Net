@@ -1,0 +1,21 @@
+model,train set,attribute,group,n test,n unique-top,n distinct
+R0n,"14,000",artist,seen,2977,2229,595
+R0n,"14,000",artist,unseen,22,17,21
+R0n,"14,000",art_style,seen,2999,2246,27
+R0n,"14,000",art_style,unseen,0,0,0
+B/32 R1,"43,012",artist,seen,2993,2241,610
+B/32 R1,"43,012",artist,unseen,6,5,6
+B/32 R1,"43,012",art_style,seen,2999,2246,27
+B/32 R1,"43,012",art_style,unseen,0,0,0
+L/14 R1,"43,012",artist,seen,2993,2241,610
+L/14 R1,"43,012",artist,unseen,6,5,6
+L/14 R1,"43,012",art_style,seen,2999,2246,27
+L/14 R1,"43,012",art_style,unseen,0,0,0
+L/14 R3,"43,012",artist,seen,2993,2241,610
+L/14 R3,"43,012",artist,unseen,6,5,6
+L/14 R3,"43,012",art_style,seen,2999,2246,27
+L/14 R3,"43,012",art_style,unseen,0,0,0
+L/14 R3c,"43,012",artist,seen,2993,2241,610
+L/14 R3c,"43,012",artist,unseen,6,5,6
+L/14 R3c,"43,012",art_style,seen,2999,2246,27
+L/14 R3c,"43,012",art_style,unseen,0,0,0

@@ -1,0 +1,707 @@
+{
+ "artfae_balance.EMOTIONS": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "app inference.EMOTIONS": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "priors.json emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "app best.pt s42 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "app best.pt s43 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "app best.pt s44 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "app best.pt s45 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "app best.pt s46 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/R3_s42 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/R3_s43 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/R3_s44 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/R3_s45 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/R3_s46 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/R1_s42 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/R1_s43 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/R1_s44 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/R1_s45 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/R1_s46 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/probe100_lr1e-3_s42 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/probe100_lr1e-3_s43 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/probe100_lr1e-3_s44 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/probe100_lr1e-3_s45 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "runs/revision_B/step1/probe100_lr1e-3_s46 emotions": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "i18n EMOTION_NAMES en keys": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "i18n EMOTION_NAMES zh keys": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "ui PALETTE light keys": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "ui PALETTE dark keys": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "inference SENTIMENT keys": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "train.csv p_* column order": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "val.csv p_* column order": {
+  "order": [
+   "amusement",
+   "awe",
+   "contentment",
+   "excitement",
+   "anger",
+   "disgust",
+   "fear",
+   "sadness",
+   "something_else"
+  ],
+  "same_as_EMOTIONS": true
+ },
+ "_train_targets_by_name": true,
+ "_display_tests": [
+  {
+   "mode": "light",
+   "lang": "en",
+   "emotion": "amusement",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "en",
+   "emotion": "awe",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "en",
+   "emotion": "contentment",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "en",
+   "emotion": "excitement",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "en",
+   "emotion": "anger",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "en",
+   "emotion": "disgust",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "en",
+   "emotion": "fear",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "en",
+   "emotion": "sadness",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "en",
+   "emotion": "something_else",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "en",
+   "emotion": "ALL distinct values",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "zh",
+   "emotion": "amusement",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "zh",
+   "emotion": "awe",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "zh",
+   "emotion": "contentment",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "zh",
+   "emotion": "excitement",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "zh",
+   "emotion": "anger",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "zh",
+   "emotion": "disgust",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "zh",
+   "emotion": "fear",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "zh",
+   "emotion": "sadness",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "zh",
+   "emotion": "something_else",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "light",
+   "lang": "zh",
+   "emotion": "ALL distinct values",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "en",
+   "emotion": "amusement",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "en",
+   "emotion": "awe",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "en",
+   "emotion": "contentment",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "en",
+   "emotion": "excitement",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "en",
+   "emotion": "anger",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "en",
+   "emotion": "disgust",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "en",
+   "emotion": "fear",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "en",
+   "emotion": "sadness",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "en",
+   "emotion": "something_else",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "en",
+   "emotion": "ALL distinct values",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "zh",
+   "emotion": "amusement",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "zh",
+   "emotion": "awe",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "zh",
+   "emotion": "contentment",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "zh",
+   "emotion": "excitement",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "zh",
+   "emotion": "anger",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "zh",
+   "emotion": "disgust",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "zh",
+   "emotion": "fear",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "zh",
+   "emotion": "sadness",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "zh",
+   "emotion": "something_else",
+   "chart_ok": true,
+   "card_ok": true
+  },
+  {
+   "mode": "dark",
+   "lang": "zh",
+   "emotion": "ALL distinct values",
+   "chart_ok": true,
+   "card_ok": true
+  }
+ ],
+ "_all_display_tests_pass": true,
+ "_chips_ok": true
+}

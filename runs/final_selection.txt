@@ -1,0 +1,42 @@
+{
+ "primary_model": "R4b",
+ "run_prefix": "R4b_textq_gate",
+ "seeds": [
+  42,
+  43,
+  44,
+  45,
+  46
+ ],
+ "selected_at_utc": "2026-11-02T20:05:20.554752+00:00",
+ "rule": "highest mean val macro-F1 (R4b = 0.3546); runs within 0.005: R3g (0.3514), R4b (0.3546); tie-break by mean anger+fear presence AP: R3g (0.3828), R4b (0.3865)",
+ "val_mean_macro_f1": {
+  "R1": 0.320549,
+  "R2b": 0.343875,
+  "R3": 0.341843,
+  "R3g": 0.351357,
+  "R4b": 0.354632
+ },
+ "val_mean_anger_fear_ap": {
+  "R1": 0.395793,
+  "R2b": 0.38427,
+  "R3": 0.385832,
+  "R3g": 0.382844,
+  "R4b": 0.386461
+ },
+ "code_sha256": {
+  "scripts/final_eval.py": "88ac2cfbc65079830faf60a2070b9dd520a60eb63cb50d05495976c15781ffd0",
+  "scripts/run_ladder.sh": "1722c4278c03d204a8f15f2f235c0194863e8accce8a71d9a67074c005b14bec",
+  "scripts/m1_paper_logits.py": "fdb7361599e1b374727b57a9f4ec890792d9a425a8f303cefb78376f2cb485b2",
+  "artfae_balance/train.py": "d1fd3cb684bbb2fe2ea0bb845bdaca543c7e89121a931c925d2b4ea8da11c7e5",
+  "artfae_balance/model.py": "46c962fe59bd07f76b8c9d24e962b07cd151e97738d2825a8ddf465d88407e2d",
+  "artfae_balance/heads.py": "173badd6376476024a6ea9456d5e548aeb6fe312f29c2f8f2f73ff2089e706a6",
+  "artfae_balance/losses.py": "7bdcdfa6ee0a568b05454489849ebdfb532c472e199850efc0a7a905c3f4037e",
+  "artfae_balance/data.py": "b73fd85c7e42d9af0f5c2b9a689b1b3da0d9e05c915c0b96d9310c696ba750f6",
+  "artfae_balance/evaluate.py": "712ae845a973ec6a1685cb907358e9d35a86dc223c1a86de5c6ee627ce76cb7d",
+  "artfae_balance/extract_features.py": "414f1de068e349da3bee87ced4474e8a45c4bbeec47a115055165ebbf10492c1",
+  "src/artfae/models/network.py": "04278a69c83599501d7821da4d1dc1d06a6aa18391ff82f847e8eff67ba32faa",
+  "src/artfae/evaluation/metrics.py": "6b8f33fe784ee343fd128f22dd71cfa4939e741e7b9c37062a89d0b1cca20eea",
+  "src/artfae/features/aesthetic.py": "55477737083a621367d461ba50b92a9f5ed1aa0051f249220055f15609c33173"
+ }
+}

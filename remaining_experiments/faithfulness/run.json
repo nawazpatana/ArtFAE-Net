@@ -1,0 +1,13 @@
+{
+  "protocol_sha256": "82d041be51241d31cd8e05b7d3452956f8046803f102231a771c28de56c23a32",
+  "engine_sha256": "b4327ec73481278d197f877cc94ebecdb2062d4470d482133502d2eeb906c1cb",
+  "script_sha256": "101f47515bbb26530a1c95c08368a067ab4fd3ee17f72f710480fca1a85435b2",
+  "checkpoint_sha256": "2ac5f447593fcad2c1b9d58790d466f3d745cecd34daff018b444fda59d89aca",
+  "max_original_saved_logit_difference": 9.5367431640625e-07,
+  "targets_match_saved": true,
+  "rise_reference": "https://github.com/eclique/RISE/blob/master/explanations.py",
+  "status": "complete",
+  "artworks": 200,
+  "wall_seconds": 1843.1140266009606,
+  "images_encoded": 89800
+}

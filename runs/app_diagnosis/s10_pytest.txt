@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /workspace/ArtFAE-Net/artfae_demo/.venv/bin/python
+rootdir: /workspace/ArtFAE-Net
+configfile: pyproject.toml
+plugins: anyio-4.16.0
+collecting ... collected 11 items
+tests/test_inference.py::test_description_table_is_complete PASSED
+tests/test_inference.py::test_i18n_parity PASSED
+tests/test_inference.py::test_smoke PASSED
+tests/test_inference.py::test_consistency_with_saved_val_logits[r1-False] 
+consistency [r1, prior correction False] on cuda: max |logit diff| = 6.06e-05 (per seed [6.06e-05, 2.88e-05, 2.49e-05, 2.22e-05, 3.97e-05]); max |ensemble prob diff| = 3.87e-06; same top class for every seed: True
+PASSED
+tests/test_inference.py::test_consistency_with_saved_val_logits[r1-True] 
+consistency [r1, prior correction True] on cuda: max |logit diff| = 6.06e-05 (per seed [6.06e-05, 2.88e-05, 2.49e-05, 2.22e-05, 3.97e-05]); max |ensemble prob diff| = 3.87e-06; same top class for every seed: True
+PASSED
+tests/test_inference.py::test_consistency_with_saved_val_logits[r3-False] 
+consistency [r3, prior correction False] on cuda: max |logit diff| = 3.81e-05 (per seed [2.26e-05, 2.49e-05, 2.97e-05, 2.16e-05, 3.81e-05]); max |ensemble prob diff| = 2.31e-06; same top class for every seed: True
+PASSED
+tests/test_inference.py::test_bundle_matches_frozen_runs PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+============================== 11 passed in 7.30s ==============================

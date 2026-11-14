@@ -1,0 +1,1402 @@
+{
+  "2284": {
+    "painting": "paul-feeley_self-portrait-1930",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/paul-feeley_self-portrait-1930.jpg",
+    "sha256": "1a5c2a286c645ff522fe15188ca5a49ecf07ddad3aaa5b3af589f3b7086e4b79",
+    "bytes": 21745,
+    "mtime_ns": 1793390785175402134
+  },
+  "2092": {
+    "painting": "gustave-courbet_the-beach-at-palavas-1854",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/gustave-courbet_the-beach-at-palavas-1854.jpg",
+    "sha256": "ce3c5aee1899f440e7900bf351a61b6f56e8a7c0472a4f7eee97b578e702d4d8",
+    "bytes": 125096,
+    "mtime_ns": 1793390606951717557
+  },
+  "2454": {
+    "painting": "giovanni-domenico-tiepolo_chinese-prince-in-fortune-tellers-1757",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/giovanni-domenico-tiepolo_chinese-prince-in-fortune-tellers-1757.jpg",
+    "sha256": "47b06a02e2f85662c6db8c47e6e56057b2980ca31b92b913af7ec0bc376fb437",
+    "bytes": 721454,
+    "mtime_ns": 1793390600699879624
+  },
+  "1271": {
+    "painting": "pierre-auguste-renoir_dance-in-the-country-1883",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/pierre-auguste-renoir_dance-in-the-country-1883.jpg",
+    "sha256": "a8ee3af217da2c55b34926f7e9b935bf2354f9c46ca6044f36c59da2c627f146",
+    "bytes": 194664,
+    "mtime_ns": 1793390797565354281
+  },
+  "53": {
+    "painting": "edmund-dulac_eldorado",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/edmund-dulac_eldorado.jpg",
+    "sha256": "da95af831f2f4b592b83c10ca751f1f6f91c70af7fcfa21d4e61b11c9ccc5598",
+    "bytes": 144696,
+    "mtime_ns": 1793390535162762315
+  },
+  "2986": {
+    "painting": "utagawa-kuniyoshi_lobster",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/utagawa-kuniyoshi_lobster.jpg",
+    "sha256": "2591de016539939baee8f24484a90459bc733cb307f15817688cc0e67437fb37",
+    "bytes": 1088692,
+    "mtime_ns": 1793390853973595079
+  },
+  "1732": {
+    "painting": "david-burliuk_japanese-bay-1921",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/david-burliuk_japanese-bay-1921.jpg",
+    "sha256": "082557336e93231f0cc702384b0faf2d0dd51b4625f3436b2e25e48225e20875",
+    "bytes": 46871,
+    "mtime_ns": 1793390527043921887
+  },
+  "1019": {
+    "painting": "claude-monet_the-church-at-varengeville-1882",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/claude-monet_the-church-at-varengeville-1882.jpg",
+    "sha256": "4ed4bc9f77977870ca34a2042bfd1a8f85f937450be3f86bf992cbad20d8f09a",
+    "bytes": 3595007,
+    "mtime_ns": 1793390514075397964
+  },
+  "61": {
+    "painting": "felix-vallotton_french-poet-paul-verlaine-1896",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/felix-vallotton_french-poet-paul-verlaine-1896.jpg",
+    "sha256": "804aeb43e8cac1734f670b848ee39485071dcd9368df6f85bb6daefb447d8a68",
+    "bytes": 99505,
+    "mtime_ns": 1793390554036140461
+  },
+  "1006": {
+    "painting": "claude-monet_mount-kolsaas-2",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/claude-monet_mount-kolsaas-2.jpg",
+    "sha256": "b08ef70aa6f3e8798ca72908ecde920a0100b8dad948b70bbeb7e39897ee14ac",
+    "bytes": 211261,
+    "mtime_ns": 1793390510945747590
+  },
+  "267": {
+    "painting": "guido-reni_reclining-venus-with-cupid",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/guido-reni_reclining-venus-with-cupid.jpg",
+    "sha256": "38983beb9d2bf0f6f01989a22c1f2dcceacca9923c37d6cec4555d22d0c9587b",
+    "bytes": 133122,
+    "mtime_ns": 1793390602979005638
+  },
+  "20": {
+    "painting": "alphonse-mucha_flower-1897",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/alphonse-mucha_flower-1897.jpg",
+    "sha256": "81a273a19ebdca77785319712fea176020d9a847e48603cb08c26c5a5172848c",
+    "bytes": 376486,
+    "mtime_ns": 1793390450718723549
+  },
+  "1413": {
+    "painting": "sofonisba-anguissola_portrait-of-queen-elisabeth-of-spain-1599",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/sofonisba-anguissola_portrait-of-queen-elisabeth-of-spain-1599.jpg",
+    "sha256": "ad0923034369440578dfaaa542c95e5ac27a4bc63e8b4f749800d78d53682eb3",
+    "bytes": 34623,
+    "mtime_ns": 1793390836826982949
+  },
+  "878": {
+    "painting": "alfred-sisley_lady-s-cove-1897",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/alfred-sisley_lady-s-cove-1897.jpg",
+    "sha256": "322981912410724c73422434e490a222b3162b9790d3831a7660606618279b4e",
+    "bytes": 313063,
+    "mtime_ns": 1793390445873888677
+  },
+  "2635": {
+    "painting": "gustave-dore_the-emir-s-head-shown-in-the-seraglio",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/gustave-dore_the-emir-s-head-shown-in-the-seraglio.jpg",
+    "sha256": "a2eafab1070ebf5ad0c8cfdd871332fabcb07021e299cb2ce12c6180be830006",
+    "bytes": 315480,
+    "mtime_ns": 1793390612534182657
+  },
+  "2148": {
+    "painting": "isaac-levitan_lake-1",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/isaac-levitan_lake-1.jpg",
+    "sha256": "448576609ffc2f03e827ab0f5d593ab46183347269d5f829168b9be4297a303b",
+    "bytes": 167818,
+    "mtime_ns": 1793390638797636854
+  },
+  "664": {
+    "painting": "maria-helena-vieira-da-silva_sof-harpa",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/maria-helena-vieira-da-silva_sof-harpa.jpg",
+    "sha256": "9fd84c8c44fe8474456643f83de853ca1f9d29683ee8fc314ccda623a03d403c",
+    "bytes": 32917,
+    "mtime_ns": 1793390743746490637
+  },
+  "285": {
+    "painting": "jacob-jordaens_the-rest-of-diana",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/jacob-jordaens_the-rest-of-diana.jpg",
+    "sha256": "5ea5e04a5b433ab7177005553b9dcab76faabaa0203fe7dc031254081529e59f",
+    "bytes": 135729,
+    "mtime_ns": 1793390668542770725
+  },
+  "702": {
+    "painting": "otto-dix_the-declaration-of-war",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/otto-dix_the-declaration-of-war.jpg",
+    "sha256": "0326e9c2c464577fb595ba4f7e3af8b3fd3243a9aa8e0ca3cbacd3e0736dbd15",
+    "bytes": 46137,
+    "mtime_ns": 1793390774331741245
+  },
+  "1449": {
+    "painting": "edith-vonnegut_mop-n-glo",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/edith-vonnegut_mop-n-glo.jpg",
+    "sha256": "8d24e15befb2a88737fdb8c2a21ac898204465b32f577abd22fb139850c6ed10",
+    "bytes": 197394,
+    "mtime_ns": 1793390535012986525
+  },
+  "1510": {
+    "painting": "mstislav-dobuzhinsky_tea-room-in-the-old-town-of-kaunas-1930",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/mstislav-dobuzhinsky_tea-room-in-the-old-town-of-kaunas-1930.jpg",
+    "sha256": "c4d9200aaf07ad863e56242d3e876b841fef3750a78802595f4c530a618b47cf",
+    "bytes": 91427,
+    "mtime_ns": 1793390759770803724
+  },
+  "305": {
+    "painting": "osias-beert_still-life-1",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/osias-beert_still-life-1.jpg",
+    "sha256": "e833f0b01197306370c80f7ded61078b73c8c88a631fecced12bbac97dd8782c",
+    "bytes": 431815,
+    "mtime_ns": 1793390773696804884
+  },
+  "1892": {
+    "painting": "paul-gauguin_tahitian-landscape-1897",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/paul-gauguin_tahitian-landscape-1897.jpg",
+    "sha256": "bc12ce3a1f6bd4d8c4d29800a7cf8ae20ad2c7afa4ea6dc4133da42aea851d51",
+    "bytes": 232466,
+    "mtime_ns": 1793390786109788374
+  },
+  "814": {
+    "painting": "walasse-ting_women-with-fruit-1988",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/walasse-ting_women-with-fruit-1988.jpg",
+    "sha256": "6de67f826599c68caee077ca613abb6dae086ba5ace7090bb7ed2cacb8c6ebed",
+    "bytes": 102835,
+    "mtime_ns": 1793390886673317665
+  },
+  "805": {
+    "painting": "max-pechstein_junges-madchen-1908",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/max-pechstein_junges-madchen-1908.jpg",
+    "sha256": "1691c61dca0e071d05d90fd0b8f452827ceb5b8cc979d5a2fe58e6d1d5436d4e",
+    "bytes": 350841,
+    "mtime_ns": 1793390754964942905
+  },
+  "915": {
+    "painting": "armand-guillaumin_agay-les-roches-rouges-1901",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/armand-guillaumin_agay-les-roches-rouges-1901.jpg",
+    "sha256": "a2807318c73ecd9d8ac57da333e4ecba3150c540e0e6c50d5a1f33085b47a4cf",
+    "bytes": 495843,
+    "mtime_ns": 1793390465210298130
+  },
+  "1089": {
+    "painting": "eugene-boudin_port-at-low-tide",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/eugene-boudin_port-at-low-tide.jpg",
+    "sha256": "d3d74858929338892f4a35ff57290a225e8a3d03b40bf954f699be226edd9b9c",
+    "bytes": 106234,
+    "mtime_ns": 1793390551095938244
+  },
+  "949": {
+    "painting": "camille-pissarro_the-climbing-path-l-hermitage-1877",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/camille-pissarro_the-climbing-path-l-hermitage-1877.jpg",
+    "sha256": "98ee5807c9716e049abd41729087e8a9116b7677f672b6d07b5ac24d8ac40e3e",
+    "bytes": 444029,
+    "mtime_ns": 1793390486031641133
+  },
+  "360": {
+    "painting": "rembrandt_the-mountebank-1635",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/rembrandt_the-mountebank-1635.jpg",
+    "sha256": "09eaf504db650a0848bd0e2f86f2be9827bfe2d101db600d343fdfa6f3d5371e",
+    "bytes": 295705,
+    "mtime_ns": 1793390816363067541
+  },
+  "2011": {
+    "painting": "boris-kustodiev_abbess-1908-1",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/boris-kustodiev_abbess-1908-1.jpg",
+    "sha256": "433275fb45b73f05fbdc7f8eeb6421088fb79d44f2f12238e646c13cf77dabf3",
+    "bytes": 123339,
+    "mtime_ns": 1793390477029920954
+  },
+  "189": {
+    "painting": "aelbert-cuyp_view-of-the-groote-kerk-in-dordrecht-from-the-river-maas",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/aelbert-cuyp_view-of-the-groote-kerk-in-dordrecht-from-the-river-maas.jpg",
+    "sha256": "97243b271fd8f802805b5dc25c9a8167ebd7b2cd4a5f50214a291803697bcf26",
+    "bytes": 151355,
+    "mtime_ns": 1793390434648145133
+  },
+  "2527": {
+    "painting": "camille-corot_young-woman-1845",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/camille-corot_young-woman-1845.jpg",
+    "sha256": "7990809cc24808f1d581aadf3514a92e1f764077e5dc7a0e38d5ffd0c1609a95",
+    "bytes": 80725,
+    "mtime_ns": 1793390482481154239
+  },
+  "125": {
+    "painting": "nicholas-roerich_idols-pagan-rus-1910",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/nicholas-roerich_idols-pagan-rus-1910.jpg",
+    "sha256": "7cb205d76064ea3311c7096ee137bb9dfebe3b76271da328ec5d69302217cca5",
+    "bytes": 68415,
+    "mtime_ns": 1793390762465007781
+  },
+  "1739": {
+    "painting": "edouard-cortes_flower-market-at-la-madeleine-6",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/edouard-cortes_flower-market-at-la-madeleine-6.jpg",
+    "sha256": "13cbe84c87c25a180d933b2d2705bb8d05b628838c711b45ea05de578b6eea4b",
+    "bytes": 906130,
+    "mtime_ns": 1793390535736080809
+  },
+  "674": {
+    "painting": "martiros-saryan_night-landscape-egypt-1911",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/martiros-saryan_night-landscape-egypt-1911.jpg",
+    "sha256": "c1484b6eb9e72783042687e4366575adc184972c8ff2b7b8038e506568db3f9b",
+    "bytes": 353567,
+    "mtime_ns": 1793390746208696425
+  },
+  "507": {
+    "painting": "sandro-botticelli_the-story-of-virginia-1504(1)",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/sandro-botticelli_the-story-of-virginia-1504(1).jpg",
+    "sha256": "b1540635ec91fd2628429d7beace48fdc36040d5fd7c766442febd1fc32e510c",
+    "bytes": 174153,
+    "mtime_ns": 1793390835398662462
+  },
+  "464": {
+    "painting": "benozzo-gozzoli_procession-of-the-magus-melchior-detail-1461",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/benozzo-gozzoli_procession-of-the-magus-melchior-detail-1461.jpg",
+    "sha256": "e3661f775a03aab29897c66cc170868e1c0d12cfe75e8a93434d57b36fbc8bb1",
+    "bytes": 301979,
+    "mtime_ns": 1793390473501154790
+  },
+  "2436": {
+    "painting": "dmitry-levitzky_ivan-golenishcev-kutuzov",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/dmitry-levitzky_ivan-golenishcev-kutuzov.jpg",
+    "sha256": "9a395a65aa84a69f128d73a3cb190f3ada059a0db42e1930c00c1e86389ca7a7",
+    "bytes": 27926,
+    "mtime_ns": 1793390529778421368
+  },
+  "1632": {
+    "painting": "mabuse_hercules-and-deianeira-1517",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/mabuse_hercules-and-deianeira-1517.jpg",
+    "sha256": "3baad71d7b5909fed0fd7ffc597fa45baba90fb901ec39935ffe27d10f37a07a",
+    "bytes": 1360509,
+    "mtime_ns": 1793390739863519087
+  },
+  "2083": {
+    "painting": "gregoire-boonzaier_still-life-with-teapot-1930",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/gregoire-boonzaier_still-life-with-teapot-1930.jpg",
+    "sha256": "51c712fb78ed1c7823e8f105f440588c524de68a60556e496cba00cca8704d50",
+    "bytes": 158490,
+    "mtime_ns": 1793390601961395086
+  },
+  "661": {
+    "painting": "marcel-duchamp_selected-details-after-cranach-1968",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/marcel-duchamp_selected-details-after-cranach-1968.jpg",
+    "sha256": "8adf1e881d5d4b5f33aa06582511011446417f6db5e91cd3c56986a0a063e1cd",
+    "bytes": 60542,
+    "mtime_ns": 1793390742839553271
+  },
+  "1325": {
+    "painting": "robert-julian-onderdonk_landscape-with-wagon",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/robert-julian-onderdonk_landscape-with-wagon.jpg",
+    "sha256": "f51d364968eed072cab323670b47417236e5936ff0971f3c92dbb6085734e000",
+    "bytes": 1585976,
+    "mtime_ns": 1793390822055096037
+  },
+  "981": {
+    "painting": "claude-monet_antibes-seen-from-the-salis-gardens-01(1)",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/claude-monet_antibes-seen-from-the-salis-gardens-01(1).jpg",
+    "sha256": "3603f93d258aabb3435d812faed22329d0b737b06d053690bc34661c35876322",
+    "bytes": 3847373,
+    "mtime_ns": 1793390503969217208
+  },
+  "2788": {
+    "painting": "thomas-cole_italian-coast-scene-with-ruined-tower-1838",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/thomas-cole_italian-coast-scene-with-ruined-tower-1838.jpg",
+    "sha256": "985d84d0f170ba0ccd65576b9f643939d50bab41ca30a00edb760dba5d6ab617",
+    "bytes": 3089947,
+    "mtime_ns": 1793390841566479495
+  },
+  "316": {
+    "painting": "peter-paul-rubens_sine-cerere-et-baccho-friget-venus",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/peter-paul-rubens_sine-cerere-et-baccho-friget-venus.jpg",
+    "sha256": "035eab38a4c1ef180893cb7790f82397026f5d3a7a53b5d9d7c6377f65ae2b04",
+    "bytes": 102201,
+    "mtime_ns": 1793390793793437961
+  },
+  "1142": {
+    "painting": "ilya-mashkov_dulber-sanatorium-krasnye-zori",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/ilya-mashkov_dulber-sanatorium-krasnye-zori.jpg",
+    "sha256": "44bba422de033d0d67768b73a37be1b73328690cbbe6a5c99fdae59cc236c865",
+    "bytes": 366825,
+    "mtime_ns": 1793390635695188280
+  },
+  "1383": {
+    "painting": "agnolo-bronzino_portrait-of-andrea-doria-as-neptune",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/agnolo-bronzino_portrait-of-andrea-doria-as-neptune.jpg",
+    "sha256": "45dfe1951d3744e46972e644e38ab68c6713bb640de0745ba58bb16666204c8b",
+    "bytes": 121144,
+    "mtime_ns": 1793390434866253103
+  },
+  "115": {
+    "painting": "mikhail-nesterov_in-a-secluded-monastery-1915",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/mikhail-nesterov_in-a-secluded-monastery-1915.jpg",
+    "sha256": "0b7b970044f5a6e1363992dbe4537d3a551fc04c219bdbb39eaf127ee0cd527b",
+    "bytes": 124311,
+    "mtime_ns": 1793390758102689925
+  },
+  "327": {
+    "painting": "rembrandt_a-nurse-and-an-eating-child",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/rembrandt_a-nurse-and-an-eating-child.jpg",
+    "sha256": "4e858d5dba9a52ffa06185d23762255948835df3dd7ea6c31abae1c37897bcc0",
+    "bytes": 356870,
+    "mtime_ns": 1793390811504845478
+  },
+  "58": {
+    "painting": "egon-schiele_portrait-of-the-composer-arthur-lowenstein-1909",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/egon-schiele_portrait-of-the-composer-arthur-lowenstein-1909.jpg",
+    "sha256": "b650177b6b444393286c0e08f92b1e0cef1688ced075fa674fe6e7c3ef5559ce",
+    "bytes": 744011,
+    "mtime_ns": 1793390542141779660
+  },
+  "2479": {
+    "painting": "louise-elisabeth-vigee-le-brun_self-portrait-in-a-straw-hat-1787",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/louise-elisabeth-vigee-le-brun_self-portrait-in-a-straw-hat-1787.jpg",
+    "sha256": "467107a0e340868689d488b2fede7aaae63ad866b3c82fe2d5f2992ffea32036",
+    "bytes": 141772,
+    "mtime_ns": 1793390733281084130
+  },
+  "590": {
+    "painting": "franz-marc_pigs",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/franz-marc_pigs.jpg",
+    "sha256": "a403a6e59d53e54f150a0826f21ec1d8fdfff32a30b820efed37c78e6808f918",
+    "bytes": 158847,
+    "mtime_ns": 1793390589080105756
+  },
+  "2823": {
+    "painting": "franz-stuck_golgotha",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/franz-stuck_golgotha.jpg",
+    "sha256": "525b8fa36867cfe2e19e194ebc540467a8a3f7e27cae08271304e62d14ff3612",
+    "bytes": 97203,
+    "mtime_ns": 1793390589823354734
+  },
+  "959": {
+    "painting": "carlos-saenz-de-tejada_girl-from-back-luisita-1917",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/carlos-saenz-de-tejada_girl-from-back-luisita-1917.jpg",
+    "sha256": "b0196cb09dce371e09ad8a881d29c78a981a00fd0a4a9ef838722414a6d2d203",
+    "bytes": 90422,
+    "mtime_ns": 1793390491279846603
+  },
+  "2604": {
+    "painting": "george-frederick-watts_girl-with-peacock(1)",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/george-frederick-watts_girl-with-peacock(1).jpg",
+    "sha256": "6fbcb75da509914686718b005fec817230eff6bf3bbcafbb616ae3ea198ea04d",
+    "bytes": 38342,
+    "mtime_ns": 1793390594508756271
+  },
+  "8": {
+    "painting": "jean-metzinger_femme-au-chapeau-rose-et-collier-de-perles-1912",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/jean-metzinger_femme-au-chapeau-rose-et-collier-de-perles-1912.jpg",
+    "sha256": "d6f4df5dbc1d760427a6320007c292ea3deec83b35653f23a184d43447906172",
+    "bytes": 475873,
+    "mtime_ns": 1793390678163676863
+  },
+  "255": {
+    "painting": "gerard-terborch_officer-writing-a-letter",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/gerard-terborch_officer-writing-a-letter.jpg",
+    "sha256": "95af02cbd83a6e90a0566b6402a94f2bba74fc757ed303edd41861e05958a2dd",
+    "bytes": 82298,
+    "mtime_ns": 1793390597540944816
+  },
+  "1504": {
+    "painting": "maria-primachenko_the-threat-of-war-1986",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/maria-primachenko_the-threat-of-war-1986.jpg",
+    "sha256": "148e05c2eb6c150762cd0bd69e03e4c1ea67570c1387345984ee4e44cac5cc11",
+    "bytes": 51182,
+    "mtime_ns": 1793390743753299357
+  },
+  "47": {
+    "painting": "carl-larsson_brita-s-forty-winks(1)",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/carl-larsson_brita-s-forty-winks(1).jpg",
+    "sha256": "eb1a6d0654b432ab7ea02743e852462a715d767526d6e2d97895e2c264f21f2f",
+    "bytes": 251245,
+    "mtime_ns": 1793390490031341735
+  },
+  "2089": {
+    "painting": "gustave-courbet_river-landscape-1869",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/gustave-courbet_river-landscape-1869.jpg",
+    "sha256": "2c454cff99bb760a58a075d2a0e6fd8c9cf278f3b1d1a2cf6108b18c9a20af74",
+    "bytes": 172418,
+    "mtime_ns": 1793390606864741625
+  },
+  "1714": {
+    "painting": "albert-huie_the-vendor-1939",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/albert-huie_the-vendor-1939.jpg",
+    "sha256": "6cb9b5963452cab67903c1c32f26dfda0be136bdf80ab8a42122ccc99372da12",
+    "bytes": 62958,
+    "mtime_ns": 1793390435519787488
+  },
+  "2359": {
+    "painting": "vincent-van-gogh_baby-in-a-carriage(1)",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/vincent-van-gogh_baby-in-a-carriage(1).jpg",
+    "sha256": "243cdf744e06ad627f77840a2c79bc9a5fca31602d56fb2e8c8da786aa58d6d1",
+    "bytes": 128839,
+    "mtime_ns": 1793390866482823028
+  },
+  "1143": {
+    "painting": "ilya-mashkov_georgia-tbilisi-the-kura-river",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/ilya-mashkov_georgia-tbilisi-the-kura-river.jpg",
+    "sha256": "1da1eeb5cfe06fec8a170150b50ca08b3a01d188770d90b7fe5fd1800af00eca",
+    "bytes": 466093,
+    "mtime_ns": 1793390635711821110
+  },
+  "2783": {
+    "painting": "theodore-gericault_horses-going-to-a-fair",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/theodore-gericault_horses-going-to-a-fair.jpg",
+    "sha256": "6f9d1d422493535c63eb2af144c0e4cb51d12865bc72f16a0f06119cfe6a2288",
+    "bytes": 56204,
+    "mtime_ns": 1793390840664911401
+  },
+  "2680": {
+    "painting": "jan-matejko_sigmund-and-barbara",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/jan-matejko_sigmund-and-barbara.jpg",
+    "sha256": "c1f8ee6334a6646078776f3e20e64e2b5393ce557956f8ee59aa2fa3cc2075ba",
+    "bytes": 94550,
+    "mtime_ns": 1793390672451102768
+  },
+  "1935": {
+    "painting": "vincent-van-gogh_canal-with-bridge-and-women-washing-1888(1)",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/vincent-van-gogh_canal-with-bridge-and-women-washing-1888(1).jpg",
+    "sha256": "e6ea0c31fe86aa75e64ab9006eaea5db536d197382f9fcb850ab5093bcbd9947",
+    "bytes": 287054,
+    "mtime_ns": 1793390867426894587
+  },
+  "88": {
+    "painting": "heorhiy-narbut_illustration-fairy-tales-teremok-mizgir-1910",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/heorhiy-narbut_illustration-fairy-tales-teremok-mizgir-1910.jpg",
+    "sha256": "e1a27fa646e62b126d8714de15f66b9adb71be4e7004f31eb35d1b905e7f7bd3",
+    "bytes": 247691,
+    "mtime_ns": 1793390633677032439
+  },
+  "2462": {
+    "painting": "jean-baptiste-simeon-chardin_still-life-flowers-in-a-vase-1763",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/jean-baptiste-simeon-chardin_still-life-flowers-in-a-vase-1763.jpg",
+    "sha256": "176224e2ccb122e3f7f7dbbc5b1711303c47f5dc9065a8655362b6a575eb6cbb",
+    "bytes": 427243,
+    "mtime_ns": 1793390675332597757
+  },
+  "540": {
+    "painting": "billy-childish_st-john-s-church-chatham-2004",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/billy-childish_st-john-s-church-chatham-2004.jpg",
+    "sha256": "de484c42171d6ecbf991ac72341b98e6594b0da812398bd693d461fbb8766bd1",
+    "bytes": 47907,
+    "mtime_ns": 1793390477008764976
+  },
+  "2935": {
+    "painting": "odilon-redon_she-draws-from-her-bosom-a-sponge-perfectly-black-and-covers-it-with-kisses-plate-8-1896",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/odilon-redon_she-draws-from-her-bosom-a-sponge-perfectly-black-and-covers-it-with-kisses-plate-8-1896.jpg",
+    "sha256": "b15133329df6fdf55e4ffa21a9739bb9926be9d37d38e954499f749b3b273ed2",
+    "bytes": 176480,
+    "mtime_ns": 1793390771765140239
+  },
+  "391": {
+    "painting": "georges-braque_big-nude-1908",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/georges-braque_big-nude-1908.jpg",
+    "sha256": "bee785c5a096c7833e6fab792e46753515946add836b5fff42345998d1bacb75",
+    "bytes": 443793,
+    "mtime_ns": 1793390596088052756
+  },
+  "1331": {
+    "painting": "rudolf-schweitzer-cumpana_t-rg-la-salonic-1929",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/rudolf-schweitzer-cumpana_t-rg-la-salonic-1929.jpg",
+    "sha256": "2ec5ac69bca34650be34a46c1ad8573d57a0533c3357ea7c6dde856ff05af2f0",
+    "bytes": 191655,
+    "mtime_ns": 1793390825508633413
+  },
+  "790": {
+    "painting": "armand-guillaumin_rochers-sur-la-c-te-agay-1907",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/armand-guillaumin_rochers-sur-la-c-te-agay-1907.jpg",
+    "sha256": "cbca589bc7bc3c15ebb7c748138fda3226a426872b29db67fce8878677dbf4e5",
+    "bytes": 507705,
+    "mtime_ns": 1793390465589644286
+  },
+  "1137": {
+    "painting": "hoca-ali-riza_manzara-landscape-1898",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/hoca-ali-riza_manzara-landscape-1898.jpg",
+    "sha256": "0a6e006d6f008c76c6c6add20563a4e92a460e5a9370ebf0aa0b8d4a5bcd0cdc",
+    "bytes": 41491,
+    "mtime_ns": 1793390635224543316
+  },
+  "435": {
+    "painting": "paul-cezanne_rocks-near-the-caves-below-the-chateau-noir",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/paul-cezanne_rocks-near-the-caves-below-the-chateau-noir.jpg",
+    "sha256": "a111c0468530b33c4d95b2d043e2fc36475539c573d829175dd090e64396f8cd",
+    "bytes": 227661,
+    "mtime_ns": 1793390782895788450
+  },
+  "2225": {
+    "painting": "john-singer-sargent_mrs-william-henry-vanderbilt-1888",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/john-singer-sargent_mrs-william-henry-vanderbilt-1888.jpg",
+    "sha256": "54d9cc8881a22f6354154ba89abccc07c32b5d1ebcf3fde97c8a54053de359e5",
+    "bytes": 66383,
+    "mtime_ns": 1793390689903050889
+  },
+  "898": {
+    "painting": "alfred-sisley_the-sevres-bridge-1877-1",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/alfred-sisley_the-sevres-bridge-1877-1.jpg",
+    "sha256": "2d40c4bec3797219073ea780681ae3835fbaf331d8da2bb09a50217254d5899d",
+    "bytes": 125636,
+    "mtime_ns": 1793390448988827047
+  },
+  "2650": {
+    "painting": "ivan-aivazovsky_chumaks-leisure-1885",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/ivan-aivazovsky_chumaks-leisure-1885.jpg",
+    "sha256": "f54247b84cbcdcc1db118c07c2c289a855ee745d83dd11e9ef7cf2a4a8906f42",
+    "bytes": 282302,
+    "mtime_ns": 1793390640993213733
+  },
+  "1774": {
+    "painting": "gustave-loiseau_red-house-near-port-marly",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/gustave-loiseau_red-house-near-port-marly.jpg",
+    "sha256": "053b068fefb9932ad59210308fdbeca611328bf858897fef3565dd3b929fa080",
+    "bytes": 353459,
+    "mtime_ns": 1793390615688924637
+  },
+  "1733": {
+    "painting": "david-burliuk_nicholai-cikovsky-1925",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/david-burliuk_nicholai-cikovsky-1925.jpg",
+    "sha256": "d7b18480b98007f2cce44692cf28ddda1662770219adeeecd0317afa6f76db51",
+    "bytes": 49980,
+    "mtime_ns": 1793390527380986765
+  },
+  "386": {
+    "painting": "eduardo-viana_k4-quadrado-azul-1916",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/eduardo-viana_k4-quadrado-azul-1916.jpg",
+    "sha256": "6d1556434678457332f67cb654b93746e5fefaab7930aa962f85bebbcc50ba6b",
+    "bytes": 44219,
+    "mtime_ns": 1793390538712392582
+  },
+  "1163": {
+    "painting": "john-henry-twachtman_abandoned-mill",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/john-henry-twachtman_abandoned-mill.jpg",
+    "sha256": "07212f538eb2d5bd35bc405e62c7aab7633e6c242ba3e6f90b8da1f7bbdab423",
+    "bytes": 335312,
+    "mtime_ns": 1793390685922698266
+  },
+  "531": {
+    "painting": "august-macke_girl-in-the-greenery",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/august-macke_girl-in-the-greenery.jpg",
+    "sha256": "bb0542f485e101fe0b266a0d7b1e8522af83d429f5a70acf6ba7578147f216d4",
+    "bytes": 390856,
+    "mtime_ns": 1793390468926692412
+  },
+  "833": {
+    "painting": "lorenzo-lotto_altar-polyptych-of-san-bartolomeo-bergamo-foot-plate-entombment-1516",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/lorenzo-lotto_altar-polyptych-of-san-bartolomeo-bergamo-foot-plate-entombment-1516.jpg",
+    "sha256": "1baf1d9f367504f60ca87ae0d7fba0bb4bc403d199d90a7440189c407a38b35a",
+    "bytes": 181201,
+    "mtime_ns": 1793390730099386639
+  },
+  "1844": {
+    "painting": "maurice-utrillo_the-maquis-of-montmartre-under-the-snow",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/maurice-utrillo_the-maquis-of-montmartre-under-the-snow.jpg",
+    "sha256": "4386221c970b9969a34c64433e341af3bf8896aaa451c420afe1536a5565d9e7",
+    "bytes": 201025,
+    "mtime_ns": 1793390753958756024
+  },
+  "1153": {
+    "painting": "istvan-nagy_self-portrait-1919",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/istvan-nagy_self-portrait-1919.jpg",
+    "sha256": "6f85064239186f36d4ce28b59857ecab6ba3a527f0a600723bae5ed10a5be048",
+    "bytes": 74543,
+    "mtime_ns": 1793390640359595327
+  },
+  "2452": {
+    "painting": "giovanni-battista-tiepolo_head-of-a-philosopher-1757",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/giovanni-battista-tiepolo_head-of-a-philosopher-1757.jpg",
+    "sha256": "15d0de1e55c92742adc33cd6a32299a29ee3247a9ee1028f453fc09a5f0487e1",
+    "bytes": 329235,
+    "mtime_ns": 1793390599525096049
+  },
+  "2993": {
+    "painting": "utagawa-kuniyoshi_the-moonlight-fight-between-yoshitsune-and-benkei-on-the-gojobashi",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/utagawa-kuniyoshi_the-moonlight-fight-between-yoshitsune-and-benkei-on-the-gojobashi.jpg",
+    "sha256": "6215d807a0356ad5e3f8acd0df6e6c1b9d4c8ae71543862b9514547a2aa79a4f",
+    "bytes": 1531539,
+    "mtime_ns": 1793390856253427638
+  },
+  "2160": {
+    "painting": "ivan-kramskoy_portrait-of-a-poet-and-artist-taras-shevchenko-1871",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/ivan-kramskoy_portrait-of-a-poet-and-artist-taras-shevchenko-1871.jpg",
+    "sha256": "35fa1bdd7f1e5a74f380e0a7c76ad3a736edd7a89ac526ac465b3c202a008585",
+    "bytes": 69761,
+    "mtime_ns": 1793390663744814187
+  },
+  "777": {
+    "painting": "zinaida-serebriakova_pears-on-the-branches-1930",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/zinaida-serebriakova_pears-on-the-branches-1930.jpg",
+    "sha256": "8ac3317741908af45641e212ca2362bb7304ddc76d2c3ff842d24375e61d8c7d",
+    "bytes": 175340,
+    "mtime_ns": 1793390900032546595
+  },
+  "2603": {
+    "painting": "fyodor-bronnikov_sick-artist-1861",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/fyodor-bronnikov_sick-artist-1861.jpg",
+    "sha256": "3c598d5b08ba9397765c7ee530bff112e7c45c2373abeb79eb4d0d6739a8853f",
+    "bytes": 223937,
+    "mtime_ns": 1793390591710520296
+  },
+  "2124": {
+    "painting": "ilya-repin_old-woman",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/ilya-repin_old-woman.jpg",
+    "sha256": "fd98374eddaad42009692743bc256e94e6777a8df76d46d287e22bce2b3ba8d9",
+    "bytes": 192561,
+    "mtime_ns": 1793390637168918925
+  },
+  "1782": {
+    "painting": "gwen-john_portrait-of-mrs-atkinson",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/gwen-john_portrait-of-mrs-atkinson.jpg",
+    "sha256": "8b0223f8291f255de9bb0b21dd6d7666b8f5ee114fc4e125bf6c7a774eb4ec9b",
+    "bytes": 634068,
+    "mtime_ns": 1793390620851684822
+  },
+  "1105": {
+    "painting": "giovanni-boldini_ballerina-in-mauve",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/giovanni-boldini_ballerina-in-mauve.jpg",
+    "sha256": "706debde3ff180489f6c319144f8998d737f225f36a0fc10eeebd0e58325d680",
+    "bytes": 351698,
+    "mtime_ns": 1793390600253151494
+  },
+  "1659": {
+    "painting": "pablo-picasso_woman-with-spanish-dress-1917",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/pablo-picasso_woman-with-spanish-dress-1917.jpg",
+    "sha256": "6c4b582c0eb3f36eba4683db95c49c6433c9354b5b7358b34d8cc5e1981b4be2",
+    "bytes": 697021,
+    "mtime_ns": 1793390778858073182
+  },
+  "1763": {
+    "painting": "gregoire-boonzaier_interior-1978",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/gregoire-boonzaier_interior-1978.jpg",
+    "sha256": "986b885fd3e3b593cb0fd24ccc9d17de8d10a4c04fbefacd6f2841ac85ad22d4",
+    "bytes": 208243,
+    "mtime_ns": 1793390601933912105
+  },
+  "1947": {
+    "painting": "vincent-van-gogh_madame-roulin-rocking-the-cradle-a-lullaby-1889-1",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/vincent-van-gogh_madame-roulin-rocking-the-cradle-a-lullaby-1889-1.jpg",
+    "sha256": "0e6dd8e4a9e0a8b1dc7883c3e607118912d78731b9cee8ebb2a18ce6a75fe6df",
+    "bytes": 1704310,
+    "mtime_ns": 1793390873000149925
+  },
+  "799": {
+    "painting": "john-duncan-fergusson_anne-estelle-rice-in-paris-closerie-des-lilas-1907",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/john-duncan-fergusson_anne-estelle-rice-in-paris-closerie-des-lilas-1907.jpg",
+    "sha256": "364c8ce9c42ef0d724e3a1c22d411a33679b8bedca2bd431c1287e5c132515c7",
+    "bytes": 80341,
+    "mtime_ns": 1793390684683940278
+  },
+  "2400": {
+    "painting": "william-adolphe-bouguereau_little-beggar-1890",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/william-adolphe-bouguereau_little-beggar-1890.jpg",
+    "sha256": "aaf1155850055001dc0622f1d4617c1137885d33f8494b3cf3901f3b72a155d4",
+    "bytes": 138593,
+    "mtime_ns": 1793390888912765809
+  },
+  "2847": {
+    "painting": "konstantin-bogaevsky_cimmerian-region-1910",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/konstantin-bogaevsky_cimmerian-region-1910.jpg",
+    "sha256": "0d71cde683b0cb8058440bd3126ca7d4b229bc1f5be5ec2f255e7f4e2cf19b9e",
+    "bytes": 144373,
+    "mtime_ns": 1793390719893855634
+  },
+  "2408": {
+    "painting": "allan-ramsay_robert-wood",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/allan-ramsay_robert-wood.jpg",
+    "sha256": "c185be91da3787918970b5d97e13b061f3b8d47051e721d7dfcc3d98729bd177",
+    "bytes": 1806971,
+    "mtime_ns": 1793390450402784491
+  },
+  "309": {
+    "painting": "peter-paul-rubens_christ-and-st-john-with-angels",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/peter-paul-rubens_christ-and-st-john-with-angels.jpg",
+    "sha256": "363dfd567b01ba13e900bc8ae3b58e50557eea3dff2290778905a0750e200afe",
+    "bytes": 163222,
+    "mtime_ns": 1793390793225918707
+  },
+  "475": {
+    "painting": "filippo-lippi_the-feast-of-herod-salome-s-dance-detail-1464-1",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/filippo-lippi_the-feast-of-herod-salome-s-dance-detail-1464-1.jpg",
+    "sha256": "e2730e4cca43dafd0b3520ef4af713c22e8372f950f4e107290624007082b780",
+    "bytes": 153441,
+    "mtime_ns": 1793390581096167825
+  },
+  "1313": {
+    "painting": "pierre-auguste-renoir_woman-s-head-the-thinker",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/pierre-auguste-renoir_woman-s-head-the-thinker.jpg",
+    "sha256": "4899c13471c863f8f98e58248acbe2da53277f28455e15c75515efa0156f8b2c",
+    "bytes": 94327,
+    "mtime_ns": 1793390801906233380
+  },
+  "1821": {
+    "painting": "janos-tornyai_great-tree-at-m-rt-ly-1910",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/janos-tornyai_great-tree-at-m-rt-ly-1910.jpg",
+    "sha256": "0b37a52dcf028d910010ddb46a22d5da300d99cf84b94447d708c26fabdab49f",
+    "bytes": 89770,
+    "mtime_ns": 1793390674898875509
+  },
+  "208": {
+    "painting": "artemisia-gentileschi_dame-assise-de-trois-quarts",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/artemisia-gentileschi_dame-assise-de-trois-quarts.jpg",
+    "sha256": "4bf78d1c7889b2588abf7901e80119048ce06889045234a3801d20cf2b95b037",
+    "bytes": 33737,
+    "mtime_ns": 1793390466146829610
+  },
+  "2673": {
+    "painting": "ivan-aivazovsky_venice-1842",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/ivan-aivazovsky_venice-1842.jpg",
+    "sha256": "857da9965979fbc6ec26cbf97511c38cfeecb8aea8f3b11a7370400cd59f5c59",
+    "bytes": 49507,
+    "mtime_ns": 1793390642523327239
+  },
+  "1365": {
+    "painting": "william-merritt-chase_keying-up-the-court-jester",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/william-merritt-chase_keying-up-the-court-jester.jpg",
+    "sha256": "1fb70ccde87e229e906869d354a4c21d5c75fe3d931d89be33ca1e48f66b7188",
+    "bytes": 201746,
+    "mtime_ns": 1793390895555532702
+  },
+  "1045": {
+    "painting": "claude-monet_wisteria-left-half-1919",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/claude-monet_wisteria-left-half-1919.jpg",
+    "sha256": "9cc7a93b68175682d470251f0d07cdcbc8fdeb3234860e370bc1125337a7f3c8",
+    "bytes": 279470,
+    "mtime_ns": 1793390520725914596
+  },
+  "2987": {
+    "painting": "utagawa-kuniyoshi_moso-hunting-for-bamboo-shoots",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/utagawa-kuniyoshi_moso-hunting-for-bamboo-shoots.jpg",
+    "sha256": "347fffb02b3c0d68222b7468a2cad3763b2bc7033448f4b367571460890d1551",
+    "bytes": 1181133,
+    "mtime_ns": 1793390854097133250
+  },
+  "2316": {
+    "painting": "thomas-eakins_young-girl-meditating-1877",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/thomas-eakins_young-girl-meditating-1877.jpg",
+    "sha256": "fd2ad04b5898a868daa1d4d8fc22305d4a723aacb229bc06ccf60755f9cd3132",
+    "bytes": 658102,
+    "mtime_ns": 1793390845968086317
+  },
+  "572": {
+    "painting": "ernst-ludwig-kirchner_dodo-head-on-pillow",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/ernst-ludwig-kirchner_dodo-head-on-pillow.jpg",
+    "sha256": "370ca5b1b28a9b8adeedb159e8535e2a5850f3098afad2011a98ab5419faf5ab",
+    "bytes": 165168,
+    "mtime_ns": 1793390545927707986
+  },
+  "2437": {
+    "painting": "dmitry-levitzky_portrait-of-anna-davia-d-avia-bernucci-1782",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/dmitry-levitzky_portrait-of-anna-davia-d-avia-bernucci-1782.jpg",
+    "sha256": "3856175cc55edba19befec77b56bf8b2c4920c9fbf983df2363db3dca50d0f62",
+    "bytes": 201690,
+    "mtime_ns": 1793390529793218700
+  },
+  "1491": {
+    "painting": "marc-chagall_rainbow-in-the-sky-a-sign-of-covenant-between-god-and-earth-genesis-ix-8-17",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/marc-chagall_rainbow-in-the-sky-a-sign-of-covenant-between-god-and-earth-genesis-ix-8-17.jpg",
+    "sha256": "872af4fc9e68482499c58fca0cdbca2c0a729293d896ef0bbfaf8bab3e3bc182",
+    "bytes": 79825,
+    "mtime_ns": 1793390742304515786
+  },
+  "1991": {
+    "painting": "aleksey-savrasov_type-of-volga-under-yurievts",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/aleksey-savrasov_type-of-volga-under-yurievts.jpg",
+    "sha256": "79a56e63315d096c1d03b92d7213abc94b089bd6a37e43afdf86041b0e0c799d",
+    "bytes": 435111,
+    "mtime_ns": 1793390440983402068
+  },
+  "1608": {
+    "painting": "jan-van-eyck_the-annunciation-1440",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/jan-van-eyck_the-annunciation-1440.jpg",
+    "sha256": "c2549070303fd50598aa178895a4ae82021a5b24dcc789b66b22ad8e60414dd9",
+    "bytes": 157125,
+    "mtime_ns": 1793390674370883222
+  },
+  "779": {
+    "painting": "zinaida-serebriakova_portrait-of-countess-rosario-zubova-1938",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/zinaida-serebriakova_portrait-of-countess-rosario-zubova-1938.jpg",
+    "sha256": "8e93784f515a2a3f44d15b84c69ba10c8dc557d1518654b10ccc1d6992d38e94",
+    "bytes": 108329,
+    "mtime_ns": 1793390900060125843
+  },
+  "812": {
+    "painting": "rik-wouters_autumn-1913",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/rik-wouters_autumn-1913.jpg",
+    "sha256": "e6dd50930a4eca4a7aecd00f6fee0284a777f5e71c1a48f6da9d8b0b28e90648",
+    "bytes": 322972,
+    "mtime_ns": 1793390818575602155
+  },
+  "881": {
+    "painting": "alfred-sisley_matrat-cottages-1889",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/alfred-sisley_matrat-cottages-1889.jpg",
+    "sha256": "733c1191754b2061c2f25fe650b3980c2d015f9c184887f3cb0264189e4a7b01",
+    "bytes": 127604,
+    "mtime_ns": 1793390445929944286
+  },
+  "781": {
+    "painting": "zinaida-serebriakova_portrait-s-n-andronikovoy-halpern-1924",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/zinaida-serebriakova_portrait-s-n-andronikovoy-halpern-1924.jpg",
+    "sha256": "ad189fa310b7052e629e89cd176975d921d97ff2f16df56642afc8b1b39c39a8",
+    "bytes": 121265,
+    "mtime_ns": 1793390900354223180
+  },
+  "749": {
+    "painting": "salvador-dali_pieta",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/salvador-dali_pieta.jpg",
+    "sha256": "3bf6f6c9d2053570de29f776b3b00b0a7bfe74535d007a189386836154ca4114",
+    "bytes": 868050,
+    "mtime_ns": 1793390833311843780
+  },
+  "1050": {
+    "painting": "cornelis-vreedenburgh_view-of-a-puddle-and-a-boat",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/cornelis-vreedenburgh_view-of-a-puddle-and-a-boat.jpg",
+    "sha256": "eb8790df5b4eefa0672e75d1624c5ff8566aded6796f315af0a23278f70d5811",
+    "bytes": 286897,
+    "mtime_ns": 1793390523017106724
+  },
+  "218": {
+    "painting": "bartolome-esteban-murillo_virgin-and-child-1650",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/bartolome-esteban-murillo_virgin-and-child-1650.jpg",
+    "sha256": "9954ef307cfc63cf45a771b27e1b536275a0ff3c822ceced71a5582e5c67f252",
+    "bytes": 30518,
+    "mtime_ns": 1793390473016011612
+  },
+  "599": {
+    "painting": "henri-matisse_nude",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/henri-matisse_nude.jpg",
+    "sha256": "dd0ee2ab48a12fb8d2e625b472de82eecb965642ba3cc6dc591222ce4596de15",
+    "bytes": 210113,
+    "mtime_ns": 1793390631733739345
+  },
+  "2295": {
+    "painting": "pyotr-konchalovsky_spring-view-from-the-window-on-konyushkovskaya-1944",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/pyotr-konchalovsky_spring-view-from-the-window-on-konyushkovskaya-1944.jpg",
+    "sha256": "4b319311bc945a13a5933482321f65df70170e6ba9ed0181c480da2cd25ad580",
+    "bytes": 34936,
+    "mtime_ns": 1793390807100492116
+  },
+  "942": {
+    "painting": "camille-pissarro_morning-rouen-the-quays-1896",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/camille-pissarro_morning-rouen-the-quays-1896.jpg",
+    "sha256": "ccd916a832102768ebd8b0e318e33f6a23f2d1d1051b83b5faf308de019566ed",
+    "bytes": 111828,
+    "mtime_ns": 1793390484303231319
+  },
+  "262": {
+    "painting": "giovanni-paolo-panini_roman-capriccio-the-pantheon-and-other-monuments-1735",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/giovanni-paolo-panini_roman-capriccio-the-pantheon-and-other-monuments-1735.jpg",
+    "sha256": "13d0540377ec5e67ba4576e827b5dc1f7c2f5186a7ece9026c57a7238392f841",
+    "bytes": 143534,
+    "mtime_ns": 1793390601393238263
+  },
+  "1327": {
+    "painting": "robert-julian-onderdonk_path-through-a-field-of-bluebonnets",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/robert-julian-onderdonk_path-through-a-field-of-bluebonnets.jpg",
+    "sha256": "44edb4262d4aa6f8dd29e18a3edc07d621fcd388856c252e3ecd38dfd720bafa",
+    "bytes": 372471,
+    "mtime_ns": 1793390822654195008
+  },
+  "1130": {
+    "painting": "henri-martin_the-bridge-on-the-river",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/henri-martin_the-bridge-on-the-river.jpg",
+    "sha256": "99b67ba81b88fd0441eec1203932e7368e057207fd9bc48de6222651f1a1dd51",
+    "bytes": 193591,
+    "mtime_ns": 1793390630530690664
+  },
+  "927": {
+    "painting": "berthe-morisot_view-of-tivoli-after-corot",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/berthe-morisot_view-of-tivoli-after-corot.jpg",
+    "sha256": "c77f9d6588fa2664bd087581bffd20869c292d33ceb07a0b72769a8e90721f64",
+    "bytes": 173217,
+    "mtime_ns": 1793390476517209967
+  },
+  "946": {
+    "painting": "camille-pissarro_snow-at-the-hermitage-pontoise-1874",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/camille-pissarro_snow-at-the-hermitage-pontoise-1874.jpg",
+    "sha256": "572f25643651020355562d4796d8ee3ff48f76e52c6347d68fb8e564d7c1b436",
+    "bytes": 80626,
+    "mtime_ns": 1793390485440127452
+  },
+  "1499": {
+    "painting": "marc-chagall_they-were-in-forty-pairs-1948",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/marc-chagall_they-were-in-forty-pairs-1948.jpg",
+    "sha256": "33dab986f54bf205eae723e1c3e1787848278dde24938b2785f6f131c3cb95e1",
+    "bytes": 345317,
+    "mtime_ns": 1793390742772797598
+  },
+  "2670": {
+    "painting": "ivan-aivazovsky_the-pier-in-feodosia-1840",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/ivan-aivazovsky_the-pier-in-feodosia-1840.jpg",
+    "sha256": "398562336ea2ff02591314e258ed49a64788dccbbd76c97a2b95ddcd7e9b329e",
+    "bytes": 118460,
+    "mtime_ns": 1793390642326687459
+  },
+  "524": {
+    "painting": "amedeo-modigliani_standing-nude-with-garden-background-1913",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/amedeo-modigliani_standing-nude-with-garden-background-1913.jpg",
+    "sha256": "587da178c475a4fd6218d9cab5a5b86d6db351b51f6b26447400a52868c63962",
+    "bytes": 78162,
+    "mtime_ns": 1793390453144439403
+  },
+  "2885": {
+    "painting": "mstislav-dobuzhinsky_gates-of-dawn-1914",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/mstislav-dobuzhinsky_gates-of-dawn-1914.jpg",
+    "sha256": "84563c1596ee06ff7fe3d4c4467d4624bbe23e71b636c4f613c7364a8a2b7be9",
+    "bytes": 26505,
+    "mtime_ns": 1793390759651834201
+  },
+  "2587": {
+    "painting": "francisco-goya_playing-at-giants-1792",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/francisco-goya_playing-at-giants-1792.jpg",
+    "sha256": "53ecd7a361ceaf02e5511bb35adf06e3137132d7659db11e5cbda62988324b39",
+    "bytes": 163132,
+    "mtime_ns": 1793390584093596103
+  },
+  "2382": {
+    "painting": "vincent-van-gogh_torso-of-venus-2",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/vincent-van-gogh_torso-of-venus-2.jpg",
+    "sha256": "aeba53afa57c2a39e3f1b154582894c7fd79294f74c56ec3db7e4b3d70f669d4",
+    "bytes": 1428651,
+    "mtime_ns": 1793390880568515680
+  },
+  "1537": {
+    "painting": "albrecht-durer_christ-washing-peter-s-feet-1511",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/albrecht-durer_christ-washing-peter-s-feet-1511.jpg",
+    "sha256": "004446e16426fd3f46efb90068804fb23b3b8c5a1ee88dab9f4914a88ba39a1d",
+    "bytes": 74164,
+    "mtime_ns": 1793390436812897123
+  },
+  "2474": {
+    "painting": "joshua-reynolds_the-puck-1789",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/joshua-reynolds_the-puck-1789.jpg",
+    "sha256": "e786eee944acc60b01a24dda3e55d652d4fe4c7dd84bf9bbc684d7e13f4f3ca0",
+    "bytes": 58855,
+    "mtime_ns": 1793390693234031445
+  },
+  "2751": {
+    "painting": "maxim-vorobiev_oak-fractured-by-a-lightning-allegory-on-the-artist-s-wife-death-1842",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/maxim-vorobiev_oak-fractured-by-a-lightning-allegory-on-the-artist-s-wife-death-1842.jpg",
+    "sha256": "2637fde46cb8703921cd4f2281f7fd20a585fd4b9f678c84efcb56b1f0e093f9",
+    "bytes": 137011,
+    "mtime_ns": 1793390755398430098
+  },
+  "1457": {
+    "painting": "fernand-leger_the-outing-in-the-country-1954",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/fernand-leger_the-outing-in-the-country-1954.jpg",
+    "sha256": "786134342dfc8369aaec61fe9d415a78feef1505fd36c10ac9e026b8401d00f0",
+    "bytes": 599496,
+    "mtime_ns": 1793390575187811190
+  },
+  "2492": {
+    "painting": "thomas-gainsborough_an-extensive-landscape-with-cattle-and-a-drover",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/thomas-gainsborough_an-extensive-landscape-with-cattle-and-a-drover.jpg",
+    "sha256": "15038f41bfb9f02e506259e2a37919c49a5781a3a6e9585d242fc5b30a90a9c5",
+    "bytes": 1220644,
+    "mtime_ns": 1793390845987474382
+  },
+  "197": {
+    "painting": "aleksey-antropov_portrait-of-a-mistress-agrippina-leontyevna-apraksina",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/aleksey-antropov_portrait-of-a-mistress-agrippina-leontyevna-apraksina.jpg",
+    "sha256": "2d9bd955f0fae9a3248b89c649ff84ffc9cb41cd87a70f822f039ac43ad35ab1",
+    "bytes": 5608488,
+    "mtime_ns": 1793390440353906540
+  },
+  "65": {
+    "painting": "felix-vallotton_portrait-of-french-writer-victor-charbonnel-1898",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/felix-vallotton_portrait-of-french-writer-victor-charbonnel-1898.jpg",
+    "sha256": "789bdbfad3ac4b0776d84208a8458d8a7c27e9cfb732a59cb84af7d8eab135a3",
+    "bytes": 15800,
+    "mtime_ns": 1793390554238391153
+  },
+  "647": {
+    "painting": "lucian-freud_sunny-morning-eight-legs",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/lucian-freud_sunny-morning-eight-legs.jpg",
+    "sha256": "885816df4d2c379117b983f82cb705d70b5b3c1578bb27dd9f426f308b5225c5",
+    "bytes": 268477,
+    "mtime_ns": 1793390737975212096
+  },
+  "989": {
+    "painting": "claude-monet_cliffs-near-dieppe",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/claude-monet_cliffs-near-dieppe.jpg",
+    "sha256": "87dc965bc87b9175f4f4c70e97bd584f5341a6822eea1ab7adb87983ed2bbbf0",
+    "bytes": 638434,
+    "mtime_ns": 1793390506195462564
+  },
+  "2840": {
+    "painting": "harry-clarke_the-year-s-at-the-spring-1920-26",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/harry-clarke_the-year-s-at-the-spring-1920-26.jpg",
+    "sha256": "1f3a7166cc0011f41b94b0be5ad285c5151869baa2e564f3ef441b02981cecd9",
+    "bytes": 164995,
+    "mtime_ns": 1793390625646166530
+  },
+  "963": {
+    "painting": "childe-hassam_carriage-rue-bonaparte",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/childe-hassam_carriage-rue-bonaparte.jpg",
+    "sha256": "f1bcf1c40bcd7c1d74fe8b8405bbc241ac3bdb0a65cebb14a0e1dbc49b725376",
+    "bytes": 186673,
+    "mtime_ns": 1793390495374878055
+  },
+  "396": {
+    "painting": "gosta-adrian-nilsson_r-dgr-n-figur-1923",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/gosta-adrian-nilsson_r-dgr-n-figur-1923.jpg",
+    "sha256": "e0d896a018e3a5ba3fca7ebdbd2b2a823238f7d9d9d2eb4b0bca48493a0bb4b3",
+    "bytes": 211868,
+    "mtime_ns": 1793390601756206730
+  },
+  "2110": {
+    "painting": "henri-fantin-latour_still-life-with-flowers",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/henri-fantin-latour_still-life-with-flowers.jpg",
+    "sha256": "5e3648256e0b41a26f681032733137e844afe48a84ef4c1e7f210530d610d496",
+    "bytes": 80833,
+    "mtime_ns": 1793390629204681041
+  },
+  "349": {
+    "painting": "rembrandt_self-portrait-leaning-forward-bust-1628",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/rembrandt_self-portrait-leaning-forward-bust-1628.jpg",
+    "sha256": "681abf887d90789396ef8ba8c2b2ac12647db93c2f4587c19382f9c53484c862",
+    "bytes": 938528,
+    "mtime_ns": 1793390815212048583
+  },
+  "2283": {
+    "painting": "pablo-picasso_self-portrait",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/pablo-picasso_self-portrait.jpg",
+    "sha256": "859d725933fbcab2aa6121ded669ca29ab381ee8c2b372607b297a8ae782ea53",
+    "bytes": 588573,
+    "mtime_ns": 1793390776731344295
+  },
+  "2419": {
+    "painting": "benjamin-west_epponia-giving-bread-to-her-husband-sabinus-in-concealment",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/benjamin-west_epponia-giving-bread-to-her-husband-sabinus-in-concealment.jpg",
+    "sha256": "a6bf00442713397b52094eab0aa5f1240eaa31549855d3fb131a8da0826992d0",
+    "bytes": 835330,
+    "mtime_ns": 1793390473160703585
+  },
+  "154": {
+    "painting": "raphael-kirchner_magentic-pole",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/raphael-kirchner_magentic-pole.jpg",
+    "sha256": "9d219ed00ca08091316c28bf1437cbae5bee0b7b756bf0b13db3840458e82c20",
+    "bytes": 29263,
+    "mtime_ns": 1793390810544766859
+  },
+  "1805": {
+    "painting": "henri-matisse_odalisque-1917",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/henri-matisse_odalisque-1917.jpg",
+    "sha256": "a124621a4c7e3843440565ab10f2da89372f728b871eb34b46107e1c632941ef",
+    "bytes": 759403,
+    "mtime_ns": 1793390631740404216
+  },
+  "2625": {
+    "painting": "gustave-dore_jacob-prays-for-protection",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/gustave-dore_jacob-prays-for-protection.jpg",
+    "sha256": "6f5a0045af6fb765e17765ba418f013f7f5a530565cf5cd74d3cf741bdfe3a57",
+    "bytes": 668434,
+    "mtime_ns": 1793390609770972358
+  },
+  "2435": {
+    "painting": "dmitry-levitzky_countess-maria-vorontsova",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/dmitry-levitzky_countess-maria-vorontsova.jpg",
+    "sha256": "2ac446186e978dc4bfc08771cb35d130ee505494b903283fa3e2f1ac6b8b6376",
+    "bytes": 177544,
+    "mtime_ns": 1793390529573827431
+  },
+  "2057": {
+    "painting": "edouard-manet_the-races-in-the-bois-de-boulogne-1872",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/edouard-manet_the-races-in-the-bois-de-boulogne-1872.jpg",
+    "sha256": "dc922753c7a7b9439b91d5287509b91498a887feeede7ea4ff7e77975c07013d",
+    "bytes": 600424,
+    "mtime_ns": 1793390538029018143
+  },
+  "2628": {
+    "painting": "gustave-dore_purgatorio",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/gustave-dore_purgatorio.jpg",
+    "sha256": "ee241a4509b514de5ffaeac276c370dacad680331d9d571b9747af99d464cc7b",
+    "bytes": 598140,
+    "mtime_ns": 1793390611133612987
+  },
+  "1998": {
+    "painting": "alexey-venetsianov_girl-with-the-cornflowers",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/alexey-venetsianov_girl-with-the-cornflowers.jpg",
+    "sha256": "5575ece887d87607d3823834c0fea347b2fe6c4d6c461720b0cd3fec116d60a9",
+    "bytes": 1847722,
+    "mtime_ns": 1793390444772898256
+  },
+  "466": {
+    "painting": "benozzo-gozzoli_st-francis-giving-away-his-clothes-vision-of-the-church-militant-and-triumphant",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/benozzo-gozzoli_st-francis-giving-away-his-clothes-vision-of-the-church-militant-and-triumphant.jpg",
+    "sha256": "0d781b981060ffc235a96399723b73010a54f9819d562b7db92aa97ea4bd27d3",
+    "bytes": 193135,
+    "mtime_ns": 1793390473512254213
+  },
+  "2111": {
+    "painting": "henri-fantin-latour_sweet-peas-in-a-vase",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/henri-fantin-latour_sweet-peas-in-a-vase.jpg",
+    "sha256": "be20fbbc222b3cac7f8ac8453f0a69c9000f6657f56c9a8fc8f6730e549b858b",
+    "bytes": 244438,
+    "mtime_ns": 1793390629213067864
+  },
+  "2445": {
+    "painting": "george-morland_landscape-with-a-gypsy-family",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/george-morland_landscape-with-a-gypsy-family.jpg",
+    "sha256": "c568d1b2278c6691fa78a3c7699a9ddf0a91e0ba4e911cb7155b71c0f02a2706",
+    "bytes": 89520,
+    "mtime_ns": 1793390595570794460
+  },
+  "1194": {
+    "painting": "laszlo-mednyanszky_fishing-on-the-tisza-1880",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/laszlo-mednyanszky_fishing-on-the-tisza-1880.jpg",
+    "sha256": "de85f22671570d3242ee8d55d1e661927272a9f4bdd2b2df5568b19f04bfaba4",
+    "bytes": 72881,
+    "mtime_ns": 1793390726330424147
+  },
+  "771": {
+    "painting": "yiannis-tsaroychis_st-sebastian",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/yiannis-tsaroychis_st-sebastian.jpg",
+    "sha256": "0e45cfba8005f51ccecde6eb7e458521ee80f5a03567ded9169c60a12be22e84",
+    "bytes": 62134,
+    "mtime_ns": 1793390899734014185
+  },
+  "174": {
+    "painting": "zinaida-serebriakova_katya-still-life-1923",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/zinaida-serebriakova_katya-still-life-1923.jpg",
+    "sha256": "1faaf13efc173a6f36457b9c4999ced0cb41cf2811a0aaf6bc84fc56b570b108",
+    "bytes": 176896,
+    "mtime_ns": 1793390899953695734
+  },
+  "1978": {
+    "painting": "albert-bierstadt_rainbow-over-a-fallen-stag",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/albert-bierstadt_rainbow-over-a-fallen-stag.jpg",
+    "sha256": "4cf2c294431c9f253e54547a3a47a249fa6f662e39bb422c27b0bbe1527228b6",
+    "bytes": 26204,
+    "mtime_ns": 1793390435286876839
+  },
+  "2161": {
+    "painting": "ivan-kramskoy_portrait-of-pyotr-valuev-1880",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/ivan-kramskoy_portrait-of-pyotr-valuev-1880.jpg",
+    "sha256": "b48b00c7868ec9aa92f00181f17a4c8ab0073dc7c288869326fd66dbcb8e2000",
+    "bytes": 27483,
+    "mtime_ns": 1793390663795894571
+  },
+  "30": {
+    "painting": "aubrey-beardsley_full-and-true-account-of-the-wonderful-mission-of-earl-lavender-frontispiece",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/aubrey-beardsley_full-and-true-account-of-the-wonderful-mission-of-earl-lavender-frontispiece.jpg",
+    "sha256": "9aebd29045ee3b61ee5a73d38a90368d70a25ad561e45e4e9f626e29e783ae8d",
+    "bytes": 2157575,
+    "mtime_ns": 1793390467602215798
+  },
+  "529": {
+    "painting": "arturo-souto_sailor-with-woman-1951",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/arturo-souto_sailor-with-woman-1951.jpg",
+    "sha256": "b1f14cad40daac0b7ae60ca0dffd1c48778886382b201812e534778e1009c3d6",
+    "bytes": 185832,
+    "mtime_ns": 1793390466613635719
+  },
+  "987": {
+    "painting": "claude-monet_camille-monet-in-the-garden-at-the-house-in-argenteuil",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/claude-monet_camille-monet-in-the-garden-at-the-house-in-argenteuil.jpg",
+    "sha256": "5b7d38ccdc9f5de4ecafe3cdd6b8d403e15f08cfebba3c652ca3e89210d576a8",
+    "bytes": 2569609,
+    "mtime_ns": 1793390505364592175
+  },
+  "2396": {
+    "painting": "wilhelm-leibl_die-alte-pariserin-1870",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/wilhelm-leibl_die-alte-pariserin-1870.jpg",
+    "sha256": "dad5d292382eb9d104e7168d9b68ca2986559607ddb145702c351712b19dabe5",
+    "bytes": 157271,
+    "mtime_ns": 1793390887478289236
+  },
+  "439": {
+    "painting": "pyotr-konchalovsky_still-life-table-with-the-dishes-1919",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/pyotr-konchalovsky_still-life-table-with-the-dishes-1919.jpg",
+    "sha256": "74c5423117e8694afd9876846a27521e7d8fcfffba77d91b52f5e7618f7a957b",
+    "bytes": 43328,
+    "mtime_ns": 1793390807272116499
+  },
+  "2938": {
+    "painting": "odilon-redon_the-mysterious-boat-1",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/odilon-redon_the-mysterious-boat-1.jpg",
+    "sha256": "6e1295cb4b39535753f6ebcdbff8162ea86eeeda52c5bcc1210792e717e6e4f6",
+    "bytes": 317201,
+    "mtime_ns": 1793390771987761240
+  },
+  "809": {
+    "painting": "pyotr-konchalovsky_still-life-oranges-stretcher-and-carpet-1946",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/pyotr-konchalovsky_still-life-oranges-stretcher-and-carpet-1946.jpg",
+    "sha256": "7f8fcb4c4272598a69025701ac342698d567426c1369db385624ce7b1a18ab21",
+    "bytes": 37804,
+    "mtime_ns": 1793390807200896631
+  },
+  "2540": {
+    "painting": "dante-gabriel-rossetti_algernon-charles-swinburne-1862",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/dante-gabriel-rossetti_algernon-charles-swinburne-1862.jpg",
+    "sha256": "c55ef97d95a5f91fc6c93050efb7c86ea80829066a0d171a4dab96ee759919f4",
+    "bytes": 32779,
+    "mtime_ns": 1793390523971613612
+  },
+  "1368": {
+    "painting": "william-merritt-chase_shinnecock-hills-peconic-bay",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/william-merritt-chase_shinnecock-hills-peconic-bay.jpg",
+    "sha256": "5b00081dd0e405088df9c6535454a98b22f9b431d11673fccacda48f8f2ec4aa",
+    "bytes": 1505089,
+    "mtime_ns": 1793390895870156991
+  },
+  "2285": {
+    "painting": "paul-mathiopoulos_male-nude-1898",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/paul-mathiopoulos_male-nude-1898.jpg",
+    "sha256": "7b9aaa822ef3a97c4262b745268eba0cc0ae558cf0f035043b901de2026f7f03",
+    "bytes": 80063,
+    "mtime_ns": 1793390786730258522
+  },
+  "2254": {
+    "painting": "mikhail-nesterov_a-girl-with-kokoshnik-woman-s-headdress-in-old-russia-1885",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/mikhail-nesterov_a-girl-with-kokoshnik-woman-s-headdress-in-old-russia-1885.jpg",
+    "sha256": "cae916e82c3deb4fff4a17b2e4947005e009f4bcebe00ad034baa13d2a7cd3fd",
+    "bytes": 31193,
+    "mtime_ns": 1793390758053933016
+  },
+  "1722": {
+    "painting": "christo-coetzee_fish",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/christo-coetzee_fish.jpg",
+    "sha256": "32a8ae19595326f869fdea82ce72cdb87a1947311a2e0bec7950ddf1fda3ed74",
+    "bytes": 295526,
+    "mtime_ns": 1793390503668903168
+  },
+  "2853": {
+    "painting": "konstantin-somov_porcelain-figurines-on-a-stone-shelf",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/konstantin-somov_porcelain-figurines-on-a-stone-shelf.jpg",
+    "sha256": "444a3eb1bff5061207bc0d2d58dc4aade5b3b439e78db8a5f592538d9d9d13c9",
+    "bytes": 237679,
+    "mtime_ns": 1793390723296730252
+  },
+  "304": {
+    "painting": "mario-nuzzi_various-flowers-in-a-glass-vase-with-blue-grapes-peaches-and-a-lemon-all-on-a-ledge",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/mario-nuzzi_various-flowers-in-a-glass-vase-with-blue-grapes-peaches-and-a-lemon-all-on-a-ledge.jpg",
+    "sha256": "a29972d751cb840c1117efa94448e855687b804ca15dd1daaaf5638203586dbb",
+    "bytes": 155759,
+    "mtime_ns": 1793390743881603408
+  },
+  "1388": {
+    "painting": "giorgio-vasari_assumption-of-the-virgin-detail-1",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/giorgio-vasari_assumption-of-the-virgin-detail-1.jpg",
+    "sha256": "2a8420d93623fa61e68859d5e41d57ec4854e6a37f8398b6f4becaaed76217be",
+    "bytes": 1654041,
+    "mtime_ns": 1793390598698033034
+  },
+  "1395": {
+    "painting": "jacopo-pontormo_study-for-the-deluge",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/jacopo-pontormo_study-for-the-deluge.jpg",
+    "sha256": "e3e8af5c223fe322d5693ea638694f7e9e949793460a927265739e6f4b12852f",
+    "bytes": 143879,
+    "mtime_ns": 1793390669039865594
+  },
+  "554": {
+    "painting": "edvard-munch_self-portrait-during-eye-disease-ii-1930",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/edvard-munch_self-portrait-during-eye-disease-ii-1930.jpg",
+    "sha256": "46417df0378dbfee34ab065bfc781a18790dadd61a8f7c3b1a15ea5560226666",
+    "bytes": 81411,
+    "mtime_ns": 1793390539045577390
+  },
+  "1606": {
+    "painting": "jan-van-eyck_angel-annunciate-from-exterior-of-left-panel-of-the-ghent-altarpiece-1432",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/jan-van-eyck_angel-annunciate-from-exterior-of-left-panel-of-the-ghent-altarpiece-1432.jpg",
+    "sha256": "21936f165dc69eae9b23e2de9e1827ef84ab34be3660be99ef0adcfdb20213f5",
+    "bytes": 175404,
+    "mtime_ns": 1793390673821704902
+  },
+  "290": {
+    "painting": "jan-steen_choice-between-richness-and-youth-1663",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/jan-steen_choice-between-richness-and-youth-1663.jpg",
+    "sha256": "4f1b652efdfae3b1d03b8c1461616fbe0a8da18e8d24bdb3a6c0b7031acb81ce",
+    "bytes": 124786,
+    "mtime_ns": 1793390673368841517
+  },
+  "2756": {
+    "painting": "orest-kiprensky_a-gypsy-with-a-branch-of-myrtle-1819",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/orest-kiprensky_a-gypsy-with-a-branch-of-myrtle-1819.jpg",
+    "sha256": "e298424694a08b2f3196b082ddff9d2f74bb34ff259950938ee2efe07f341670",
+    "bytes": 302929,
+    "mtime_ns": 1793390772760632926
+  },
+  "2936": {
+    "painting": "odilon-redon_struggle-between-woman-and-centaur",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/odilon-redon_struggle-between-woman-and-centaur.jpg",
+    "sha256": "35ba2a775cd5b3394a192ec055f427885a2f40ebef8ec2489c01c2901f7d7f4a",
+    "bytes": 339307,
+    "mtime_ns": 1793390771792858770
+  },
+  "611": {
+    "painting": "jacoba-van-heemskerck_composition-1914",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/jacoba-van-heemskerck_composition-1914.jpg",
+    "sha256": "ac69b0a7ab66933c07fd197f04a2306f941db6be1599c25980e8b669af334a6b",
+    "bytes": 167547,
+    "mtime_ns": 1793390668860881487
+  },
+  "2955": {
+    "painting": "katsushika-hokusai_hotei",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/katsushika-hokusai_hotei.jpg",
+    "sha256": "6630c5c0fbeecf7932978cee171171794839bf0bfce77acc76b053577a7050f8",
+    "bytes": 52248,
+    "mtime_ns": 1793390699035134341
+  },
+  "522": {
+    "painting": "amedeo-modigliani_portrait-of-paul-alexandre-1909",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/amedeo-modigliani_portrait-of-paul-alexandre-1909.jpg",
+    "sha256": "7371b26f08bbc58519e5766cff92d7aadb8e44bce0389e13d1830a810a105ded",
+    "bytes": 282381,
+    "mtime_ns": 1793390453077450725
+  },
+  "811": {
+    "painting": "raoul-dufy_pedistal-table-rue-seguier-1909",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/raoul-dufy_pedistal-table-rue-seguier-1909.jpg",
+    "sha256": "966d3710973f976e816baff75aac90b5ff74b1a43ef44bdfaa2e08ef5f7f533b",
+    "bytes": 101020,
+    "mtime_ns": 1793390809385186261
+  },
+  "2126": {
+    "painting": "ilya-repin_portrait-of-a-woman-1887",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/ilya-repin_portrait-of-a-woman-1887.jpg",
+    "sha256": "e2d519a7431f3bcd5d3f7096629ac3b68d820b38c7deb0893f50bb4618d4304b",
+    "bytes": 145615,
+    "mtime_ns": 1793390637194109746
+  },
+  "1621": {
+    "painting": "lucas-cranach-the-elder_heracles-and-omphale-1537",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/lucas-cranach-the-elder_heracles-and-omphale-1537.jpg",
+    "sha256": "31686b9e5cdb3fd3ce3c94cf5bde17aa5b9ca148e3de667eb7f50af0818b9d70",
+    "bytes": 123784,
+    "mtime_ns": 1793390736064546505
+  },
+  "564": {
+    "painting": "egon-schiele_the-self-seers-death-and-man-1911",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/egon-schiele_the-self-seers-death-and-man-1911.jpg",
+    "sha256": "334f39ca0c374553b4655ffbaac4a8fa0c0f3c32d467b1d24e2491a73bfa9c22",
+    "bytes": 215406,
+    "mtime_ns": 1793390542749834639
+  },
+  "308": {
+    "painting": "peter-paul-rubens_adam-and-eve",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/peter-paul-rubens_adam-and-eve.jpg",
+    "sha256": "36ffcbb66c9e561e0aab0250882b8d9cf77d85b9fa8b24bf36c48d64b4444c66",
+    "bytes": 87667,
+    "mtime_ns": 1793390792711474956
+  },
+  "1799": {
+    "painting": "henri-martin_return-from-the-fields-1896",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/henri-martin_return-from-the-fields-1896.jpg",
+    "sha256": "570ae9bab169848da0b6f8b8558d35cc5c5ae195fa3d212af5b9228e90ac20f9",
+    "bytes": 515165,
+    "mtime_ns": 1793390630378795738
+  },
+  "105": {
+    "painting": "koloman-moser_self-portrait",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/koloman-moser_self-portrait.jpg",
+    "sha256": "5fb0a8735ee1e8560f37b868eeec00d5a554ff711ed0c3c5bfe825ab46ff1c59",
+    "bytes": 7537680,
+    "mtime_ns": 1793390716881161469
+  },
+  "512": {
+    "painting": "alexander-calder_four-fish-in-water",
+    "path": "/workspace/ArtFAE-Net/clean_artemis/images/alexander-calder_four-fish-in-water.jpg",
+    "sha256": "5adc68cbe6fb9f083c3048952cccaab5aefe3cb90add4e881c17761388a454fe",
+    "bytes": 170391,
+    "mtime_ns": 1793390441025495134
+  }
+}

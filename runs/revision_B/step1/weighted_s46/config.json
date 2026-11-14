@@ -1,0 +1,42 @@
+{
+ "epochs": 20,
+ "batch_size": 32,
+ "lr": 0.0003,
+ "weight_decay": 0.01,
+ "patience": 5,
+ "accumulation": 1,
+ "clip_grad": 1.0,
+ "mixed_precision": true,
+ "architecture": {
+  "hidden": 128,
+  "gated": true,
+  "spatial": true,
+  "numerical": true,
+  "text": true
+ },
+ "seed": 46,
+ "condition": "weighted",
+ "selection": "min selection-split soft CE (T=1)",
+ "train_manifest": "data/artemis_balanced/train.csv",
+ "val_manifest": "data/artemis_balanced/val.csv",
+ "features": "features_l14",
+ "dims": {
+  "visual_dim": 768,
+  "attribute_dim": 28,
+  "text_dim": 768,
+  "patch_dim": 1024
+ },
+ "model_class": "ArtFAENet",
+ "trainable_parameters": 762249,
+ "class_weights": [
+  1.067802294464667,
+  0.9447851642175253,
+  0.820054926353606,
+  1.1141575316107626,
+  1.7884586901148989,
+  1.3324570302597636,
+  1.1235728697496825,
+  1.072885688408437,
+  1.0290114928344434
+ ]
+}

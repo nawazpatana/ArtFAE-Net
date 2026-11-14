@@ -1,0 +1,12 @@
+{
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R1_R1_s42_holdout_logits.npy": "81959e481a6ff6e51b54fae950480d652d21b55a0a85214e8679ed8c66585a1e",
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R1_R1_s43_holdout_logits.npy": "cb86d0c87755504ea52475b685bb6ee01aaeda2dc7fb51b808248fc408b25c6b",
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R1_R1_s44_holdout_logits.npy": "cd26f6d41bee439da0ed939b0f208bed6c58ce7ccdefe073858e5be52c38daae",
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R1_R1_s45_holdout_logits.npy": "2adf2c123c4ffe6ff9a3b20e50308355e9d693f37540e2f78369f42fdd05b12a",
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R1_R1_s46_holdout_logits.npy": "58104be5a8e4b69b77bcde75b71c480b2e2532d9a8d5a82721dbf5d3b2c3c748",
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/PROBE_probe100_lr1e-3_s42_holdout_logits.npy": "84a1e749e1dde6d62238361d154ee37bb756285fbd10ed5d57761d5d748d6986",
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/PROBE_probe100_lr1e-3_s43_holdout_logits.npy": "26780ab7c272df802ebb70880d24760fe34c413e6e40dd3a9b140f6fa4bf9f3f",
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/PROBE_probe100_lr1e-3_s44_holdout_logits.npy": "10a104fa6fc0b6de2e860caa311ffcb285dbef68d6e02088c6123f8e19429dc7",
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/PROBE_probe100_lr1e-3_s45_holdout_logits.npy": "9431c79cec336bffb43777a67b42e6a139e1eb75d13e127fed68401061830e63",
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/PROBE_probe100_lr1e-3_s46_holdout_logits.npy": "abf3fba8e7a435984dc528198d0ceed84d1b56dc2657a958d97e9fdfbd9986d7"
+}

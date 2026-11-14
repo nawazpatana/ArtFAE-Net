@@ -1,0 +1,334 @@
+{
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/report.md": {
+    "sha256": "636d81fa106455a097ff975c9584832f83671d400ab330350d90223942e6f19f",
+    "bytes": 7432
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R1_R1_s43_holdout_logits.npy": {
+    "sha256": "cb86d0c87755504ea52475b685bb6ee01aaeda2dc7fb51b808248fc408b25c6b",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/MLP_mlp_s43_holdout_logits.npy": {
+    "sha256": "7dd4b8ac142f2db0eacb6097c6ef6801740b1260cf07cce321663f00d2637349",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s43/best.pt": {
+    "sha256": "7525f2e6770e41eed8fa062f6bb9c041a9c6172d7671747629822f61711d2111",
+    "bytes": 3057223
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s46/config.json": {
+    "sha256": "7d0c98321003befa25235a7ed48651d5f9810f9e6fb535953b19ce6ea13216d6",
+    "bytes": 668
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s43/val_logits.npy": {
+    "sha256": "f427983b6d5a076c3b3b0d9430a50ac5114e3c5a0cfc1bc425dc6735fdc47a65",
+    "bytes": 108128
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/NO_ECSA_no_ecsa_s42_holdout_logits.npy": {
+    "sha256": "264107621b13f772a47a850b24d8042c602c0e251ae01185417bd414f206df49",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s44/best.pt": {
+    "sha256": "6cb9df03c27c59d2662b980f01670649740b3dd50363c0ecebac0e4aac15ba1e",
+    "bytes": 3057223
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s45/best.pt": {
+    "sha256": "0ad58b5fe0253823e1c40fea2ecd6b9c5d8d017617e53aa4972112ad8ced5ef6",
+    "bytes": 3057223
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R1_R1_s44_holdout_logits.npy": {
+    "sha256": "cd26f6d41bee439da0ed939b0f208bed6c58ce7ccdefe073858e5be52c38daae",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/data/artemis_balanced/test.csv": {
+    "sha256": "9ef9be2f99b4de067a593a8e0f6b130e9995c53d9d665072e88760ee18fbbef1",
+    "bytes": 867371
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s42/best.pt": {
+    "sha256": "2ac5f447593fcad2c1b9d58790d466f3d745cecd34daff018b444fda59d89aca",
+    "bytes": 3057223
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s44/config.json": {
+    "sha256": "eee06e64bf9bc07b0bc5a629b1573598ae22da7bee86d126dbcf3ca53c130367",
+    "bytes": 676
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/AGF_ONLY_agf_only_s43_holdout_logits.npy": {
+    "sha256": "c149ca8e3979e944c393827da1222d9f60251c5b1e223ed99312efd14b109f52",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/MLP_mlp_s44_holdout_logits.npy": {
+    "sha256": "0fe0b986b953a8ca09a2c85c928e9285c46c58ae51a7098fc7283fdae1feb533",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/NO_ECSA_no_ecsa_s45_holdout_logits.npy": {
+    "sha256": "76011fd4b716a658b9274c4c12275eb65ceef805af1d2f9a5d854a391712f7f0",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R1_R1_s46_holdout_logits.npy": {
+    "sha256": "58104be5a8e4b69b77bcde75b71c480b2e2532d9a8d5a82721dbf5d3b2c3c748",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/WEIGHTED_weighted_s45_holdout_logits.npy": {
+    "sha256": "a2a3cbf68f1c966cce46d917a980991701ac2765b2aafffb4cbeda72c56e38cf",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/PROBE_probe100_lr1e-3_s45_holdout_logits.npy": {
+    "sha256": "9431c79cec336bffb43777a67b42e6a139e1eb75d13e127fed68401061830e63",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s42/val_logits.npy": {
+    "sha256": "12034e9c128d5d188ed41eef0554da36817a8a9ed7f7567c967cc7d73e753459",
+    "bytes": 108128
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/AGF_ONLY_agf_only_s46_holdout_logits.npy": {
+    "sha256": "0843cc4c4a1fd0a8ac81a4caded0334fb05152e3ab6f0df5fc02443892d60f0e",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R3_MF1_L14_R3_lam0.3_s45_holdout_logits.npy": {
+    "sha256": "152e802e5cfa2cd76d1d00dae020d5e6d355f28d5342ad59621bb798a3e85da9",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R1_R1_s45_holdout_logits.npy": {
+    "sha256": "2adf2c123c4ffe6ff9a3b20e50308355e9d693f37540e2f78369f42fdd05b12a",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s42/config.json": {
+    "sha256": "7a6517cc4930b2fe1972464f9823bb06fea19ef8299f6d0f66da824e1fd124fc",
+    "bytes": 676
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R3_MF1_L14_R3_lam0.3_s42_holdout_logits.npy": {
+    "sha256": "12596fb12c1096472d1506dcae68635c2d1ef928cff4ecf1a8d6b751b2f12eb2",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/NO_ATTR_no_attr_s44_holdout_logits.npy": {
+    "sha256": "f6bf2ac72d3a7026cc96eae737082f3437d86d86d4b783ce9041fbcf83346ec9",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s43/val_logits.npy": {
+    "sha256": "37b53bc45ff64551f01532ff67b16a0664d24fc65f0182302bd31f13a831ffa6",
+    "bytes": 108128
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/WEIGHTED_weighted_s42_holdout_logits.npy": {
+    "sha256": "36eaabac69c4a6bb93c20869a0bb6dea77a118e6b9ab310b60ff766af65e6fd2",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/results.json": {
+    "sha256": "16eaa8abbc97cdae6bcacae182e8e4b3c180b3dec985b790f075ac5481fb47c3",
+    "bytes": 46896
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s43/config.json": {
+    "sha256": "6e10067441cece37584f4892b8e39614e2ba504c60313abc62a6018993a22ebf",
+    "bytes": 668
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s42/best.pt": {
+    "sha256": "9bc849047af90c51aba07b73284663ba4d99785f1e5b0e3a75cb2dc260b177b2",
+    "bytes": 31373
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/PROBE_probe100_lr1e-3_s42_holdout_logits.npy": {
+    "sha256": "84a1e749e1dde6d62238361d154ee37bb756285fbd10ed5d57761d5d748d6986",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s46/best.pt": {
+    "sha256": "0b90a5388b4b96d1afd38e83cdc9fbe73f02bec45674775298adb03724efc90d",
+    "bytes": 31373
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/MLP_mlp_s46_holdout_logits.npy": {
+    "sha256": "3fe5d0eecd8bda9a43f51dfd21709d77359b6ddb773a294baf92b14dc0480b4c",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s45/val_logits.npy": {
+    "sha256": "a4ac92be27184dddb314c4ae536098ded8d2bc413f5d8a7e7930fb3a742f0090",
+    "bytes": 108128
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/NO_ATTR_no_attr_s46_holdout_logits.npy": {
+    "sha256": "63708b68bf11d774be4b085ddae34af913817ba48d4f3913f2f5132bab79f21a",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/WEIGHTED_weighted_s44_holdout_logits.npy": {
+    "sha256": "695e71df29a1ea857e3a1465f2e2c5f572d81023aef397d784316aed033cceb4",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/data/artemis_balanced/train.csv": {
+    "sha256": "7175f9dd71b6d64b16f8d66e68a75d5de03a52783ee7870160a3a6028a45fff7",
+    "bytes": 13251347
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R3_MF1_L14_R3_lam0.3_s46_holdout_logits.npy": {
+    "sha256": "acc248d6fa38d24afb4d1389f4f7c5ed49952359b16f94bf1d13633627507f10",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s44/best.pt": {
+    "sha256": "99c26f2d441bfacdaaf5eae3a2dea9a6cec8e3106fa573fcdb198f353689cc17",
+    "bytes": 31373
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s42/val_logits.npy": {
+    "sha256": "7c503c3ec2b4b6864d06bae5540d179ef28c3b3346d5ff85078f4841b3259646",
+    "bytes": 108128
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/NO_ATTR_no_attr_s43_holdout_logits.npy": {
+    "sha256": "d0384d70c35d39903a03eda73ad3ef732b8d22c13495f1d0c7759705bf83c9e1",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s46/config.json": {
+    "sha256": "88431b37fddeec281e3e75b9e42b98613b7d4d23ca10845749d041a628940144",
+    "bytes": 676
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R3_R3_s45_holdout_logits.npy": {
+    "sha256": "152e802e5cfa2cd76d1d00dae020d5e6d355f28d5342ad59621bb798a3e85da9",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s46/val_logits.npy": {
+    "sha256": "451647b066e265bdd3436caf4687b83ce4d1bd584ac07797a8b022a926c9af44",
+    "bytes": 108128
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/AGF_ONLY_agf_only_s45_holdout_logits.npy": {
+    "sha256": "9d8778d4c4e87a44e1489f0c3a1076c635552c25949b045512ba3c8fe43f8b04",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/PROBE_probe100_lr1e-3_s43_holdout_logits.npy": {
+    "sha256": "26780ab7c272df802ebb70880d24760fe34c413e6e40dd3a9b140f6fa4bf9f3f",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R3_R3_s44_holdout_logits.npy": {
+    "sha256": "ddaf400647dcd689fffb468c75d2d8ff3106869536bb1fe2fa4a2da62f387215",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s44/config.json": {
+    "sha256": "b63ce6aa25e580a03c6d9d162e6bd71958e4c1b12ea9341c3f35bcbc547fc5c6",
+    "bytes": 668
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s45/val_logits.npy": {
+    "sha256": "8c9d7220d6a19b8e5a6704e694dceaf37a446b66eeee07903a86a91752ccedf7",
+    "bytes": 108128
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/NO_ATTR_no_attr_s45_holdout_logits.npy": {
+    "sha256": "83b9468863c6c05042b72599251b1d23a97d882893c346e3be632ab224a03252",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s44/val_logits.npy": {
+    "sha256": "ee3bd01b242a5317125923c3fe5ab80b0395e476f713cbc7ebdb3898e406c142",
+    "bytes": 108128
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R3_R3_s43_holdout_logits.npy": {
+    "sha256": "2223ae40fdfcc53dd60983d848c81a93f5ce7e8e5aced5f328e35652efa48e77",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R3_MF1_L14_R3_lam0.3_s44_holdout_logits.npy": {
+    "sha256": "68c2c4d61b898d46e38d0e899690dc588ca3ce9768730b5e7e98f4d09edcb005",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/per_seed.csv": {
+    "sha256": "3d8529513001d0f1f8fce881021aa5b95a9505d8a2ffed5f789f61dce14fe93d",
+    "bytes": 7709
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s45/config.json": {
+    "sha256": "3ce5ba891f5b33797e367a0cfe7652deaf045b3dcc2eae0d92e106b17c272888",
+    "bytes": 676
+  },
+  "/workspace/ArtFAE-Net/data/artemis_balanced/val.csv": {
+    "sha256": "f42b8b2ec7b0b01a58247e2fda3fb05c4e1342f7171cc290f52e75e3427f8076",
+    "bytes": 869517
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R1_R1_s42_holdout_logits.npy": {
+    "sha256": "81959e481a6ff6e51b54fae950480d652d21b55a0a85214e8679ed8c66585a1e",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s46/best.pt": {
+    "sha256": "e550fd6755ab7637c59239d993ed6d6284fdb0fe11a1bc8eb789a6b19289a6d8",
+    "bytes": 3057223
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s43/config.json": {
+    "sha256": "bc5c607e144c91c1b4ac63d6fc3384e57f365249489c08ff0b9529ddbe9ef7ed",
+    "bytes": 676
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s42/config.json": {
+    "sha256": "c9513a9ef2c9aa665bd6a3ebbcfc98b543d974692eaa492ee196c29f06431386",
+    "bytes": 668
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/WEIGHTED_weighted_s43_holdout_logits.npy": {
+    "sha256": "fda73dfc577903a1b943a577ee4fdc1be087cefe655f8667efc944f8c8136c60",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s45/best.pt": {
+    "sha256": "73d261db7883058b3973b6f25447d9caa36112b1277f0f13842408d070171ec2",
+    "bytes": 31373
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/PROBE_probe100_lr1e-3_s44_holdout_logits.npy": {
+    "sha256": "10a104fa6fc0b6de2e860caa311ffcb285dbef68d6e02088c6123f8e19429dc7",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_selection_v3.txt": {
+    "sha256": "9de09f23ba771fbc154ed4d137468da42bdee66079b86dfbdec8ea9b871a4642",
+    "bytes": 44325
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/MLP_mlp_s45_holdout_logits.npy": {
+    "sha256": "84dc4fece0d18d84bd7663c92e9c5fd242e1706dc8586dcda082cab0ee22c500",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/AGF_ONLY_agf_only_s42_holdout_logits.npy": {
+    "sha256": "ada6638a255cd4bad51b7fdd1a1a6b601a41b6f7c0e86a0cda62c4d9be8eb623",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/NO_ATTR_no_attr_s42_holdout_logits.npy": {
+    "sha256": "2b557af1a0e7b9b870900b5f139265826cbb35c55c4e052e89fd5d72c3a1bca0",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s43/best.pt": {
+    "sha256": "b90fa2db09b411eaad36c0a238de2ce65e21274136a0c9388975ae6d305f9e0e",
+    "bytes": 31373
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/fresh_holdout/holdout.csv": {
+    "sha256": "8037097832492ec730b6389572fe0cdcd053bd96aa65a4cca60d370465497e4f",
+    "bytes": 10679328
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/WEIGHTED_weighted_s46_holdout_logits.npy": {
+    "sha256": "cadfcfa40280f501ccebc901ac24e69e38509cdcc17df7f117f913de7317ab86",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/probe100_lr1e-3_s46/val_logits.npy": {
+    "sha256": "7217ee582cffc8e12bf7ef9fe1946df16cbd27b282134687d840c7758458e1cc",
+    "bytes": 108128
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/MLP_mlp_s42_holdout_logits.npy": {
+    "sha256": "9663155f5420333d71185e9d1a82763b8a65d8342b76a8a4e3207012e48e03a0",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R3_R3_s42_holdout_logits.npy": {
+    "sha256": "10d5de172653e433d9e9985834201a104228c5b7a1dd987f3bfe37264e2dd7cb",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/NO_ECSA_no_ecsa_s46_holdout_logits.npy": {
+    "sha256": "c1b43491b292f5559038bdd0da1c215a2db470eb97084cd368c0aa30d5f29867",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/NO_ECSA_no_ecsa_s43_holdout_logits.npy": {
+    "sha256": "5147100b45cb3c720736c462ae8c293141b0b7c94aee043882e72ad317520e4f",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s44/val_logits.npy": {
+    "sha256": "7c11a9a841239dbc39911948b5656384035b10d6449a693c9cfd56ab158e4062",
+    "bytes": 108128
+  },
+  "/workspace/ArtFAE-Net/runs/revision_B/step1/R1_s45/config.json": {
+    "sha256": "770fdbfbb9b84027d225b526be4ce0502710a0fa2e96ec048e25a69c310ff622",
+    "bytes": 668
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R3_MF1_L14_R3_lam0.3_s43_holdout_logits.npy": {
+    "sha256": "d0c656947bcc9144a8e96248d6ff88c73e179029511a46f9fee18556a976497f",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/PROBE_probe100_lr1e-3_s46_holdout_logits.npy": {
+    "sha256": "abf3fba8e7a435984dc528198d0ceed84d1b56dc2657a958d97e9fdfbd9986d7",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/AGF_ONLY_agf_only_s44_holdout_logits.npy": {
+    "sha256": "564898cef920ec6c7b12d3494984e3297f986f2dec6a777663d97cf0d24771b2",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/R3_R3_s46_holdout_logits.npy": {
+    "sha256": "b707dd359c8dce153c897592fe8f7dbad0c367060026bccb73459c3d4a2581aa",
+    "bytes": 2180288
+  },
+  "/workspace/ArtFAE-Net/runs/final_eval_v3/NO_ECSA_no_ecsa_s44_holdout_logits.npy": {
+    "sha256": "a20cacaf96b42cf650137c064cd41b8ecc260d8767d87e27731bf018e4c26bcc",
+    "bytes": 2180288
+  }
+}

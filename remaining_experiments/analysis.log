@@ -1,0 +1,13 @@
+fill     curve                   contrast     mean  CI95_low  CI95_high
+mean  deletion ECSA_advantage_over_random 0.031992  0.023990   0.040050
+mean  deletion RISE_advantage_over_random 0.021767  0.014879   0.028265
+mean  deletion   ECSA_advantage_over_RISE 0.010225  0.003704   0.017080
+mean retention ECSA_advantage_over_random 0.057235  0.049175   0.065710
+mean retention RISE_advantage_over_random 0.047125  0.039679   0.054654
+mean retention   ECSA_advantage_over_RISE 0.010110  0.002427   0.017760
+blur  deletion ECSA_advantage_over_random 0.037181  0.029838   0.044936
+blur  deletion RISE_advantage_over_random 0.023846  0.017080   0.030219
+blur  deletion   ECSA_advantage_over_RISE 0.013335  0.006767   0.019878
+blur retention ECSA_advantage_over_random 0.058032  0.049812   0.066563
+blur retention RISE_advantage_over_random 0.043446  0.036250   0.050172
+blur retention   ECSA_advantage_over_RISE 0.014585  0.007293   0.021944

@@ -1,0 +1,102 @@
+{
+ "holdout": {
+  "n": 30280,
+  "n_unique_top": 22351,
+  "tied_fraction": 0.26185601056803165,
+  "unique_top_counts": {
+   "amusement": 2039,
+   "awe": 3099,
+   "contentment": 8245,
+   "excitement": 1077,
+   "anger": 98,
+   "disgust": 778,
+   "fear": 2372,
+   "sadness": 2606,
+   "something_else": 2037
+  },
+  "unique_top_share": {
+   "amusement": 0.09122634334034271,
+   "awe": 0.13865151447362534,
+   "contentment": 0.36888729810746723,
+   "excitement": 0.04818576350051452,
+   "anger": 0.004384591293454432,
+   "disgust": 0.03480828598273008,
+   "fear": 0.10612500559259093,
+   "sadness": 0.1165943358239005,
+   "something_else": 0.09113686188537426
+  },
+  "mean_vote_share": {
+   "amusement": 0.09785489716468125,
+   "awe": 0.15041432479442746,
+   "contentment": 0.25295160207731826,
+   "excitement": 0.07894050024415214,
+   "anger": 0.016502872323639454,
+   "disgust": 0.05964779671990948,
+   "fear": 0.10494750714903661,
+   "sadness": 0.12128936228609664,
+   "something_else": 0.11745113724073872
+  },
+  "mean_votes_per_artwork": 5.664828269484809
+ },
+ "natural_artemis_release_v0": {
+  "n": 80031,
+  "n_unique_top": 59669,
+  "tied_fraction": 0.25442640976621556,
+  "unique_top_counts": {
+   "amusement": 5398,
+   "awe": 8749,
+   "contentment": 23592,
+   "excitement": 2986,
+   "anger": 247,
+   "disgust": 1680,
+   "fear": 5625,
+   "sadness": 6299,
+   "something_else": 5093
+  },
+  "unique_top_share": {
+   "amusement": 0.09046573597680538,
+   "awe": 0.14662555095610785,
+   "contentment": 0.3953811862105951,
+   "excitement": 0.0500427357589368,
+   "anger": 0.004139502924466641,
+   "disgust": 0.028155323534833833,
+   "fear": 0.09427005647823829,
+   "sadness": 0.10556570413447519,
+   "something_else": 0.0853542040255409
+  },
+  "mean_vote_share": {
+   "amusement": 0.09989819621664299,
+   "awe": 0.16133007906814484,
+   "contentment": 0.27718364529201023,
+   "excitement": 0.08202175344046683,
+   "anger": 0.014684453543749622,
+   "disgust": 0.048799311553952784,
+   "fear": 0.09171739964025329,
+   "sadness": 0.1078246493025936,
+   "something_else": 0.11654051194218586
+  },
+  "mean_votes_per_artwork": 5.681348477464982
+ },
+ "exclusions": {
+  "official_artworks_aggregated": 80031,
+  "ambiguous painting name: stems": 8,
+  "ambiguous painting name: artworks": 528,
+  "already used": 49024,
+  "unused, no image in the WikiArt folder": 0,
+  "undecodable": 0,
+  "undecodable_list": [],
+  "duplicate rule": 199,
+  "duplicate rule by class": {
+   "duplicate rule: pair classified 'same artwork, different reproduction'": 149,
+   "duplicate rule: pair classified 'uncertain'": 33,
+   "duplicate rule: pair classified 'same artwork'": 17
+  }
+ },
+ "artists": {
+  "n_artists": 1075,
+  "n_artists_absent_from_43k_train": 39,
+  "n_artworks_by_absent_artists": 1245,
+  "n_unique_top_artworks_by_absent_artists": 929
+ },
+ "no_image_list": []
+}

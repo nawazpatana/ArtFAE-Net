@@ -1,0 +1,488 @@
+pair,holdout_side,reference_side,reference_split,hamming,classification,note
+pair_0001,aki-kuroda_untitled-2008-1,rembrandt_sick-woman-with-a-large-white-headdress-saskia,train43K,8,different,different artists and works (Rembrandt etching vs Kuroda abstract)
+pair_0002,clyfford-still_ph-385-1949-no-1-1949,clyfford-still_1949-no-1-1949,train43K,0,same artwork,identical image of the same Clyfford Still painting (1949-No. 1)
+pair_0003,jimmy-ernst_twice-1972,raphael-kirchner_unknown-10,train43K,8,different,different artists and works (Kirchner nude vs Ernst abstract)
+pair_0004,mark-tobey_longing-for-community,marc-chagall_the-judgement-of-solomon-i-kings-iii-16-27,train43K,8,different,different artists and works (Chagall etching vs Tobey abstract)
+pair_0005,paul-reed_17-1964,paul-reed_9a-1964,train43K,6,different,different works of one Reed series (different palette and shapes)
+pair_0006,raoul-ubac_composition-56,nicholas-roerich_brangena-1912,train43K,8,different,different artists and works (Roerich costume vs Ubac abstract)
+pair_0007,pablo-picasso_man-with-a-guitar-1911,georges-braque_man-with-a-guitar-1911,train43K,8,uncertain,near-identical cubist composition under two attributions (Braque/Picasso); cannot rule out same work
+pair_0008,alphonse-mucha_not_detected_227797,alphonse-mucha_the-slavs-in-their-original-homeland-1912,train43K,4,"same artwork, different reproduction",same Mucha Slav Epic canvas; different file/crop
+pair_0009,aubrey-beardsley_adulterer-1897,konstantin-somov_portrait-of-eugine-lanceray,test,8,different,different artists and works (Somov portrait vs Beardsley drawing)
+pair_0010,aubrey-beardsley_frontispiece-for-venus-and-tannhauser,aubrey-beardsley_venus-between-terminal-gods-1895,train43K,8,"same artwork, different reproduction",same Beardsley Venus design; different reproduction (contrast/print)
+pair_0011,aubrey-beardsley_the-coiffing-1896,aubrey-beardsley_coiffing,train43K,8,"same artwork, different reproduction",same Beardsley drawing (The Coiffing); different scan
+pair_0012,boris-kustodiev_portrait-of-natalia-orshanskaya-1925,camille-pissarro_young-woman-knotting-her-hair,train43K,6,different,different artists and works (Pissarro vs Kustodiev)
+pair_0013,ferdinand-hodler_a-day(1),ferdinand-hodler_the-day-1900,train43K,0,same artwork,identical image of the same Hodler painting (The Day)
+pair_0014,koloman-moser_sketch-for-a-poster-of-the-vienna-workshop,francisco-goya_even-so-he-cannot-make-her-out-1799,train43K,8,different,different artists and works (Goya etching vs Moser poster sketch)
+pair_0015,nicholas-roerich_prince-igor-1914,nicholas-roerich_igor,val,2,"same artwork, different reproduction",same Roerich Prince Igor costume design; different scan/crop
+pair_0016,paul-mathiopoulos_portrait-of-a-woman-1,martiros-saryan_self-portrait-1909-2,train43K,8,different,different artists and works (Saryan sketch vs Mathiopoulos portrait)
+pair_0017,zinaida-serebriakova_portrait-of-aleksandr-serebriakov-studying-an-album,camille-pissarro_the-little-bridge-pontoise-1875,train43K,8,different,different artists and works (Pissarro landscape vs Serebriakova portrait)
+pair_0018,adriaen-van-ostade_a-frozen-lake,isaac-van-ostade_a-frozen-lake,train43K,4,"same artwork, different reproduction",same frozen-lake painting attributed to different Ostade brothers; different scan
+pair_0019,aleksey-antropov_portrait-of-brigadier-michael-dmitrievich-buturlin,thomas-gainsborough_portrait-of-peter-godfrey-of-old-hall-east-bergholt-suffolk,train43K,8,different,different sitters and artists (Gainsborough vs Antropov)
+pair_0020,aleksey-antropov_portrait-of-tsar-peter-i-the-great-1672-1725-1772,thomas-eakins_the-writing-master-benjamin-eakins-1882,train43K,8,different,different sitters and artists (Eakins vs Antropov)
+pair_0021,anthony-van-dyck_isabella-brandt-1621,peter-paul-rubens_portrait-of-isabella-brandt-1626,train43K,6,"same artwork, different reproduction",same Isabella Brandt portrait under two attributions (Rubens/van Dyck); different scan
+pair_0022,anthony-van-dyck_portrait-of-a-lady-presumed-to-be-the-marquise-geromina-spinola-doria-de-genes-oil-on-canvas,anthony-van-dyck_portrait-of-a-noble-genoese-lady-1627,train43K,6,"same artwork, different reproduction",same van Dyck Genoese lady portrait; different scan/colour
+pair_0023,bartolome-esteban-murillo_st-leander-1655,bartolome-esteban-murillo_st-isidore-of-seville-1655,train43K,0,same artwork,identical image under two titles (Murillo St Isidore / St Leander)
+pair_0024,canaletto_campo-santa-maria-formosa,canaletto_campo-santa-maria-formosa-1,train43K,2,"same artwork, different reproduction",same Canaletto Campo Santa Maria Formosa; different scan/colour
+pair_0025,canaletto_rialto-bridge-from-the-south,canaletto_the-rialto-bridge-from-the-south,train43K,4,"same artwork, different reproduction",same Canaletto Rialto Bridge from the South; different scan/colour
+pair_0026,canaletto_the-grand-canal-from-the-campo-san-vio-venice,canaletto_grand-canal-looking-east-from-the-campo-san-vio-1723,train43K,8,"same artwork, different reproduction",same Canaletto Grand Canal from Campo San Vio; different scan/colour
+pair_0027,canaletto_view-of-campo-santi-apostoli-1730,canaletto_campo-santi-apostoli,train43K,2,"same artwork, different reproduction",same Canaletto Campo Santi Apostoli; different scan/colour
+pair_0028,david-teniers-the-younger_peasants-dancing-outside-an-inn,david-teniers-the-younger_peasants-dancing-outside-an-inn-1,train43K,6,uncertain,"Teniers peasants dancing outside an inn: similar layout, very different colour; version vs reproduction unclear"
+pair_0029,david-teniers-the-younger_the-archduke-leopold-wilhelm-in-his-picture-gallery-in-brussels-1651,david-teniers-the-younger_archduke-leopold-s-gallery-1651,train43K,8,uncertain,Teniers Archduke Leopold Wilhelm gallery: multiple autograph versions exist; cannot tell version from reproduction
+pair_0030,diego-velazquez_cardinal-camillo-massimi-1650,henry-raeburn_henry-mackenzie,train43K,6,different,different sitters and artists (Raeburn vs Velazquez)
+pair_0031,diego-velazquez_count-duke-of-olivares,antoine-pesne_portrait-of-a-man,train43K,6,different,different sitters and artists (Pesne vs Velazquez Olivares); dark-portrait pHash collision
+pair_0032,diego-velazquez_count-duke-of-olivares,diego-velazquez_the-infanta-maria-of-austria-1630,train43K,8,different,different sitters (Velazquez Infanta vs Olivares)
+pair_0033,diego-velazquez_count-duke-of-olivares,frans-hals_portrait-of-paulus-verschuur-1643,train43K,8,different,different sitters and artists (Hals vs Velazquez)
+pair_0034,diego-velazquez_count-duke-of-olivares,rembrandt_self-portrait-1660-2,train43K,8,different,different sitters and artists (Rembrandt vs Velazquez)
+pair_0035,diego-velazquez_count-duke-of-olivares,hans-von-aachen_portrait-of-anna-of-austria-1585-1618-1604,train43K,8,different,different sitters and artists (von Aachen vs Velazquez)
+pair_0036,diego-velazquez_count-duke-of-olivares,vasily-tropinin_old-woman-with-a-hen-portrait-of-the-artist-s-wife-1856,train43K,8,different,different sitters and artists (Tropinin vs Velazquez)
+pair_0037,diego-velazquez_count-duke-of-olivares,tintoretto_portrait-of-doge-pietro-loredano,val,8,different,different sitters and artists (Tintoretto vs Velazquez)
+pair_0038,diego-velazquez_madre-maria-jeronima-de-la-fuente-1620,edward-burne-jones_hope,train43K,8,different,different artists and works (Burne-Jones Hope vs Velazquez nun)
+pair_0039,francisco-de-zurbaran_christ-on-the-cross-1627,oskar-kokoschka_lovers-with-cat-1917,train43K,8,different,different artists and works (Kokoschka vs Zurbaran crucifixion)
+pair_0040,frans-hals_jacobus-zaffius-1611,thomas-eakins_portrait-of-mary-adeline-williams-1899,train43K,8,different,different sitters and artists (Eakins vs Hals)
+pair_0041,frans-hals_joseph-coymans-1644,frans-hals_johannes-hoornbeek,train43K,6,different,different sitters (Hals: Hoornbeek vs Coymans)
+pair_0042,frans-hals_joseph-coymans-1644,frans-hals_portrait-of-a-young-man-with-a-glove,train43K,8,different,different sitters (Hals: young man with glove vs Coymans)
+pair_0043,frans-hals_portrait-of-a-standing-man-1645,pablo-picasso_portrait-of-aunt-pepa-1896,train43K,8,different,different sitters and artists (Picasso vs Hals)
+pair_0044,frans-snyders_a-fruit-stall-1,paolo-uccello_madonna-1452-1,train43K,8,different,different artists and works (Uccello Madonna vs Snyders fruit stall)
+pair_0045,gerard-terborch_portrait-of-a-young-man-1670,diego-velazquez_portrait-of-a-cleric-1623,train43K,6,different,different sitters and artists (Velazquez cleric vs Terborch)
+pair_0046,gerard-terborch_portrait-of-a-young-man-1670,joshua-reynolds_self-portrait-4,train43K,4,different,different sitters and artists (Reynolds vs Terborch)
+pair_0047,gerard-terborch_portrait-of-a-young-man-1670,rembrandt_self-portrait-1660-2,train43K,8,different,different sitters and artists (Rembrandt vs Terborch)
+pair_0048,gerard-terborch_portrait-of-a-young-man-1670,grigoriy-myasoyedov_self-portrait-1878,train43K,4,different,different sitters and artists (Myasoyedov vs Terborch)
+pair_0049,gerard-terborch_portrait-of-a-young-man-1670,gustave-courbet_portrait-of-monsieur-nicolle-1862,train43K,8,different,different sitters and artists (Courbet vs Terborch)
+pair_0050,gerard-terborch_portrait-of-a-young-man-1670,vasily-perov_portrait-of-sergei-timofeevich-aksakov-1872,train43K,8,different,different sitters and artists (Perov vs Terborch)
+pair_0051,gerard-terborch_portrait-of-a-young-man-1670,henry-raeburn_portrait-of-the-reverend-john-thomson-minister-of-duddingston,test,8,different,different sitters and artists (Raeburn vs Terborch)
+pair_0052,jacob-jordaens_the-assumption-of-the-virgin,rembrandt_the-ascension-of-christ-1636,train43K,8,different,different artists and works (Rembrandt Ascension vs Jordaens Assumption)
+pair_0053,johannes-vermeer_the-music-lesson,paul-cezanne_achille-emperaire,train43K,8,different,different artists and works (Cezanne vs Vermeer)
+pair_0054,peter-paul-rubens_infanta-isabella-the-ruler-of-the-netherlands,peter-paul-rubens_portrait-of-a-chambermaid,train43K,6,uncertain,Rubens chambermaid vs Infanta Isabella: near-identical face and ruff; cannot rule out same portrait
+pair_0055,peter-paul-rubens_portrait-of-jan-gaspar-gevartius,peter-paul-rubens_portrait-of-haspar-hevarts,test,6,"same artwork, different reproduction",same Rubens portrait of Gevartius (title misspelled); different scan/colour
+pair_0056,peter-paul-rubens_portrait-of-philip-rubens,le-nain-brothers_portrait-of-a-knight-of-saint-michael,train43K,6,different,different sitters and artists (Le Nain vs Rubens)
+pair_0057,peter-paul-rubens_self-portrait-1,edgar-degas_self-portrait-1855,train43K,8,different,different sitters and artists (Degas vs Rubens)
+pair_0058,peter-paul-rubens_self-portrait-1,agnolo-bronzino_don-garcia-de-medici,train43K,6,different,different sitters and artists (Bronzino vs Rubens)
+pair_0059,peter-paul-rubens_self-portrait-1,titian_portrait-of-antonio-anselmi,train43K,4,different,different sitters and artists (Titian vs Rubens)
+pair_0060,peter-paul-rubens_self-portrait-1,edouard-manet_boy-with-a-sword-1861,train43K,8,different,different sitters and artists (Manet vs Rubens)
+pair_0061,peter-paul-rubens_self-portrait-1,john-singer-sargent_the-earl-of-wemyss-and-march-1909,train43K,6,different,different sitters and artists (Sargent vs Rubens)
+pair_0062,peter-paul-rubens_self-portrait-1,thomas-eakins_portrait-of-william-b-kurtz-1903,train43K,6,different,different sitters and artists (Eakins vs Rubens)
+pair_0063,peter-paul-rubens_self-portrait-1,tintoretto_portrait-of-a-venetian-admiral,val,8,different,different sitters and artists (Tintoretto vs Rubens)
+pair_0064,peter-paul-rubens_self-portrait-1,john-singer-sargent_peter-a-b-widener-1902,test,4,different,different sitters and artists (Sargent vs Rubens)
+pair_0065,peter-paul-rubens_self-portrait-1,dmitry-levitzky_portrait-of-g-k-levitzky-artist-s-father-1779,test,8,different,different sitters and artists (Levitzky vs Rubens)
+pair_0066,peter-paul-rubens_self-portrait-1625,henry-raeburn_portrait-of-thomas-reid,train43K,8,different,different sitters and artists (Raeburn vs Rubens)
+pair_0067,peter-paul-rubens_self-portrait-1625,rembrandt_saskia-wearing-a-veil-1634,test,8,different,different sitters and artists (Rembrandt Saskia vs Rubens)
+pair_0068,peter-paul-rubens_the-raising-of-the-cross,peter-paul-rubens_the-elevation-of-the-cross(1),test,0,same artwork,identical image of the same Rubens triptych (Elevation/Raising of the Cross)
+pair_0069,rembrandt_a-man-with-a-crucifix-and-chain-1641,konstantin-makovsky_female-portrait-7,train43K,8,different,different artists and works (Makovsky vs Rembrandt etching)
+pair_0070,rembrandt_artist-in-his-studio-1626,rembrandt_the-artist-in-his-studio,train43K,4,"same artwork, different reproduction",same Rembrandt Artist in His Studio; different scan/colour
+pair_0071,rembrandt_christ-disputing-with-the-doctors-1630,rembrandt_jesus-disputing-with-the-doctors-1630,val,8,"same artwork, different reproduction",same Rembrandt etching (Christ disputing with the doctors); different impression/scan
+pair_0072,rembrandt_circumcision,rembrandt_simon-with-jesus-1669,val,6,"same artwork, different reproduction",same Rembrandt Simeon with the Christ child; different scan/title
+pair_0073,rembrandt_landscape-with-three-huts-1650,rembrandt_the-three-cottages-1650,train43K,6,"same artwork, different reproduction",same Rembrandt etching (Three Cottages / Three Huts); different impression/scan
+pair_0074,rembrandt_lucretia,rembrandt_lucretia-1666,train43K,6,"same artwork, different reproduction",same Rembrandt Lucretia (1666); different scan/colour
+pair_0075,rembrandt_minerva-1632,rembrandt_minerva,train43K,6,"same artwork, different reproduction",same Rembrandt Minerva; different scan/colour
+pair_0076,rembrandt_portrait-of-a-woman-wearing-a-gold-chain,rembrandt_portrait-of-a-young-woman-1633,train43K,8,different,different sitters (two Rembrandt women's portraits)
+pair_0077,rembrandt_portrait-of-margeretha-de-geer-1661,frans-hals_sara-wolphaerts,train43K,8,different,different sitters and artists (Hals vs Rembrandt)
+pair_0078,rembrandt_portrait-of-mother-of-rembrandt,rembrandt_portrait-of-rembrandt-s-mother,train43K,6,"same artwork, different reproduction",same Rembrandt portrait of his mother; different scan/colour
+pair_0079,rembrandt_saskia-as-flora-1634-oil-on-canvas-1634,rembrandt_flora-1634,train43K,6,"same artwork, different reproduction","same Rembrandt Flora (Saskia as Flora, 1634); different scan"
+pair_0080,rembrandt_self-portrait-drawing-at-a-window-1648,rembrandt_self-portrait-drawing-at-a-window,train43K,8,"same artwork, different reproduction",same Rembrandt etching (self-portrait drawing at a window); different impression/scan
+pair_0081,rembrandt_self-portrait-with-plumed-beret-1629,rembrandt_self-portrait-in-a-plumed-hat-1629,train43K,6,"same artwork, different reproduction",same Rembrandt self-portrait with plumed beret (1629); different scan/colour
+pair_0082,rembrandt_the-flight-into-egypt-a-night-piece-1651,vincent-van-gogh_vase-with-flowers-coffeepot-and-fruit-1887,train43K,8,different,different artists and works (van Gogh still life vs Rembrandt etching)
+pair_0083,rembrandt_the-raising-of-lazarus-1642,rembrandt_the-resurrection-of-lazurus-a-small-plate-1642,train43K,6,"same artwork, different reproduction",same Rembrandt Lazarus small-plate etching (1642); different impression/scan
+pair_0084,rembrandt_three-oriental-figures-jacob-and-laban-1641,rembrandt_jacob-with-laban-1644,train43K,2,"same artwork, different reproduction",same Rembrandt etching (Jacob and Laban / three oriental figures); different scan
+pair_0085,aki-kuroda_untitled-5-1982,barnett-newman_canto-xvi-1964,train43K,6,different,different artists and works (Newman vs Kuroda)
+pair_0086,anne-appleby_autumn-aspen-2000,anne-appleby_spring-aspen-2000,train43K,8,different,"different works of one Appleby series (Spring vs Autumn Aspen, different colours)"
+pair_0087,anne-appleby_verona-variation-7-2003,anne-appleby_verona-variation-4-2003,train43K,8,different,"different works of one Appleby series (Verona variation 4 vs 7, different colours)"
+pair_0088,anne-appleby_verona-variation-7-2003,charles-hinman_dance-1972,train43K,8,different,different artists and works (Hinman vs Appleby)
+pair_0089,barnett-newman_canto-viii-1964,barnett-newman_canto-vii-1963,train43K,8,different,"different prints of Newman's Canto series (VII vs VIII, different band layout)"
+pair_0090,brice-marden_untitled-lewison-24-5,john-mclaughlin_untitled-1963,train43K,8,different,different artists and works (McLaughlin vs Marden)
+pair_0091,morris-louis_blue-veil-1958,morris-louis_tet-1958,train43K,6,uncertain,Morris Louis Tet vs Blue Veil (1958): near-identical veil structure; cannot rule out same canvas
+pair_0092,pedro-calapez_escala-de-cor-17-2008,gene-davis_signal-1973,train43K,8,different,different artists and works (Gene Davis vs Calapez)
+pair_0093,jamie-wyeth_portrait-of-andrew-wyeth-1969,rembrandt_self-portrait-as-the-apostle-paul-1661,train43K,8,different,different sitters and artists (Rembrandt vs Jamie Wyeth)
+pair_0094,jamie-wyeth_portrait-of-andrew-wyeth-1969,titian_portrait-of-antonio-anselmi,train43K,8,different,different sitters and artists (Titian vs Jamie Wyeth)
+pair_0095,amadeo-de-souza-cardoso_castle-1912,amadeo-de-souza-cardoso_stronghold-1912,train43K,6,"same artwork, different reproduction",same Souza-Cardoso painting under two titles (Stronghold / Castle 1912); different scan
+pair_0096,jean-metzinger_still-life-playing-cards-coffee-cup-and-apples-1917,jean-metzinger_still-life-playing-cards-coffee-cup-and-apples-1917-1,train43K,2,"same artwork, different reproduction","same Metzinger still life (playing cards, coffee cup, apples); different file"
+pair_0097,lyonel-feininger_church-of-the-minorites-ii-1926,lyonel-feininger_st-mary-s-church-with-the-arrow-1930,train43K,0,same artwork,identical image of one Feininger church painting under two titles
+pair_0098,lyonel-feininger_the-green-bridge-ii-1916,lyonel-feininger_the-green-bridge-ii-1916-1,train43K,2,"same artwork, different reproduction",same Feininger Green Bridge II (1916); different file/colour
+pair_0099,andrea-del-castagno_dante-alighieri,andrea-del-castagno_petrarch,train43K,8,different,different frescoes of one Castagno cycle (Petrarch vs Dante)
+pair_0100,antonello-da-messina_portrait-of-a-man-1,antonello-da-messina_portrait-of-an-unknown-man,train43K,6,"same artwork, different reproduction",same Antonello portrait of a man; different scan/colour
+pair_0101,antonello-da-messina_portrait-of-a-man-1473,antonello-da-messina_portrait-of-a-man-1475(1),train43K,6,uncertain,Antonello red-cap portraits (1473/1475): near-identical; version vs reproduction unclear
+pair_0102,filippo-lippi_adoration-of-the-magi,fra-angelico_adoration-of-the-magi,train43K,6,"same artwork, different reproduction",same Adoration of the Magi tondo under two attributions (Fra Angelico/Lippi)
+pair_0103,filippo-lippi_madonna-and-child-3,filippo-lippi_madonna-and-child-2,train43K,2,"same artwork, different reproduction",same Filippo Lippi Madonna and Child; different scan/colour
+pair_0104,fra-angelico_coronation-of-the-virgin-1435,salvador-dali_gradiva-finds-the-anthropomorphic-ruins,train43K,8,different,different artists and works (Dali vs Fra Angelico)
+pair_0105,pietro-perugino_the-miracles-of-san-bernardino-the-healing-of-the-blind-and-deaf-riccardo-micuzio,pinturicchio_painting-cycle-for-the-miracles-of-st-bernard-scene-healing-the-blind-and-deaf-riccardo-micuzio-1473,train43K,8,"same artwork, different reproduction",same San Bernardino miracle panel under two attributions (Pinturicchio/Perugino)
+pair_0106,sandro-botticelli_the-triumph-of-mordecai-from-the-story-of-esther-1480(1),filippo-lippi_the-triumph-of-mordecai,train43K,4,"same artwork, different reproduction",same Triumph of Mordecai panel under two attributions (Lippi/Botticelli)
+pair_0107,amedeo-modigliani_a-young-girl-1918,amedeo-modigliani_seated-young-woman-1918,train43K,2,"same artwork, different reproduction",same Modigliani seated young woman (1918); different scan
+pair_0108,amedeo-modigliani_a-young-girl-1918,amedeo-modigliani_young-brunette-girl-sitting-1918,train43K,6,"same artwork, different reproduction",same Modigliani young girl (1918); different scan/colour
+pair_0109,amedeo-modigliani_head-of-a-woman,john-singer-sargent_mrs-archibald-douglas-dick-nee-isabelle-parrott-1886,train43K,8,different,different artists and works (Sargent vs Modigliani)
+pair_0110,amedeo-modigliani_head-of-a-young-woman-1908-1,amedeo-modigliani_bust-of-young-girl,train43K,6,"same artwork, different reproduction",same Modigliani head of a young woman; different scan
+pair_0111,amedeo-modigliani_portrait-of-paul-guillaume-1916,dmitry-levitzky_portrait-of-baron-a-n-stroganoff,train43K,8,different,different sitters and artists (Levitzky vs Modigliani)
+pair_0112,amedeo-modigliani_portrait-of-the-mechanical-1917,amedeo-modigliani_oscar-miestchaninoff-1917,train43K,4,"same artwork, different reproduction",same Modigliani portrait inscribed CHAN (1917) under two titles; different scan
+pair_0113,amedeo-modigliani_portrait-of-the-painter-manuel-humbert-1916-1,amedeo-modigliani_manuel-humberg-esteve-1916,train43K,8,"same artwork, different reproduction",same Modigliani portrait of Manuel Humbert (1916); different scan/colour
+pair_0114,amedeo-modigliani_seated-algerian-almaiisa-1916,amedeo-modigliani_almaisa-1916,test,8,"same artwork, different reproduction",same Modigliani Almaisa (1916); different scan/colour
+pair_0115,amedeo-modigliani_the-servant-girl,amedeo-modigliani_servant-girl,train43K,6,"same artwork, different reproduction",same Modigliani servant girl; different scan
+pair_0116,billy-childish_lt-sydney-a-cloman-first-infantry-on-his-horse-on-the-wounded-knee-battleground-2010,judith-leyster_jolly-toper-1629,train43K,8,different,different artists and works (Leyster vs Childish)
+pair_0117,chronis-botsoglou_untitled,chronis-botsoglou_nekyia-1,train43K,4,"same artwork, different reproduction",same Botsoglou painting under two titles; different scan/colour
+pair_0118,edvard-munch_vampire-ii-1902,vincent-van-gogh_head-of-a-young-man-2,train43K,8,different,different artists and works (van Gogh vs Munch)
+pair_0119,helene-schjerfbeck_forty-year-old-1939,mary-cassatt_portrait-of-ellen-mary-cassatt,train43K,8,different,different sitters and artists (Cassatt vs Schjerfbeck)
+pair_0120,lucian-freud_bella-1986,rodolfo-arico_poligonale-orfico-1988,train43K,8,different,different artists and works (Arico vs Freud)
+pair_0121,marie-laurencin_portrait-of-doctor-robert-le-masle-1949,pietro-perugino_portrait-of-a-young-man,train43K,8,different,different sitters and artists (Perugino vs Laurencin)
+pair_0122,mario-eloy_self-portrait-1928,joshua-reynolds_self-portrait-3,train43K,8,different,different sitters and artists (Reynolds vs Eloy)
+pair_0123,mario-eloy_self-portrait-1928,edward-hopper_night-windows,train43K,8,different,different artists and works (Hopper Night Windows vs Eloy portrait)
+pair_0124,mario-eloy_self-portrait-1928,john-singer-sargent_francis-j-h-jenkinson-1915,train43K,8,different,different sitters and artists (Sargent vs Eloy)
+pair_0125,mario-eloy_self-portrait-1928,ivan-kramskoy_portrait-of-the-doctor-sergey-botkin-1882,test,6,different,different sitters and artists (Kramskoy vs Eloy)
+pair_0126,max-pechstein_dancer-in-the-mirror-1923,marc-chagall_angel-in-paradise-1956,train43K,8,different,different artists and works (Chagall vs Pechstein)
+pair_0127,pablo-picasso_self-portrait-1901,gwen-john_self-portrait-1902(1),train43K,8,different,different sitters and artists (Gwen John vs Picasso)
+pair_0128,pablo-picasso_self-portrait-1901-1,pablo-picasso_self-portrait-1901-3,train43K,2,"same artwork, different reproduction","same Picasso self-portrait (1901, Yo Picasso composition); different scan/colour"
+pair_0129,salvador-dali_untitled-male-nude-in-a-landscape,thomas-gainsborough_james-maitland-8th-earl-of-lauderdale,train43K,8,different,different artists and works (Gainsborough vs Dali)
+pair_0130,giorgione_christ-carrying-the-cross(2),titian_christ-carrying-the-cross-1507,test,0,same artwork,"identical image under two attributions (Titian/Giorgione, Christ Carrying the Cross)"
+pair_0131,giovanni-antonio-boltraffio_a-youth-crowned-with-flowers,george-luks_flyweight-champion-of-jumel-place-1920,train43K,8,different,different sitters and artists (Luks vs Boltraffio)
+pair_0132,giovanni-antonio-boltraffio_a-youth-crowned-with-flowers,johann-koler_self-portrait-1859,train43K,8,different,different sitters and artists (Koler vs Boltraffio)
+pair_0133,leonardo-da-vinci_portrait-of-an-unknown-woman-la-belle-ferroniere,rembrandt_man-with-a-magnifying-glass-1629,train43K,8,different,different sitters and artists (Rembrandt vs Leonardo)
+pair_0134,leonardo-da-vinci_portrait-of-an-unknown-woman-la-belle-ferroniere,henry-raeburn_lieutenant-general-william-stuart,train43K,8,different,different sitters and artists (Raeburn vs Leonardo)
+pair_0135,leonardo-da-vinci_portrait-of-an-unknown-woman-la-belle-ferroniere,henry-raeburn_portrait-of-the-reverend-john-thomson-minister-of-duddingston,test,6,different,different sitters and artists (Raeburn vs Leonardo)
+pair_0136,pietro-perugino_combat-of-love-and-chastity-1505,andrea-mantegna_the-combat-of-love-and-chastity-1505,train43K,6,"same artwork, different reproduction",same Combat of Love and Chastity under two attributions (Mantegna/Perugino); different scan
+pair_0137,titian_portrait-d-isabella-d-este-1536,titian_isabella-d-este-duchess-of-mantua-1536,val,2,"same artwork, different reproduction",same Titian Isabella d'Este (1536); different scan/colour
+pair_0138,titian_the-feast-of-the-gods-1529,giovanni-bellini_the-feast-of-the-gods-1514,train43K,4,"same artwork, different reproduction",same Feast of the Gods under two attributions (Bellini/Titian); different scan
+pair_0139,alfred-sisley_fishermen-mending-nets-1872,alfred-sisley_drying-nets-1872,train43K,8,"same artwork, different reproduction",same Sisley drying nets (1872); different scan/colour
+pair_0140,alfred-sisley_plum-and-walnut-trees-in-spring-1889,alfred-sisley_trees-in-bloom-1889,train43K,8,"same artwork, different reproduction",same Sisley trees in bloom (1889) under two titles; different scan/colour
+pair_0141,arkhip-kuindzhi_rock,john-singer-sargent_portrait-of-douglas-vickers-1914,val,8,different,different artists and works (Sargent portrait vs Kuindzhi rock)
+pair_0142,camille-pissarro_summer-fishing,camille-pissarro_road-along-the-loing-canal,train43K,8,"same artwork, different reproduction",same Pissarro Loing canal painting under two titles; different scan/colour
+pair_0143,camille-pissarro_twilight-eragny-1889,camille-pissarro_haystacks-1889,train43K,6,"same artwork, different reproduction",same Pissarro haystacks watercolour (1889) under two titles; different scan
+pair_0144,childe-hassam_a-rainy-day-in-boston-1885,childe-hassam_rainy-day-boston,train43K,8,"same artwork, different reproduction",same Hassam Rainy Day in Boston (1885); different scan/colour cast
+pair_0145,childe-hassam_cab-station-rue-bonaparte,childe-hassam_childe-hassam-a-shower-bonaparte-street,train43K,8,"same artwork, different reproduction","same Hassam shower on rue Bonaparte (1887); different file, one framed"
+pair_0146,childe-hassam_isle-of-shoals,childe-hassam_summer-sunlight,train43K,4,"same artwork, different reproduction",same Hassam Summer Sunlight / Isle of Shoals; different scan
+pair_0147,claude-monet_at-val-saint-nicolas-near-dieppe-morning,claude-monet_at-val-saint-nicolas-near-dieppe-in-the-morning,train43K,8,uncertain,"Monet Val-Saint-Nicolas morning: several autograph versions exist; colours differ, cannot tell which"
+pair_0148,claude-monet_meadow,sergey-solomko_maria-swan-white,train43K,6,different,different artists and works (Solomko vs Monet)
+pair_0149,claude-monet_not_detected_212140,claude-monet_rough-sea-at-etretat-1883,train43K,6,"same artwork, different reproduction",same Monet Rough Sea at Etretat (1883); different scan/colour
+pair_0150,claude-monet_not_detected_212142,claude-monet_waterloo-bridge-1902,train43K,8,uncertain,Monet Waterloo Bridge: dozens of near-identical versions; cannot tell version from reproduction
+pair_0151,claude-monet_not_detected_212148,claude-monet_the-bridge-at-argenteuil,train43K,4,"same artwork, different reproduction",same Monet Bridge at Argenteuil; different scan/colour
+pair_0152,claude-monet_promenade-near-argenteuil-1873,claude-monet_the-promenade-near-argenteuil,val,6,"same artwork, different reproduction",same Monet Promenade near Argenteuil (1873); different scan/colour
+pair_0153,claude-monet_saint-lazare-station-exterior-view-1,claude-monet_saint-lazare-station,test,2,"same artwork, different reproduction",same Monet Saint-Lazare station; different scan/colour
+pair_0154,claude-monet_the-house-seen-from-the-rose-garden-3-1924,claude-monet_the-house-at-giverny-viewed-from-the-rose-garden-1924,train43K,2,uncertain,"Monet house from the rose garden (1924): multiple versions, colours differ; cannot tell which"
+pair_0155,claude-monet_water-lilies-34,mikhail-vrubel_yellow-roses-1894,train43K,8,different,different artists and works (Vrubel roses vs Monet water lilies)
+pair_0156,claude-monet_windmill-near-zaandam,claude-monet_a-windmill-near-zaandam(1),test,6,uncertain,"Monet windmill near Zaandam: similar compositions, windmill differs slightly; version unclear"
+pair_0157,edgar-degas_ballerina-and-lady-with-a-fan-1885,edgar-degas_a-ballet-seen-from-the-opera-box-1885,train43K,6,"same artwork, different reproduction","same Degas ballet from the opera box (1885); different scan, one framed"
+pair_0158,edgar-degas_before-the-start-1878,marcel-duchamp_the-bec-auer-1967,train43K,8,different,different artists and works (Duchamp drawing vs Degas racehorses)
+pair_0159,edgar-degas_dancer-on-stage,edgar-degas_dancers-on-set-1880,train43K,4,"same artwork, different reproduction",same Degas dancer on stage; different scan/colour
+pair_0160,guy-rose_river-epte-giverny-1910-1,guy-rose_river-epte-giverny-1910,train43K,0,same artwork,identical image of the same Guy Rose River Epte (1910)
+pair_0161,joaquã­n-sorolla_the-young-yachtsman-1909,rembrandt_portrait-of-a-jewish-young-man-1648,train43K,8,different,different artists and works (Rembrandt vs Sorolla)
+pair_0162,john-henry-twachtman_fish-sheds-and-schooner-gloucester,william-merritt-chase_fish-sheds-and-schooner-gloucester,val,2,"same artwork, different reproduction",same Gloucester fish-sheds painting under two attributions (Chase/Twachtman)
+pair_0163,john-henry-twachtman_summer-1899,john-henry-twachtman_summer-late,train43K,2,"same artwork, different reproduction",same Twachtman summer landscape; different scan/colour
+pair_0164,john-henry-twachtman_the-white-bridge-1897,john-henry-twachtman_the-white-bridge,train43K,8,uncertain,"Twachtman White Bridge: several versions exist; very different colour, cannot tell which"
+pair_0165,mary-cassatt_young-woman-sewing-in-the-garden-1882,mary-cassatt_woman-with-needlework-sun,train43K,4,"same artwork, different reproduction",same Cassatt young woman sewing in the garden; different scan/colour
+pair_0166,pericles-pantazis_supreme-court-1880,charles-francois-daubigny_pond-gijlieu,train43K,6,different,different artists and works (Daubigny vs Pantazis)
+pair_0167,pierre-auguste-renoir_chestnut-tree-blooming-1881,pierre-auguste-renoir_tree-blooming,val,2,"same artwork, different reproduction",same Renoir chestnut tree blooming (1881); different scan
+pair_0168,pierre-auguste-renoir_nude-arranging-her-hair-1885,pierre-auguste-renoir_young-woman-at-her-toilette,train43K,4,"same artwork, different reproduction",same Renoir nude arranging her hair (1885); different scan
+pair_0169,pierre-auguste-renoir_sara-looking-to-the-right,mary-cassatt_sara-looking-towards-the-right,train43K,2,"same artwork, different reproduction",same Sara pastel under two attributions (Cassatt/Renoir); different file
+pair_0170,pierre-auguste-renoir_seated-bather-1883,pierre-auguste-renoir_nude-in-a-landscape-1883,train43K,4,"same artwork, different reproduction",same Renoir seated bather / nude in a landscape (1883); different scan/colour
+pair_0171,pierre-auguste-renoir_still-life-with-peaches-1916,pierre-auguste-renoir_still-life-with-peaches-1,train43K,4,"same artwork, different reproduction",same Renoir still life with peaches; different scan/colour
+pair_0172,pierre-auguste-renoir_strong-wind-gust-of-wind,pierre-auguste-renoir_the-gust-of-wind,train43K,2,"same artwork, different reproduction",same Renoir gust of wind landscape; different scan/colour
+pair_0173,pierre-auguste-renoir_young-girl-wearing-a-red-hat-1913,pierre-auguste-renoir_girl-in-a-red-hat-1913,test,2,"same artwork, different reproduction",same Renoir girl in a red hat (1913); different scan/colour
+pair_0174,walter-sickert_george-moore-1891,ivan-kramskoy_portrait-of-feodor-petrushevsky-1882,train43K,8,different,different sitters and artists (Kramskoy vs Sickert)
+pair_0175,walter-sickert_george-moore-1891,joshua-reynolds_portrait-of-lord-john-townshend,test,8,different,different sitters and artists (Reynolds vs Sickert)
+pair_0176,willard-metcalf_flying-shadows-1910,willard-metcalf_flying-shadows,train43K,8,uncertain,"Metcalf Flying Shadows: same composition, autumn vs spring colouring; version vs colour cast unclear"
+pair_0177,willard-metcalf_the-path-1915,willard-metcalf_the-path,test,2,"same artwork, different reproduction",same Metcalf The Path (1915); different scan
+pair_0178,william-james-glackens_twenty-three-fifth-avenue-interior-1910,william-james-glackens_twenty-three-fifth-avenue-1910,train43K,4,"same artwork, different reproduction",same Glackens 23 Fifth Avenue interior (1910); different scan/colour
+pair_0179,william-merritt-chase_ready-for-the-ride,titian_portrait-of-antonio-anselmi,train43K,6,different,different sitters and artists (Titian vs Chase)
+pair_0180,william-merritt-chase_ready-for-the-ride,edouard-manet_boy-with-a-sword-1861,train43K,8,different,different sitters and artists (Manet vs Chase)
+pair_0181,william-merritt-chase_ready-for-the-ride,john-singer-sargent_peter-a-b-widener-1902,test,8,different,different sitters and artists (Sargent vs Chase)
+pair_0182,william-merritt-chase_the-japanese-book,william-merritt-chase_the-japanese-book-1900,train43K,2,"same artwork, different reproduction",same Chase The Japanese Book; different file
+pair_0183,william-merritt-chase_woman-in-kimono-holding-a-japanese-fan,william-merritt-chase_woman-in-kimono-holding-a-japanese-fan-1,train43K,0,same artwork,identical image of the same Chase woman in kimono with fan
+pair_0184,agnolo-bronzino_portrait-of-laudomia-de-medici,agnolo-bronzino_don-garcia-de-medici,train43K,8,different,different sitters (Bronzino: Don Garcia vs Laudomia de Medici)
+pair_0185,el-greco_portrait-of-a-young-man,el-greco_portrait-of-jeronimo-de-cevallos-1613,train43K,8,different,different sitters (El Greco: Cevallos vs young man)
+pair_0186,parmigianino_virgin-and-child-1527,giorgio-vasari_madonna,train43K,8,"same artwork, different reproduction",same Madonna under two attributions (Vasari/Parmigianino); different scan/colour
+pair_0187,tintoretto_portrait-of-jacopo-sansovino-1571,tintoretto_portrait-of-the-sculptor-jacopo-sansovino-1570,train43K,6,"same artwork, different reproduction",same Tintoretto portrait of Jacopo Sansovino; different scan/colour
+pair_0188,tintoretto_portrait-of-jacopo-sansovino-1571,felix-vallotton_portrait-of-verlaine-1902,train43K,8,different,different sitters and artists (Vallotton vs Tintoretto)
+pair_0189,tintoretto_portrait-of-jacopo-soranso,john-singer-sargent_mrs-george-lewis-elizabeth-eberstadt-1892,train43K,8,different,different sitters and artists (Sargent vs Tintoretto)
+pair_0190,tintoretto_portrait-of-senator-marco-grimani-1583,william-merritt-chase_a-girl-in-yellow-aka-the-yellow-gown,train43K,8,different,different sitters and artists (Chase vs Tintoretto)
+pair_0191,titian_mary-with-the-christ-child-1561,titian_madonna-and-child-in-an-evening-landscape-1565,train43K,6,uncertain,"Titian Madonna and Child in evening landscape: similar composition, background differs; version unclear"
+pair_0192,titian_not_detected_224925,titian_portrait-of-marcantonio-trevisani-1554,train43K,0,same artwork,identical image of the same Titian portrait of Marcantonio Trevisani
+pair_0193,titian_self-portrait,paolo-veronese_self-portrait,train43K,8,different,different sitters and artists (Veronese vs Titian)
+pair_0194,anne-truitt_parva-xxviii-1993,agnolo-bronzino_don-garcia-de-medici,train43K,8,different,different artists and works (Bronzino portrait vs Truitt sculpture)
+pair_0195,anne-truitt_parva-xxviii-1993,tintoretto_self-portrait-with-a-book,train43K,6,different,different artists and works (Tintoretto portrait vs Truitt sculpture)
+pair_0196,anne-truitt_parva-xxviii-1993,felix-vallotton_portrait-of-verlaine-1902,train43K,8,different,different artists and works (Vallotton portrait vs Truitt sculpture)
+pair_0197,anne-truitt_parva-xxviii-1993,diego-velazquez_portrait-of-philip-iv-of-spain-1656,val,8,different,different artists and works (Velazquez portrait vs Truitt sculpture)
+pair_0198,anne-truitt_parva-xxviii-1993,john-singer-sargent_peter-a-b-widener-1902,test,8,different,different artists and works (Sargent portrait vs Truitt sculpture)
+pair_0199,anne-truitt_parva-xxviii-1993,dmitry-levitzky_portrait-of-g-k-levitzky-artist-s-father-1779,test,4,different,different artists and works (Levitzky portrait vs Truitt sculpture)
+pair_0200,anne-truitt_return-2004,anne-truitt_twining-court-ii-2002,train43K,4,different,different Truitt sculptures (black Twining Court II vs red Return)
+pair_0201,joan-hernandez-pijuan_untitled-1969,john-miller_porthkidney-beach,train43K,8,different,different artists and works (Miller beach vs Hernandez-Pijuan)
+pair_0202,robert-mangold_untitled-fcpa-1995,gene-davis_signal-1973,train43K,8,different,different artists and works (Gene Davis vs Mangold)
+pair_0203,fernando-botero_the-great-feast,suzanne-valadon_maurice-utrillo-playing-with-a-sling-shot-1895,train43K,8,different,different artists and works (Valadon drawing vs Botero)
+pair_0204,marc-chagall_the-story-of-the-rooster-the-little-goat-4,ivan-aivazovsky_dejection-of-noah-from-mountain-ararat-1897,train43K,6,different,different artists and works (Aivazovsky drawing vs Chagall book page)
+pair_0205,edward-hopper_not_detected_235602(1),edward-hopper_cape-cod-afternoon,test,2,"same artwork, different reproduction",same Hopper Cape Cod Afternoon; different file
+pair_0206,albrecht-durer_cardinal-albrecht-von-brandenburg,albrecht-durer_portrait-of-cardinal-albrecht-of-brandenburg,train43K,8,"same artwork, different reproduction",same Durer drawing of Cardinal Albrecht of Brandenburg; different scan/paper tone
+pair_0207,albrecht-durer_coat-of-arms-with-a-skull-1503,albrecht-durer_the-coat-of-arms-with-the-skull-1507,train43K,8,"same artwork, different reproduction",same Durer engraving Coat of Arms with a Skull; different impression/scan
+pair_0208,albrecht-durer_hare-1502,albrecht-durer_a-young-hare,val,4,"same artwork, different reproduction",same Durer Young Hare (1502); different scan/colour
+pair_0209,albrecht-durer_lucas-van-leyden-1521,albrecht-durer_portrait-of-a-man-1521,train43K,8,"same artwork, different reproduction","same Durer portrait drawing (1521, Lucas van Leyden); different scan"
+pair_0210,albrecht-durer_portrait-of-a-man-sebastian-brant,albrecht-durer_sebastian-brant,train43K,4,"same artwork, different reproduction",same Durer drawing of Sebastian Brant; different scan
+pair_0211,albrecht-durer_saint-eustace,albrecht-durer_st-eustace,test,6,"same artwork, different reproduction",same Durer engraving St Eustace; different impression/scan
+pair_0212,albrecht-durer_st-george-on-horseback-1505,albrecht-durer_st-george-on-horseback-1508,val,4,"same artwork, different reproduction",same Durer engraving St George on horseback (1508); different scan
+pair_0213,albrecht-durer_st-michael-fighting-the-dragon-1498,albrecht-durer_st-michael-and-the-dragon-from-a-latin-edition-1511,train43K,4,"same artwork, different reproduction",same Durer woodcut St Michael fighting the dragon; different impression/scan
+pair_0214,albrecht-durer_study-of-drapery-1508-1,albrecht-durer_standing-apostle-1508,val,6,"same artwork, different reproduction",same Durer standing apostle drapery study (1508); different scan/colour
+pair_0215,albrecht-durer_the-penance-of-st-john-chrysostom-1496,albrecht-durer_the-penance-of-st-john-chrysostom,val,4,"same artwork, different reproduction",same Durer engraving Penance of St John Chrysostom; different scan
+pair_0216,albrecht-durer_the-southern-hemisphere-of-the-celestial-globe-1515,albrecht-durer_map-of-the-southern-sky-with-representations-of-constellations-decorated-with-the-crest-of-1515,train43K,6,"same artwork, different reproduction",same Durer southern celestial map woodcut; coloured vs uncoloured impression
+pair_0217,albrecht-durer_venus-und-amor,albrecht-durer_cupid-the-honey-thief-1514,val,8,"same artwork, different reproduction",same Durer drawing Cupid the Honey Thief / Venus and Amor; colour vs greyscale scan
+pair_0218,hans-baldung_madonna-with-the-parrots-1533,joshua-reynolds_sir-john-molesworth,train43K,8,different,different artists and works (Reynolds vs Baldung)
+pair_0219,hans-holbein-the-younger_portrait-of-a-member-of-the-wedigh-family-1532-1,hans-holbein-the-younger_portrait-of-a-member-of-the-wedigh-family-1532,train43K,6,"same artwork, different reproduction",same Holbein portrait of a Wedigh family member (1532); different scan/colour
+pair_0220,hans-holbein-the-younger_portrait-of-nobleman-with-a-falcon-1542,john-hoppner_portrait-of-adam-duncan-1st-viscount-duncan-1798,train43K,8,different,different sitters and artists (Hoppner vs Holbein)
+pair_0221,hans-holbein-the-younger_sir-henry-guildford-1527,hans-holbein-the-younger_portrait-of-sir-henry-guildford-1527,val,4,"same artwork, different reproduction",same Holbein Sir Henry Guildford (1527); different scan
+pair_0222,hans-memling_christ-giving-his-blessing-1481,guido-reni_saint-paul-1634,train43K,8,different,different artists and works (Reni St Paul vs Memling Christ)
+pair_0223,hugo-van-der-goes_benedictine-monk,joseph-wright_old-john-head-waiter-at-the-king-s-head-in-derby,train43K,8,different,different sitters and artists (Wright vs van der Goes)
+pair_0224,jan-van-eyck_the-ghent-altarpiece-1432,jan-van-eyck_the-ghent-altarpiece-1432-1,train43K,8,"same artwork, different reproduction",same van Eyck Ghent Altarpiece (open); different scan/colour
+pair_0225,jan-van-eyck_the-virgin-and-child-in-a-church-1437,jan-van-eyck_virgin-and-child-with-st-michael-st-catherine-and-a-donor-1437,train43K,8,"same artwork, different reproduction",same van Eyck Dresden triptych (Virgin and Child in a church); different scan
+pair_0226,jan-van-hemessen_allegorical-scene,jan-provoost_christian-allegory-1515,train43K,2,"same artwork, different reproduction",same allegorical scene under two attributions (Provoost/Hemessen); different scan
+pair_0227,lucas-cranach-the-elder_portrait-of-anna-cuspinian,lucas-cranach-the-elder_anna-cuspinian,train43K,8,"same artwork, different reproduction",same Cranach portrait of Anna Cuspinian; different scan/colour
+pair_0228,martin-schongauer_the-temptation-of-st-anthony,martin-schongauer_holy-antonius,train43K,8,"same artwork, different reproduction",same Schongauer engraving Temptation of St Anthony; different impression/scan
+pair_0229,rogier-van-der-weyden_portrait-of-a-man-1,rogier-van-der-weyden_portrait-of-pierre-de-beffremont,val,8,"same artwork, different reproduction",same Rogier van der Weyden portrait (Pierre de Beffremont); different scan/colour
+pair_0230,henri-matisse_cape-layet-1904,henri-edmond-cross_cape-layet-provence,train43K,6,"same artwork, different reproduction",same Cap Layet pointillist landscape under two attributions (Cross/Matisse)
+pair_0231,maurice-prendergast_children-in-the-tree,theo-van-doesburg_composition-with-three-heads-from-sketchbook-13,train43K,8,different,different artists and works (van Doesburg sketch vs Prendergast)
+pair_0232,theo-van-rysselberghe_portrait-of-irma-sethe-1894,guy-rose_lifting-fog-laguna,train43K,8,different,different artists and works (Guy Rose seascape vs van Rysselberghe portrait)
+pair_0233,andy-warhol_tatum-o-neal-1987,salvador-dali_self-potrait,train43K,8,different,different artists and works (Dali drawing vs Warhol Polaroid)
+pair_0234,billy-apple_red-apple-1996,patrick-caulfield_freud-s-smoke-1997,train43K,8,different,different artists and works (Caulfield vs Billy Apple)
+pair_0235,edward-ruscha_hollywood-1969,vincent-van-gogh_landscape-with-a-church-1883-1,train43K,8,different,different artists and works (van Gogh drawing vs Ruscha print)
+pair_0236,gianfranco-baruchello_cordiali-saluti-dell-entropia-errore-1963,koloman-moser_mermaid-illustration-for-jugendschatz-german-seals,train43K,8,different,different artists and works (Moser illustration vs Baruchello)
+pair_0237,mario-schifano_per-costruzione-di-oasi-1980,henri-de-toulouse-lautrec_portrait-of-misia-natanson-sert-1895,train43K,8,different,different artists and works (Toulouse-Lautrec vs Schifano)
+pair_0238,mario-schifano_per-costruzione-di-oasi-1980,konstantin-somov_female-portrait-and-sketches-of-hands,train43K,8,different,different artists and works (Somov drawing vs Schifano)
+pair_0239,peter-blake_the-beach-boys-1964,claude-viallat_untitled-no-223-2001,train43K,8,different,different artists and works (Viallat vs Peter Blake)
+pair_0240,robert-silvers_the-great-jatte,georges-seurat_sunday-afternoon-on-the-island-of-la-grande-jatte-1886,test,4,uncertain,Silvers photomosaic reproducing Seurat's Grande Jatte; derivative image of the reference
+pair_0241,tano-festa_omaggio-alla-pittura,robert-brackman_self-portrait-1,train43K,8,different,different artists and works (Brackman vs Festa)
+pair_0242,valerio-adami_capriccio-1983,alexander-orlowski_self-portrait-in-a-suit-of-a-caucasian-warrior,train43K,8,different,different artists and works (Orlowski vs Adami)
+pair_0243,david-burliuk_futurist-still-life-with-cactus-1928,cornelis-springer_figures-on-a-market-square-in-a-dutch-town-1843,train43K,8,different,different artists and works (Springer vs Burliuk)
+pair_0244,edouard-cortes_place-pigalle-winter-1,edouard-cortes_place-pigalle-winter-evening,train43K,8,different,"different Cortes Place Pigalle versions (buildings, figures and trams differ)"
+pair_0245,edouard-cortes_st-denis,edouard-cortes_theatre-du-vaudeville-2,train43K,6,different,different Cortes street scenes (Vaudeville vs St-Denis)
+pair_0246,edouard-cortes_theatre-du-vaudeville-3,edouard-cortes_theatre-du-vaudeville-2,train43K,8,different,different Cortes Vaudeville versions (figures and storefronts differ)
+pair_0247,edouard-cortes_theatre-du-vaudeville-3,edouard-cortes_theatre-du-vaudeville-4,train43K,6,different,different Cortes Vaudeville versions (figures and lighting layout differ)
+pair_0248,ferdinand-hodler_lake-geneva-from-chexbres-1904,ferdinand-hodler_lake-geneva-in-chexbres-1904,train43K,2,"same artwork, different reproduction",same Hodler Lake Geneva from Chexbres (1904); different file
+pair_0249,georges-seurat_the-black-horse-1883,georges-seurat_boy-with-horse-1883,train43K,2,"same artwork, different reproduction","same Seurat study, boy with black horse (1883); different scan/colour"
+pair_0250,gustave-loiseau_near-the-seine,gustave-loiseau_landscape-of-seine-et-oise-1906,train43K,2,"same artwork, different reproduction",same Loiseau cottage landscape under two titles; different scan
+pair_0251,gwen-john_little-girl-wearing-large-hat,rembrandt_portrait-of-an-old-man-in-red-1654-1,train43K,8,different,different sitters and artists (Rembrandt vs Gwen John)
+pair_0252,gwen-john_little-girl-wearing-large-hat,valentin-serov_portrait-of-the-singer-angelo-mazini-1890,train43K,6,different,different sitters and artists (Serov vs Gwen John)
+pair_0253,gwen-john_little-girl-wearing-large-hat,louise-elisabeth-vigee-le-brun_sergey-gagarin-1801,train43K,8,different,different sitters and artists (Vigee-Le Brun vs Gwen John)
+pair_0254,henri-de-toulouse-lautrec_monsieur-louis-pascal-1891,henri-de-toulouse-lautrec_louis-pascal-1892,train43K,8,"same artwork, different reproduction",same Toulouse-Lautrec Louis Pascal; different scan/colour
+pair_0255,henri-de-toulouse-lautrec_portrait-of-octave-raquin-1901,antonio-carneiro_auto-retrato-1919,test,8,different,different sitters and artists (Carneiro vs Toulouse-Lautrec)
+pair_0256,moise-kisling_not-identified-9,rembrandt_portrait-of-a-jewish-young-man-1648,train43K,8,different,different sitters and artists (Rembrandt vs Kisling)
+pair_0257,moise-kisling_not-identified-9,balthus_sleeping-girl-1943,train43K,8,different,different artists and works (Balthus vs Kisling)
+pair_0258,moise-kisling_sitting-nude-1923-1,moise-kisling_sitting-nude-1923,train43K,4,"same artwork, different reproduction",same Kisling sitting nude (1923); colour vs black-and-white reproduction
+pair_0259,paul-cezanne_self-portrait-1880-1,paul-cezanne_self-portrait-in-front-of-olive-wallpaper-1881,train43K,2,"same artwork, different reproduction",same Cezanne self-portrait before olive wallpaper; different scan/colour
+pair_0260,paul-gauguin_tahitian-woman-1899,paul-gauguin_tahitian-woman-1894,train43K,4,"same artwork, different reproduction",same Gauguin Tahitian woman pastel; different (degraded) reproduction
+pair_0261,pyotr-konchalovsky_children-at-the-piano-1919,georges-braque_grandmother-s-friend-1900,train43K,8,different,different artists and works (Braque vs Konchalovsky)
+pair_0262,theo-van-rysselberghe_woman-with-violin-portrait-of-rene-druet-1910,mihaly-munkacsy_portrait-of-franz-liszt-1886,train43K,8,different,different sitters and artists (Munkacsy vs van Rysselberghe)
+pair_0263,vincent-van-gogh_plaster-statuette-of-a-female-torso,vincent-van-gogh_gypsum-torso-1886(1),train43K,8,"same artwork, different reproduction",same van Gogh plaster torso (blue background); different scan
+pair_0264,vincent-van-gogh_plaster-statuette-of-a-female-torso-1886-4,vincent-van-gogh_plaster-statuette-of-a-female-torso-1886-1,val,8,different,different van Gogh torso paintings (different pose and background colour)
+pair_0265,vincent-van-gogh_portrait-of-patience-escalier-1888,vincent-van-gogh_farmer-with-straw-hat-1888(1),train43K,6,"same artwork, different reproduction",same van Gogh drawing of Patience Escalier (straw hat); different scan
+pair_0266,vincent-van-gogh_still-life-vase-with-fifteen-sunflowers-1888-1,vincent-van-gogh_still-life-vase-with-fourteen-sunflowers-1889,train43K,8,different,"different van Gogh Sunflowers versions (14 vs 15 flowers, arrangement differs)"
+pair_0267,vincent-van-gogh_suburbs-of-paris-1887,vincent-van-gogh_man-with-spade-in-a-suburb-of-paris-1887,train43K,8,"same artwork, different reproduction",same van Gogh suburb of Paris with man with spade (1887); different scan
+pair_0268,vincent-van-gogh_the-grounds-of-the-asylum-1889,vincent-van-gogh_trees-in-the-garden-of-the-hospital-saint-paul-1888,train43K,8,uncertain,van Gogh garden of Saint-Paul asylum: two near-identical 1889 versions exist; cannot tell which
+pair_0269,anders-zorn_mona-1898,anders-zorn_mona-1911-1,train43K,8,uncertain,Zorn Mona dated 1898 vs 1911: identical composition but dates differ; replica vs reproduction unclear
+pair_0270,anton-azbe_portrait-of-a-dalmatian-girl-1885,koloman-moser_the-sketch-of-the-round-window-art-1897,train43K,8,different,different artists and works (Moser vs Azbe)
+pair_0271,anton-azbe_portrait-of-a-dalmatian-girl-1885,john-singer-sargent_head-of-ana-capri-girl-1878,train43K,8,different,different sitters and artists (Sargent vs Azbe)
+pair_0272,arkhip-kuindzhi_portrait-of-an-unknown-man,sandro-botticelli_portrait-of-a-young-man-1483-1(1),val,8,different,different sitters and artists (Botticelli vs Kuindzhi)
+pair_0273,camille-corot_girl-with-mandolin-1865,juan-gris_woman-with-a-mandolin-after-corot-1916,train43K,8,different,different works (Gris cubist variation after Corot vs Corot original)
+pair_0274,camille-corot_mur-peasants,camille-corot_peasants-from-mur,test,0,same artwork,identical image of the same Corot peasants of Mur
+pair_0275,camille-pissarro_jacob-coin-de-village,camille-pissarro_village-corner-1863,train43K,8,"same artwork, different reproduction",same Pissarro village corner (1863) under two titles; different scan
+pair_0276,camille-pissarro_the-harvest,esteban-vicente_number-6-1956,train43K,8,different,different artists and works (Vicente abstract vs Pissarro harvest)
+pair_0277,columbano-bordalo-pinheiro_portrait-of-antero-de-quintal-1889,joshua-reynolds_george-ashby,train43K,8,different,different sitters and artists (Reynolds vs Bordalo Pinheiro)
+pair_0278,columbano-bordalo-pinheiro_portrait-of-antero-de-quintal-1889,edgar-degas_self-portrait-1855,train43K,8,different,different sitters and artists (Degas vs Bordalo Pinheiro)
+pair_0279,columbano-bordalo-pinheiro_portrait-of-antero-de-quintal-1889,agnolo-bronzino_don-garcia-de-medici,train43K,8,different,different sitters and artists (Bronzino vs Bordalo Pinheiro)
+pair_0280,columbano-bordalo-pinheiro_portrait-of-antero-de-quintal-1889,titian_portrait-of-antonio-anselmi,train43K,4,different,different sitters and artists (Titian vs Bordalo Pinheiro)
+pair_0281,columbano-bordalo-pinheiro_portrait-of-antero-de-quintal-1889,edouard-manet_boy-with-a-sword-1861,train43K,8,different,different sitters and artists (Manet vs Bordalo Pinheiro)
+pair_0282,columbano-bordalo-pinheiro_portrait-of-antero-de-quintal-1889,john-singer-sargent_the-earl-of-wemyss-and-march-1909,train43K,6,different,different sitters and artists (Sargent vs Bordalo Pinheiro)
+pair_0283,columbano-bordalo-pinheiro_portrait-of-antero-de-quintal-1889,thomas-eakins_portrait-of-elizabeth-r-coffin,train43K,8,different,different sitters and artists (Eakins vs Bordalo Pinheiro)
+pair_0284,columbano-bordalo-pinheiro_portrait-of-antero-de-quintal-1889,thomas-eakins_portrait-of-william-b-kurtz-1903,train43K,6,different,different sitters and artists (Eakins vs Bordalo Pinheiro)
+pair_0285,columbano-bordalo-pinheiro_portrait-of-antero-de-quintal-1889,john-singer-sargent_peter-a-b-widener-1902,test,4,different,different sitters and artists (Sargent vs Bordalo Pinheiro)
+pair_0286,edgar-degas_portrait-of-madame-edmondo-morbilli-1865,le-nain-brothers_portrait-of-a-knight-of-saint-michael,train43K,8,different,different sitters and artists (Le Nain vs Degas)
+pair_0287,edouard-manet_the-garden-around-manet-s-house,edouard-manet_a-corner-of-the-garden-in-rueil-1882,train43K,8,"same artwork, different reproduction",same Manet garden at Rueil (1882) under two titles; different scan
+pair_0288,edouard-manet_vase-of-peonies-on-a-small-pedestal-1864,edouard-manet_peonies-in-a-vase-1864,train43K,6,uncertain,"Manet peonies in a vase (1864): same composition, flower colours differ; version vs colour cast unclear"
+pair_0289,giovanni-boldini_portrait-of-lina-cavalieri-1901,john-singer-sargent_madame-francois-buloz-1879,train43K,8,different,different sitters and artists (Sargent vs Boldini)
+pair_0290,grigoriy-myasoyedov_in-the-salon-of-zenaida-volkonskaya-1907,grigoriy-myasoyedov_pushkin-and-his-friends-listen-to-mickiewicz-in-the-salon-of-princess-zinaida-volkonskaya-1907,train43K,6,"same artwork, different reproduction",same Myasoyedov salon of Zinaida Volkonskaya (Pushkin listening to Mickiewicz); different scan
+pair_0291,henri-fantin-latour_roses-and-lilies-1888,henri-fantin-latour_roses-and-lilies,train43K,6,"same artwork, different reproduction",same Fantin-Latour roses and lilies (1888); different scan
+pair_0292,henri-fantin-latour_roses-in-a-tall-glass,laszlo-mednyanszky_old-man-1897,train43K,8,different,different artists and works (Mednyanszky portrait vs Fantin-Latour roses)
+pair_0293,ilya-repin_leo-tolstoy-barefoot-1891,tintoretto_portrait-of-a-man-3,train43K,8,different,different sitters and artists (Tintoretto vs Repin)
+pair_0294,ilya-repin_leo-tolstoy-barefoot-1891,mary-cassatt_portrait-of-madame-cordier-1874,train43K,4,different,different sitters and artists (Cassatt vs Repin)
+pair_0295,ilya-repin_portrait-of-a-p-bogolyubov-1882,ilya-repin_portrait-of-the-artist-a-p-bogolubov-1882,train43K,2,"same artwork, different reproduction",same Repin portrait of A. P. Bogolyubov (1882); different scan
+pair_0296,ilya-repin_portrait-of-maria-borisovna-chukovskaya-1909,fyodor-solntsev_dress-of-the-kiev-girls,train43K,6,different,different artists and works (Solntsev costume print vs Repin portrait)
+pair_0297,ilya-repin_portrait-of-painter-grigory-grigoryevich-myasoyedov-1883,grigoriy-myasoyedov_portrait-of-i-repin-study-1883,val,4,"same artwork, different reproduction",same portrait study (1883) under two attributions (Myasoyedov/Repin); different scan
+pair_0298,ilya-repin_portrait-of-the-artist-ivan-kramskoy-1882,ivan-kramskoy_no-title-1882,val,0,same artwork,"identical image (Repin portrait of Kramskoy, 1882) under two titles"
+pair_0299,ilya-repin_portrait-of-the-surgeon-nikolay-pirogov-1881-1,aleksey-antropov_portrait-of-anna-vasiliyevna-buturlina,val,8,different,different sitters and artists (Antropov vs Repin)
+pair_0300,ilya-repin_portrait-of-vasily-kirillovich-syutayev-1882,gwen-john_self-portrait-1902(1),train43K,8,different,different sitters and artists (Gwen John vs Repin)
+pair_0301,ilya-repin_portrait-of-vasily-kirillovich-syutayev-1882,grigoriy-myasoyedov_portrait-of-i-repin-study-1883,val,8,different,different sitters (Myasoyedov study vs Repin Syutayev portrait)
+pair_0302,ivan-kramskoy_christ-1883,rembrandt_hendrickje-stoffels-in-velvet-beret,train43K,6,different,different artists and works (Rembrandt Hendrickje vs Kramskoy Christ bust)
+pair_0303,ivan-kramskoy_christ-1883,rembrandt_portrait-of-hendrikje-stoffels-1654,train43K,6,different,different artists and works (Rembrandt Hendrickje vs Kramskoy Christ bust)
+pair_0304,ivan-kramskoy_christ-1883,henry-raeburn_portrait-of-the-reverend-john-thomson-minister-of-duddingston,test,8,different,different artists and works (Raeburn vs Kramskoy)
+pair_0305,ivan-kramskoy_portrait-a-i-kuindzhi-1872,rembrandt_self-portrait-with-beret-and-turned-up-collar-1659,train43K,8,different,different sitters and artists (Rembrandt vs Kramskoy)
+pair_0306,ivan-kramskoy_portrait-of-pavel-tretyakov-1876,diego-velazquez_portrait-of-a-cleric-1623,train43K,4,different,different sitters and artists (Velazquez vs Kramskoy)
+pair_0307,ivan-kramskoy_portrait-of-pavel-tretyakov-1876,joshua-reynolds_self-portrait-4,train43K,8,different,different sitters and artists (Reynolds vs Kramskoy)
+pair_0308,ivan-kramskoy_portrait-of-pavel-tretyakov-1876,rembrandt_self-portrait-with-beret-and-turned-up-collar-1659,train43K,8,different,different sitters and artists (Rembrandt vs Kramskoy)
+pair_0309,ivan-kramskoy_portrait-of-pavel-tretyakov-1876,grigoriy-myasoyedov_self-portrait-1878,train43K,8,different,different sitters and artists (Myasoyedov vs Kramskoy)
+pair_0310,ivan-kramskoy_portrait-of-pavel-tretyakov-1876,john-singer-sargent_hugh-lane-1906,train43K,8,different,different sitters and artists (Sargent vs Kramskoy)
+pair_0311,ivan-kramskoy_portrait-of-pavel-tretyakov-1876,pablo-picasso_portrait-of-aunt-pepa-1896,train43K,8,different,different sitters and artists (Picasso vs Kramskoy)
+pair_0312,ivan-kramskoy_portrait-of-pavel-tretyakov-1876,valentin-serov_portrait-of-the-singer-angelo-mazini-1890,train43K,6,different,different sitters and artists (Serov vs Kramskoy)
+pair_0313,ivan-kramskoy_portrait-of-pavel-tretyakov-1876,francisco-goya_bartholomew-suerda,train43K,8,different,different sitters and artists (Goya vs Kramskoy)
+pair_0314,ivan-kramskoy_portrait-of-the-sculptor-mark-antokolsky-1876,ivan-kramskoy_portrait-of-sculptor-mark-matveevitch-antokolsky-1876,val,6,"same artwork, different reproduction",same Kramskoy portrait of sculptor Mark Antokolsky (1876); different scan/colour
+pair_0315,ivan-kramskoy_portrait-of-yuri-stepanovich-nechaev-maltsev-1885,dmitry-levitzky_portrait-of-g-k-levitzky-artist-s-father-1779,test,8,different,different sitters and artists (Levitzky vs Kramskoy)
+pair_0316,ivan-kramskoy_portrait-samarin-1878,rembrandt_portrait-of-a-man-1667,train43K,8,different,different sitters and artists (Rembrandt vs Kramskoy)
+pair_0317,ivan-kramskoy_portrait-samarin-1878,ivan-kramskoy_samarin-yury-fyodorovich-1878,train43K,6,"same artwork, different reproduction",same Kramskoy portrait of Yury Samarin (1878); different scan/colour
+pair_0318,james-mcneill-whistler_old-mother-gerard-1859,paul-cezanne_still-life-vase-with-flowers-1903,train43K,8,different,different artists and works (Cezanne still life vs Whistler portrait)
+pair_0319,james-mcneill-whistler_the-master-smith-of-lyme-regis-1896,ivan-kramskoy_portrait-of-feodor-petrushevsky-1882,train43K,8,different,different sitters and artists (Kramskoy vs Whistler)
+pair_0320,james-mcneill-whistler_the-master-smith-of-lyme-regis-1896,joshua-reynolds_portrait-of-lord-john-townshend,test,8,different,different sitters and artists (Reynolds vs Whistler)
+pair_0321,james-tissot_letter-with-hats,james-tissot_without-a-dowry-aka-sunday-in-the-luxembourg-gardens-1885,train43K,6,"same artwork, different reproduction",same Tissot Luxembourg Gardens scene (Without a Dowry); different scan/colour
+pair_0322,jean-francois-millet_the-comtesse-of-valmont,francisco-goya_don-ramon-satue-1823,train43K,8,different,different sitters and artists (Goya vs Millet)
+pair_0323,jean-francois-millet_the-comtesse-of-valmont,henry-raeburn_portrait-of-thomas-reid,train43K,8,different,different sitters and artists (Raeburn vs Millet)
+pair_0324,john-collier_charles-robert-darwin-1883,john-singer-sargent_the-earl-of-wemyss-and-march-1909,train43K,8,different,different sitters and artists (Sargent vs Collier)
+pair_0325,john-collier_charles-robert-darwin-1883,thomas-eakins_portrait-of-william-b-kurtz-1903,train43K,8,different,different sitters and artists (Eakins vs Collier)
+pair_0326,john-singer-sargent_abbott-lawrence-lowell-1923,agnolo-bronzino_portrait-of-cosimo-i-de-medici-1,train43K,8,different,different sitters and artists (Bronzino vs Sargent)
+pair_0327,john-singer-sargent_colonel-thomas-edward-vickers-1896,john-singer-sargent_francis-j-h-jenkinson-1915,train43K,8,different,different sitters (Sargent: Jenkinson vs Vickers)
+pair_0328,john-singer-sargent_colonel-thomas-edward-vickers-1896,john-singer-sargent_sir-george-lewis-1896,train43K,8,different,different sitters (Sargent: Lewis vs Vickers)
+pair_0329,john-singer-sargent_colonel-thomas-edward-vickers-1896,thomas-eakins_portrait-of-frank-lindsay-greenwalt-1903,train43K,6,different,different sitters and artists (Eakins vs Sargent)
+pair_0330,john-singer-sargent_colonel-thomas-edward-vickers-1896,ivan-kramskoy_portrait-of-the-doctor-sergey-botkin-1882,test,8,different,different sitters and artists (Kramskoy vs Sargent)
+pair_0331,john-singer-sargent_colonel-thomas-edward-vickers-1896,george-frederick-watts_charles-booth(1),test,6,different,different sitters and artists (Watts vs Sargent)
+pair_0332,john-singer-sargent_edward-robinson-1903,henry-raeburn_self-portrait,train43K,6,different,different sitters and artists (Raeburn vs Sargent)
+pair_0333,john-singer-sargent_miss-eden-1905,john-singer-sargent_sybil-frances-grey-later-lady-eden-1905,val,0,same artwork,"identical image of the same Sargent portrait (Sybil Frances Grey / Miss Eden, 1905)"
+pair_0334,john-singer-sargent_sir-philip-sasson-phillip-albert-gustave-david-sasson-1923,joshua-reynolds_portrait-of-lord-john-townshend,test,8,different,different sitters and artists (Reynolds vs Sargent)
+pair_0335,john-singer-sargent_the-duchess-of-sutherland-1904,ivan-kramskoy_portrait-of-anatoly-kramskoy-the-artist-s-son-1882,train43K,8,different,different sitters and artists (Kramskoy vs Sargent)
+pair_0336,julius-leblanc-stewart_self-portrait-1886(1),georges-seurat_at-work-the-land-man-s-face-in-profile-leaning-forward,train43K,8,different,different artists and works (Seurat drawing vs Leblanc-Stewart)
+pair_0337,kazimir-malevich_portrait-of-a-man-1930,konstantin-makovsky_russian-beauty-in-kokoshnik,train43K,6,different,different sitters and artists (Makovsky vs Malevich)
+pair_0338,konstantin-makovsky_cairo-court,konstantin-makovsky_genre-scene-1,train43K,4,"same artwork, different reproduction",same Makovsky Cairo courtyard genre scene; different scan/colour
+pair_0339,leon-bonnat_charles-ephrussi,francisco-goya_mariano-goya,train43K,8,different,different sitters and artists (Goya vs Bonnat)
+pair_0340,mihaly-munkacsy_pluckmakers-1871,mihaly-munkacsy_making-lint-1871,train43K,8,"same artwork, different reproduction",same Munkacsy Making Lint / Pluckmakers (1871); different scan/colour
+pair_0341,pericles-pantazis_stubbornness,pablo-picasso_standing-nude-1908,train43K,8,different,different artists and works (Picasso nude vs Pantazis)
+pair_0342,salvador-dali_mme-reese,salvador-dali_portrait-of-mrs-reeves,train43K,6,"same artwork, different reproduction",same Dali portrait of Mrs Reeves; different scan/colour
+pair_0343,theodore-rousseau_not_detected_198916-1867,theodore-rousseau_the-pond-stormy-sky,val,0,same artwork,identical image of the same Theodore Rousseau stormy-sky pond
+pair_0344,thomas-eakins_portrait-of-montague-flagg-the-wanderer-1887,gustave-courbet_portrait-of-pierre-joseph-proudhon-1865,train43K,8,different,different sitters and artists (Courbet vs Eakins)
+pair_0345,thomas-eakins_portrait-of-montague-flagg-the-wanderer-1887,john-singer-sargent_sir-george-lewis-1896,train43K,8,different,different sitters and artists (Sargent vs Eakins)
+pair_0346,thomas-eakins_portrait-of-montague-flagg-the-wanderer-1887,henry-raeburn_rev-alexander-carlyle,train43K,8,different,different sitters and artists (Raeburn vs Eakins)
+pair_0347,thomas-eakins_portrait-of-montague-flagg-the-wanderer-1887,john-hoppner_peter-dolland-1779,train43K,8,different,different sitters and artists (Hoppner vs Eakins)
+pair_0348,thomas-eakins_portrait-of-montague-flagg-the-wanderer-1887,david-wilkie_unknown-man-formerly-known-as-james-northcote,test,8,different,different sitters and artists (Wilkie vs Eakins)
+pair_0349,thomas-eakins_study-for-ships-and-sailboats-on-the-delaware-1874,thomas-eakins_ships-and-sailboats-on-the-delaware-1874,train43K,8,different,different Eakins works (finished Delaware painting vs sparser study)
+pair_0350,vasily-perov_portrait-of-a-merchant-s-t-kuznetsov-1873,ivan-kramskoy_portrait-of-ekaterina-kornilova-1880,train43K,8,different,different sitters and artists (Kramskoy vs Perov)
+pair_0351,vasily-perov_portrait-of-the-historian-mikhail-pogodin-1872,tintoretto_portrait-of-the-sculptor-jacopo-sansovino-1570,train43K,8,different,different sitters and artists (Tintoretto vs Perov)
+pair_0352,vasily-perov_portrait-of-the-historian-mikhail-pogodin-1872,maurice-quentin-de-la-tour_fran-ois-emmanuel-pommyer-abbot-of-bonneval,train43K,8,different,different sitters and artists (de La Tour vs Perov)
+pair_0353,vasily-perov_portrait-of-the-historian-mikhail-pogodin-1872,ivan-kramskoy_portrait-of-sofia-nikolaevna-kramskoy-the-artist-s-wife-1879,test,4,different,different sitters and artists (Kramskoy vs Perov)
+pair_0354,vasily-surikov_head-of-khakasy-1893,toyen_a-lady-with-the-sunshade-1945,train43K,6,different,different artists and works (Toyen vs Surikov)
+pair_0355,vasily-surikov_head-of-khakasy-1893,thomas-eakins_william-rush-carving-the-allegorical-figure-of-the-schuylkill,train43K,6,different,different artists and works (Eakins drawing vs Surikov)
+pair_0356,vasily-surikov_head-of-khakasy-1893,patrick-caulfield_cross-1968,test,4,different,different artists and works (Caulfield vs Surikov)
+pair_0357,viktor-vasnetsov_portrait-of-mikhail-nesterov-1926-1,mikhail-nesterov_portrait-of-victor-vasnetsov-1925,train43K,6,"same artwork, different reproduction",same portrait of Vasnetsov by Nesterov (1925) under two titles; different scan
+pair_0358,vincent-van-gogh_farmhouse-at-night-1883(1),vincent-van-gogh_tabernacle-in-the-heath,train43K,8,"same artwork, different reproduction",same van Gogh drawing of a cottage at night in the heath; different scan
+pair_0359,vincent-van-gogh_fish-drying-barn-in-scheveningen-1882(1),vincent-van-gogh_the-fish-drying-barn-at-scheveningen,train43K,6,"same artwork, different reproduction",same van Gogh fish-drying barn at Scheveningen drawing; different scan
+pair_0360,vincent-van-gogh_mower-after-millet-1881,vincent-van-gogh_reaper-with-sickle-after-millet-1881,test,8,uncertain,van Gogh reaper vs mower after Millet: near-identical figure and pose; cannot rule out same drawing
+pair_0361,vincent-van-gogh_peasant-woman-at-the-washtub-and-peasant-woman-hanging-up-the-laundry-1885,vincent-van-gogh_woman-by-the-wash-tub-in-the-garden-1885,train43K,4,"same artwork, different reproduction",same van Gogh drawing of woman at the washtub in the garden (1885); different scan
+pair_0362,vincent-van-gogh_peasant-woman-stooping-1885,vincent-van-gogh_peasant-woman-gleaning-1885-1,train43K,8,"same artwork, different reproduction",same van Gogh drawing of stooping peasant woman gleaning (1885); different scan
+pair_0363,vincent-van-gogh_planting-beets-1885,vincent-van-gogh_peasant-woman-planting-beets-2-1885,train43K,6,"same artwork, different reproduction",same van Gogh drawing of peasant woman planting beets (1885); different scan
+pair_0364,vincent-van-gogh_scheveningen-woman-knitting-1881,vincent-van-gogh_young-woman-knitting-1881,train43K,4,"same artwork, different reproduction",same van Gogh Scheveningen woman knitting (1881); different scan/colour
+pair_0365,vincent-van-gogh_woman-digging-1883,winston-churchill_great-hall-at-blenheim-palace(1),val,8,different,different artists and works (Churchill interior vs van Gogh drawing)
+pair_0366,vincent-van-gogh_young-man-with-a-pipe-1884,boris-kustodiev_portrait-of-a-singer-i-v-ershov-1905,train43K,6,different,different sitters and artists (Kustodiev vs van Gogh)
+pair_0367,vladimir-makovsky_a-portrait-of-e-i-makovsky-1880,rembrandt_portrait-of-a-man-1667,train43K,8,different,different sitters and artists (Rembrandt vs Makovsky)
+pair_0368,vladimir-makovsky_portrait-of-alexei-ivanovitch-strelkovsky-1889,vasily-surikov_portrait-of-alexander-suvorov-1907,train43K,8,different,different sitters and artists (Surikov vs Makovsky)
+pair_0369,wilhelm-leibl_m-dchen-am-fenster-1899,tintoretto_self-portrait-with-a-book,train43K,8,different,different sitters and artists (Tintoretto vs Leibl)
+pair_0370,william-merritt-chase_portrait-of-a-gentleman,grigoriy-myasoyedov_portrait-of-fiddler-v-g-walter-1902,train43K,8,different,different sitters and artists (Myasoyedov vs Chase)
+pair_0371,bernardo-bellotto_fortress-of-sonnenstein-above-pirna-1756,bernardo-bellotto_view-of-pirna-from-the-sonnenstein-castle,train43K,8,uncertain,Bellotto Pirna from Sonnenstein: several autograph versions exist; cannot tell version from reproduction
+pair_0372,bernardo-bellotto_the-schloss-hof-garden-side-1758,bernardo-bellotto_the-imperial-summer-residence-garden-1758,train43K,4,uncertain,Bellotto Schloss Hof garden side (1758): near-identical; version vs reproduction unclear
+pair_0373,bernardo-bellotto_zwinger-waterway-1750,maxime-maufra_isle-of-brehat-1892,test,6,different,different artists and works (Maufra seascape vs Bellotto Zwinger)
+pair_0374,canaletto_piazza-san-marco-looking-east,canaletto_piazza-san-marco-looking-east-from-the-north-west-corner,val,4,"same artwork, different reproduction",same Canaletto Piazza San Marco looking east through arcade; different scan/colour
+pair_0375,carl-ludwig-johann-christineck_teresa-schnee-1777,aleksey-antropov_portrait-of-princess-t-a-trubetzkaya,train43K,6,different,different sitters and artists (Antropov vs Christineck)
+pair_0376,dmitry-levitzky_portrait-of-gubarev-1788,dmitry-levitzky_portrait-of-prince-alexander-prozorovskiy-1779,train43K,8,different,different sitters (Levitzky: Prozorovsky vs Gubarev)
+pair_0377,dmitry-levitzky_portrait-of-gubarev-1788,ivan-kramskoy_portrait-of-the-doctor-sergey-botkin-1882,test,8,different,different sitters and artists (Kramskoy vs Levitzky)
+pair_0378,dmitry-levitzky_portrait-of-gubarev-1788,george-frederick-watts_charles-booth(1),test,6,different,different sitters and artists (Watts vs Levitzky)
+pair_0379,fyodor-rokotov_portrait-of-an-unknown-man-in-a-green-caftan,dmitry-levitzky_eustathius-palmenbah,train43K,8,different,different sitters and artists (Levitzky vs Rokotov)
+pair_0380,fyodor-rokotov_portrait-of-an-unknown-man-in-a-green-caftan,francisco-goya_bartholomew-suerda,train43K,8,different,different sitters and artists (Goya vs Rokotov)
+pair_0381,fyodor-rokotov_portrait-of-an-unknown-man-in-a-green-caftan,camille-pissarro_portrait-of-nini-1884,test,8,different,different sitters and artists (Pissarro vs Rokotov)
+pair_0382,fyodor-rokotov_portrait-of-an-unknown-woman-in-a-red-dress,tintoretto_self-portrait-with-a-book,train43K,8,different,different sitters and artists (Tintoretto vs Rokotov)
+pair_0383,fyodor-rokotov_portrait-of-an-unknown-woman-in-a-red-dress,diego-velazquez_portrait-of-philip-iv-of-spain-1656,val,8,different,different sitters and artists (Velazquez vs Rokotov)
+pair_0384,fyodor-rokotov_portrait-of-n-e-struisky,diego-velazquez_portrait-of-a-cleric-1623,train43K,8,different,different sitters and artists (Velazquez vs Rokotov)
+pair_0385,george-morland_smugglers-1792,george-morland_the-smugglers-1792,train43K,6,"same artwork, different reproduction",same Morland The Smugglers (1792); different scan/colour
+pair_0386,jean-baptiste-simeon-chardin_the-signatories,jean-baptiste-simeon-chardin_young-draughtsman-copying-an-academy-study,train43K,8,"same artwork, different reproduction",same Chardin young draughtsman copying an academy study; different scan/colour
+pair_0387,jean-marc-nattier_marquise-de-pompadour-as-diana-1746,jean-marc-nattier_jeanne-antoinette-poisson-marquise-de-pompadour-as-diana-1746,train43K,0,same artwork,identical image of the same Nattier Marquise de Pompadour as Diana (1746)
+pair_0388,joseph-wright_sir-william-fitzherbert-as-a-boy,rembrandt_a-scholar-1631,train43K,8,different,different sitters and artists (Rembrandt vs Wright of Derby)
+pair_0389,louise-elisabeth-vigee-le-brun_portrait-of-count-pavel-shuvalov-1799,grigoriy-myasoyedov_self-portrait-1878,train43K,8,different,different sitters and artists (Myasoyedov vs Vigee-Le Brun)
+pair_0390,louise-elisabeth-vigee-le-brun_portrait-of-count-pavel-shuvalov-1799,ivan-kramskoy_marc,train43K,8,different,different sitters and artists (Kramskoy vs Vigee-Le Brun)
+pair_0391,louise-elisabeth-vigee-le-brun_portrait-of-count-pavel-shuvalov-1799,vasily-tropinin_old-woman-with-a-hen-portrait-of-the-artist-s-wife-1856,train43K,8,different,different sitters and artists (Tropinin vs Vigee-Le Brun)
+pair_0392,louise-elisabeth-vigee-le-brun_portrait-of-count-pavel-shuvalov-1799,rembrandt_old-man-dressed-as-saint-paul-1632,val,8,different,different sitters and artists (Rembrandt vs Vigee-Le Brun)
+pair_0393,louise-elisabeth-vigee-le-brun_portrait-of-count-pavel-shuvalov-1799,henry-raeburn_portrait-of-the-reverend-john-thomson-minister-of-duddingston,test,6,different,different sitters and artists (Raeburn vs Vigee-Le Brun)
+pair_0394,maurice-quentin-de-la-tour_francois-dachery-childhood-friend-of-maurice-quentin-de-la-tour,maurice-quentin-de-la-tour_francois-dachery,train43K,8,uncertain,"de La Tour pastels of Francois Dachery: same sitter and pose, coat colour differs; version vs colour cast unclear"
+pair_0395,maurice-quentin-de-la-tour_marc-rene-marquis-de-voyer-d-argenson,maurice-quentin-de-la-tour_marc-ren-marquis-de-voyer-d-argenson-lieutenant-general-of-the-king-s-armies-inspector-general,train43K,6,uncertain,de La Tour Marquis d'Argenson in armour: pastel vs oil-looking version; replica vs reproduction unclear
+pair_0396,pietro-longhi_a-shepherd-girl-with-a-basket,john-singer-sargent_portrait-of-douglas-vickers-1914,val,8,different,different artists and works (Sargent portrait vs Longhi shepherd girl)
+pair_0397,pietro-longhi_portrait-of-francesco-guardi,ivan-aivazovsky_portrait-of-a-man-1850,train43K,8,different,different sitters and artists (Aivazovsky vs Longhi)
+pair_0398,vladimir-borovikovsky_elisabeth-alexeievna-tsarina-of-russia-1814,vasily-perov_portrait-of-unknown-man-1870,train43K,8,different,different sitters and artists (Perov vs Borovikovsky)
+pair_0399,adolphe-joseph-thomas-monticelli_elegant-gathering,marcel-duchamp_bare-stripped-bride-1968,train43K,6,different,different artists and works (Duchamp etching vs Monticelli)
+pair_0400,alfred-stevens_girl-with-duck-1893,ilya-mashkov_still-life-3,train43K,8,different,different artists and works (Mashkov still life vs Stevens)
+pair_0401,caspar-david-friedrich_dolmen-in-snow-1807,caspar-david-friedrich_passage-grave-in-the-snow,train43K,4,"same artwork, different reproduction",same Friedrich Dolmen in the Snow (1807); different scan
+pair_0402,caspar-david-friedrich_on-board-of-a-sailing-ship,aleksey-savrasov_summer-landscape-with-windmills-1859,val,8,different,different artists and works (Savrasov landscape vs Friedrich ship)
+pair_0403,caspar-david-friedrich_the-stages-of-life,maurice-utrillo_donjon-street,train43K,8,different,different artists and works (Utrillo vs Friedrich)
+pair_0404,cornelis-springer_street-scene-with-figures-1871,cornelis-springer_village-view,train43K,4,"same artwork, different reproduction",same Springer village street scene (1871) under two titles; different scan
+pair_0405,cornelis-springer_the-herengracht-aan-de-amstel,cornelis-springer_view-on-heerengracht-in-amsterdam,train43K,8,uncertain,"Springer Herengracht in winter: same composition, lighting differs strongly; version vs colour cast unclear"
+pair_0406,dante-gabriel-rossetti_the-loving-cup,dante-gabriel-rossetti_the-loving-cup-1867,val,8,uncertain,"Rossetti The Loving Cup: oil and watercolour versions exist; colours differ, cannot tell which"
+pair_0407,david-wilkie_sir-robert-liston-diplomat-1811,henri-fantin-latour_self-portrait-1895,train43K,8,different,different sitters and artists (Fantin-Latour vs Wilkie)
+pair_0408,david-wilkie_sir-robert-liston-diplomat-1811,antoine-watteau_sylvia-portrait-of-jeanne-rose-guyonne-benozzi,train43K,8,different,different sitters and artists (Watteau vs Wilkie)
+pair_0409,ferdinand-hodler_self-portrait-with-stand-1879,ivan-kramskoy_a-girl-with-her-scythe-1873,train43K,8,different,different sitters and artists (Kramskoy vs Hodler)
+pair_0410,francisco-goya_duke-of-alba,francisco-goya_duke-of-alba-1795,train43K,4,uncertain,"Goya Duke of Alba: same composition, very different colour; two versions exist, cannot tell which"
+pair_0411,francisco-goya_jose-pio-de-molina,amedeo-modigliani_bust-of-manuel-humbert,train43K,8,different,different sitters and artists (Modigliani vs Goya)
+pair_0412,francisco-goya_marquesa-mariana-de-pontejos,francisco-goya_the-marquesa-de-pontejos,val,4,"same artwork, different reproduction",same Goya Marquesa de Pontejos; different scan/colour
+pair_0413,francisco-goya_the-count-of-tajo,el-greco_antonio-de-covarrubias-1594,train43K,8,different,different sitters and artists (El Greco vs Goya)
+pair_0414,francisco-goya_the-count-of-tajo,tintoretto_self-portrait-with-a-book,train43K,6,different,different sitters and artists (Tintoretto vs Goya)
+pair_0415,francisco-goya_the-count-of-tajo,thomas-eakins_portrait-of-mary-adeline-williams-1899,train43K,6,different,different sitters and artists (Eakins vs Goya)
+pair_0416,francisco-goya_the-count-of-tajo,henry-raeburn_hugh-william-williams,train43K,6,different,different sitters and artists (Raeburn vs Goya)
+pair_0417,francisco-goya_the-forge,patrick-caulfield_vessel-1987,train43K,8,different,different artists and works (Caulfield vs Goya)
+pair_0418,francisco-goya_trials-1799,sean-scully_untitled-1973,train43K,8,different,different artists and works (Scully vs Goya etching)
+pair_0419,fyodor-bronnikov_bellagio-1875-1,alfred-sisley_barges-at-billancourt-1877,train43K,6,different,different artists and works (Sisley vs Bronnikov)
+pair_0420,fyodor-solntsev_images-of-the-vc-vasily-dmitrievich-and-vc-sofia-vitovtovna,fyodor-solntsev_silk-robe-of-tsar-ivan-vasilyevich-iv,train43K,8,different,different Solntsev costume plates (robes of Ivan IV vs grand-ducal couple)
+pair_0421,fyodor-solntsev_kiev-province-from-village-kurenevka,karl-bodmer_a-missouri-indian-an-oto-indian-and-the-chief-of-the-puncas-plate-7-from-travels-in-the-1844,train43K,8,different,different artists and works (Bodmer vs Solntsev)
+pair_0422,george-frederick-watts_portrait-of-sir-john-everett-millais-1871(1),joshua-reynolds_george-ashby,train43K,8,different,different sitters and artists (Reynolds vs Watts)
+pair_0423,george-frederick-watts_portrait-of-sir-john-everett-millais-1871(1),joshua-reynolds_portrait-of-robert-shafto-called-bonnie-bobbie-shafto,train43K,8,different,different sitters and artists (Reynolds vs Watts)
+pair_0424,george-frederick-watts_portrait-of-sir-john-everett-millais-1871(1),thomas-eakins_portrait-of-william-b-kurtz-1903,train43K,8,different,different sitters and artists (Eakins vs Watts)
+pair_0425,george-frederick-watts_portrait-of-sir-john-everett-millais-1871(1),dmitry-levitzky_portrait-of-g-k-levitzky-artist-s-father-1779,test,8,different,different sitters and artists (Levitzky vs Watts)
+pair_0426,gheorghe-tattarescu_ion-gr-di-teanu,nikolai-ge_portrait-of-joseph-daumang,train43K,8,different,different sitters and artists (Ge vs Tattarescu)
+pair_0427,gustave-dore_abdiel-and-satan,gustave-dore_this-greeting-on-thy-impious-crest-receive,test,6,"same artwork, different reproduction",same Dore engraving Abdiel and Satan (Paradise Lost); different scan
+pair_0428,gustave-dore_the-people-mourning-over-the-ruins-of-jerusalem-lamentations-1-1-2-1866,gustave-dore_people-mourn-over-the-destruction-of-jerusalem,train43K,8,"same artwork, different reproduction",same Dore engraving people mourning over Jerusalem; different scan/crop with caption
+pair_0429,henry-raeburn_portrait-of-the-rev-william-paul,konstantin-makovsky_male-portrait-1,train43K,6,different,different sitters and artists (Makovsky vs Raeburn)
+pair_0430,ivan-aivazovsky_night-in-the-crimea-view-of-ayu-dag-1850,ivan-aivazovsky_night-at-crimea-view-on-ayu-dag-1859,train43K,8,uncertain,Aivazovsky moonlit Ayu-Dag dated 1850 vs 1859: same composition; version vs reproduction unclear
+pair_0431,john-atkinson-grimshaw_in-the-winter,eugene-boudin_the-beach-at-trouville-1863,train43K,8,different,different artists and works (Boudin vs Grimshaw)
+pair_0432,john-hoppner_richard-bache,joshua-reynolds_kitty-fisher-1759,train43K,8,different,different sitters and artists (Reynolds vs Hoppner)
+pair_0433,joseph-wright_a-grotto-in-the-gulf-of-salerno-sunset,joseph-wright_a-cavern-evening,train43K,6,different,"different Wright of Derby grotto paintings (cavern evening vs Salerno sunset, boat and light differ)"
+pair_0434,joseph-wright_a-grotto-in-the-gulf-of-salerno-sunset,joseph-wright_a-grotto-in-the-gulf-of-salernum-with-the-figure-of-julia-banished-from-rome-1780,train43K,8,different,"different Wright of Derby grotto paintings (Julia figure vs boat, different composition)"
+pair_0435,karl-bryullov_portrait-of-the-architect-a-bolotov,antoine-pesne_portrait-of-a-man,train43K,8,different,different sitters and artists (Pesne vs Bryullov)
+pair_0436,karl-bryullov_portrait-of-the-architect-a-bolotov,giovanni-antonio-boltraffio_the-poet-casio-1500,train43K,8,different,different sitters and artists (Boltraffio vs Bryullov)
+pair_0437,karl-bryullov_portrait-of-the-architect-a-bolotov,tintoretto_portrait-of-a-man-3,train43K,8,different,different sitters and artists (Tintoretto vs Bryullov)
+pair_0438,karl-bryullov_portrait-of-the-architect-a-bolotov,henry-raeburn_portrait-of-the-reverend-john-thomson-minister-of-duddingston,test,8,different,different sitters and artists (Raeburn vs Bryullov)
+pair_0439,karl-bryullov_portrait-of-the-architect-a-bolotov,orest-kiprensky_portrait-of-v-s-khvostov-1814,test,8,different,different sitters and artists (Kiprensky vs Bryullov)
+pair_0440,konstantin-makovsky_boyaryshnya-9,konstantin-makovsky_portrait-8,train43K,6,"same artwork, different reproduction",same Makovsky boyaryshnya in kokoshnik; different scan/colour
+pair_0441,konstantin-makovsky_female-portrait-10,konstantin-makovsky_portrait-21,train43K,4,"same artwork, different reproduction",same Makovsky portrait of a dark-haired woman with roses; different scan
+pair_0442,konstantin-makovsky_portrait,konstantin-makovsky_portrait-of-the-young-lady-with-pink-bow,train43K,4,uncertain,"Makovsky young lady with pink bow: same sitter and pose, background colour differs; version vs colour cast unclear"
+pair_0443,konstantin-makovsky_zaporozhye-cossack,vladimir-makovsky_zaporizhzhya-cossack-1884,train43K,0,same artwork,identical image of the same Makovsky Zaporozhye Cossack (1884)
+pair_0444,maxim-vorobiev_the-nevka-by-the-elagin-island-1829,maxim-vorobiev_elagin-island-at-night-1820,train43K,8,uncertain,Vorobiev Elagin Island (1820 night vs 1829 day): same composition; separate versions likely but unclear
+pair_0445,orest-kiprensky_portrait-of-nikita-mikhailovich-muraviev-1813,orest-kiprensky_portrait-of-nikita-muraviev-1813,train43K,6,"same artwork, different reproduction",same Kiprensky drawing of Nikita Muraviev (1813); different scan
+pair_0446,orest-kiprensky_portrait-of-sergei-nikiforovich-marin-1812,john-french-sloan_boy-with-piccolo-1904,train43K,8,different,different sitters and artists (Sloan vs Kiprensky)
+pair_0447,paul-cezanne_the-barque-of-dante-1870,edouard-manet_the-barque-of-dante-copy-after-delacroix-1854,train43K,8,different,different copies after Delacroix's Barque of Dante (Manet vs Cezanne)
+pair_0448,pierre-paul-prud'hon_etienne-renon-de-franois-1795,henri-fantin-latour_self-portrait-1895,train43K,8,different,different sitters and artists (Fantin-Latour vs Prud'hon)
+pair_0449,pierre-paul-prud'hon_monsieur-lavallee-1809,joshua-reynolds_man-in-a-brown-coat,train43K,8,different,different sitters and artists (Reynolds vs Prud'hon)
+pair_0450,pierre-paul-prud'hon_monsieur-lavallee-1809,felix-vallotton_portrait-of-verlaine-1902,train43K,8,different,different sitters and artists (Vallotton vs Prud'hon)
+pair_0451,pierre-paul-prud'hon_monsieur-lavallee-1809,vasily-tropinin_karamzin,train43K,8,different,different sitters and artists (Tropinin vs Prud'hon)
+pair_0452,pierre-paul-prud'hon_monsieur-lavallee-1809,diego-velazquez_portrait-of-philip-iv-of-spain-1656,val,8,different,different sitters and artists (Velazquez vs Prud'hon)
+pair_0453,pierre-paul-prud'hon_russian-general-a-i-osterman-tolstoi,orest-kiprensky_portrait-of-the-prince-p-scherbatov-1808,train43K,6,different,different sitters and artists (Kiprensky vs Prud'hon)
+pair_0454,polychronis-lembesis_captain-benes,polychronis-lembesis_captain-ben-1,train43K,0,same artwork,identical image of the same Lembesis Captain Benes
+pair_0455,theodore-gericault_officer-of-chasseurs-of-the-imperial-guard,theodore-gericault_head-of-a-horseman,test,4,"same artwork, different reproduction",same Gericault head of a chasseur officer; different scan
+pair_0456,thomas-cole_landscape-composition-italian-scenery-1832,camille-corot_landscape-composition-italian-scenery-1832,test,0,same artwork,"identical image (Thomas Cole Italian scenery, 1832) misattributed to Corot in the reference"
+pair_0457,thomas-cole_valley-of-the-vaucluse-1841,thomas-cole_the-fountain-of-vaucluse-1841,train43K,4,"same artwork, different reproduction",same Thomas Cole Vaucluse (1841) under two titles; different scan/colour
+pair_0458,vasily-tropinin_not_detected_241138(1),vasily-tropinin_portrait-of-fedor-semenovich-moslova,train43K,2,"same artwork, different reproduction",same Tropinin group portrait (Moslov); different scan
+pair_0459,vasily-tropinin_portret-lieutenant-captain-ivan-vasilyevich-alymova-1819,joshua-reynolds_self-portrait-4,train43K,8,different,different sitters and artists (Reynolds vs Tropinin)
+pair_0460,vasily-tropinin_portret-lieutenant-captain-ivan-vasilyevich-alymova-1819,grigoriy-myasoyedov_self-portrait-1878,train43K,8,different,different sitters and artists (Myasoyedov vs Tropinin)
+pair_0461,vasily-tropinin_portret-lieutenant-captain-ivan-vasilyevich-alymova-1819,vasily-perov_portrait-of-sergei-timofeevich-aksakov-1872,train43K,8,different,different sitters and artists (Perov vs Tropinin)
+pair_0462,vasily-tropinin_portret-lieutenant-captain-ivan-vasilyevich-alymova-1819,henry-raeburn_portrait-of-the-reverend-john-thomson-minister-of-duddingston,test,8,different,different sitters and artists (Raeburn vs Tropinin)
+pair_0463,william-turner_the-wreck-of-a-transport-ship,william-turner_shipwreck,train43K,8,"same artwork, different reproduction",same Turner Wreck of a Transport Ship / Shipwreck; different scan/colour
+pair_0464,arnold-bã¶cklin_melancholy,leon-bakst_dmitry-filosof-portrait-1897,train43K,8,different,different sitters and artists (Bakst vs Bocklin)
+pair_0465,fernand-khnopff_tude-de-femme-1891,dmitry-levitzky_mikhail-sergeevich-potemkin,train43K,8,different,different sitters and artists (Levitzky vs Khnopff)
+pair_0466,gustav-klimt_old-woman-1909,ilya-repin_portrait-of-painter-and-sculptor-mikhail-osipovich-mikeshin-1888,train43K,6,different,different sitters and artists (Repin vs Klimt)
+pair_0467,gustav-klimt_old-woman-1909,john-singer-sargent_leon-delafosse,train43K,6,different,different sitters and artists (Sargent vs Klimt)
+pair_0468,james-tissot_jacob-deceives-isaac,james-tissot_isaac-feels-jacob-as-rebekah,train43K,8,"same artwork, different reproduction",same Tissot Isaac blessing Jacob; greyscale vs colour reproduction
+pair_0469,nicholas-roerich_ambassador-1914,nicholas-roerich_messenger-island-1914,train43K,4,"same artwork, different reproduction",same Roerich Messenger/Ambassador island (1914); different scan
+pair_0470,nicholas-roerich_glow-1914,nicholas-roerich_glow-1914-1,train43K,8,uncertain,"Roerich The Glow (1914): red vs greyscale; same composition, version vs reproduction unclear"
+pair_0471,nicholas-roerich_himalayas-study-holy-himalayas-1933,nicholas-roerich_sacred-himalayas-1933,train43K,6,uncertain,"Roerich Himalayas (1933) sacred/holy: same composition, colours differ; study vs reproduction unclear"
+pair_0472,nicholas-roerich_kangchenjunga-1936-1,nicholas-roerich_kangchenjunga-1924-2,test,6,uncertain,"Roerich Kangchenjunga 1924 vs 1936: same composition; Roerich repeated motifs, version unclear"
+pair_0473,nicholas-roerich_kardang-study-1932,nicholas-roerich_kardang-1932,train43K,2,"same artwork, different reproduction",same Roerich Kardang (1932); different scan/colour
+pair_0474,nicholas-roerich_ladakh-4,nicholas-roerich_ladakh-himalayas,train43K,6,"same artwork, different reproduction",same Roerich Ladakh Himalayas; different scan
+pair_0475,nicholas-roerich_lake-of-the-nagas-1932,nicholas-roerich_lake,train43K,2,"same artwork, different reproduction",same Roerich Lake of the Nagas (1932); different scan/colour
+pair_0476,nicholas-roerich_mount-m-1931-1,nicholas-roerich_mountains,train43K,4,uncertain,"Roerich mountains (Mount M): same composition, very different colour; version vs colour cast unclear"
+pair_0477,nicholas-roerich_rocks-of-ladakh-1933,nicholas-roerich_rocks-of-ladakh-1933-1,train43K,2,"same artwork, different reproduction",same Roerich Rocks of Ladakh (1933); different scan
+pair_0478,nicholas-roerich_rocks-of-mongolia-1933,nicholas-roerich_shara-muren-1936,train43K,6,"same artwork, different reproduction",same Roerich Shara-Muren / Rocks of Mongolia; different scan
+pair_0479,nicholas-roerich_spell-new-moon-1938,konstantin-makovsky_parisienne-in-pearl-necklace,train43K,8,different,different artists and works (Makovsky portrait vs Roerich moon)
+pair_0480,nicholas-roerich_stones-and-rocks-1919-1,nicholas-roerich_karelian-landscape-1918,train43K,4,"same artwork, different reproduction",same Roerich Karelian landscape / Stones and Rocks; different scan
+pair_0481,nicholas-roerich_sunset-1931,nicholas-roerich_himalayas-guru-guri-dhar-1933,train43K,8,uncertain,"Roerich Himalayas blue range: same composition, colours differ; Roerich repeated motifs, version unclear"
+pair_0482,nicholas-roerich_tibet-1933,nicholas-roerich_shara-muren-1936,train43K,6,"same artwork, different reproduction",same Roerich Shara-Muren rocks under another title (Tibet); different scan
+pair_0483,odilon-redon_vitrage,odilon-redon_the-window,train43K,4,"same artwork, different reproduction",same Redon The Window / Vitrage; different scan/colour
+pair_0484,katsushika-hokusai_shoki-riding-a-shishi-lion,amadeo-de-souza-cardoso_pont-l-albb-1907,train43K,8,different,different artists and works (Souza-Cardoso vs Hokusai)
+pair_0485,keisai-eisen_clearing-weather-at-awazu-awazu-seiran-tamagawa-of-the-maru-ebiya-kamuro-katsumi-and-shinobu-no,keisai-eisen_the-courtesan-tamagawa-of-the-maruebiya-house(1),train43K,6,"same artwork, different reproduction",same Keisai Eisen courtesan Tamagawa woodblock; different impression/scan
+pair_0486,kitagawa-utamaro_geisha,kitagawa-utamaro_pensive-love,test,4,"same artwork, different reproduction",same Utamaro Pensive Love woodblock; different impression/scan
+pair_0487,utagawa-kunisada_not_detected_240345,billy-childish_reunion-owl-2011,train43K,8,different,different artists and works (Childish vs Kunisada)

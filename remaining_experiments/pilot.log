@@ -1,0 +1,11 @@
+Original end-to-end vs saved logits max abs: 7.808208465576172e-05
+{
+  "max_original_logit_difference": 7.808208465576172e-05,
+  "target_classes_match": true,
+  "modified_images": 16,
+  "modified_batch_seconds": 0.2690861859591678,
+  "images_per_second": 59.460503120839896,
+  "cuda_peak_allocated": 2375646208,
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "protocol_sha256": "82d041be51241d31cd8e05b7d3452956f8046803f102231a771c28de56c23a32"
+}

@@ -1,0 +1,41 @@
+{
+  "model": "PROBE",
+  "scope": "EXPLORATORY validation; same first 32 predetermined images, batch8 FP32, two warmup batches and five passes; fresh worker; complete CLIP object loaded for both, not a stripped minimum-memory probe",
+  "checkpoint": "runs/revision_B/step1/probe100_lr1e-3_s42/best.pt",
+  "checkpoint_sha256": "9bc849047af90c51aba07b73284663ba4d99785f1e5b0e3a75cb2dc260b177b2",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "torch": "2.13.0+cu132",
+  "python": "3.12.3",
+  "batch": 8,
+  "precision": "FP32, no autocast, TF32 off",
+  "text_cache": false,
+  "images": 32,
+  "measured_images_with_repetition": 160,
+  "load_seconds": 0.5453416419913992,
+  "model_baseline_allocated_bytes": 1712282624,
+  "model_baseline_reserved_bytes": 1761607680,
+  "peak_allocated_bytes": 2059189248,
+  "peak_reserved_bytes": 2208301056,
+  "loaded_RSS_bytes": 1042853888,
+  "peak_sampled_process_RSS_bytes": 2706989056,
+  "peak_ru_maxrss_bytes": 2720931840,
+  "amortized_ms_per_image": {
+    "decode_s": 2.9750440633506514,
+    "features_s": 12.533066113246605,
+    "head_s": 0.0040331477066501975,
+    "complete_s": 15.518979669286637,
+    "output_s": 0.006836344982730225
+  },
+  "complete_throughput_images_s": 64.4372259845848,
+  "warm_batch_median_ms": 121.49102048715577,
+  "warm_batch_p95_ms": 143.60514013678767,
+  "caveats": [
+    "GPU synchronized wall-clock includes CPU work, decoding and output transfer; excludes model load and receipt checks",
+    "OS file caches may be warm; hardware-specific batch8 observation, not interactive single-image latency",
+    "RAM peak includes model import/load and allocator retention; CUDA reserved is not device-wide usage",
+    "Feature latency includes actual feature branches used by each model; same encoder parameters, images, precision and hardware",
+    "No training or holdout inference"
+  ],
+  "protocol_sha256": "82d041be51241d31cd8e05b7d3452956f8046803f102231a771c28de56c23a32",
+  "script_sha256": "ab8ae4a716706cfd3210722cb33e29c70ce69e9bfe4a6d893a62259be22587d7"
+}

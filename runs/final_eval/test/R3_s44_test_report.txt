@@ -1,0 +1,13 @@
+unique-top n=2246  acc=0.4996  macroF1=0.3379  balAcc=0.3458
+softCE=1.8313  KL=0.7778  Brier=0.1908
+emotion          sup      P      R     F1  top2R #pred  AUROC     AP chance
+amusement        189  0.379  0.339  0.358  0.540   169  0.741  0.610  0.359
+awe              357  0.416  0.359  0.385  0.686   308  0.690  0.751  0.568
+contentment      911  0.699  0.697  0.698  0.841   908  0.813  0.910  0.698
+excitement        97  0.234  0.330  0.274  0.577   137  0.689  0.520  0.315
+anger             14  0.000  0.000  0.000  0.000     2  0.692  0.199  0.095
+disgust          106  0.394  0.123  0.187  0.198    33  0.730  0.425  0.198
+fear             201  0.425  0.567  0.486  0.736   268  0.778  0.611  0.286
+sadness          232  0.390  0.418  0.403  0.586   249  0.715  0.572  0.343
+something_else   139  0.227  0.281  0.251  0.446   172  0.616  0.540  0.431
+saved /workspace/ArtFAE-Net/runs/final_eval/test/R3_s44_test_report.json

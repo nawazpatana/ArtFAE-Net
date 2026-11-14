@@ -1,0 +1,10 @@
+{
+  "identity_masks_preserve_source_pixels": true,
+  "source_objects_unchanged": true,
+  "outside_visible_crop_preserved": true,
+  "deletion_retention_complements_correct": true,
+  "mask_counts_match_declared_fractions": true,
+  "constant_and_linear_partial_AUC_analytic_checks": true,
+  "CPU_only": true,
+  "no_model_loaded": true
+}

@@ -1,0 +1,99 @@
+group,checkpoint,total,trainable,note
+runs/L14_R1,/workspace/ArtFAE-Net/runs/L14_R1_s42/best.pt,762249,762249,
+runs/L14_R1,/workspace/ArtFAE-Net/runs/L14_R1_s43/best.pt,762249,762249,
+runs/L14_R1,/workspace/ArtFAE-Net/runs/L14_R1_s44/best.pt,762249,762249,
+runs/L14_R1,/workspace/ArtFAE-Net/runs/L14_R1_s45/best.pt,762249,762249,
+runs/L14_R1,/workspace/ArtFAE-Net/runs/L14_R1_s46/best.pt,762249,762249,
+runs/L14_R3_lam0.3,/workspace/ArtFAE-Net/runs/L14_R3_lam0.3_s42/best.pt,763410,763410,
+runs/L14_R3_lam0.3,/workspace/ArtFAE-Net/runs/L14_R3_lam0.3_s43/best.pt,763410,763410,
+runs/L14_R3_lam0.3,/workspace/ArtFAE-Net/runs/L14_R3_lam0.3_s44/best.pt,763410,763410,
+runs/L14_R3_lam0.3,/workspace/ArtFAE-Net/runs/L14_R3_lam0.3_s45/best.pt,763410,763410,
+runs/L14_R3_lam0.3,/workspace/ArtFAE-Net/runs/L14_R3_lam0.3_s46/best.pt,763410,763410,
+runs/R0n_paper14k,/workspace/ArtFAE-Net/runs/R0n_paper14k_s42/best.pt,631177,631177,
+runs/R0n_paper14k,/workspace/ArtFAE-Net/runs/R0n_paper14k_s43/best.pt,631177,631177,
+runs/R0n_paper14k,/workspace/ArtFAE-Net/runs/R0n_paper14k_s44/best.pt,631177,631177,
+runs/R0n_paper14k,/workspace/ArtFAE-Net/runs/R0n_paper14k_s45/best.pt,631177,631177,
+runs/R0n_paper14k,/workspace/ArtFAE-Net/runs/R0n_paper14k_s46/best.pt,631177,631177,
+runs/R1,/workspace/ArtFAE-Net/runs/R1_s42/best.pt,631177,631177,
+runs/R1,/workspace/ArtFAE-Net/runs/R1_s43/best.pt,631177,631177,
+runs/R1,/workspace/ArtFAE-Net/runs/R1_s44/best.pt,631177,631177,
+runs/R1,/workspace/ArtFAE-Net/runs/R1_s45/best.pt,631177,631177,
+runs/R1,/workspace/ArtFAE-Net/runs/R1_s46/best.pt,631177,631177,
+runs/R2_tau0.5,/workspace/ArtFAE-Net/runs/R2_tau0.5_s42/best.pt,631177,631177,
+runs/R2_tau1.0,/workspace/ArtFAE-Net/runs/R2_tau1.0_s42/best.pt,631177,631177,
+runs/R2a_tau1.0,/workspace/ArtFAE-Net/runs/R2a_tau1.0_s42/best.pt,631177,631177,
+runs/R2b_sampler,/workspace/ArtFAE-Net/runs/R2b_sampler_s42/best.pt,631177,631177,
+runs/R2b_sampler,/workspace/ArtFAE-Net/runs/R2b_sampler_s43/best.pt,631177,631177,
+runs/R2b_sampler,/workspace/ArtFAE-Net/runs/R2b_sampler_s44/best.pt,631177,631177,
+runs/R2b_sampler,/workspace/ArtFAE-Net/runs/R2b_sampler_s45/best.pt,631177,631177,
+runs/R2b_sampler,/workspace/ArtFAE-Net/runs/R2b_sampler_s46/best.pt,631177,631177,
+runs/R3_lam0.1,/workspace/ArtFAE-Net/runs/R3_lam0.1_s42/best.pt,632338,632338,
+runs/R3_lam0.3,/workspace/ArtFAE-Net/runs/R3_lam0.3_s42/best.pt,632338,632338,
+runs/R3_lam0.3,/workspace/ArtFAE-Net/runs/R3_lam0.3_s43/best.pt,632338,632338,
+runs/R3_lam0.3,/workspace/ArtFAE-Net/runs/R3_lam0.3_s44/best.pt,632338,632338,
+runs/R3_lam0.3,/workspace/ArtFAE-Net/runs/R3_lam0.3_s45/best.pt,632338,632338,
+runs/R3_lam0.3,/workspace/ArtFAE-Net/runs/R3_lam0.3_s46/best.pt,632338,632338,
+runs/R3g_gate,/workspace/ArtFAE-Net/runs/R3g_gate_s42/best.pt,632339,632339,
+runs/R3g_gate,/workspace/ArtFAE-Net/runs/R3g_gate_s43/best.pt,632339,632339,
+runs/R3g_gate,/workspace/ArtFAE-Net/runs/R3g_gate_s44/best.pt,632339,632339,
+runs/R3g_gate,/workspace/ArtFAE-Net/runs/R3g_gate_s45/best.pt,632339,632339,
+runs/R3g_gate,/workspace/ArtFAE-Net/runs/R3g_gate_s46/best.pt,632339,632339,
+runs/R4a_textq,/workspace/ArtFAE-Net/runs/R4a_textq_s42/best.pt,697874,697874,
+runs/R4b_textq_gate,/workspace/ArtFAE-Net/runs/R4b_textq_gate_s42/best.pt,697875,697875,
+runs/R4b_textq_gate,/workspace/ArtFAE-Net/runs/R4b_textq_gate_s43/best.pt,697875,697875,
+runs/R4b_textq_gate,/workspace/ArtFAE-Net/runs/R4b_textq_gate_s44/best.pt,697875,697875,
+runs/R4b_textq_gate,/workspace/ArtFAE-Net/runs/R4b_textq_gate_s45/best.pt,697875,697875,
+runs/R4b_textq_gate,/workspace/ArtFAE-Net/runs/R4b_textq_gate_s46/best.pt,697875,697875,
+workspace B3,/workspace/ArtFAE-Net/results/cpu_baselines_20261022/B3/best.pt,140809,140809,
+workspace B4,/workspace/ArtFAE-Net/results/cpu_baselines_20261022/B4/best.pt,264713,264713,
+workspace B5,/workspace/ArtFAE-Net/results/cpu_baselines_20261022/B5/best.pt,271881,271881,
+workspace B3,/workspace/ArtFAE-Net/results/cpu_replications_20261022/B3_seed43/best.pt,140809,140809,
+workspace B3,/workspace/ArtFAE-Net/results/cpu_replications_20261022/B3_seed44/best.pt,140809,140809,
+workspace B4,/workspace/ArtFAE-Net/results/cpu_replications_20261022/B4_seed43/best.pt,264713,264713,
+workspace B4,/workspace/ArtFAE-Net/results/cpu_replications_20261022/B4_seed44/best.pt,264713,264713,
+workspace B5,/workspace/ArtFAE-Net/results/cpu_replications_20261022/B5_seed43/best.pt,271881,271881,
+workspace B5,/workspace/ArtFAE-Net/results/cpu_replications_20261022/B5_seed44/best.pt,271881,271881,
+workspace B2 (CLIP B/32 linear head),/workspace/ArtFAE-Net/results/clip_b32_full/best_head.pt,4617,4617,
+"workspace B1 (ResNet50, frozen backbone)",/workspace/ArtFAE-Net/results/resnet50_frozen_cpu_20261022/best.pt,23526473,18441,
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T012203Z_s42_c2c10f53/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical,text (paper M1, runs/m1_paper)"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T034634Z_s42_92507d82/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical,text"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T034708Z_s42_15d935b8/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical,text"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T034739Z_s42_3a3ce52b/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical,text"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T034804Z_s42_8e319c3c/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical,text"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T034829Z_s42_455f8984/best_model.pt,241865,241865,"hidden 64, branches: gated,spatial,numerical,text"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T034900Z_s42_237ac8c2/best_model.pt,241865,241865,"hidden 64, branches: gated,spatial,numerical,text"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T034929Z_s42_1b2c58af/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical,text"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T034949Z_s42_35d95269/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical,text"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T035013Z_s43_8338868f/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical,text"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T035034Z_s44_bae26a96/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical,text"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T035056Z_s42_90eacef2/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,text"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T035114Z_s42_e887b665/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T035134Z_s42_5bf61a7d/best_model.pt,284553,284553,"hidden 128, branches: gated,numerical,text"
+home artfae_m1 M1,/home/dev/ArtFAE-Net/results/artfae_m1/20261027T035202Z_s42_41cc5b42/best_model.pt,532361,532361,"hidden 128, branches: spatial,numerical,text"
+home baseline_simple_fusion B5,/home/dev/ArtFAE-Net/results/baseline_simple_fusion/20261027T012224Z_s42_cb1927af/best_model.pt,271881,271881,"hidden 128, branches: gated,spatial,numerical,text"
+home baseline_simple_fusion B5,/home/dev/ArtFAE-Net/results/baseline_simple_fusion/20261027T012420Z_s42_4a8c201b/best_model.pt,271881,271881,"hidden 128, branches: gated,spatial,numerical,text"
+home matched_component_runs M1,/home/dev/ArtFAE-Net/results/matched_component_runs/20261028T031743Z_s43_1aedbc2d/best_model.pt,532361,532361,"hidden 128, branches: spatial,numerical,text"
+home matched_component_runs M1,/home/dev/ArtFAE-Net/results/matched_component_runs/20261028T031812Z_s44_47c7e61b/best_model.pt,532361,532361,"hidden 128, branches: spatial,numerical,text"
+home matched_component_runs M1,/home/dev/ArtFAE-Net/results/matched_component_runs/20261028T031840Z_s43_189b81d2/best_model.pt,284553,284553,"hidden 128, branches: gated,numerical,text"
+home matched_component_runs M1,/home/dev/ArtFAE-Net/results/matched_component_runs/20261028T031909Z_s44_c94c6d67/best_model.pt,284553,284553,"hidden 128, branches: gated,numerical,text"
+home matched_component_runs M1,/home/dev/ArtFAE-Net/results/matched_component_runs/20261028T031938Z_s43_a49a865b/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,text"
+home matched_component_runs M1,/home/dev/ArtFAE-Net/results/matched_component_runs/20261028T032006Z_s44_6463946d/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,text"
+home matched_component_runs M1,/home/dev/ArtFAE-Net/results/matched_component_runs/20261028T032035Z_s43_73be36a1/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical"
+home matched_component_runs M1,/home/dev/ArtFAE-Net/results/matched_component_runs/20261028T032103Z_s44_c8807365/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical"
+home research_baselines M1,/home/dev/ArtFAE-Net/results/research_baselines/20261027T044339660113Z/deployed_reference/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical,text"
+home research_baselines M1,/home/dev/ArtFAE-Net/results/research_baselines/20261027T044339660113Z/validation_candidate/best_model.pt,631177,631177,"hidden 128, branches: gated,spatial,numerical,text"
+home B2 (CLIP B/32 linear head),/home/dev/ArtFAE-Net/results/clip_b32_full/best_head.pt,4617,4617,
+home pipeline 14K clip_l14,/home/dev/ArtFAE-Net/results/pipeline/runs/clip_l14_s42/model.pt,303202313,151179273,"clip_l14, frozen_blocks=12/24"
+home pipeline 14K clip_l14,/home/dev/ArtFAE-Net/results/pipeline/runs/clip_l14_s43/model.pt,303202313,151179273,"clip_l14, frozen_blocks=12/24"
+home pipeline 14K siglip2_so400m,/home/dev/ArtFAE-Net/results/pipeline/runs/siglip2_so400m_s42/model.pt,428250953,228619065,"siglip2_so400m, frozen_blocks=13/27"
+home pipeline 14K siglip2_so400m,/home/dev/ArtFAE-Net/results/pipeline/runs/siglip2_so400m_s43/model.pt,428250953,228619065,"siglip2_so400m, frozen_blocks=13/27"
+home pipeline 14K bundle current,/home/dev/ArtFAE-Net/results/pipeline/bundles/current,1462906532,759596676,"4 members: siglip2_so400m, frozen_blocks=13/27; clip_l14, frozen_blocks=12/24; siglip2_so400m, frozen_blocks=13/27; clip_l14, frozen_blocks=12/24"
+home pipeline 14K bundle ensemble4,/home/dev/ArtFAE-Net/results/pipeline/bundles/ensemble4,1462906532,759596676,"4 members: siglip2_so400m, frozen_blocks=13/27; clip_l14, frozen_blocks=12/24; siglip2_so400m, frozen_blocks=13/27; clip_l14, frozen_blocks=12/24"
+home pipeline 14K bundle siglip_clipL,/home/dev/ArtFAE-Net/results/pipeline/bundles/siglip_clipL,731453266,379798338,"2 members: siglip2_so400m, frozen_blocks=13/27; clip_l14, frozen_blocks=12/24"
+home pipeline 43K clip_l14,/home/dev/ArtFAE-Net/results/updated_artemis_20261031/pipeline/runs/clip_l14_s42/model.pt,303202313,151179273,"clip_l14, frozen_blocks=12/24"
+home pipeline 43K clip_l14,/home/dev/ArtFAE-Net/results/updated_artemis_20261031/pipeline/runs/clip_l14_s43/model.pt,303202313,151179273,"clip_l14, frozen_blocks=12/24"
+home pipeline 43K siglip2_so400m,/home/dev/ArtFAE-Net/results/updated_artemis_20261031/pipeline/runs/siglip2_so400m_s42/model.pt,428250953,228619065,"siglip2_so400m, frozen_blocks=13/27"
+home pipeline 43K siglip2_so400m,/home/dev/ArtFAE-Net/results/updated_artemis_20261031/pipeline/runs/siglip2_so400m_s43/model.pt,428250953,228619065,"siglip2_so400m, frozen_blocks=13/27"
+home pipeline 43K bundle ensemble4,/home/dev/ArtFAE-Net/results/updated_artemis_20261031/pipeline/bundles/ensemble4,1462906532,759596676,"4 members: siglip2_so400m, frozen_blocks=13/27; clip_l14, frozen_blocks=12/24; siglip2_so400m, frozen_blocks=13/27; clip_l14, frozen_blocks=12/24"
+frozen feature extractor,openai/clip-vit-base-patch32,151277312,0,"vision+proj 87,849,216; text+proj 63,428,096 (text encodes the describe() sentence); logit_scale excluded"
+frozen feature extractor,openai/clip-vit-large-patch14-336,427944192,0,"vision+proj 304,293,888; text+proj 123,650,304 (text encodes the describe() sentence); logit_scale excluded"

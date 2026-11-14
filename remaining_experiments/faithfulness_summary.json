@@ -1,0 +1,235 @@
+{
+  "scope": "EXPLORATORY development validation, fixed R1 seed42, no human-region or causal claim",
+  "artworks": 200,
+  "unique_top": 148,
+  "known_training_reproductions_in_subset": [
+    "childe-hassam_carriage-rue-bonaparte",
+    "ivan-aivazovsky_venice-1842"
+  ],
+  "known_reproduction_count": 2,
+  "original_predicted_class_counts": {
+    "2": 108,
+    "7": 22,
+    "0": 21,
+    "1": 19,
+    "6": 17,
+    "5": 6,
+    "8": 4,
+    "3": 3
+  },
+  "partial_auc_convention": "raw fixed-target probabilities, trapezoid on observed fractions [5/49,24/49], divided by 19/49. No endpoints imputed; lower deletion/higher retention favourable.",
+  "summary": [
+    {
+      "fill": "mean",
+      "curve": "deletion",
+      "ranking": "ECSA",
+      "mean_partial_AUC": 0.21987329354019539,
+      "CI95_low": 0.2064535972383363,
+      "CI95_high": 0.23357518929056825
+    },
+    {
+      "fill": "mean",
+      "curve": "deletion",
+      "ranking": "RISE",
+      "mean_partial_AUC": 0.2300983862500442,
+      "CI95_low": 0.21646889428426758,
+      "CI95_high": 0.24396215284669673
+    },
+    {
+      "fill": "mean",
+      "curve": "deletion",
+      "ranking": "Random",
+      "mean_partial_AUC": 0.2518657265318263,
+      "CI95_low": 0.23948396180007409,
+      "CI95_high": 0.26433309120704224
+    },
+    {
+      "fill": "mean",
+      "curve": "retention",
+      "ranking": "ECSA",
+      "mean_partial_AUC": 0.25811701625879657,
+      "CI95_low": 0.24576381236988754,
+      "CI95_high": 0.2713446999742453
+    },
+    {
+      "fill": "mean",
+      "curve": "retention",
+      "ranking": "RISE",
+      "mean_partial_AUC": 0.24800702256689733,
+      "CI95_low": 0.23468392413572747,
+      "CI95_high": 0.2619156916872108
+    },
+    {
+      "fill": "mean",
+      "curve": "retention",
+      "ranking": "Random",
+      "mean_partial_AUC": 0.20088193961968157,
+      "CI95_low": 0.1893500432086128,
+      "CI95_high": 0.21258370512872446
+    },
+    {
+      "fill": "blur",
+      "curve": "deletion",
+      "ranking": "ECSA",
+      "mean_partial_AUC": 0.20145819762623624,
+      "CI95_low": 0.18914060497352558,
+      "CI95_high": 0.21389770862445434
+    },
+    {
+      "fill": "blur",
+      "curve": "deletion",
+      "ranking": "RISE",
+      "mean_partial_AUC": 0.21479311320538583,
+      "CI95_low": 0.20169584205217267,
+      "CI95_high": 0.228429140800071
+    },
+    {
+      "fill": "blur",
+      "curve": "deletion",
+      "ranking": "Random",
+      "mean_partial_AUC": 0.238639397373423,
+      "CI95_low": 0.22702422086572716,
+      "CI95_high": 0.2510343561037174
+    },
+    {
+      "fill": "blur",
+      "curve": "retention",
+      "ranking": "ECSA",
+      "mean_partial_AUC": 0.254691527568196,
+      "CI95_low": 0.2418102185772732,
+      "CI95_high": 0.2682496430370466
+    },
+    {
+      "fill": "blur",
+      "curve": "retention",
+      "ranking": "RISE",
+      "mean_partial_AUC": 0.2401063788750846,
+      "CI95_low": 0.2270823952407625,
+      "CI95_high": 0.25376969198380156
+    },
+    {
+      "fill": "blur",
+      "curve": "retention",
+      "ranking": "Random",
+      "mean_partial_AUC": 0.19666000971031422,
+      "CI95_low": 0.1854575282805624,
+      "CI95_high": 0.20867578151071883
+    }
+  ],
+  "contrasts": [
+    {
+      "fill": "mean",
+      "curve": "deletion",
+      "contrast": "ECSA_advantage_over_random",
+      "mean": 0.03199243299163093,
+      "CI95_low": 0.02398996977550713,
+      "CI95_high": 0.040049527130918076
+    },
+    {
+      "fill": "mean",
+      "curve": "deletion",
+      "contrast": "RISE_advantage_over_random",
+      "mean": 0.02176734028178218,
+      "CI95_low": 0.014879459277442409,
+      "CI95_high": 0.028264585220039284
+    },
+    {
+      "fill": "mean",
+      "curve": "deletion",
+      "contrast": "ECSA_advantage_over_RISE",
+      "mean": 0.010225092709848753,
+      "CI95_low": 0.003704478574818684,
+      "CI95_high": 0.017080368406727508
+    },
+    {
+      "fill": "mean",
+      "curve": "retention",
+      "contrast": "ECSA_advantage_over_random",
+      "mean": 0.05723507663911502,
+      "CI95_low": 0.049175155102145415,
+      "CI95_high": 0.06571039108554097
+    },
+    {
+      "fill": "mean",
+      "curve": "retention",
+      "contrast": "RISE_advantage_over_random",
+      "mean": 0.04712508294721575,
+      "CI95_low": 0.03967897137567449,
+      "CI95_high": 0.054654286767753135
+    },
+    {
+      "fill": "mean",
+      "curve": "retention",
+      "contrast": "ECSA_advantage_over_RISE",
+      "mean": 0.010109993691899275,
+      "CI95_low": 0.0024266475576319216,
+      "CI95_high": 0.017759592792558437
+    },
+    {
+      "fill": "blur",
+      "curve": "deletion",
+      "contrast": "ECSA_advantage_over_random",
+      "mean": 0.03718119974718674,
+      "CI95_low": 0.029838102258384028,
+      "CI95_high": 0.044936239265241214
+    },
+    {
+      "fill": "blur",
+      "curve": "deletion",
+      "contrast": "RISE_advantage_over_random",
+      "mean": 0.023846284168037146,
+      "CI95_low": 0.017079871672092885,
+      "CI95_high": 0.03021920589660784
+    },
+    {
+      "fill": "blur",
+      "curve": "deletion",
+      "contrast": "ECSA_advantage_over_RISE",
+      "mean": 0.013334915579149597,
+      "CI95_low": 0.0067674908901221645,
+      "CI95_high": 0.019878042849123867
+    },
+    {
+      "fill": "blur",
+      "curve": "retention",
+      "contrast": "ECSA_advantage_over_random",
+      "mean": 0.058031517857881756,
+      "CI95_low": 0.0498121170129725,
+      "CI95_high": 0.06656272385523065
+    },
+    {
+      "fill": "blur",
+      "curve": "retention",
+      "contrast": "RISE_advantage_over_random",
+      "mean": 0.04344636916477037,
+      "CI95_low": 0.03625029443160779,
+      "CI95_high": 0.05017176809007742
+    },
+    {
+      "fill": "blur",
+      "curve": "retention",
+      "contrast": "ECSA_advantage_over_RISE",
+      "mean": 0.014585148693111378,
+      "CI95_low": 0.007292687933548893,
+      "CI95_high": 0.02194400634631318
+    }
+  ],
+  "bootstrap": "2000 paired artwork draws, ten random rankings averaged within each artwork. Pointwise unadjusted intervals, conditional on checkpoint/subset/mask draws. RISE finite-mask uncertainty not separately resampled. Not H1\u2013H5.",
+  "checkpoint_sha256": "2ac5f447593fcad2c1b9d58790d466f3d745cecd34daff018b444fda59d89aca",
+  "protocol_sha256": "82d041be51241d31cd8e05b7d3452956f8046803f102231a771c28de56c23a32",
+  "run": {
+    "protocol_sha256": "82d041be51241d31cd8e05b7d3452956f8046803f102231a771c28de56c23a32",
+    "engine_sha256": "b4327ec73481278d197f877cc94ebecdb2062d4470d482133502d2eeb906c1cb",
+    "script_sha256": "101f47515bbb26530a1c95c08368a067ab4fd3ee17f72f710480fca1a85435b2",
+    "checkpoint_sha256": "2ac5f447593fcad2c1b9d58790d466f3d745cecd34daff018b444fda59d89aca",
+    "max_original_saved_logit_difference": 9.5367431640625e-07,
+    "targets_match_saved": true,
+    "rise_reference": "https://github.com/eclique/RISE/blob/master/explanations.py",
+    "status": "complete",
+    "artworks": 200,
+    "wall_seconds": 1843.1140266009606,
+    "images_encoded": 89800,
+    "wall_seconds_scope": "Intervention loop only; excludes model loading and the original 200 encodings."
+  },
+  "no_holdout_inference": true
+}

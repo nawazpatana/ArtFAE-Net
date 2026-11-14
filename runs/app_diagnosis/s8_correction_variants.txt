@@ -1,0 +1,23 @@
+NOTE: val is the selection split for every model and the source of val_prior -> in-sample, optimistic.
+R3_MF1  none                                       softCE 1.7560  mean anger 0.0200 (human 0.0189)  anger top1 5
+R3_MF1  app delta log(val)-log(train)              softCE 1.7571  mean anger 0.0287 (human 0.0189)  anger top1 18
+R3_MF1  sampler delta log(val)-log(sampler_eff)    softCE 1.7524  mean anger 0.0175 (human 0.0189)  anger top1 2
+R3      none                                       softCE 1.7561  mean anger 0.0157 (human 0.0189)  anger top1 0
+R3      app delta log(val)-log(train)              softCE 1.7578  mean anger 0.0228 (human 0.0189)  anger top1 6
+R3      sampler delta log(val)-log(sampler_eff)    softCE 1.7566  mean anger 0.0137 (human 0.0189)  anger top1 0
+R1      none                                       softCE 1.7502  mean anger 0.0125 (human 0.0189)  anger top1 0
+R1      app delta log(val)-log(train)              softCE 1.7502  mean anger 0.0182 (human 0.0189)  anger top1 0
+R1      sampler delta log(val)-log(sampler_eff)    softCE 1.7688  mean anger 0.0106 (human 0.0189)  anger top1 0
+PROBE   none                                       softCE 1.7555  mean anger 0.0112 (human 0.0189)  anger top1 0
+PROBE   app delta log(val)-log(train)              softCE 1.7539  mean anger 0.0163 (human 0.0189)  anger top1 0
+PROBE   sampler delta log(val)-log(sampler_eff)    softCE 1.7743  mean anger 0.0095 (human 0.0189)  anger top1 0
+
+train-split CFP/Minimalism anger utterances: 489; random 8:
+  [Color_Field_Painting] theodoros-stamos_transparent-green-sun-box-1970: This should not be considered art as it is just a plain piece of paper. It really makes me feel nothing.
+  [Color_Field_Painting] piero-dorazio_rosso-perugino-1979: it's too simple. My 5 year old daughter could do this. how is this even art
+  [Minimalism] agnes-martin_with-my-back-to-the-world-1997: Anyone could do that, it takes no talent to paint that.
+  [Color_Field_Painting] ronnie-landfield_series-painting-5-1966: This painting only shows a black screen, there is nothing to admire as it does not contain an actual image. I do not like this painting as there is nothing to look at.
+  [Color_Field_Painting] ronnie-landfield_green-mountain-man-1975: I feel anger because this very bland style of art reminds of me paintings that people with little talent create and get applauded for when it takes no technical skills and evokes no emotions in the viewer,
+  [Minimalism] mira-schendel_untitled-1981-1: almost a totally black canvas, a disappointing piece of art. i'm angry that someone probably made money off this
+  [Color_Field_Painting] jose-guerrero_andaluc-a-aparici-n-1964: A very aggressive piece.  Reminds me of toxic male masculinity.
+  [Color_Field_Painting] barnett-newman_eve: even though it's just a solid red color, it feels overwhelming, like anger fostering into hatred

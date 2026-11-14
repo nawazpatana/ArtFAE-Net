@@ -1,0 +1,53 @@
+PASS test_description_table_is_complete
+PASS test_i18n_parity
+PASS test_smoke
+
+consistency on cuda: max |logit diff| = 5.60e-05 (per seed [5.6e-05, 3.48e-05, 3.29e-05, 2.16e-05, 5.02e-05]); max |ensemble prob diff| = 2.64e-06; same top class for every seed: True
+PASS test_consistency_with_saved_val_logits
+PASS test_bundle_matches_frozen_runs
+PASS test_app_ui[en]
+PASS test_app_ui[zh]
+369                          top disgust (unchanged True, probs max diff 4.9e-05)
+    anger presence 0.858 -> 0.299
+    chips before {'amusement': 0.522, 'anger': 0.858, 'fear': 0.559, 'sadness': 0.626, 'something_else': 0.829}
+    chips after  {'something_else': 0.804}
+6                            top fear (unchanged True, probs max diff 3.8e-05)
+    anger presence 0.538 -> 0.082
+    chips before {'anger': 0.538, 'disgust': 0.633, 'sadness': 0.713, 'something_else': 0.568}
+    chips after  {'sadness': 0.557, 'something_else': 0.526}
+1430                         top excitement (unchanged True, probs max diff 4.7e-05)
+    anger presence 0.665 -> 0.128
+    chips before {'amusement': 0.786, 'anger': 0.665, 'fear': 0.67, 'something_else': 0.574}
+    chips after  {'amusement': 0.68, 'something_else': 0.533}
+1428                         top anger (unchanged True, probs max diff 4.9e-05)
+    anger presence 0.859 -> 0.313
+    chips before {'amusement': 0.57, 'disgust': 0.559, 'fear': 0.72, 'sadness': 0.598, 'something_else': 0.73}
+    chips after  {'fear': 0.501, 'something_else': 0.696}
+731                          top anger (unchanged True, probs max diff 4.9e-05)
+    anger presence 0.818 -> 0.241
+    chips before {'amusement': 0.767, 'disgust': 0.758, 'fear': 0.745, 'sadness': 0.537, 'something_else': 0.662}
+    chips after  {'amusement': 0.653, 'fear': 0.532, 'something_else': 0.624}
+S1_tall_purple_monochrome    top something_else (unchanged True, probs max diff 4.4e-05)
+    anger presence 0.660 -> 0.153
+    chips before {'anger': 0.66, 'fear': 0.541, 'sadness': 0.518}
+    chips after  {'contentment': 0.573}
+S2_navy_black_bands          top something_else (unchanged True, probs max diff 4.9e-05)
+    anger presence 0.885 -> 0.351
+    chips before {'anger': 0.885, 'disgust': 0.527, 'fear': 0.738, 'sadness': 0.735}
+    chips after  {'fear': 0.532, 'sadness': 0.587}
+S3_maroon_on_black           top fear (unchanged True, probs max diff 4.6e-05)
+    anger presence 0.904 -> 0.399
+    chips before {'anger': 0.904, 'disgust': 0.654, 'sadness': 0.615, 'something_else': 0.754}
+    chips after  {'something_else': 0.722}
+C1_uniform_black             top something_else (unchanged True, probs max diff 4.0e-05)
+    anger presence 0.883 -> 0.349
+    chips before {'anger': 0.883, 'disgust': 0.604, 'fear': 0.844, 'sadness': 0.656}
+    chips after  {'fear': 0.678}
+C2_uniform_mid_grey          top something_else (unchanged True, probs max diff 4.1e-05)
+    anger presence 0.940 -> 0.532
+    chips before {'anger': 0.94, 'disgust': 0.743, 'fear': 0.551, 'sadness': 0.585}
+    chips after  {'anger': 0.532}
+C3_uniform_bright_yellow     top something_else (unchanged True, probs max diff 4.9e-05)
+    anger presence 0.919 -> 0.457
+    chips before {'amusement': 0.594, 'anger': 0.919, 'disgust': 0.723}
+    chips after  {}

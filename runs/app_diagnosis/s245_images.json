@@ -1,0 +1,2147 @@
+[
+ {
+  "kind": "val",
+  "id": 369,
+  "art_style": "Color_Field_Painting",
+  "painting": "paul-feeley_tenos-1956",
+  "image_path": "clean_artemis/images/paul-feeley_tenos-1956.jpg",
+  "n_votes": 5,
+  "votes": {
+   "amusement": 1,
+   "awe": 0,
+   "contentment": 1,
+   "excitement": 1,
+   "anger": 0,
+   "disgust": 1,
+   "fear": 0,
+   "sadness": 0,
+   "something_else": 1
+  },
+  "shares": {
+   "amusement": 0.2,
+   "awe": 0.0,
+   "contentment": 0.2,
+   "excitement": 0.2,
+   "anger": 0.0,
+   "disgust": 0.2,
+   "fear": 0.0,
+   "sadness": 0.0,
+   "something_else": 0.2
+  },
+  "utterances": [
+   {
+    "emotion": "amusement",
+    "utterance": "The blue reminds of a really saggy, single nipple udder which made me laugh when I saw it"
+   },
+   {
+    "emotion": "something else",
+    "utterance": "Why is there a painting of what looks like a blue condom?"
+   },
+   {
+    "emotion": "contentment",
+    "utterance": "The blue coloring looks like an upside down bottle of wine"
+   },
+   {
+    "emotion": "disgust",
+    "utterance": "I think I am offended by the shape, for no reason other than my brain assumes it is sexual, but it is not."
+   },
+   {
+    "emotion": "excitement",
+    "utterance": "The yellow resembles a woman's inner thigh area and the blue looks like a penis."
+   }
+  ],
+  "official_release_vote_count": 5,
+  "file_size_px": [
+   300,
+   500
+  ],
+  "loaded_size_px_after_draft": [
+   300,
+   500
+  ],
+  "crop": {
+   "resized": [
+    336,
+    560
+   ],
+   "crop_in_resized": [
+    0,
+    112,
+    336,
+    448
+   ],
+   "crop_in_original": [
+    0.0,
+    100.0,
+    300.0,
+    400.0
+   ],
+   "fraction_of_long_side_seen": 0.6
+  },
+  "attributes": {
+   "red": 0.53509,
+   "green": 0.4544,
+   "blue": 0.37263,
+   "hue_sin": 0.07973,
+   "hue_cos": 0.13764,
+   "saturation": 0.55541,
+   "saturation_var": 0.00891,
+   "value": 0.63549,
+   "warm": 0.57501,
+   "cool": 0.41483,
+   "luminance": 0.46563,
+   "luminance_std": 0.12715,
+   "dark": 0.0,
+   "bright": 0.0,
+   "contrast_p95_p05": 0.35261,
+   "edge_density": 0.00656,
+   "edge_tl": 0.00171,
+   "edge_tr": 0.00385,
+   "edge_bl": 0.00995,
+   "edge_br": 0.01074,
+   "hue_bin_0": 0.6153,
+   "hue_bin_1": 0.00127,
+   "hue_bin_2": 9e-05,
+   "hue_bin_3": 0.00025,
+   "hue_bin_4": 0.383,
+   "hue_bin_5": 8e-05,
+   "hue_bin_6": 1e-05,
+   "hue_bin_7": 1e-05
+  },
+  "description": "Moderate overall brightness, moderate luminance contrast, and predominantly warm colors.",
+  "app_predict_vs_decomposition_a_max_abs_diff": 0.0,
+  "app_presence_vs_R3MF1_sigmoid_mean_max_abs_diff": 4.768371586472142e-08,
+  "app_top": "disgust",
+  "chips_shown": {
+   "amusement": 0.522,
+   "anger": 0.858,
+   "fear": 0.559,
+   "sadness": 0.626,
+   "something_else": 0.829
+  },
+  "presence_all": {
+   "amusement": 0.522,
+   "awe": 0.231,
+   "contentment": 0.247,
+   "excitement": 0.361,
+   "anger": 0.858,
+   "disgust": 0.889,
+   "fear": 0.559,
+   "sadness": 0.626,
+   "something_else": 0.829
+  },
+  "per_seed_top_app": [
+   "something_else",
+   "disgust",
+   "disgust",
+   "disgust",
+   "disgust"
+  ],
+  "probs": {
+   "a_app": {
+    "amusement": 0.0745,
+    "awe": 0.0542,
+    "contentment": 0.0954,
+    "excitement": 0.0294,
+    "anger": 0.0885,
+    "disgust": 0.2502,
+    "fear": 0.0821,
+    "sadness": 0.1085,
+    "something_else": 0.2172
+   },
+   "b_mf1_raw": {
+    "amusement": 0.0805,
+    "awe": 0.0546,
+    "contentment": 0.1012,
+    "excitement": 0.034,
+    "anger": 0.0627,
+    "disgust": 0.2114,
+    "fear": 0.0826,
+    "sadness": 0.1131,
+    "something_else": 0.2601
+   },
+   "c_r3_ce": {
+    "amusement": 0.0752,
+    "awe": 0.0574,
+    "contentment": 0.116,
+    "excitement": 0.0372,
+    "anger": 0.0572,
+    "disgust": 0.2244,
+    "fear": 0.0816,
+    "sadness": 0.0909,
+    "something_else": 0.2602
+   },
+   "d_r1": {
+    "amusement": 0.108,
+    "awe": 0.0747,
+    "contentment": 0.1512,
+    "excitement": 0.0451,
+    "anger": 0.0365,
+    "disgust": 0.1571,
+    "fear": 0.0697,
+    "sadness": 0.0928,
+    "something_else": 0.2648
+   },
+   "e_probe": {
+    "amusement": 0.1208,
+    "awe": 0.0772,
+    "contentment": 0.1576,
+    "excitement": 0.0569,
+    "anger": 0.0489,
+    "disgust": 0.1532,
+    "fear": 0.0712,
+    "sadness": 0.0962,
+    "something_else": 0.2181
+   }
+  },
+  "top": {
+   "a_app": "disgust",
+   "b_mf1_raw": "something_else",
+   "c_r3_ce": "something_else",
+   "d_r1": "something_else",
+   "e_probe": "something_else"
+  },
+  "softCE": {
+   "a_app": 2.2772,
+   "b_mf1_raw": 2.2187,
+   "c_r3_ce": 2.1752,
+   "d_r1": 2.0784,
+   "e_probe": 2.0454
+  },
+  "step4": {
+   "global_max_abs_diff": 4.470348358154297e-07,
+   "attr_text_max_abs_diff": 1.1548399925231934e-07,
+   "patches_max_abs_diff": 0.0078125,
+   "attributes_max_abs_diff": 0.0,
+   "processor_pixel_shape": [
+    1,
+    3,
+    336,
+    336
+   ],
+   "logits_vs_saved_val_logits_max_abs_diff_all_20_runs": 3.910064697265625e-05,
+   "app_raw_logits_vs_saved_R3_MF1_max_abs_diff": 3.910064697265625e-05
+  },
+  "anger_path": {
+   "a_app": 0.0885,
+   "b_mf1_raw": 0.0627,
+   "c_r3_ce": 0.0572,
+   "d_r1": 0.0365,
+   "e_probe": 0.0489
+  }
+ },
+ {
+  "kind": "val",
+  "id": 6,
+  "art_style": "Abstract_Expressionism",
+  "painting": "morris-graves_bird-moon-and-falling-stars-1940",
+  "image_path": "clean_artemis/images/morris-graves_bird-moon-and-falling-stars-1940.jpg",
+  "n_votes": 5,
+  "votes": {
+   "amusement": 0,
+   "awe": 0,
+   "contentment": 0,
+   "excitement": 0,
+   "anger": 0,
+   "disgust": 1,
+   "fear": 3,
+   "sadness": 0,
+   "something_else": 1
+  },
+  "shares": {
+   "amusement": 0.0,
+   "awe": 0.0,
+   "contentment": 0.0,
+   "excitement": 0.0,
+   "anger": 0.0,
+   "disgust": 0.2,
+   "fear": 0.6,
+   "sadness": 0.0,
+   "something_else": 0.2
+  },
+  "utterances": [
+   {
+    "emotion": "disgust",
+    "utterance": "I am disgusted because it looks very similar to what a 5 year old would draw. It's not good."
+   },
+   {
+    "emotion": "something else",
+    "utterance": "I'm intrigued. This looks like it's drawn on a chalkboard. Is it?"
+   },
+   {
+    "emotion": "fear",
+    "utterance": "There is something a little bit creepy about this painting and the style it is."
+   },
+   {
+    "emotion": "fear",
+    "utterance": "The dark black background contrasted with the white lines is scary."
+   },
+   {
+    "emotion": "fear",
+    "utterance": "there is a spider web on the window"
+   }
+  ],
+  "official_release_vote_count": 5,
+  "file_size_px": [
+   350,
+   400
+  ],
+  "loaded_size_px_after_draft": [
+   350,
+   400
+  ],
+  "crop": {
+   "resized": [
+    336,
+    384
+   ],
+   "crop_in_resized": [
+    0,
+    24,
+    336,
+    360
+   ],
+   "crop_in_original": [
+    0.0,
+    25.0,
+    350.0,
+    375.0
+   ],
+   "fraction_of_long_side_seen": 0.875
+  },
+  "attributes": {
+   "red": 0.26758,
+   "green": 0.25052,
+   "blue": 0.20373,
+   "hue_sin": 0.69887,
+   "hue_cos": 0.53495,
+   "saturation": 0.16931,
+   "saturation_var": 0.0198,
+   "value": 0.2688,
+   "warm": 0.34297,
+   "cool": 0.01627,
+   "luminance": 0.25077,
+   "luminance_std": 0.23215,
+   "dark": 0.6796,
+   "bright": 0.07773,
+   "contrast_p95_p05": 0.76106,
+   "edge_density": 0.18138,
+   "edge_tl": 0.15582,
+   "edge_tr": 0.15948,
+   "edge_bl": 0.19946,
+   "edge_br": 0.21075,
+   "hue_bin_0": 0.52661,
+   "hue_bin_1": 0.40563,
+   "hue_bin_2": 0.01404,
+   "hue_bin_3": 0.01018,
+   "hue_bin_4": 0.01203,
+   "hue_bin_5": 0.01343,
+   "hue_bin_6": 0.00651,
+   "hue_bin_7": 0.01157
+  },
+  "description": "Low overall brightness, moderate luminance contrast, and predominantly warm colors.",
+  "app_predict_vs_decomposition_a_max_abs_diff": 0.0,
+  "app_presence_vs_R3MF1_sigmoid_mean_max_abs_diff": 8.344650270775134e-08,
+  "app_top": "fear",
+  "chips_shown": {
+   "anger": 0.538,
+   "disgust": 0.633,
+   "sadness": 0.713,
+   "something_else": 0.568
+  },
+  "presence_all": {
+   "amusement": 0.335,
+   "awe": 0.315,
+   "contentment": 0.189,
+   "excitement": 0.268,
+   "anger": 0.538,
+   "disgust": 0.633,
+   "fear": 0.939,
+   "sadness": 0.713,
+   "something_else": 0.568
+  },
+  "per_seed_top_app": [
+   "fear",
+   "fear",
+   "fear",
+   "fear",
+   "fear"
+  ],
+  "probs": {
+   "a_app": {
+    "amusement": 0.0463,
+    "awe": 0.0705,
+    "contentment": 0.075,
+    "excitement": 0.0244,
+    "anger": 0.0211,
+    "disgust": 0.0743,
+    "fear": 0.4309,
+    "sadness": 0.1249,
+    "something_else": 0.1327
+   },
+   "b_mf1_raw": {
+    "amusement": 0.0487,
+    "awe": 0.069,
+    "contentment": 0.0773,
+    "excitement": 0.0274,
+    "anger": 0.0146,
+    "disgust": 0.0612,
+    "fear": 0.4206,
+    "sadness": 0.1266,
+    "something_else": 0.1547
+   },
+   "c_r3_ce": {
+    "amusement": 0.0561,
+    "awe": 0.0747,
+    "contentment": 0.0803,
+    "excitement": 0.0302,
+    "anger": 0.0202,
+    "disgust": 0.0921,
+    "fear": 0.3529,
+    "sadness": 0.1465,
+    "something_else": 0.147
+   },
+   "d_r1": {
+    "amusement": 0.057,
+    "awe": 0.0781,
+    "contentment": 0.1086,
+    "excitement": 0.0358,
+    "anger": 0.0139,
+    "disgust": 0.0701,
+    "fear": 0.3498,
+    "sadness": 0.1226,
+    "something_else": 0.1641
+   },
+   "e_probe": {
+    "amusement": 0.0633,
+    "awe": 0.0737,
+    "contentment": 0.0866,
+    "excitement": 0.0292,
+    "anger": 0.0131,
+    "disgust": 0.056,
+    "fear": 0.4009,
+    "sadness": 0.123,
+    "something_else": 0.1543
+   }
+  },
+  "top": {
+   "a_app": "fear",
+   "b_mf1_raw": "fear",
+   "c_r3_ce": "fear",
+   "d_r1": "fear",
+   "e_probe": "fear"
+  },
+  "softCE": {
+   "a_app": 1.4289,
+   "b_mf1_raw": 1.4516,
+   "c_r3_ce": 1.4853,
+   "d_r1": 1.5232,
+   "e_probe": 1.4986
+  },
+  "step4": {
+   "global_max_abs_diff": 4.544854164123535e-07,
+   "attr_text_max_abs_diff": 8.195638656616211e-08,
+   "patches_max_abs_diff": 0.0078125,
+   "attributes_max_abs_diff": 0.0,
+   "processor_pixel_shape": [
+    1,
+    3,
+    336,
+    336
+   ],
+   "logits_vs_saved_val_logits_max_abs_diff_all_20_runs": 6.0558319091796875e-05,
+   "app_raw_logits_vs_saved_R3_MF1_max_abs_diff": 4.869699478149414e-05
+  },
+  "anger_path": {
+   "a_app": 0.0211,
+   "b_mf1_raw": 0.0146,
+   "c_r3_ce": 0.0202,
+   "d_r1": 0.0139,
+   "e_probe": 0.0131
+  }
+ },
+ {
+  "kind": "val",
+  "id": 1430,
+  "art_style": "Minimalism",
+  "painting": "jim-lambie_mental-oyster-installation-view-2005",
+  "image_path": "clean_artemis/images/jim-lambie_mental-oyster-installation-view-2005.jpg",
+  "n_votes": 6,
+  "votes": {
+   "amusement": 2,
+   "awe": 0,
+   "contentment": 0,
+   "excitement": 2,
+   "anger": 0,
+   "disgust": 0,
+   "fear": 1,
+   "sadness": 0,
+   "something_else": 1
+  },
+  "shares": {
+   "amusement": 0.3333,
+   "awe": 0.0,
+   "contentment": 0.0,
+   "excitement": 0.3333,
+   "anger": 0.0,
+   "disgust": 0.0,
+   "fear": 0.1667,
+   "sadness": 0.0,
+   "something_else": 0.1667
+  },
+  "utterances": [
+   {
+    "emotion": "amusement",
+    "utterance": "The reusing of objects as art is awesome."
+   },
+   {
+    "emotion": "excitement",
+    "utterance": "The dramatic contrast of white and black lines excites my eyes."
+   },
+   {
+    "emotion": "amusement",
+    "utterance": "This one is amusing because of the optical illusions, especially in the bottom right corner."
+   },
+   {
+    "emotion": "something else",
+    "utterance": "the black and white stripes and jagged edges of the wire make my brain go crazy. It looks like a nightmare that I can't make sense of"
+   },
+   {
+    "emotion": "fear",
+    "utterance": "this one makes me scared with the black and white stripes and the barb wire looking stuff and I don't know what is going on and it all looks mathematical and and scientific"
+   },
+   {
+    "emotion": "excitement",
+    "utterance": "The strange patterns appear to be creating an optical illusion."
+   }
+  ],
+  "official_release_vote_count": 6,
+  "file_size_px": [
+   510,
+   410
+  ],
+  "loaded_size_px_after_draft": [
+   510,
+   410
+  ],
+  "crop": {
+   "resized": [
+    418,
+    336
+   ],
+   "crop_in_resized": [
+    41,
+    0,
+    377,
+    336
+   ],
+   "crop_in_original": [
+    50.0,
+    0.0,
+    460.0,
+    410.0
+   ],
+   "fraction_of_long_side_seen": 0.804
+  },
+  "attributes": {
+   "red": 0.5159,
+   "green": 0.50221,
+   "blue": 0.49152,
+   "hue_sin": 0.39082,
+   "hue_cos": 0.32233,
+   "saturation": 0.11885,
+   "saturation_var": 0.02321,
+   "value": 0.52435,
+   "warm": 0.08736,
+   "cool": 0.14276,
+   "luminance": 0.50441,
+   "luminance_std": 0.28085,
+   "dark": 0.21887,
+   "bright": 0.17519,
+   "contrast_p95_p05": 0.82236,
+   "edge_density": 0.40842,
+   "edge_tl": 0.22491,
+   "edge_tr": 0.16669,
+   "edge_bl": 0.60413,
+   "edge_br": 0.63794,
+   "hue_bin_0": 0.34926,
+   "hue_bin_1": 0.08861,
+   "hue_bin_2": 0.06588,
+   "hue_bin_3": 0.36129,
+   "hue_bin_4": 0.03472,
+   "hue_bin_5": 0.00149,
+   "hue_bin_6": 0.00159,
+   "hue_bin_7": 0.09715
+  },
+  "description": "Moderate overall brightness, high luminance contrast, and mixed or neutral colors.",
+  "app_predict_vs_decomposition_a_max_abs_diff": 0.0,
+  "app_presence_vs_R3MF1_sigmoid_mean_max_abs_diff": 7.152557368605983e-08,
+  "app_top": "excitement",
+  "chips_shown": {
+   "amusement": 0.786,
+   "anger": 0.665,
+   "fear": 0.67,
+   "something_else": 0.574
+  },
+  "presence_all": {
+   "amusement": 0.786,
+   "awe": 0.408,
+   "contentment": 0.172,
+   "excitement": 0.812,
+   "anger": 0.665,
+   "disgust": 0.422,
+   "fear": 0.67,
+   "sadness": 0.206,
+   "something_else": 0.574
+  },
+  "per_seed_top_app": [
+   "fear",
+   "amusement",
+   "excitement",
+   "excitement",
+   "excitement"
+  ],
+  "probs": {
+   "a_app": {
+    "amusement": 0.1959,
+    "awe": 0.0944,
+    "contentment": 0.086,
+    "excitement": 0.2394,
+    "anger": 0.0361,
+    "disgust": 0.033,
+    "fear": 0.1111,
+    "sadness": 0.0235,
+    "something_else": 0.1805
+   },
+   "b_mf1_raw": {
+    "amusement": 0.1957,
+    "awe": 0.0881,
+    "contentment": 0.0844,
+    "excitement": 0.2557,
+    "anger": 0.0238,
+    "disgust": 0.0259,
+    "fear": 0.1033,
+    "sadness": 0.0228,
+    "something_else": 0.2004
+   },
+   "c_r3_ce": {
+    "amusement": 0.2102,
+    "awe": 0.1017,
+    "contentment": 0.0901,
+    "excitement": 0.2151,
+    "anger": 0.0347,
+    "disgust": 0.0459,
+    "fear": 0.0554,
+    "sadness": 0.029,
+    "something_else": 0.2177
+   },
+   "d_r1": {
+    "amusement": 0.1858,
+    "awe": 0.1056,
+    "contentment": 0.1067,
+    "excitement": 0.2497,
+    "anger": 0.0243,
+    "disgust": 0.0412,
+    "fear": 0.0691,
+    "sadness": 0.0236,
+    "something_else": 0.1941
+   },
+   "e_probe": {
+    "amusement": 0.2016,
+    "awe": 0.1037,
+    "contentment": 0.0986,
+    "excitement": 0.2629,
+    "anger": 0.0072,
+    "disgust": 0.0387,
+    "fear": 0.0786,
+    "sadness": 0.0219,
+    "something_else": 0.1868
+   }
+  },
+  "top": {
+   "a_app": "excitement",
+   "b_mf1_raw": "excitement",
+   "c_r3_ce": "something_else",
+   "d_r1": "excitement",
+   "e_probe": "excitement"
+  },
+  "softCE": {
+   "a_app": 1.6715,
+   "b_mf1_raw": 1.6446,
+   "c_r3_ce": 1.7683,
+   "d_r1": 1.7422,
+   "e_probe": 1.6827
+  },
+  "step4": {
+   "global_max_abs_diff": 4.470348358154297e-07,
+   "attr_text_max_abs_diff": 9.685754776000977e-08,
+   "patches_max_abs_diff": 0.001953125,
+   "attributes_max_abs_diff": 0.0,
+   "processor_pixel_shape": [
+    1,
+    3,
+    336,
+    336
+   ],
+   "logits_vs_saved_val_logits_max_abs_diff_all_20_runs": 2.4557113647460938e-05,
+   "app_raw_logits_vs_saved_R3_MF1_max_abs_diff": 2.09808349609375e-05
+  },
+  "anger_path": {
+   "a_app": 0.0361,
+   "b_mf1_raw": 0.0238,
+   "c_r3_ce": 0.0347,
+   "d_r1": 0.0243,
+   "e_probe": 0.0072
+  }
+ },
+ {
+  "kind": "val",
+  "id": 1428,
+  "art_style": "Mannerism_Late_Renaissance",
+  "painting": "titian_portrait-of-a-painter-with-a-palm-tree-1561",
+  "image_path": "clean_artemis/images/titian_portrait-of-a-painter-with-a-palm-tree-1561.jpg",
+  "n_votes": 6,
+  "votes": {
+   "amusement": 1,
+   "awe": 1,
+   "contentment": 3,
+   "excitement": 0,
+   "anger": 0,
+   "disgust": 0,
+   "fear": 1,
+   "sadness": 0,
+   "something_else": 0
+  },
+  "shares": {
+   "amusement": 0.1667,
+   "awe": 0.1667,
+   "contentment": 0.5,
+   "excitement": 0.0,
+   "anger": 0.0,
+   "disgust": 0.0,
+   "fear": 0.1667,
+   "sadness": 0.0,
+   "something_else": 0.0
+  },
+  "utterances": [
+   {
+    "emotion": "contentment",
+    "utterance": "The blue and orange in the sky. The mans face is calm and serious because he is not smiling and he is not frowning.."
+   },
+   {
+    "emotion": "awe",
+    "utterance": "I like the eerie sunset in the background. That guy looks like he is not messing around"
+   },
+   {
+    "emotion": "contentment",
+    "utterance": "This one looks like an upset uncle or father, and he is trying to discipline his child."
+   },
+   {
+    "emotion": "contentment",
+    "utterance": "The extremely dark outfit of the man really contrasts his pale face and hands."
+   },
+   {
+    "emotion": "fear",
+    "utterance": "The focused look, that seems void of any happiness on this man is unsettling."
+   },
+   {
+    "emotion": "amusement",
+    "utterance": "The serious-at-the-time portrait is a humorous anachronism today"
+   }
+  ],
+  "official_release_vote_count": 6,
+  "file_size_px": [
+   2024,
+   2456
+  ],
+  "loaded_size_px_after_draft": [
+   1012,
+   1228
+  ],
+  "crop": {
+   "resized": [
+    336,
+    408
+   ],
+   "crop_in_resized": [
+    0,
+    36,
+    336,
+    372
+   ],
+   "crop_in_original": [
+    0.0,
+    108.4,
+    1012.0,
+    1120.4
+   ],
+   "fraction_of_long_side_seen": 0.824
+  },
+  "attributes": {
+   "red": 0.26723,
+   "green": 0.21362,
+   "blue": 0.18599,
+   "hue_sin": 0.15269,
+   "hue_cos": 0.94424,
+   "saturation": 0.26813,
+   "saturation_var": 0.01501,
+   "value": 0.2672,
+   "warm": 0.80151,
+   "cool": 0.0,
+   "luminance": 0.2229,
+   "luminance_std": 0.07616,
+   "dark": 0.50943,
+   "bright": 0.0,
+   "contrast_p95_p05": 0.22154,
+   "edge_density": 0.00958,
+   "edge_tl": 0.00287,
+   "edge_tr": 0.01825,
+   "edge_bl": 0.0047,
+   "edge_br": 0.01251,
+   "hue_bin_0": 0.7875,
+   "hue_bin_1": 0.00154,
+   "hue_bin_2": 0.0,
+   "hue_bin_3": 0.0,
+   "hue_bin_4": 0.0,
+   "hue_bin_5": 0.00018,
+   "hue_bin_6": 0.00122,
+   "hue_bin_7": 0.20956
+  },
+  "description": "Low overall brightness, low luminance contrast, and predominantly warm colors.",
+  "app_predict_vs_decomposition_a_max_abs_diff": 0.0,
+  "app_presence_vs_R3MF1_sigmoid_mean_max_abs_diff": 3.5762786843029915e-08,
+  "app_top": "anger",
+  "chips_shown": {
+   "amusement": 0.57,
+   "disgust": 0.559,
+   "fear": 0.72,
+   "sadness": 0.598,
+   "something_else": 0.73
+  },
+  "presence_all": {
+   "amusement": 0.57,
+   "awe": 0.44,
+   "contentment": 0.274,
+   "excitement": 0.188,
+   "anger": 0.859,
+   "disgust": 0.559,
+   "fear": 0.72,
+   "sadness": 0.598,
+   "something_else": 0.73
+  },
+  "per_seed_top_app": [
+   "anger",
+   "sadness",
+   "anger",
+   "fear",
+   "anger"
+  ],
+  "probs": {
+   "a_app": {
+    "amusement": 0.0813,
+    "awe": 0.1071,
+    "contentment": 0.115,
+    "excitement": 0.0163,
+    "anger": 0.2589,
+    "disgust": 0.0282,
+    "fear": 0.1377,
+    "sadness": 0.1128,
+    "something_else": 0.1427
+   },
+   "b_mf1_raw": {
+    "amusement": 0.0907,
+    "awe": 0.1103,
+    "contentment": 0.1252,
+    "excitement": 0.0195,
+    "anger": 0.1922,
+    "disgust": 0.0244,
+    "fear": 0.1421,
+    "sadness": 0.12,
+    "something_else": 0.1755
+   },
+   "c_r3_ce": {
+    "amusement": 0.0922,
+    "awe": 0.1275,
+    "contentment": 0.1382,
+    "excitement": 0.0182,
+    "anger": 0.0958,
+    "disgust": 0.0369,
+    "fear": 0.166,
+    "sadness": 0.133,
+    "something_else": 0.1922
+   },
+   "d_r1": {
+    "amusement": 0.1155,
+    "awe": 0.0899,
+    "contentment": 0.1496,
+    "excitement": 0.0154,
+    "anger": 0.0776,
+    "disgust": 0.0562,
+    "fear": 0.1809,
+    "sadness": 0.1336,
+    "something_else": 0.1814
+   },
+   "e_probe": {
+    "amusement": 0.1369,
+    "awe": 0.1166,
+    "contentment": 0.1929,
+    "excitement": 0.0208,
+    "anger": 0.0421,
+    "disgust": 0.0499,
+    "fear": 0.1721,
+    "sadness": 0.1024,
+    "something_else": 0.1664
+   }
+  },
+  "top": {
+   "a_app": "anger",
+   "b_mf1_raw": "anger",
+   "c_r3_ce": "something_else",
+   "d_r1": "something_else",
+   "e_probe": "contentment"
+  },
+  "softCE": {
+   "a_app": 2.2027,
+   "b_mf1_raw": 2.1313,
+   "c_r3_ce": 2.0296,
+   "d_r1": 1.9962,
+   "e_probe": 1.8057
+  },
+  "step4": {
+   "global_max_abs_diff": 5.662441253662109e-07,
+   "attr_text_max_abs_diff": 6.332993507385254e-08,
+   "patches_max_abs_diff": 0.001953125,
+   "attributes_max_abs_diff": 0.0,
+   "processor_pixel_shape": [
+    1,
+    3,
+    336,
+    336
+   ],
+   "logits_vs_saved_val_logits_max_abs_diff_all_20_runs": 6.097555160522461e-05,
+   "app_raw_logits_vs_saved_R3_MF1_max_abs_diff": 5.173683166503906e-05
+  },
+  "anger_path": {
+   "a_app": 0.2589,
+   "b_mf1_raw": 0.1922,
+   "c_r3_ce": 0.0958,
+   "d_r1": 0.0776,
+   "e_probe": 0.0421
+  }
+ },
+ {
+  "kind": "val",
+  "id": 731,
+  "art_style": "Expressionism",
+  "painting": "pyotr-konchalovsky_portrait-of-baron-k-rausch-von-traubenberg-1911",
+  "image_path": "clean_artemis/images/pyotr-konchalovsky_portrait-of-baron-k-rausch-von-traubenberg-1911.jpg",
+  "n_votes": 10,
+  "votes": {
+   "amusement": 1,
+   "awe": 1,
+   "contentment": 2,
+   "excitement": 0,
+   "anger": 1,
+   "disgust": 2,
+   "fear": 2,
+   "sadness": 0,
+   "something_else": 1
+  },
+  "shares": {
+   "amusement": 0.1,
+   "awe": 0.1,
+   "contentment": 0.2,
+   "excitement": 0.0,
+   "anger": 0.1,
+   "disgust": 0.2,
+   "fear": 0.2,
+   "sadness": 0.0,
+   "something_else": 0.1
+  },
+  "utterances": [
+   {
+    "emotion": "disgust",
+    "utterance": "A wealthy thus selfish man portrayed as perfect."
+   },
+   {
+    "emotion": "contentment",
+    "utterance": "The pose seems like this guy was a mob boss. seems creepy"
+   },
+   {
+    "emotion": "disgust",
+    "utterance": "He has the look of disgust on his face."
+   },
+   {
+    "emotion": "fear",
+    "utterance": "The expression on the mans face is ominous and the dark colors add to the gloomy feel of the painting."
+   },
+   {
+    "emotion": "anger",
+    "utterance": "the man seems disgusted and in deep thought sitting on the chair"
+   },
+   {
+    "emotion": "contentment",
+    "utterance": "the look of sophistication a seriousness on the mans face"
+   },
+   {
+    "emotion": "something else",
+    "utterance": "Painting of a man wearing a suit looking serious but confident."
+   },
+   {
+    "emotion": "amusement",
+    "utterance": "This man has a very large and prominent bulge in his pants"
+   },
+   {
+    "emotion": "fear",
+    "utterance": "All the shadows on his face and his expression make me feel like he's mean."
+   },
+   {
+    "emotion": "awe",
+    "utterance": "This man looks quite stern and imposing."
+   }
+  ],
+  "official_release_vote_count": 10,
+  "file_size_px": [
+   835,
+   1000
+  ],
+  "loaded_size_px_after_draft": [
+   835,
+   1000
+  ],
+  "crop": {
+   "resized": [
+    336,
+    402
+   ],
+   "crop_in_resized": [
+    0,
+    33,
+    336,
+    369
+   ],
+   "crop_in_original": [
+    0.0,
+    82.0,
+    835.0,
+    917.0
+   ],
+   "fraction_of_long_side_seen": 0.835
+  },
+  "attributes": {
+   "red": 0.26055,
+   "green": 0.21913,
+   "blue": 0.25475,
+   "hue_sin": -0.59826,
+   "hue_cos": 0.23862,
+   "saturation": 0.24627,
+   "saturation_var": 0.00909,
+   "value": 0.2801,
+   "warm": 0.17769,
+   "cool": 0.27522,
+   "luminance": 0.23048,
+   "luminance_std": 0.13642,
+   "dark": 0.55461,
+   "bright": 0.0,
+   "contrast_p95_p05": 0.4212,
+   "edge_density": 0.05183,
+   "edge_tl": 0.04602,
+   "edge_tr": 0.05054,
+   "edge_bl": 0.04626,
+   "edge_br": 0.06451,
+   "hue_bin_0": 0.09211,
+   "hue_bin_1": 0.00186,
+   "hue_bin_2": 0.00381,
+   "hue_bin_3": 0.00495,
+   "hue_bin_4": 0.11438,
+   "hue_bin_5": 0.1722,
+   "hue_bin_6": 0.38112,
+   "hue_bin_7": 0.22957
+  },
+  "description": "Low overall brightness, moderate luminance contrast, and mixed or neutral colors.",
+  "app_predict_vs_decomposition_a_max_abs_diff": 0.0,
+  "app_presence_vs_R3MF1_sigmoid_mean_max_abs_diff": 3.5762786843029915e-08,
+  "app_top": "anger",
+  "chips_shown": {
+   "amusement": 0.767,
+   "disgust": 0.758,
+   "fear": 0.745,
+   "sadness": 0.537,
+   "something_else": 0.662
+  },
+  "presence_all": {
+   "amusement": 0.767,
+   "awe": 0.242,
+   "contentment": 0.235,
+   "excitement": 0.356,
+   "anger": 0.818,
+   "disgust": 0.758,
+   "fear": 0.745,
+   "sadness": 0.537,
+   "something_else": 0.662
+  },
+  "per_seed_top_app": [
+   "anger",
+   "anger",
+   "disgust",
+   "fear",
+   "anger"
+  ],
+  "probs": {
+   "a_app": {
+    "amusement": 0.1254,
+    "awe": 0.0485,
+    "contentment": 0.0814,
+    "excitement": 0.0311,
+    "anger": 0.2002,
+    "disgust": 0.1497,
+    "fear": 0.1761,
+    "sadness": 0.0672,
+    "something_else": 0.1206
+   },
+   "b_mf1_raw": {
+    "amusement": 0.1392,
+    "awe": 0.0501,
+    "contentment": 0.089,
+    "excitement": 0.037,
+    "anger": 0.1482,
+    "disgust": 0.1315,
+    "fear": 0.1834,
+    "sadness": 0.0726,
+    "something_else": 0.1491
+   },
+   "c_r3_ce": {
+    "amusement": 0.1543,
+    "awe": 0.0571,
+    "contentment": 0.1072,
+    "excitement": 0.0332,
+    "anger": 0.0759,
+    "disgust": 0.135,
+    "fear": 0.2023,
+    "sadness": 0.0759,
+    "something_else": 0.1591
+   },
+   "d_r1": {
+    "amusement": 0.1608,
+    "awe": 0.0564,
+    "contentment": 0.1413,
+    "excitement": 0.037,
+    "anger": 0.0625,
+    "disgust": 0.1274,
+    "fear": 0.1444,
+    "sadness": 0.0921,
+    "something_else": 0.1782
+   },
+   "e_probe": {
+    "amusement": 0.2082,
+    "awe": 0.0866,
+    "contentment": 0.1444,
+    "excitement": 0.0452,
+    "anger": 0.0446,
+    "disgust": 0.0961,
+    "fear": 0.1531,
+    "sadness": 0.0849,
+    "something_else": 0.1369
+   }
+  },
+  "top": {
+   "a_app": "anger",
+   "b_mf1_raw": "fear",
+   "c_r3_ce": "fear",
+   "d_r1": "something_else",
+   "e_probe": "amusement"
+  },
+  "softCE": {
+   "a_app": 2.1117,
+   "b_mf1_raw": 2.1067,
+   "c_r3_ce": 2.0814,
+   "d_r1": 2.1107,
+   "e_probe": 2.1424
+  },
+  "step4": {
+   "global_max_abs_diff": 4.7497451305389404e-07,
+   "attr_text_max_abs_diff": 8.568167686462402e-08,
+   "patches_max_abs_diff": 0.001953125,
+   "attributes_max_abs_diff": 0.0,
+   "processor_pixel_shape": [
+    1,
+    3,
+    336,
+    336
+   ],
+   "logits_vs_saved_val_logits_max_abs_diff_all_20_runs": 4.786252975463867e-05,
+   "app_raw_logits_vs_saved_R3_MF1_max_abs_diff": 3.039836883544922e-05
+  },
+  "anger_path": {
+   "a_app": 0.2002,
+   "b_mf1_raw": 0.1482,
+   "c_r3_ce": 0.0759,
+   "d_r1": 0.0625,
+   "e_probe": 0.0446
+  }
+ },
+ {
+  "kind": "synthetic",
+  "id": "S1_tall_purple_monochrome",
+  "image_path": "runs/app_diagnosis/stimuli/S1_tall_purple_monochrome.jpg",
+  "file_size_px": [
+   700,
+   1600
+  ],
+  "loaded_size_px_after_draft": [
+   700,
+   1600
+  ],
+  "crop": {
+   "resized": [
+    336,
+    768
+   ],
+   "crop_in_resized": [
+    0,
+    216,
+    336,
+    552
+   ],
+   "crop_in_original": [
+    0.0,
+    450.0,
+    700.0,
+    1150.0
+   ],
+   "fraction_of_long_side_seen": 0.438
+  },
+  "attributes": {
+   "red": 0.32296,
+   "green": 0.15758,
+   "blue": 0.4276,
+   "hue_sin": -0.99456,
+   "hue_cos": 0.10323,
+   "saturation": 0.62963,
+   "saturation_var": 5e-05,
+   "value": 0.4274,
+   "warm": 0.0,
+   "cool": 0.0,
+   "luminance": 0.21218,
+   "luminance_std": 0.01032,
+   "dark": 0.17278,
+   "bright": 0.0,
+   "contrast_p95_p05": 0.03305,
+   "edge_density": 0.0,
+   "edge_tl": 0.0,
+   "edge_tr": 0.0,
+   "edge_bl": 0.0,
+   "edge_br": 0.0,
+   "hue_bin_0": 0.0,
+   "hue_bin_1": 0.0,
+   "hue_bin_2": 0.0,
+   "hue_bin_3": 0.0,
+   "hue_bin_4": 0.0,
+   "hue_bin_5": 0.0,
+   "hue_bin_6": 1.0,
+   "hue_bin_7": 0.0
+  },
+  "description": "Low overall brightness, low luminance contrast, and mixed or neutral colors.",
+  "app_predict_vs_decomposition_a_max_abs_diff": 0.0,
+  "app_presence_vs_R3MF1_sigmoid_mean_max_abs_diff": 3.5762786843029915e-08,
+  "app_top": "something_else",
+  "chips_shown": {
+   "anger": 0.66,
+   "fear": 0.541,
+   "sadness": 0.518
+  },
+  "presence_all": {
+   "amusement": 0.487,
+   "awe": 0.273,
+   "contentment": 0.347,
+   "excitement": 0.486,
+   "anger": 0.66,
+   "disgust": 0.484,
+   "fear": 0.541,
+   "sadness": 0.518,
+   "something_else": 0.689
+  },
+  "per_seed_top_app": [
+   "something_else",
+   "something_else",
+   "something_else",
+   "contentment",
+   "something_else"
+  ],
+  "probs": {
+   "a_app": {
+    "amusement": 0.0847,
+    "awe": 0.0623,
+    "contentment": 0.1491,
+    "excitement": 0.0954,
+    "anger": 0.0992,
+    "disgust": 0.0498,
+    "fear": 0.0649,
+    "sadness": 0.113,
+    "something_else": 0.2817
+   },
+   "b_mf1_raw": {
+    "amusement": 0.0865,
+    "awe": 0.0591,
+    "contentment": 0.1494,
+    "excitement": 0.1042,
+    "anger": 0.0676,
+    "disgust": 0.0402,
+    "fear": 0.0621,
+    "sadness": 0.111,
+    "something_else": 0.3198
+   },
+   "c_r3_ce": {
+    "amusement": 0.073,
+    "awe": 0.0826,
+    "contentment": 0.1749,
+    "excitement": 0.059,
+    "anger": 0.0385,
+    "disgust": 0.0575,
+    "fear": 0.0718,
+    "sadness": 0.1405,
+    "something_else": 0.3021
+   },
+   "d_r1": {
+    "amusement": 0.0828,
+    "awe": 0.0659,
+    "contentment": 0.1844,
+    "excitement": 0.0899,
+    "anger": 0.0522,
+    "disgust": 0.0565,
+    "fear": 0.0551,
+    "sadness": 0.0868,
+    "something_else": 0.3264
+   },
+   "e_probe": {
+    "amusement": 0.1073,
+    "awe": 0.0639,
+    "contentment": 0.1521,
+    "excitement": 0.0691,
+    "anger": 0.1282,
+    "disgust": 0.0729,
+    "fear": 0.0617,
+    "sadness": 0.0838,
+    "something_else": 0.2611
+   }
+  },
+  "top": {
+   "a_app": "something_else",
+   "b_mf1_raw": "something_else",
+   "c_r3_ce": "something_else",
+   "d_r1": "something_else",
+   "e_probe": "something_else"
+  },
+  "anger_path": {
+   "a_app": 0.0992,
+   "b_mf1_raw": 0.0676,
+   "c_r3_ce": 0.0385,
+   "d_r1": 0.0522,
+   "e_probe": 0.1282
+  }
+ },
+ {
+  "kind": "synthetic",
+  "id": "S2_navy_black_bands",
+  "image_path": "runs/app_diagnosis/stimuli/S2_navy_black_bands.jpg",
+  "file_size_px": [
+   1100,
+   1500
+  ],
+  "loaded_size_px_after_draft": [
+   550,
+   750
+  ],
+  "crop": {
+   "resized": [
+    336,
+    458
+   ],
+   "crop_in_resized": [
+    0,
+    61,
+    336,
+    397
+   ],
+   "crop_in_original": [
+    0.0,
+    99.9,
+    550.0,
+    649.9
+   ],
+   "fraction_of_long_side_seen": 0.733
+  },
+  "attributes": {
+   "red": 0.06626,
+   "green": 0.08049,
+   "blue": 0.16986,
+   "hue_sin": -0.83456,
+   "hue_cos": -0.52197,
+   "saturation": 0.53066,
+   "saturation_var": 0.02185,
+   "value": 0.16993,
+   "warm": 0.0,
+   "cool": 1.0,
+   "luminance": 0.08392,
+   "luminance_std": 0.0425,
+   "dark": 1.0,
+   "bright": 0.0,
+   "contrast_p95_p05": 0.11223,
+   "edge_density": 0.0,
+   "edge_tl": 0.0,
+   "edge_tr": 0.0,
+   "edge_bl": 0.0,
+   "edge_br": 0.0,
+   "hue_bin_0": 0.0,
+   "hue_bin_1": 0.0,
+   "hue_bin_2": 0.0,
+   "hue_bin_3": 0.0,
+   "hue_bin_4": 2e-05,
+   "hue_bin_5": 0.99998,
+   "hue_bin_6": 0.0,
+   "hue_bin_7": 0.0
+  },
+  "description": "Low overall brightness, low luminance contrast, and predominantly cool colors.",
+  "app_predict_vs_decomposition_a_max_abs_diff": 0.0,
+  "app_presence_vs_R3MF1_sigmoid_mean_max_abs_diff": 2.384185793236071e-08,
+  "app_top": "something_else",
+  "chips_shown": {
+   "anger": 0.885,
+   "disgust": 0.527,
+   "fear": 0.738,
+   "sadness": 0.735
+  },
+  "presence_all": {
+   "amusement": 0.381,
+   "awe": 0.163,
+   "contentment": 0.232,
+   "excitement": 0.285,
+   "anger": 0.885,
+   "disgust": 0.527,
+   "fear": 0.738,
+   "sadness": 0.735,
+   "something_else": 0.785
+  },
+  "per_seed_top_app": [
+   "something_else",
+   "sadness",
+   "anger",
+   "something_else",
+   "fear"
+  ],
+  "probs": {
+   "a_app": {
+    "amusement": 0.0476,
+    "awe": 0.0329,
+    "contentment": 0.0843,
+    "excitement": 0.0347,
+    "anger": 0.1964,
+    "disgust": 0.052,
+    "fear": 0.1521,
+    "sadness": 0.181,
+    "something_else": 0.219
+   },
+   "b_mf1_raw": {
+    "amusement": 0.0514,
+    "awe": 0.0328,
+    "contentment": 0.089,
+    "excitement": 0.04,
+    "anger": 0.1405,
+    "disgust": 0.0441,
+    "fear": 0.1526,
+    "sadness": 0.1881,
+    "something_else": 0.2614
+   },
+   "c_r3_ce": {
+    "amusement": 0.0468,
+    "awe": 0.0365,
+    "contentment": 0.0977,
+    "excitement": 0.0333,
+    "anger": 0.1244,
+    "disgust": 0.0582,
+    "fear": 0.1266,
+    "sadness": 0.2018,
+    "something_else": 0.2747
+   },
+   "d_r1": {
+    "amusement": 0.0553,
+    "awe": 0.0484,
+    "contentment": 0.1412,
+    "excitement": 0.0409,
+    "anger": 0.0755,
+    "disgust": 0.048,
+    "fear": 0.1296,
+    "sadness": 0.1854,
+    "something_else": 0.2758
+   },
+   "e_probe": {
+    "amusement": 0.0471,
+    "awe": 0.0439,
+    "contentment": 0.0891,
+    "excitement": 0.0377,
+    "anger": 0.1077,
+    "disgust": 0.0719,
+    "fear": 0.1484,
+    "sadness": 0.1406,
+    "something_else": 0.3135
+   }
+  },
+  "top": {
+   "a_app": "something_else",
+   "b_mf1_raw": "something_else",
+   "c_r3_ce": "something_else",
+   "d_r1": "something_else",
+   "e_probe": "something_else"
+  },
+  "anger_path": {
+   "a_app": 0.1964,
+   "b_mf1_raw": 0.1405,
+   "c_r3_ce": 0.1244,
+   "d_r1": 0.0755,
+   "e_probe": 0.1077
+  }
+ },
+ {
+  "kind": "synthetic",
+  "id": "S3_maroon_on_black",
+  "image_path": "runs/app_diagnosis/stimuli/S3_maroon_on_black.jpg",
+  "file_size_px": [
+   1000,
+   1400
+  ],
+  "loaded_size_px_after_draft": [
+   1000,
+   1400
+  ],
+  "crop": {
+   "resized": [
+    336,
+    470
+   ],
+   "crop_in_resized": [
+    0,
+    67,
+    336,
+    403
+   ],
+   "crop_in_original": [
+    0.0,
+    199.4,
+    1000.0,
+    1199.4
+   ],
+   "fraction_of_long_side_seen": 0.714
+  },
+  "attributes": {
+   "red": 0.15841,
+   "green": 0.04535,
+   "blue": 0.06511,
+   "hue_sin": -0.2358,
+   "hue_cos": 0.96852,
+   "saturation": 0.64274,
+   "saturation_var": 0.02726,
+   "value": 0.1584,
+   "warm": 0.99789,
+   "cool": 0.0,
+   "luminance": 0.07079,
+   "luminance_std": 0.02514,
+   "dark": 1.0,
+   "bright": 0.0,
+   "contrast_p95_p05": 0.06833,
+   "edge_density": 0.0,
+   "edge_tl": 0.0,
+   "edge_tr": 0.0,
+   "edge_bl": 0.0,
+   "edge_br": 0.0,
+   "hue_bin_0": 7e-05,
+   "hue_bin_1": 0.0,
+   "hue_bin_2": 0.0,
+   "hue_bin_3": 0.0,
+   "hue_bin_4": 0.0,
+   "hue_bin_5": 0.0,
+   "hue_bin_6": 0.0,
+   "hue_bin_7": 0.99993
+  },
+  "description": "Low overall brightness, low luminance contrast, and predominantly warm colors.",
+  "app_predict_vs_decomposition_a_max_abs_diff": 0.0,
+  "app_presence_vs_R3MF1_sigmoid_mean_max_abs_diff": 3.5762786843029915e-08,
+  "app_top": "fear",
+  "chips_shown": {
+   "anger": 0.904,
+   "disgust": 0.654,
+   "sadness": 0.615,
+   "something_else": 0.754
+  },
+  "presence_all": {
+   "amusement": 0.264,
+   "awe": 0.186,
+   "contentment": 0.211,
+   "excitement": 0.356,
+   "anger": 0.904,
+   "disgust": 0.654,
+   "fear": 0.87,
+   "sadness": 0.615,
+   "something_else": 0.754
+  },
+  "per_seed_top_app": [
+   "anger",
+   "fear",
+   "fear",
+   "fear",
+   "fear"
+  ],
+  "probs": {
+   "a_app": {
+    "amusement": 0.031,
+    "awe": 0.0341,
+    "contentment": 0.0623,
+    "excitement": 0.0336,
+    "anger": 0.2345,
+    "disgust": 0.0858,
+    "fear": 0.2479,
+    "sadness": 0.093,
+    "something_else": 0.178
+   },
+   "b_mf1_raw": {
+    "amusement": 0.0345,
+    "awe": 0.0353,
+    "contentment": 0.0679,
+    "excitement": 0.0401,
+    "anger": 0.1721,
+    "disgust": 0.0745,
+    "fear": 0.2567,
+    "sadness": 0.0993,
+    "something_else": 0.2197
+   },
+   "c_r3_ce": {
+    "amusement": 0.0426,
+    "awe": 0.0416,
+    "contentment": 0.0695,
+    "excitement": 0.0336,
+    "anger": 0.1677,
+    "disgust": 0.0929,
+    "fear": 0.2325,
+    "sadness": 0.1113,
+    "something_else": 0.2084
+   },
+   "d_r1": {
+    "amusement": 0.0382,
+    "awe": 0.0374,
+    "contentment": 0.0804,
+    "excitement": 0.0472,
+    "anger": 0.0837,
+    "disgust": 0.0772,
+    "fear": 0.2958,
+    "sadness": 0.0961,
+    "something_else": 0.2441
+   },
+   "e_probe": {
+    "amusement": 0.0332,
+    "awe": 0.0376,
+    "contentment": 0.0658,
+    "excitement": 0.0353,
+    "anger": 0.1632,
+    "disgust": 0.0799,
+    "fear": 0.2464,
+    "sadness": 0.0987,
+    "something_else": 0.2399
+   }
+  },
+  "top": {
+   "a_app": "fear",
+   "b_mf1_raw": "fear",
+   "c_r3_ce": "fear",
+   "d_r1": "fear",
+   "e_probe": "fear"
+  },
+  "anger_path": {
+   "a_app": 0.2345,
+   "b_mf1_raw": 0.1721,
+   "c_r3_ce": 0.1677,
+   "d_r1": 0.0837,
+   "e_probe": 0.1632
+  }
+ },
+ {
+  "kind": "synthetic",
+  "id": "C1_uniform_black",
+  "image_path": "runs/app_diagnosis/stimuli/C1_uniform_black.jpg",
+  "file_size_px": [
+   900,
+   1200
+  ],
+  "loaded_size_px_after_draft": [
+   900,
+   1200
+  ],
+  "crop": {
+   "resized": [
+    336,
+    448
+   ],
+   "crop_in_resized": [
+    0,
+    56,
+    336,
+    392
+   ],
+   "crop_in_original": [
+    0.0,
+    150.0,
+    900.0,
+    1050.0
+   ],
+   "fraction_of_long_side_seen": 0.75
+  },
+  "attributes": {
+   "red": 0.05295,
+   "green": 0.05295,
+   "blue": 0.05295,
+   "hue_sin": 0.0,
+   "hue_cos": 1.0,
+   "saturation": 0.0,
+   "saturation_var": 0.0,
+   "value": 0.05292,
+   "warm": 0.0,
+   "cool": 0.0,
+   "luminance": 0.05292,
+   "luminance_std": 0.00237,
+   "dark": 1.0,
+   "bright": 0.0,
+   "contrast_p95_p05": 0.00392,
+   "edge_density": 0.0,
+   "edge_tl": 0.0,
+   "edge_tr": 0.0,
+   "edge_bl": 0.0,
+   "edge_br": 0.0,
+   "hue_bin_0": 0.0,
+   "hue_bin_1": 0.0,
+   "hue_bin_2": 0.0,
+   "hue_bin_3": 0.0,
+   "hue_bin_4": 0.0,
+   "hue_bin_5": 0.0,
+   "hue_bin_6": 0.0,
+   "hue_bin_7": 0.0
+  },
+  "description": "Low overall brightness, low luminance contrast, and mixed or neutral colors.",
+  "app_predict_vs_decomposition_a_max_abs_diff": 0.0,
+  "app_presence_vs_R3MF1_sigmoid_mean_max_abs_diff": 5.960464477539063e-08,
+  "app_top": "something_else",
+  "chips_shown": {
+   "anger": 0.883,
+   "disgust": 0.604,
+   "fear": 0.844,
+   "sadness": 0.656
+  },
+  "presence_all": {
+   "amusement": 0.316,
+   "awe": 0.168,
+   "contentment": 0.193,
+   "excitement": 0.255,
+   "anger": 0.883,
+   "disgust": 0.604,
+   "fear": 0.844,
+   "sadness": 0.656,
+   "something_else": 0.826
+  },
+  "per_seed_top_app": [
+   "something_else",
+   "something_else",
+   "anger",
+   "something_else",
+   "fear"
+  ],
+  "probs": {
+   "a_app": {
+    "amusement": 0.036,
+    "awe": 0.0305,
+    "contentment": 0.0737,
+    "excitement": 0.0278,
+    "anger": 0.1895,
+    "disgust": 0.0638,
+    "fear": 0.2118,
+    "sadness": 0.1169,
+    "something_else": 0.25
+   },
+   "b_mf1_raw": {
+    "amusement": 0.0388,
+    "awe": 0.0306,
+    "contentment": 0.0778,
+    "excitement": 0.032,
+    "anger": 0.1341,
+    "disgust": 0.0539,
+    "fear": 0.2124,
+    "sadness": 0.1217,
+    "something_else": 0.2989
+   },
+   "c_r3_ce": {
+    "amusement": 0.0407,
+    "awe": 0.0402,
+    "contentment": 0.0977,
+    "excitement": 0.0306,
+    "anger": 0.1142,
+    "disgust": 0.063,
+    "fear": 0.1828,
+    "sadness": 0.1455,
+    "something_else": 0.2853
+   },
+   "d_r1": {
+    "amusement": 0.0345,
+    "awe": 0.0385,
+    "contentment": 0.0858,
+    "excitement": 0.0338,
+    "anger": 0.08,
+    "disgust": 0.0526,
+    "fear": 0.2161,
+    "sadness": 0.1293,
+    "something_else": 0.3295
+   },
+   "e_probe": {
+    "amusement": 0.0419,
+    "awe": 0.0492,
+    "contentment": 0.0817,
+    "excitement": 0.0603,
+    "anger": 0.1237,
+    "disgust": 0.0801,
+    "fear": 0.1282,
+    "sadness": 0.1373,
+    "something_else": 0.2976
+   }
+  },
+  "top": {
+   "a_app": "something_else",
+   "b_mf1_raw": "something_else",
+   "c_r3_ce": "something_else",
+   "d_r1": "something_else",
+   "e_probe": "something_else"
+  },
+  "anger_path": {
+   "a_app": 0.1895,
+   "b_mf1_raw": 0.1341,
+   "c_r3_ce": 0.1142,
+   "d_r1": 0.08,
+   "e_probe": 0.1237
+  }
+ },
+ {
+  "kind": "synthetic",
+  "id": "C2_uniform_mid_grey",
+  "image_path": "runs/app_diagnosis/stimuli/C2_uniform_mid_grey.jpg",
+  "file_size_px": [
+   900,
+   1200
+  ],
+  "loaded_size_px_after_draft": [
+   900,
+   1200
+  ],
+  "crop": {
+   "resized": [
+    336,
+    448
+   ],
+   "crop_in_resized": [
+    0,
+    56,
+    336,
+    392
+   ],
+   "crop_in_original": [
+    0.0,
+    150.0,
+    900.0,
+    1050.0
+   ],
+   "fraction_of_long_side_seen": 0.75
+  },
+  "attributes": {
+   "red": 0.49999,
+   "green": 0.49999,
+   "blue": 0.49999,
+   "hue_sin": 0.0,
+   "hue_cos": 1.0,
+   "saturation": 0.0,
+   "saturation_var": 0.0,
+   "value": 0.49999,
+   "warm": 0.0,
+   "cool": 0.0,
+   "luminance": 0.49999,
+   "luminance_std": 0.00237,
+   "dark": 0.0,
+   "bright": 0.0,
+   "contrast_p95_p05": 0.00392,
+   "edge_density": 0.0,
+   "edge_tl": 0.0,
+   "edge_tr": 0.0,
+   "edge_bl": 0.0,
+   "edge_br": 0.0,
+   "hue_bin_0": 0.0,
+   "hue_bin_1": 0.0,
+   "hue_bin_2": 0.0,
+   "hue_bin_3": 0.0,
+   "hue_bin_4": 0.0,
+   "hue_bin_5": 0.0,
+   "hue_bin_6": 0.0,
+   "hue_bin_7": 0.0
+  },
+  "description": "Moderate overall brightness, low luminance contrast, and mixed or neutral colors.",
+  "app_predict_vs_decomposition_a_max_abs_diff": 0.0,
+  "app_presence_vs_R3MF1_sigmoid_mean_max_abs_diff": 3.5762786843029915e-08,
+  "app_top": "something_else",
+  "chips_shown": {
+   "anger": 0.94,
+   "disgust": 0.743,
+   "fear": 0.551,
+   "sadness": 0.585
+  },
+  "presence_all": {
+   "amusement": 0.479,
+   "awe": 0.138,
+   "contentment": 0.245,
+   "excitement": 0.253,
+   "anger": 0.94,
+   "disgust": 0.743,
+   "fear": 0.551,
+   "sadness": 0.585,
+   "something_else": 0.928
+  },
+  "per_seed_top_app": [
+   "something_else",
+   "something_else",
+   "anger",
+   "something_else",
+   "anger"
+  ],
+  "probs": {
+   "a_app": {
+    "amusement": 0.0396,
+    "awe": 0.0169,
+    "contentment": 0.0755,
+    "excitement": 0.019,
+    "anger": 0.2576,
+    "disgust": 0.1215,
+    "fear": 0.044,
+    "sadness": 0.0885,
+    "something_else": 0.3373
+   },
+   "b_mf1_raw": {
+    "amusement": 0.0432,
+    "awe": 0.0172,
+    "contentment": 0.0809,
+    "excitement": 0.0222,
+    "anger": 0.1857,
+    "disgust": 0.1049,
+    "fear": 0.0449,
+    "sadness": 0.0928,
+    "something_else": 0.4081
+   },
+   "c_r3_ce": {
+    "amusement": 0.0542,
+    "awe": 0.0263,
+    "contentment": 0.115,
+    "excitement": 0.0266,
+    "anger": 0.1487,
+    "disgust": 0.0892,
+    "fear": 0.0405,
+    "sadness": 0.0909,
+    "something_else": 0.4086
+   },
+   "d_r1": {
+    "amusement": 0.0482,
+    "awe": 0.0219,
+    "contentment": 0.0842,
+    "excitement": 0.0236,
+    "anger": 0.1393,
+    "disgust": 0.0803,
+    "fear": 0.0443,
+    "sadness": 0.0984,
+    "something_else": 0.4599
+   },
+   "e_probe": {
+    "amusement": 0.082,
+    "awe": 0.0413,
+    "contentment": 0.1074,
+    "excitement": 0.0424,
+    "anger": 0.1155,
+    "disgust": 0.1406,
+    "fear": 0.0702,
+    "sadness": 0.0996,
+    "something_else": 0.301
+   }
+  },
+  "top": {
+   "a_app": "something_else",
+   "b_mf1_raw": "something_else",
+   "c_r3_ce": "something_else",
+   "d_r1": "something_else",
+   "e_probe": "something_else"
+  },
+  "anger_path": {
+   "a_app": 0.2576,
+   "b_mf1_raw": 0.1857,
+   "c_r3_ce": 0.1487,
+   "d_r1": 0.1393,
+   "e_probe": 0.1155
+  }
+ },
+ {
+  "kind": "synthetic",
+  "id": "C3_uniform_bright_yellow",
+  "image_path": "runs/app_diagnosis/stimuli/C3_uniform_bright_yellow.jpg",
+  "file_size_px": [
+   900,
+   1200
+  ],
+  "loaded_size_px_after_draft": [
+   900,
+   1200
+  ],
+  "crop": {
+   "resized": [
+    336,
+    448
+   ],
+   "crop_in_resized": [
+    0,
+    56,
+    336,
+    392
+   ],
+   "crop_in_original": [
+    0.0,
+    150.0,
+    900.0,
+    1050.0
+   ],
+   "fraction_of_long_side_seen": 0.75
+  },
+  "attributes": {
+   "red": 0.91991,
+   "green": 0.8064,
+   "blue": 0.27259,
+   "hue_sin": 0.75941,
+   "hue_cos": 0.65062,
+   "saturation": 0.70195,
+   "saturation_var": 0.0,
+   "value": 0.91965,
+   "warm": 1.0,
+   "cool": 0.0,
+   "luminance": 0.79159,
+   "luminance_std": 0.00237,
+   "dark": 0.0,
+   "bright": 5e-05,
+   "contrast_p95_p05": 0.00392,
+   "edge_density": 0.0,
+   "edge_tl": 0.0,
+   "edge_tr": 0.0,
+   "edge_bl": 0.0,
+   "edge_br": 0.0,
+   "hue_bin_0": 0.0,
+   "hue_bin_1": 1.0,
+   "hue_bin_2": 0.0,
+   "hue_bin_3": 0.0,
+   "hue_bin_4": 0.0,
+   "hue_bin_5": 0.0,
+   "hue_bin_6": 0.0,
+   "hue_bin_7": 0.0
+  },
+  "description": "High overall brightness, low luminance contrast, and predominantly warm colors.",
+  "app_predict_vs_decomposition_a_max_abs_diff": 0.0,
+  "app_presence_vs_R3MF1_sigmoid_mean_max_abs_diff": 1.7881393421514957e-08,
+  "app_top": "something_else",
+  "chips_shown": {
+   "amusement": 0.594,
+   "anger": 0.919,
+   "disgust": 0.723
+  },
+  "presence_all": {
+   "amusement": 0.594,
+   "awe": 0.177,
+   "contentment": 0.285,
+   "excitement": 0.493,
+   "anger": 0.919,
+   "disgust": 0.723,
+   "fear": 0.419,
+   "sadness": 0.313,
+   "something_else": 0.87
+  },
+  "per_seed_top_app": [
+   "something_else",
+   "something_else",
+   "something_else",
+   "anger",
+   "anger"
+  ],
+  "probs": {
+   "a_app": {
+    "amusement": 0.0781,
+    "awe": 0.0278,
+    "contentment": 0.1029,
+    "excitement": 0.0685,
+    "anger": 0.2317,
+    "disgust": 0.1364,
+    "fear": 0.0332,
+    "sadness": 0.0395,
+    "something_else": 0.282
+   },
+   "b_mf1_raw": {
+    "amusement": 0.0849,
+    "awe": 0.0283,
+    "contentment": 0.1101,
+    "excitement": 0.08,
+    "anger": 0.1656,
+    "disgust": 0.1163,
+    "fear": 0.0335,
+    "sadness": 0.0416,
+    "something_else": 0.3398
+   },
+   "c_r3_ce": {
+    "amusement": 0.1022,
+    "awe": 0.0361,
+    "contentment": 0.1586,
+    "excitement": 0.0637,
+    "anger": 0.1247,
+    "disgust": 0.107,
+    "fear": 0.0228,
+    "sadness": 0.0433,
+    "something_else": 0.3416
+   },
+   "d_r1": {
+    "amusement": 0.1204,
+    "awe": 0.0291,
+    "contentment": 0.1283,
+    "excitement": 0.089,
+    "anger": 0.1553,
+    "disgust": 0.106,
+    "fear": 0.0216,
+    "sadness": 0.0296,
+    "something_else": 0.3207
+   },
+   "e_probe": {
+    "amusement": 0.1131,
+    "awe": 0.044,
+    "contentment": 0.1235,
+    "excitement": 0.0765,
+    "anger": 0.0972,
+    "disgust": 0.1415,
+    "fear": 0.0669,
+    "sadness": 0.0373,
+    "something_else": 0.2999
+   }
+  },
+  "top": {
+   "a_app": "something_else",
+   "b_mf1_raw": "something_else",
+   "c_r3_ce": "something_else",
+   "d_r1": "something_else",
+   "e_probe": "something_else"
+  },
+  "anger_path": {
+   "a_app": 0.2317,
+   "b_mf1_raw": 0.1656,
+   "c_r3_ce": 0.1247,
+   "d_r1": 0.1553,
+   "e_probe": 0.0972
+  }
+ }
+]

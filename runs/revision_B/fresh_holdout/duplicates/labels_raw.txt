@@ -1,0 +1,487 @@
+0001|D|different artists and works (Rembrandt etching vs Kuroda abstract)
+0002|S|identical image of the same Clyfford Still painting (1949-No. 1)
+0003|D|different artists and works (Kirchner nude vs Ernst abstract)
+0004|D|different artists and works (Chagall etching vs Tobey abstract)
+0005|D|different works of one Reed series (different palette and shapes)
+0006|D|different artists and works (Roerich costume vs Ubac abstract)
+0007|U|near-identical cubist composition under two attributions (Braque/Picasso); cannot rule out same work
+0008|R|same Mucha Slav Epic canvas; different file/crop
+0009|D|different artists and works (Somov portrait vs Beardsley drawing)
+0010|R|same Beardsley Venus design; different reproduction (contrast/print)
+0011|R|same Beardsley drawing (The Coiffing); different scan
+0012|D|different artists and works (Pissarro vs Kustodiev)
+0013|S|identical image of the same Hodler painting (The Day)
+0014|D|different artists and works (Goya etching vs Moser poster sketch)
+0015|R|same Roerich Prince Igor costume design; different scan/crop
+0016|D|different artists and works (Saryan sketch vs Mathiopoulos portrait)
+0017|D|different artists and works (Pissarro landscape vs Serebriakova portrait)
+0018|R|same frozen-lake painting attributed to different Ostade brothers; different scan
+0019|D|different sitters and artists (Gainsborough vs Antropov)
+0020|D|different sitters and artists (Eakins vs Antropov)
+0021|R|same Isabella Brandt portrait under two attributions (Rubens/van Dyck); different scan
+0022|R|same van Dyck Genoese lady portrait; different scan/colour
+0023|S|identical image under two titles (Murillo St Isidore / St Leander)
+0024|R|same Canaletto Campo Santa Maria Formosa; different scan/colour
+0025|R|same Canaletto Rialto Bridge from the South; different scan/colour
+0026|R|same Canaletto Grand Canal from Campo San Vio; different scan/colour
+0027|R|same Canaletto Campo Santi Apostoli; different scan/colour
+0028|U|Teniers peasants dancing outside an inn: similar layout, very different colour; version vs reproduction unclear
+0029|U|Teniers Archduke Leopold Wilhelm gallery: multiple autograph versions exist; cannot tell version from reproduction
+0030|D|different sitters and artists (Raeburn vs Velazquez)
+0031|D|different sitters and artists (Pesne vs Velazquez Olivares); dark-portrait pHash collision
+0032|D|different sitters (Velazquez Infanta vs Olivares)
+0033|D|different sitters and artists (Hals vs Velazquez)
+0034|D|different sitters and artists (Rembrandt vs Velazquez)
+0035|D|different sitters and artists (von Aachen vs Velazquez)
+0036|D|different sitters and artists (Tropinin vs Velazquez)
+0037|D|different sitters and artists (Tintoretto vs Velazquez)
+0038|D|different artists and works (Burne-Jones Hope vs Velazquez nun)
+0039|D|different artists and works (Kokoschka vs Zurbaran crucifixion)
+0040|D|different sitters and artists (Eakins vs Hals)
+0041|D|different sitters (Hals: Hoornbeek vs Coymans)
+0042|D|different sitters (Hals: young man with glove vs Coymans)
+0043|D|different sitters and artists (Picasso vs Hals)
+0044|D|different artists and works (Uccello Madonna vs Snyders fruit stall)
+0045|D|different sitters and artists (Velazquez cleric vs Terborch)
+0046|D|different sitters and artists (Reynolds vs Terborch)
+0047|D|different sitters and artists (Rembrandt vs Terborch)
+0048|D|different sitters and artists (Myasoyedov vs Terborch)
+0049|D|different sitters and artists (Courbet vs Terborch)
+0050|D|different sitters and artists (Perov vs Terborch)
+0051|D|different sitters and artists (Raeburn vs Terborch)
+0052|D|different artists and works (Rembrandt Ascension vs Jordaens Assumption)
+0053|D|different artists and works (Cezanne vs Vermeer)
+0054|U|Rubens chambermaid vs Infanta Isabella: near-identical face and ruff; cannot rule out same portrait
+0055|R|same Rubens portrait of Gevartius (title misspelled); different scan/colour
+0056|D|different sitters and artists (Le Nain vs Rubens)
+0057|D|different sitters and artists (Degas vs Rubens)
+0058|D|different sitters and artists (Bronzino vs Rubens)
+0059|D|different sitters and artists (Titian vs Rubens)
+0060|D|different sitters and artists (Manet vs Rubens)
+0061|D|different sitters and artists (Sargent vs Rubens)
+0062|D|different sitters and artists (Eakins vs Rubens)
+0063|D|different sitters and artists (Tintoretto vs Rubens)
+0064|D|different sitters and artists (Sargent vs Rubens)
+0065|D|different sitters and artists (Levitzky vs Rubens)
+0066|D|different sitters and artists (Raeburn vs Rubens)
+0067|D|different sitters and artists (Rembrandt Saskia vs Rubens)
+0068|S|identical image of the same Rubens triptych (Elevation/Raising of the Cross)
+0069|D|different artists and works (Makovsky vs Rembrandt etching)
+0070|R|same Rembrandt Artist in His Studio; different scan/colour
+0071|R|same Rembrandt etching (Christ disputing with the doctors); different impression/scan
+0072|R|same Rembrandt Simeon with the Christ child; different scan/title
+0073|R|same Rembrandt etching (Three Cottages / Three Huts); different impression/scan
+0074|R|same Rembrandt Lucretia (1666); different scan/colour
+0075|R|same Rembrandt Minerva; different scan/colour
+0076|D|different sitters (two Rembrandt women's portraits)
+0077|D|different sitters and artists (Hals vs Rembrandt)
+0078|R|same Rembrandt portrait of his mother; different scan/colour
+0079|R|same Rembrandt Flora (Saskia as Flora, 1634); different scan
+0080|R|same Rembrandt etching (self-portrait drawing at a window); different impression/scan
+0081|R|same Rembrandt self-portrait with plumed beret (1629); different scan/colour
+0082|D|different artists and works (van Gogh still life vs Rembrandt etching)
+0083|R|same Rembrandt Lazarus small-plate etching (1642); different impression/scan
+0084|R|same Rembrandt etching (Jacob and Laban / three oriental figures); different scan
+0085|D|different artists and works (Newman vs Kuroda)
+0086|D|different works of one Appleby series (Spring vs Autumn Aspen, different colours)
+0087|D|different works of one Appleby series (Verona variation 4 vs 7, different colours)
+0088|D|different artists and works (Hinman vs Appleby)
+0089|D|different prints of Newman's Canto series (VII vs VIII, different band layout)
+0090|D|different artists and works (McLaughlin vs Marden)
+0091|U|Morris Louis Tet vs Blue Veil (1958): near-identical veil structure; cannot rule out same canvas
+0092|D|different artists and works (Gene Davis vs Calapez)
+0093|D|different sitters and artists (Rembrandt vs Jamie Wyeth)
+0094|D|different sitters and artists (Titian vs Jamie Wyeth)
+0095|R|same Souza-Cardoso painting under two titles (Stronghold / Castle 1912); different scan
+0096|R|same Metzinger still life (playing cards, coffee cup, apples); different file
+0097|S|identical image of one Feininger church painting under two titles
+0098|R|same Feininger Green Bridge II (1916); different file/colour
+0099|D|different frescoes of one Castagno cycle (Petrarch vs Dante)
+0100|R|same Antonello portrait of a man; different scan/colour
+0101|U|Antonello red-cap portraits (1473/1475): near-identical; version vs reproduction unclear
+0102|R|same Adoration of the Magi tondo under two attributions (Fra Angelico/Lippi)
+0103|R|same Filippo Lippi Madonna and Child; different scan/colour
+0104|D|different artists and works (Dali vs Fra Angelico)
+0105|R|same San Bernardino miracle panel under two attributions (Pinturicchio/Perugino)
+0106|R|same Triumph of Mordecai panel under two attributions (Lippi/Botticelli)
+0107|R|same Modigliani seated young woman (1918); different scan
+0108|R|same Modigliani young girl (1918); different scan/colour
+0109|D|different artists and works (Sargent vs Modigliani)
+0110|R|same Modigliani head of a young woman; different scan
+0111|D|different sitters and artists (Levitzky vs Modigliani)
+0112|R|same Modigliani portrait inscribed CHAN (1917) under two titles; different scan
+0113|R|same Modigliani portrait of Manuel Humbert (1916); different scan/colour
+0114|R|same Modigliani Almaisa (1916); different scan/colour
+0115|R|same Modigliani servant girl; different scan
+0116|D|different artists and works (Leyster vs Childish)
+0117|R|same Botsoglou painting under two titles; different scan/colour
+0118|D|different artists and works (van Gogh vs Munch)
+0119|D|different sitters and artists (Cassatt vs Schjerfbeck)
+0120|D|different artists and works (Arico vs Freud)
+0121|D|different sitters and artists (Perugino vs Laurencin)
+0122|D|different sitters and artists (Reynolds vs Eloy)
+0123|D|different artists and works (Hopper Night Windows vs Eloy portrait)
+0124|D|different sitters and artists (Sargent vs Eloy)
+0125|D|different sitters and artists (Kramskoy vs Eloy)
+0126|D|different artists and works (Chagall vs Pechstein)
+0127|D|different sitters and artists (Gwen John vs Picasso)
+0128|R|same Picasso self-portrait (1901, Yo Picasso composition); different scan/colour
+0129|D|different artists and works (Gainsborough vs Dali)
+0130|S|identical image under two attributions (Titian/Giorgione, Christ Carrying the Cross)
+0131|D|different sitters and artists (Luks vs Boltraffio)
+0132|D|different sitters and artists (Koler vs Boltraffio)
+0133|D|different sitters and artists (Rembrandt vs Leonardo)
+0134|D|different sitters and artists (Raeburn vs Leonardo)
+0135|D|different sitters and artists (Raeburn vs Leonardo)
+0136|R|same Combat of Love and Chastity under two attributions (Mantegna/Perugino); different scan
+0137|R|same Titian Isabella d'Este (1536); different scan/colour
+0138|R|same Feast of the Gods under two attributions (Bellini/Titian); different scan
+0139|R|same Sisley drying nets (1872); different scan/colour
+0140|R|same Sisley trees in bloom (1889) under two titles; different scan/colour
+0141|D|different artists and works (Sargent portrait vs Kuindzhi rock)
+0142|R|same Pissarro Loing canal painting under two titles; different scan/colour
+0143|R|same Pissarro haystacks watercolour (1889) under two titles; different scan
+0144|R|same Hassam Rainy Day in Boston (1885); different scan/colour cast
+0145|R|same Hassam shower on rue Bonaparte (1887); different file, one framed
+0146|R|same Hassam Summer Sunlight / Isle of Shoals; different scan
+0147|U|Monet Val-Saint-Nicolas morning: several autograph versions exist; colours differ, cannot tell which
+0148|D|different artists and works (Solomko vs Monet)
+0149|R|same Monet Rough Sea at Etretat (1883); different scan/colour
+0150|U|Monet Waterloo Bridge: dozens of near-identical versions; cannot tell version from reproduction
+0151|R|same Monet Bridge at Argenteuil; different scan/colour
+0152|R|same Monet Promenade near Argenteuil (1873); different scan/colour
+0153|R|same Monet Saint-Lazare station; different scan/colour
+0154|U|Monet house from the rose garden (1924): multiple versions, colours differ; cannot tell which
+0155|D|different artists and works (Vrubel roses vs Monet water lilies)
+0156|U|Monet windmill near Zaandam: similar compositions, windmill differs slightly; version unclear
+0157|R|same Degas ballet from the opera box (1885); different scan, one framed
+0158|D|different artists and works (Duchamp drawing vs Degas racehorses)
+0159|R|same Degas dancer on stage; different scan/colour
+0160|S|identical image of the same Guy Rose River Epte (1910)
+0161|D|different artists and works (Rembrandt vs Sorolla)
+0162|R|same Gloucester fish-sheds painting under two attributions (Chase/Twachtman)
+0163|R|same Twachtman summer landscape; different scan/colour
+0164|U|Twachtman White Bridge: several versions exist; very different colour, cannot tell which
+0165|R|same Cassatt young woman sewing in the garden; different scan/colour
+0166|D|different artists and works (Daubigny vs Pantazis)
+0167|R|same Renoir chestnut tree blooming (1881); different scan
+0168|R|same Renoir nude arranging her hair (1885); different scan
+0169|R|same Sara pastel under two attributions (Cassatt/Renoir); different file
+0170|R|same Renoir seated bather / nude in a landscape (1883); different scan/colour
+0171|R|same Renoir still life with peaches; different scan/colour
+0172|R|same Renoir gust of wind landscape; different scan/colour
+0173|R|same Renoir girl in a red hat (1913); different scan/colour
+0174|D|different sitters and artists (Kramskoy vs Sickert)
+0175|D|different sitters and artists (Reynolds vs Sickert)
+0176|U|Metcalf Flying Shadows: same composition, autumn vs spring colouring; version vs colour cast unclear
+0177|R|same Metcalf The Path (1915); different scan
+0178|R|same Glackens 23 Fifth Avenue interior (1910); different scan/colour
+0179|D|different sitters and artists (Titian vs Chase)
+0180|D|different sitters and artists (Manet vs Chase)
+0181|D|different sitters and artists (Sargent vs Chase)
+0182|R|same Chase The Japanese Book; different file
+0183|S|identical image of the same Chase woman in kimono with fan
+0184|D|different sitters (Bronzino: Don Garcia vs Laudomia de Medici)
+0185|D|different sitters (El Greco: Cevallos vs young man)
+0186|R|same Madonna under two attributions (Vasari/Parmigianino); different scan/colour
+0187|R|same Tintoretto portrait of Jacopo Sansovino; different scan/colour
+0188|D|different sitters and artists (Vallotton vs Tintoretto)
+0189|D|different sitters and artists (Sargent vs Tintoretto)
+0190|D|different sitters and artists (Chase vs Tintoretto)
+0191|U|Titian Madonna and Child in evening landscape: similar composition, background differs; version unclear
+0192|S|identical image of the same Titian portrait of Marcantonio Trevisani
+0193|D|different sitters and artists (Veronese vs Titian)
+0194|D|different artists and works (Bronzino portrait vs Truitt sculpture)
+0195|D|different artists and works (Tintoretto portrait vs Truitt sculpture)
+0196|D|different artists and works (Vallotton portrait vs Truitt sculpture)
+0197|D|different artists and works (Velazquez portrait vs Truitt sculpture)
+0198|D|different artists and works (Sargent portrait vs Truitt sculpture)
+0199|D|different artists and works (Levitzky portrait vs Truitt sculpture)
+0200|D|different Truitt sculptures (black Twining Court II vs red Return)
+0201|D|different artists and works (Miller beach vs Hernandez-Pijuan)
+0202|D|different artists and works (Gene Davis vs Mangold)
+0203|D|different artists and works (Valadon drawing vs Botero)
+0204|D|different artists and works (Aivazovsky drawing vs Chagall book page)
+0205|R|same Hopper Cape Cod Afternoon; different file
+0206|R|same Durer drawing of Cardinal Albrecht of Brandenburg; different scan/paper tone
+0207|R|same Durer engraving Coat of Arms with a Skull; different impression/scan
+0208|R|same Durer Young Hare (1502); different scan/colour
+0209|R|same Durer portrait drawing (1521, Lucas van Leyden); different scan
+0210|R|same Durer drawing of Sebastian Brant; different scan
+0211|R|same Durer engraving St Eustace; different impression/scan
+0212|R|same Durer engraving St George on horseback (1508); different scan
+0213|R|same Durer woodcut St Michael fighting the dragon; different impression/scan
+0214|R|same Durer standing apostle drapery study (1508); different scan/colour
+0215|R|same Durer engraving Penance of St John Chrysostom; different scan
+0216|R|same Durer southern celestial map woodcut; coloured vs uncoloured impression
+0217|R|same Durer drawing Cupid the Honey Thief / Venus and Amor; colour vs greyscale scan
+0218|D|different artists and works (Reynolds vs Baldung)
+0219|R|same Holbein portrait of a Wedigh family member (1532); different scan/colour
+0220|D|different sitters and artists (Hoppner vs Holbein)
+0221|R|same Holbein Sir Henry Guildford (1527); different scan
+0222|D|different artists and works (Reni St Paul vs Memling Christ)
+0223|D|different sitters and artists (Wright vs van der Goes)
+0224|R|same van Eyck Ghent Altarpiece (open); different scan/colour
+0225|R|same van Eyck Dresden triptych (Virgin and Child in a church); different scan
+0226|R|same allegorical scene under two attributions (Provoost/Hemessen); different scan
+0227|R|same Cranach portrait of Anna Cuspinian; different scan/colour
+0228|R|same Schongauer engraving Temptation of St Anthony; different impression/scan
+0229|R|same Rogier van der Weyden portrait (Pierre de Beffremont); different scan/colour
+0230|R|same Cap Layet pointillist landscape under two attributions (Cross/Matisse)
+0231|D|different artists and works (van Doesburg sketch vs Prendergast)
+0232|D|different artists and works (Guy Rose seascape vs van Rysselberghe portrait)
+0233|D|different artists and works (Dali drawing vs Warhol Polaroid)
+0234|D|different artists and works (Caulfield vs Billy Apple)
+0235|D|different artists and works (van Gogh drawing vs Ruscha print)
+0236|D|different artists and works (Moser illustration vs Baruchello)
+0237|D|different artists and works (Toulouse-Lautrec vs Schifano)
+0238|D|different artists and works (Somov drawing vs Schifano)
+0239|D|different artists and works (Viallat vs Peter Blake)
+0240|U|Silvers photomosaic reproducing Seurat's Grande Jatte; derivative image of the reference
+0241|D|different artists and works (Brackman vs Festa)
+0242|D|different artists and works (Orlowski vs Adami)
+0243|D|different artists and works (Springer vs Burliuk)
+0244|D|different Cortes Place Pigalle versions (buildings, figures and trams differ)
+0245|D|different Cortes street scenes (Vaudeville vs St-Denis)
+0246|D|different Cortes Vaudeville versions (figures and storefronts differ)
+0247|D|different Cortes Vaudeville versions (figures and lighting layout differ)
+0248|R|same Hodler Lake Geneva from Chexbres (1904); different file
+0249|R|same Seurat study, boy with black horse (1883); different scan/colour
+0250|R|same Loiseau cottage landscape under two titles; different scan
+0251|D|different sitters and artists (Rembrandt vs Gwen John)
+0252|D|different sitters and artists (Serov vs Gwen John)
+0253|D|different sitters and artists (Vigee-Le Brun vs Gwen John)
+0254|R|same Toulouse-Lautrec Louis Pascal; different scan/colour
+0255|D|different sitters and artists (Carneiro vs Toulouse-Lautrec)
+0256|D|different sitters and artists (Rembrandt vs Kisling)
+0257|D|different artists and works (Balthus vs Kisling)
+0258|R|same Kisling sitting nude (1923); colour vs black-and-white reproduction
+0259|R|same Cezanne self-portrait before olive wallpaper; different scan/colour
+0260|R|same Gauguin Tahitian woman pastel; different (degraded) reproduction
+0261|D|different artists and works (Braque vs Konchalovsky)
+0262|D|different sitters and artists (Munkacsy vs van Rysselberghe)
+0263|R|same van Gogh plaster torso (blue background); different scan
+0264|D|different van Gogh torso paintings (different pose and background colour)
+0265|R|same van Gogh drawing of Patience Escalier (straw hat); different scan
+0266|D|different van Gogh Sunflowers versions (14 vs 15 flowers, arrangement differs)
+0267|R|same van Gogh suburb of Paris with man with spade (1887); different scan
+0268|U|van Gogh garden of Saint-Paul asylum: two near-identical 1889 versions exist; cannot tell which
+0269|U|Zorn Mona dated 1898 vs 1911: identical composition but dates differ; replica vs reproduction unclear
+0270|D|different artists and works (Moser vs Azbe)
+0271|D|different sitters and artists (Sargent vs Azbe)
+0272|D|different sitters and artists (Botticelli vs Kuindzhi)
+0273|D|different works (Gris cubist variation after Corot vs Corot original)
+0274|S|identical image of the same Corot peasants of Mur
+0275|R|same Pissarro village corner (1863) under two titles; different scan
+0276|D|different artists and works (Vicente abstract vs Pissarro harvest)
+0277|D|different sitters and artists (Reynolds vs Bordalo Pinheiro)
+0278|D|different sitters and artists (Degas vs Bordalo Pinheiro)
+0279|D|different sitters and artists (Bronzino vs Bordalo Pinheiro)
+0280|D|different sitters and artists (Titian vs Bordalo Pinheiro)
+0281|D|different sitters and artists (Manet vs Bordalo Pinheiro)
+0282|D|different sitters and artists (Sargent vs Bordalo Pinheiro)
+0283|D|different sitters and artists (Eakins vs Bordalo Pinheiro)
+0284|D|different sitters and artists (Eakins vs Bordalo Pinheiro)
+0285|D|different sitters and artists (Sargent vs Bordalo Pinheiro)
+0286|D|different sitters and artists (Le Nain vs Degas)
+0287|R|same Manet garden at Rueil (1882) under two titles; different scan
+0288|U|Manet peonies in a vase (1864): same composition, flower colours differ; version vs colour cast unclear
+0289|D|different sitters and artists (Sargent vs Boldini)
+0290|R|same Myasoyedov salon of Zinaida Volkonskaya (Pushkin listening to Mickiewicz); different scan
+0291|R|same Fantin-Latour roses and lilies (1888); different scan
+0292|D|different artists and works (Mednyanszky portrait vs Fantin-Latour roses)
+0293|D|different sitters and artists (Tintoretto vs Repin)
+0294|D|different sitters and artists (Cassatt vs Repin)
+0295|R|same Repin portrait of A. P. Bogolyubov (1882); different scan
+0296|D|different artists and works (Solntsev costume print vs Repin portrait)
+0297|R|same portrait study (1883) under two attributions (Myasoyedov/Repin); different scan
+0298|S|identical image (Repin portrait of Kramskoy, 1882) under two titles
+0299|D|different sitters and artists (Antropov vs Repin)
+0300|D|different sitters and artists (Gwen John vs Repin)
+0301|D|different sitters (Myasoyedov study vs Repin Syutayev portrait)
+0302|D|different artists and works (Rembrandt Hendrickje vs Kramskoy Christ bust)
+0303|D|different artists and works (Rembrandt Hendrickje vs Kramskoy Christ bust)
+0304|D|different artists and works (Raeburn vs Kramskoy)
+0305|D|different sitters and artists (Rembrandt vs Kramskoy)
+0306|D|different sitters and artists (Velazquez vs Kramskoy)
+0307|D|different sitters and artists (Reynolds vs Kramskoy)
+0308|D|different sitters and artists (Rembrandt vs Kramskoy)
+0309|D|different sitters and artists (Myasoyedov vs Kramskoy)
+0310|D|different sitters and artists (Sargent vs Kramskoy)
+0311|D|different sitters and artists (Picasso vs Kramskoy)
+0312|D|different sitters and artists (Serov vs Kramskoy)
+0313|D|different sitters and artists (Goya vs Kramskoy)
+0314|R|same Kramskoy portrait of sculptor Mark Antokolsky (1876); different scan/colour
+0315|D|different sitters and artists (Levitzky vs Kramskoy)
+0316|D|different sitters and artists (Rembrandt vs Kramskoy)
+0317|R|same Kramskoy portrait of Yury Samarin (1878); different scan/colour
+0318|D|different artists and works (Cezanne still life vs Whistler portrait)
+0319|D|different sitters and artists (Kramskoy vs Whistler)
+0320|D|different sitters and artists (Reynolds vs Whistler)
+0321|R|same Tissot Luxembourg Gardens scene (Without a Dowry); different scan/colour
+0322|D|different sitters and artists (Goya vs Millet)
+0323|D|different sitters and artists (Raeburn vs Millet)
+0324|D|different sitters and artists (Sargent vs Collier)
+0325|D|different sitters and artists (Eakins vs Collier)
+0326|D|different sitters and artists (Bronzino vs Sargent)
+0327|D|different sitters (Sargent: Jenkinson vs Vickers)
+0328|D|different sitters (Sargent: Lewis vs Vickers)
+0329|D|different sitters and artists (Eakins vs Sargent)
+0330|D|different sitters and artists (Kramskoy vs Sargent)
+0331|D|different sitters and artists (Watts vs Sargent)
+0332|D|different sitters and artists (Raeburn vs Sargent)
+0333|S|identical image of the same Sargent portrait (Sybil Frances Grey / Miss Eden, 1905)
+0334|D|different sitters and artists (Reynolds vs Sargent)
+0335|D|different sitters and artists (Kramskoy vs Sargent)
+0336|D|different artists and works (Seurat drawing vs Leblanc-Stewart)
+0337|D|different sitters and artists (Makovsky vs Malevich)
+0338|R|same Makovsky Cairo courtyard genre scene; different scan/colour
+0339|D|different sitters and artists (Goya vs Bonnat)
+0340|R|same Munkacsy Making Lint / Pluckmakers (1871); different scan/colour
+0341|D|different artists and works (Picasso nude vs Pantazis)
+0342|R|same Dali portrait of Mrs Reeves; different scan/colour
+0343|S|identical image of the same Theodore Rousseau stormy-sky pond
+0344|D|different sitters and artists (Courbet vs Eakins)
+0345|D|different sitters and artists (Sargent vs Eakins)
+0346|D|different sitters and artists (Raeburn vs Eakins)
+0347|D|different sitters and artists (Hoppner vs Eakins)
+0348|D|different sitters and artists (Wilkie vs Eakins)
+0349|D|different Eakins works (finished Delaware painting vs sparser study)
+0350|D|different sitters and artists (Kramskoy vs Perov)
+0351|D|different sitters and artists (Tintoretto vs Perov)
+0352|D|different sitters and artists (de La Tour vs Perov)
+0353|D|different sitters and artists (Kramskoy vs Perov)
+0354|D|different artists and works (Toyen vs Surikov)
+0355|D|different artists and works (Eakins drawing vs Surikov)
+0356|D|different artists and works (Caulfield vs Surikov)
+0357|R|same portrait of Vasnetsov by Nesterov (1925) under two titles; different scan
+0358|R|same van Gogh drawing of a cottage at night in the heath; different scan
+0359|R|same van Gogh fish-drying barn at Scheveningen drawing; different scan
+0360|U|van Gogh reaper vs mower after Millet: near-identical figure and pose; cannot rule out same drawing
+0361|R|same van Gogh drawing of woman at the washtub in the garden (1885); different scan
+0362|R|same van Gogh drawing of stooping peasant woman gleaning (1885); different scan
+0363|R|same van Gogh drawing of peasant woman planting beets (1885); different scan
+0364|R|same van Gogh Scheveningen woman knitting (1881); different scan/colour
+0365|D|different artists and works (Churchill interior vs van Gogh drawing)
+0366|D|different sitters and artists (Kustodiev vs van Gogh)
+0367|D|different sitters and artists (Rembrandt vs Makovsky)
+0368|D|different sitters and artists (Surikov vs Makovsky)
+0369|D|different sitters and artists (Tintoretto vs Leibl)
+0370|D|different sitters and artists (Myasoyedov vs Chase)
+0371|U|Bellotto Pirna from Sonnenstein: several autograph versions exist; cannot tell version from reproduction
+0372|U|Bellotto Schloss Hof garden side (1758): near-identical; version vs reproduction unclear
+0373|D|different artists and works (Maufra seascape vs Bellotto Zwinger)
+0374|R|same Canaletto Piazza San Marco looking east through arcade; different scan/colour
+0375|D|different sitters and artists (Antropov vs Christineck)
+0376|D|different sitters (Levitzky: Prozorovsky vs Gubarev)
+0377|D|different sitters and artists (Kramskoy vs Levitzky)
+0378|D|different sitters and artists (Watts vs Levitzky)
+0379|D|different sitters and artists (Levitzky vs Rokotov)
+0380|D|different sitters and artists (Goya vs Rokotov)
+0381|D|different sitters and artists (Pissarro vs Rokotov)
+0382|D|different sitters and artists (Tintoretto vs Rokotov)
+0383|D|different sitters and artists (Velazquez vs Rokotov)
+0384|D|different sitters and artists (Velazquez vs Rokotov)
+0385|R|same Morland The Smugglers (1792); different scan/colour
+0386|R|same Chardin young draughtsman copying an academy study; different scan/colour
+0387|S|identical image of the same Nattier Marquise de Pompadour as Diana (1746)
+0388|D|different sitters and artists (Rembrandt vs Wright of Derby)
+0389|D|different sitters and artists (Myasoyedov vs Vigee-Le Brun)
+0390|D|different sitters and artists (Kramskoy vs Vigee-Le Brun)
+0391|D|different sitters and artists (Tropinin vs Vigee-Le Brun)
+0392|D|different sitters and artists (Rembrandt vs Vigee-Le Brun)
+0393|D|different sitters and artists (Raeburn vs Vigee-Le Brun)
+0394|U|de La Tour pastels of Francois Dachery: same sitter and pose, coat colour differs; version vs colour cast unclear
+0395|U|de La Tour Marquis d'Argenson in armour: pastel vs oil-looking version; replica vs reproduction unclear
+0396|D|different artists and works (Sargent portrait vs Longhi shepherd girl)
+0397|D|different sitters and artists (Aivazovsky vs Longhi)
+0398|D|different sitters and artists (Perov vs Borovikovsky)
+0399|D|different artists and works (Duchamp etching vs Monticelli)
+0400|D|different artists and works (Mashkov still life vs Stevens)
+0401|R|same Friedrich Dolmen in the Snow (1807); different scan
+0402|D|different artists and works (Savrasov landscape vs Friedrich ship)
+0403|D|different artists and works (Utrillo vs Friedrich)
+0404|R|same Springer village street scene (1871) under two titles; different scan
+0405|U|Springer Herengracht in winter: same composition, lighting differs strongly; version vs colour cast unclear
+0406|U|Rossetti The Loving Cup: oil and watercolour versions exist; colours differ, cannot tell which
+0407|D|different sitters and artists (Fantin-Latour vs Wilkie)
+0408|D|different sitters and artists (Watteau vs Wilkie)
+0409|D|different sitters and artists (Kramskoy vs Hodler)
+0410|U|Goya Duke of Alba: same composition, very different colour; two versions exist, cannot tell which
+0411|D|different sitters and artists (Modigliani vs Goya)
+0412|R|same Goya Marquesa de Pontejos; different scan/colour
+0413|D|different sitters and artists (El Greco vs Goya)
+0414|D|different sitters and artists (Tintoretto vs Goya)
+0415|D|different sitters and artists (Eakins vs Goya)
+0416|D|different sitters and artists (Raeburn vs Goya)
+0417|D|different artists and works (Caulfield vs Goya)
+0418|D|different artists and works (Scully vs Goya etching)
+0419|D|different artists and works (Sisley vs Bronnikov)
+0420|D|different Solntsev costume plates (robes of Ivan IV vs grand-ducal couple)
+0421|D|different artists and works (Bodmer vs Solntsev)
+0422|D|different sitters and artists (Reynolds vs Watts)
+0423|D|different sitters and artists (Reynolds vs Watts)
+0424|D|different sitters and artists (Eakins vs Watts)
+0425|D|different sitters and artists (Levitzky vs Watts)
+0426|D|different sitters and artists (Ge vs Tattarescu)
+0427|R|same Dore engraving Abdiel and Satan (Paradise Lost); different scan
+0428|R|same Dore engraving people mourning over Jerusalem; different scan/crop with caption
+0429|D|different sitters and artists (Makovsky vs Raeburn)
+0430|U|Aivazovsky moonlit Ayu-Dag dated 1850 vs 1859: same composition; version vs reproduction unclear
+0431|D|different artists and works (Boudin vs Grimshaw)
+0432|D|different sitters and artists (Reynolds vs Hoppner)
+0433|D|different Wright of Derby grotto paintings (cavern evening vs Salerno sunset, boat and light differ)
+0434|D|different Wright of Derby grotto paintings (Julia figure vs boat, different composition)
+0435|D|different sitters and artists (Pesne vs Bryullov)
+0436|D|different sitters and artists (Boltraffio vs Bryullov)
+0437|D|different sitters and artists (Tintoretto vs Bryullov)
+0438|D|different sitters and artists (Raeburn vs Bryullov)
+0439|D|different sitters and artists (Kiprensky vs Bryullov)
+0440|R|same Makovsky boyaryshnya in kokoshnik; different scan/colour
+0441|R|same Makovsky portrait of a dark-haired woman with roses; different scan
+0442|U|Makovsky young lady with pink bow: same sitter and pose, background colour differs; version vs colour cast unclear
+0443|S|identical image of the same Makovsky Zaporozhye Cossack (1884)
+0444|U|Vorobiev Elagin Island (1820 night vs 1829 day): same composition; separate versions likely but unclear
+0445|R|same Kiprensky drawing of Nikita Muraviev (1813); different scan
+0446|D|different sitters and artists (Sloan vs Kiprensky)
+0447|D|different copies after Delacroix's Barque of Dante (Manet vs Cezanne)
+0448|D|different sitters and artists (Fantin-Latour vs Prud'hon)
+0449|D|different sitters and artists (Reynolds vs Prud'hon)
+0450|D|different sitters and artists (Vallotton vs Prud'hon)
+0451|D|different sitters and artists (Tropinin vs Prud'hon)
+0452|D|different sitters and artists (Velazquez vs Prud'hon)
+0453|D|different sitters and artists (Kiprensky vs Prud'hon)
+0454|S|identical image of the same Lembesis Captain Benes
+0455|R|same Gericault head of a chasseur officer; different scan
+0456|S|identical image (Thomas Cole Italian scenery, 1832) misattributed to Corot in the reference
+0457|R|same Thomas Cole Vaucluse (1841) under two titles; different scan/colour
+0458|R|same Tropinin group portrait (Moslov); different scan
+0459|D|different sitters and artists (Reynolds vs Tropinin)
+0460|D|different sitters and artists (Myasoyedov vs Tropinin)
+0461|D|different sitters and artists (Perov vs Tropinin)
+0462|D|different sitters and artists (Raeburn vs Tropinin)
+0463|R|same Turner Wreck of a Transport Ship / Shipwreck; different scan/colour
+0464|D|different sitters and artists (Bakst vs Bocklin)
+0465|D|different sitters and artists (Levitzky vs Khnopff)
+0466|D|different sitters and artists (Repin vs Klimt)
+0467|D|different sitters and artists (Sargent vs Klimt)
+0468|R|same Tissot Isaac blessing Jacob; greyscale vs colour reproduction
+0469|R|same Roerich Messenger/Ambassador island (1914); different scan
+0470|U|Roerich The Glow (1914): red vs greyscale; same composition, version vs reproduction unclear
+0471|U|Roerich Himalayas (1933) sacred/holy: same composition, colours differ; study vs reproduction unclear
+0472|U|Roerich Kangchenjunga 1924 vs 1936: same composition; Roerich repeated motifs, version unclear
+0473|R|same Roerich Kardang (1932); different scan/colour
+0474|R|same Roerich Ladakh Himalayas; different scan
+0475|R|same Roerich Lake of the Nagas (1932); different scan/colour
+0476|U|Roerich mountains (Mount M): same composition, very different colour; version vs colour cast unclear
+0477|R|same Roerich Rocks of Ladakh (1933); different scan
+0478|R|same Roerich Shara-Muren / Rocks of Mongolia; different scan
+0479|D|different artists and works (Makovsky portrait vs Roerich moon)
+0480|R|same Roerich Karelian landscape / Stones and Rocks; different scan
+0481|U|Roerich Himalayas blue range: same composition, colours differ; Roerich repeated motifs, version unclear
+0482|R|same Roerich Shara-Muren rocks under another title (Tibet); different scan
+0483|R|same Redon The Window / Vitrage; different scan/colour
+0484|D|different artists and works (Souza-Cardoso vs Hokusai)
+0485|R|same Keisai Eisen courtesan Tamagawa woodblock; different impression/scan
+0486|R|same Utamaro Pensive Love woodblock; different impression/scan
+0487|D|different artists and works (Childish vs Kunisada)

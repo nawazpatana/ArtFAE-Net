@@ -1,0 +1,5 @@
+PASSED tests/test_inference.py::test_app_ui[r1-en]
+PASSED tests/test_inference.py::test_app_ui[r1-zh]
+PASSED tests/test_inference.py::test_app_ui[r3-en]
+PASSED tests/test_inference.py::test_app_ui[r3-zh]
+======================= 4 passed, 7 deselected in 4.68s ========================

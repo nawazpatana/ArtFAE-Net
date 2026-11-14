@@ -1,0 +1,226 @@
+model,seed,emotion,n_pred unique-top,n_pred all test
+R0n,42,amusement,249,342
+R0n,43,amusement,251,347
+R0n,44,amusement,261,350
+R0n,45,amusement,251,349
+R0n,46,amusement,195,271
+R0n,42,awe,334,464
+R0n,43,awe,327,448
+R0n,44,awe,325,452
+R0n,45,awe,326,450
+R0n,46,awe,365,504
+R0n,42,contentment,1027,1313
+R0n,43,contentment,1010,1301
+R0n,44,contentment,1030,1334
+R0n,45,contentment,1092,1418
+R0n,46,contentment,1042,1342
+R0n,42,excitement,82,118
+R0n,43,excitement,79,119
+R0n,44,excitement,75,111
+R0n,45,excitement,63,97
+R0n,46,excitement,89,130
+R0n,42,anger,1,3
+R0n,43,anger,3,4
+R0n,44,anger,0,1
+R0n,45,anger,0,0
+R0n,46,anger,4,7
+R0n,42,disgust,70,100
+R0n,43,disgust,83,118
+R0n,44,disgust,65,91
+R0n,45,disgust,63,90
+R0n,46,disgust,82,113
+R0n,42,fear,226,305
+R0n,43,fear,223,308
+R0n,44,fear,241,332
+R0n,45,fear,211,278
+R0n,46,fear,167,225
+R0n,42,sadness,175,236
+R0n,43,sadness,186,245
+R0n,44,sadness,170,222
+R0n,45,sadness,167,223
+R0n,46,sadness,204,275
+R0n,42,something_else,82,118
+R0n,43,something_else,84,109
+R0n,44,something_else,79,106
+R0n,45,something_else,73,94
+R0n,46,something_else,98,132
+B/32 R1,42,amusement,264,356
+B/32 R1,43,amusement,189,246
+B/32 R1,44,amusement,209,285
+B/32 R1,45,amusement,256,343
+B/32 R1,46,amusement,301,414
+B/32 R1,42,awe,269,375
+B/32 R1,43,awe,342,474
+B/32 R1,44,awe,274,385
+B/32 R1,45,awe,265,361
+B/32 R1,46,awe,234,319
+B/32 R1,42,contentment,1081,1397
+B/32 R1,43,contentment,1163,1526
+B/32 R1,44,contentment,1088,1402
+B/32 R1,45,contentment,1227,1628
+B/32 R1,46,contentment,1143,1484
+B/32 R1,42,excitement,84,121
+B/32 R1,43,excitement,74,113
+B/32 R1,44,excitement,100,147
+B/32 R1,45,excitement,53,77
+B/32 R1,46,excitement,66,103
+B/32 R1,42,anger,2,2
+B/32 R1,43,anger,0,0
+B/32 R1,44,anger,0,2
+B/32 R1,45,anger,0,0
+B/32 R1,46,anger,0,1
+B/32 R1,42,disgust,31,52
+B/32 R1,43,disgust,13,18
+B/32 R1,44,disgust,24,34
+B/32 R1,45,disgust,22,34
+B/32 R1,46,disgust,28,48
+B/32 R1,42,fear,191,256
+B/32 R1,43,fear,205,278
+B/32 R1,44,fear,213,286
+B/32 R1,45,fear,190,257
+B/32 R1,46,fear,184,241
+B/32 R1,42,sadness,246,330
+B/32 R1,43,sadness,208,271
+B/32 R1,44,sadness,246,337
+B/32 R1,45,sadness,159,195
+B/32 R1,46,sadness,230,307
+B/32 R1,42,something_else,78,110
+B/32 R1,43,something_else,52,73
+B/32 R1,44,something_else,92,121
+B/32 R1,45,something_else,74,104
+B/32 R1,46,something_else,60,82
+L/14 R1,42,amusement,193,274
+L/14 R1,43,amusement,193,272
+L/14 R1,44,amusement,195,275
+L/14 R1,45,amusement,288,402
+L/14 R1,46,amusement,208,287
+L/14 R1,42,awe,343,467
+L/14 R1,43,awe,329,447
+L/14 R1,44,awe,299,412
+L/14 R1,45,awe,242,337
+L/14 R1,46,awe,360,499
+L/14 R1,42,contentment,1153,1504
+L/14 R1,43,contentment,1174,1528
+L/14 R1,44,contentment,1188,1551
+L/14 R1,45,contentment,1108,1434
+L/14 R1,46,contentment,1078,1393
+L/14 R1,42,excitement,97,144
+L/14 R1,43,excitement,95,140
+L/14 R1,44,excitement,98,140
+L/14 R1,45,excitement,78,120
+L/14 R1,46,excitement,86,118
+L/14 R1,42,anger,0,0
+L/14 R1,43,anger,0,1
+L/14 R1,44,anger,0,1
+L/14 R1,45,anger,4,5
+L/14 R1,46,anger,7,8
+L/14 R1,42,disgust,27,39
+L/14 R1,43,disgust,25,39
+L/14 R1,44,disgust,23,34
+L/14 R1,45,disgust,41,57
+L/14 R1,46,disgust,31,44
+L/14 R1,42,fear,184,238
+L/14 R1,43,fear,186,243
+L/14 R1,44,fear,208,270
+L/14 R1,45,fear,201,261
+L/14 R1,46,fear,150,196
+L/14 R1,42,sadness,189,253
+L/14 R1,43,sadness,177,242
+L/14 R1,44,sadness,183,245
+L/14 R1,45,sadness,204,274
+L/14 R1,46,sadness,245,342
+L/14 R1,42,something_else,60,80
+L/14 R1,43,something_else,67,87
+L/14 R1,44,something_else,52,71
+L/14 R1,45,something_else,80,109
+L/14 R1,46,something_else,81,112
+L/14 R3,42,amusement,168,230
+L/14 R3,43,amusement,241,330
+L/14 R3,44,amusement,193,258
+L/14 R3,45,amusement,258,347
+L/14 R3,46,amusement,199,270
+L/14 R3,42,awe,258,352
+L/14 R3,43,awe,257,353
+L/14 R3,44,awe,317,436
+L/14 R3,45,awe,461,643
+L/14 R3,46,awe,297,405
+L/14 R3,42,contentment,1047,1348
+L/14 R3,43,contentment,973,1234
+L/14 R3,44,contentment,913,1165
+L/14 R3,45,contentment,937,1214
+L/14 R3,46,contentment,985,1266
+L/14 R3,42,excitement,140,210
+L/14 R3,43,excitement,77,117
+L/14 R3,44,excitement,129,195
+L/14 R3,45,excitement,51,74
+L/14 R3,46,excitement,99,151
+L/14 R3,42,anger,20,23
+L/14 R3,43,anger,15,16
+L/14 R3,44,anger,7,8
+L/14 R3,45,anger,1,2
+L/14 R3,46,anger,16,20
+L/14 R3,42,disgust,40,57
+L/14 R3,43,disgust,42,58
+L/14 R3,44,disgust,32,42
+L/14 R3,45,disgust,40,56
+L/14 R3,46,disgust,71,100
+L/14 R3,42,fear,216,290
+L/14 R3,43,fear,176,241
+L/14 R3,44,fear,238,312
+L/14 R3,45,fear,211,270
+L/14 R3,46,fear,261,346
+L/14 R3,42,sadness,229,312
+L/14 R3,43,sadness,339,464
+L/14 R3,44,sadness,238,332
+L/14 R3,45,sadness,227,309
+L/14 R3,46,sadness,243,343
+L/14 R3,42,something_else,128,177
+L/14 R3,43,something_else,126,186
+L/14 R3,44,something_else,179,251
+L/14 R3,45,something_else,60,84
+L/14 R3,46,something_else,75,98
+L/14 R3c,42,amusement,170,228
+L/14 R3c,43,amusement,236,322
+L/14 R3c,44,amusement,198,263
+L/14 R3c,45,amusement,235,316
+L/14 R3c,46,amusement,185,253
+L/14 R3c,42,awe,285,393
+L/14 R3c,43,awe,284,390
+L/14 R3c,44,awe,354,497
+L/14 R3c,45,awe,510,710
+L/14 R3c,46,awe,318,436
+L/14 R3c,42,contentment,1053,1356
+L/14 R3c,43,contentment,976,1245
+L/14 R3c,44,contentment,917,1164
+L/14 R3c,45,contentment,913,1184
+L/14 R3c,46,contentment,992,1267
+L/14 R3c,42,excitement,110,170
+L/14 R3c,43,excitement,61,95
+L/14 R3c,44,excitement,95,148
+L/14 R3c,45,excitement,40,57
+L/14 R3c,46,excitement,80,119
+L/14 R3c,42,anger,43,51
+L/14 R3c,43,anger,25,30
+L/14 R3c,44,anger,21,26
+L/14 R3c,45,anger,6,8
+L/14 R3c,46,anger,26,38
+L/14 R3c,42,disgust,59,85
+L/14 R3c,43,disgust,68,98
+L/14 R3c,44,disgust,55,73
+L/14 R3c,45,disgust,78,105
+L/14 R3c,46,disgust,103,151
+L/14 R3c,42,fear,220,293
+L/14 R3c,43,fear,178,242
+L/14 R3c,44,fear,243,322
+L/14 R3c,45,fear,209,269
+L/14 R3c,46,fear,264,348
+L/14 R3c,42,sadness,224,306
+L/14 R3c,43,sadness,334,463
+L/14 R3c,44,sadness,239,335
+L/14 R3c,45,sadness,219,300
+L/14 R3c,46,sadness,236,331
+L/14 R3c,42,something_else,82,117
+L/14 R3c,43,something_else,84,114
+L/14 R3c,44,something_else,124,171
+L/14 R3c,45,something_else,36,50
+L/14 R3c,46,something_else,42,56

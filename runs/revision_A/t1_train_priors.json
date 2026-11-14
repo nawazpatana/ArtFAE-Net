@@ -1,0 +1,35 @@
+{
+ "majority class (contentment, one-hot)": {
+  "amusement": 0.0,
+  "awe": 0.0,
+  "contentment": 1.0,
+  "excitement": 0.0,
+  "anger": 0.0,
+  "disgust": 0.0,
+  "fear": 0.0,
+  "sadness": 0.0,
+  "something_else": 0.0
+ },
+ "mean train vote distribution, 43K": {
+  "amusement": 0.101437,
+  "awe": 0.167523,
+  "contentment": 0.293069,
+  "excitement": 0.08488,
+  "anger": 0.012744,
+  "disgust": 0.040768,
+  "fear": 0.082501,
+  "sadness": 0.099369,
+  "something_else": 0.11771
+ },
+ "mean train vote distribution, paper 14K": {
+  "amusement": 0.097242,
+  "awe": 0.169545,
+  "contentment": 0.288129,
+  "excitement": 0.080809,
+  "anger": 0.019998,
+  "disgust": 0.052881,
+  "fear": 0.083955,
+  "sadness": 0.101981,
+  "something_else": 0.105459
+ }
+}

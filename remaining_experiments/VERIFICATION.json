@@ -1,0 +1,16 @@
+{
+  "artwork_response_files_checked": 200,
+  "response_probabilities_valid": true,
+  "rankings_are_permutations": true,
+  "partial_AUC_verified_by_independent_integration_weights": true,
+  "paired_derangements_valid": true,
+  "permutation_probability_files_valid": true,
+  "original_permutation_logits_reproduce": true,
+  "resource_batch_records_consistent": true,
+  "protected_artifact_hashes_matching": 83,
+  "validation_image_hashes_matching": 200,
+  "no_training_or_new_holdout_inference": true,
+  "all_original_H1_H5_outputs_unchanged": true,
+  "cached_validation_arrays_match_historical_lock": 4,
+  "encoder_weight_blob_hash_verified": true
+}

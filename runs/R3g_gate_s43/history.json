@@ -1,0 +1,83 @@
+[
+ {
+  "epoch": 1,
+  "train_loss": 2.1312438617758804,
+  "val_macro_f1": 0.32926402899805046,
+  "val_accuracy": 0.5109228711547035,
+  "val_soft_ce": 1.8084248673958214,
+  "amp_skipped_steps": 0,
+  "seconds": 3.030034046001674
+ },
+ {
+  "epoch": 2,
+  "train_loss": 2.0648205831285233,
+  "val_macro_f1": 0.3303133630595408,
+  "val_accuracy": 0.5140436914846188,
+  "val_soft_ce": 1.8051854362391861,
+  "amp_skipped_steps": 0,
+  "seconds": 5.779870429003495
+ },
+ {
+  "epoch": 3,
+  "train_loss": 2.043517901001005,
+  "val_macro_f1": 0.33181902867162,
+  "val_accuracy": 0.5216228265715559,
+  "val_soft_ce": 1.8027835006330382,
+  "amp_skipped_steps": 0,
+  "seconds": 8.555958219003514
+ },
+ {
+  "epoch": 4,
+  "train_loss": 2.025648106666628,
+  "val_macro_f1": 0.3361270373434275,
+  "val_accuracy": 0.5269728042799822,
+  "val_soft_ce": 1.809941456914284,
+  "amp_skipped_steps": 1,
+  "seconds": 11.381310194003163
+ },
+ {
+  "epoch": 5,
+  "train_loss": 2.01373322975865,
+  "val_macro_f1": 0.3242695369892164,
+  "val_accuracy": 0.502452073116362,
+  "val_soft_ce": 1.8237622952602082,
+  "amp_skipped_steps": 1,
+  "seconds": 14.207665478999843
+ },
+ {
+  "epoch": 6,
+  "train_loss": 1.991746993438705,
+  "val_macro_f1": 0.3343900585703872,
+  "val_accuracy": 0.5086937137761925,
+  "val_soft_ce": 1.8267263817992068,
+  "amp_skipped_steps": 0,
+  "seconds": 17.03088623200165
+ },
+ {
+  "epoch": 7,
+  "train_loss": 1.9735755943025888,
+  "val_macro_f1": 0.3282329726463269,
+  "val_accuracy": 0.5069103878733838,
+  "val_soft_ce": 1.8304125253158163,
+  "amp_skipped_steps": 1,
+  "seconds": 19.855939444001706
+ },
+ {
+  "epoch": 8,
+  "train_loss": 1.9584781669920726,
+  "val_macro_f1": 0.3197925758888506,
+  "val_accuracy": 0.49888542131074454,
+  "val_soft_ce": 1.8448432907006276,
+  "amp_skipped_steps": 0,
+  "seconds": 22.67782723500568
+ },
+ {
+  "epoch": 9,
+  "train_loss": 1.943293630938236,
+  "val_macro_f1": 0.33223887828382,
+  "val_accuracy": 0.49754792688363797,
+  "val_soft_ce": 1.8565792589570163,
+  "amp_skipped_steps": 1,
+  "seconds": 25.501634844004002
+ }
+]

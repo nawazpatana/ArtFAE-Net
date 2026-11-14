@@ -1,0 +1,41 @@
+{
+  "model": "R1",
+  "scope": "EXPLORATORY validation; same first 32 predetermined images, batch8 FP32, two warmup batches and five passes; fresh worker; complete CLIP object loaded for both, not a stripped minimum-memory probe",
+  "checkpoint": "runs/revision_B/step1/R1_s42/best.pt",
+  "checkpoint_sha256": "2ac5f447593fcad2c1b9d58790d466f3d745cecd34daff018b444fda59d89aca",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "torch": "2.13.0+cu132",
+  "python": "3.12.3",
+  "batch": 8,
+  "precision": "FP32, no autocast, TF32 off",
+  "text_cache": false,
+  "images": 32,
+  "measured_images_with_repetition": 160,
+  "load_seconds": 0.5494649140164256,
+  "model_baseline_allocated_bytes": 1715304448,
+  "model_baseline_reserved_bytes": 1765801984,
+  "peak_allocated_bytes": 2062211072,
+  "peak_reserved_bytes": 2214592512,
+  "loaded_RSS_bytes": 1046417408,
+  "peak_sampled_process_RSS_bytes": 2710183936,
+  "peak_ru_maxrss_bytes": 2725429248,
+  "amortized_ms_per_image": {
+    "decode_s": 2.9193980793934315,
+    "features_s": 13.054300557269016,
+    "head_s": 0.03837420008494519,
+    "complete_s": 16.017300759995123,
+    "output_s": 0.0052279232477303594
+  },
+  "complete_throughput_images_s": 62.43249190260597,
+  "warm_batch_median_ms": 125.42190996464342,
+  "warm_batch_p95_ms": 147.59262814186513,
+  "caveats": [
+    "GPU synchronized wall-clock includes CPU work, decoding and output transfer; excludes model load and receipt checks",
+    "OS file caches may be warm; hardware-specific batch8 observation, not interactive single-image latency",
+    "RAM peak includes model import/load and allocator retention; CUDA reserved is not device-wide usage",
+    "Feature latency includes actual feature branches used by each model; same encoder parameters, images, precision and hardware",
+    "No training or holdout inference"
+  ],
+  "protocol_sha256": "82d041be51241d31cd8e05b7d3452956f8046803f102231a771c28de56c23a32",
+  "script_sha256": "ab8ae4a716706cfd3210722cb33e29c70ce69e9bfe4a6d893a62259be22587d7"
+}

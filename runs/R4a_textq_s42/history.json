@@ -1,0 +1,83 @@
+[
+ {
+  "epoch": 1,
+  "train_loss": 2.1308887933427583,
+  "val_macro_f1": 0.3227421108772675,
+  "val_accuracy": 0.5100312082032992,
+  "val_soft_ce": 1.8099323651309975,
+  "amp_skipped_steps": 0,
+  "seconds": 3.0070357610020437
+ },
+ {
+  "epoch": 2,
+  "train_loss": 2.0638455342306354,
+  "val_macro_f1": 0.34487845446455884,
+  "val_accuracy": 0.5113687026304057,
+  "val_soft_ce": 1.8072072449093455,
+  "amp_skipped_steps": 0,
+  "seconds": 5.72601532000408
+ },
+ {
+  "epoch": 3,
+  "train_loss": 2.0384761011790067,
+  "val_macro_f1": 0.35062822862503357,
+  "val_accuracy": 0.5176103432902363,
+  "val_soft_ce": 1.8053479844173284,
+  "amp_skipped_steps": 1,
+  "seconds": 8.444566965001286
+ },
+ {
+  "epoch": 4,
+  "train_loss": 2.0182738219440055,
+  "val_macro_f1": 0.3545256950014911,
+  "val_accuracy": 0.5127061970575123,
+  "val_soft_ce": 1.8197856496906706,
+  "amp_skipped_steps": 0,
+  "seconds": 11.298911725003563
+ },
+ {
+  "epoch": 5,
+  "train_loss": 2.003874364691225,
+  "val_macro_f1": 0.34561938451881014,
+  "val_accuracy": 0.49264378065091396,
+  "val_soft_ce": 1.8334781908222781,
+  "amp_skipped_steps": 1,
+  "seconds": 14.057671105001646
+ },
+ {
+  "epoch": 6,
+  "train_loss": 1.9813653072135278,
+  "val_macro_f1": 0.33280372946702425,
+  "val_accuracy": 0.5100312082032992,
+  "val_soft_ce": 1.8281020956961809,
+  "amp_skipped_steps": 0,
+  "seconds": 16.83661689300061
+ },
+ {
+  "epoch": 7,
+  "train_loss": 1.9663559550586263,
+  "val_macro_f1": 0.3515829981383447,
+  "val_accuracy": 0.5153811859117253,
+  "val_soft_ce": 1.8362327300843717,
+  "amp_skipped_steps": 1,
+  "seconds": 19.695594329001324
+ },
+ {
+  "epoch": 8,
+  "train_loss": 1.9464463828431056,
+  "val_macro_f1": 0.3343876406718917,
+  "val_accuracy": 0.4944271065537227,
+  "val_soft_ce": 1.8532404122692578,
+  "amp_skipped_steps": 0,
+  "seconds": 22.449009506002767
+ },
+ {
+  "epoch": 9,
+  "train_loss": 1.9296303158592183,
+  "val_macro_f1": 0.33367309067216433,
+  "val_accuracy": 0.500222915737851,
+  "val_soft_ce": 1.8550413483112371,
+  "amp_skipped_steps": 2,
+  "seconds": 25.17852851900534
+ }
+]

@@ -1,0 +1,149 @@
+{
+  "status": "LOCKED EXPLORATORY VALIDATION PROTOCOL, before model execution",
+  "authorization": "Latest user task requests validation-only experiments A\u2013C; no training, holdout model inference, data edits or external messages authorized. Cost/risks reported before GPU execution.",
+  "subset_rule": "200 lowest SHA256(275-ecsa-validation-v1|painting) among original validation rows; no class/prediction selection",
+  "subset_sha256": "ba8e56377c9baa666740748ab205a91582ca9c03c31a76e4a27ee468bd297b43",
+  "validation_manifest_sha256": "f42b8b2ec7b0b01a58247e2fda3fb05c4e1342f7171cc290f52e75e3427f8076",
+  "encoder": "openai/clip-vit-large-patch14-336",
+  "encoder_revision": "ce19dc912ca5cd21c8a653c79e251e808ccabcd1",
+  "device": "cuda",
+  "precision": "float32 encoder/head; pooled tokens rounded to float16 then restored as in saved cache; TF32 disabled",
+  "batch": 16,
+  "head_checkpoints": {
+    "R1": [
+      {
+        "run": "runs/revision_B/step1/R1_s42",
+        "checkpoint_sha256": "2ac5f447593fcad2c1b9d58790d466f3d745cecd34daff018b444fda59d89aca"
+      },
+      {
+        "run": "runs/revision_B/step1/R1_s43",
+        "checkpoint_sha256": "7525f2e6770e41eed8fa062f6bb9c041a9c6172d7671747629822f61711d2111"
+      },
+      {
+        "run": "runs/revision_B/step1/R1_s44",
+        "checkpoint_sha256": "6cb9df03c27c59d2662b980f01670649740b3dd50363c0ecebac0e4aac15ba1e"
+      },
+      {
+        "run": "runs/revision_B/step1/R1_s45",
+        "checkpoint_sha256": "0ad58b5fe0253823e1c40fea2ecd6b9c5d8d017617e53aa4972112ad8ced5ef6"
+      },
+      {
+        "run": "runs/revision_B/step1/R1_s46",
+        "checkpoint_sha256": "e550fd6755ab7637c59239d993ed6d6284fdb0fe11a1bc8eb789a6b19289a6d8"
+      }
+    ],
+    "PROBE": [
+      {
+        "run": "runs/revision_B/step1/probe100_lr1e-3_s42",
+        "checkpoint_sha256": "9bc849047af90c51aba07b73284663ba4d99785f1e5b0e3a75cb2dc260b177b2"
+      },
+      {
+        "run": "runs/revision_B/step1/probe100_lr1e-3_s43",
+        "checkpoint_sha256": "b90fa2db09b411eaad36c0a238de2ce65e21274136a0c9388975ae6d305f9e0e"
+      },
+      {
+        "run": "runs/revision_B/step1/probe100_lr1e-3_s44",
+        "checkpoint_sha256": "99c26f2d441bfacdaaf5eae3a2dea9a6cec8e3106fa573fcdb198f353689cc17"
+      },
+      {
+        "run": "runs/revision_B/step1/probe100_lr1e-3_s45",
+        "checkpoint_sha256": "73d261db7883058b3973b6f25447d9caa36112b1277f0f13842408d070171ec2"
+      },
+      {
+        "run": "runs/revision_B/step1/probe100_lr1e-3_s46",
+        "checkpoint_sha256": "0b90a5388b4b96d1afd38e83cdc9fbe73f02bec45674775298adb03724efc90d"
+      }
+    ]
+  },
+  "evidence_checkpoint": {
+    "run": "runs/revision_B/step1/R1_s42",
+    "checkpoint_sha256": "2ac5f447593fcad2c1b9d58790d466f3d745cecd34daff018b444fda59d89aca"
+  },
+  "mask_counts": [
+    5,
+    10,
+    15,
+    24
+  ],
+  "mask_fractions": [
+    0.10204081632653061,
+    0.20408163265306123,
+    0.30612244897959184,
+    0.4897959183673469
+  ],
+  "random_rankings": 10,
+  "replacement": [
+    "visible-crop per-image RGB mean",
+    "Gaussian blur, radius 12 encoder pixels mapped to decoded source scale"
+  ],
+  "geometry": "7x7 equal display cells on 336 centre crop; mask projected back to decoded source; outside visible crop preserved. Adaptive pooled tokens overlap and do not equal independent image regions.",
+  "target": "original predicted class of fixed R1 checkpoint; unchanged for every intervention",
+  "recompute": "global image and pooled patches freshly encoded; all 28 whole-image attributes recomputed; changed deterministic description selects its matching pre-encoded frozen text embedding from all 27 possibilities",
+  "auc": "raw fixed-target probabilities, trapezoid on observed fractions [5/49,24/49], divided by 19/49. No endpoints imputed; lower deletion/higher retention favourable.",
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 2752026,
+    "unit": "paired validation artwork; random trials averaged within artwork; conditional on selected checkpoint/subset"
+  },
+  "rise": {
+    "masks_per_artwork": 256,
+    "grid": 7,
+    "keep_probability": 0.5,
+    "upsampling": "bilinear reflect, random shifts per original author implementation",
+    "mask_replacement": "visible mean-fill, outside crop unchanged",
+    "saliency": "sum(target_probability * retained_mask)/(N*0.5), spatially averaged into matching 7x7 display cells",
+    "label": "RISE-style finite-mask comparator, exploratory; not claimed converged",
+    "reference": "https://github.com/eclique/RISE/blob/master/explanations.py"
+  },
+  "permutation": {
+    "validation_artworks": 3000,
+    "model_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "paired_derangements": 20,
+    "rng_seed": 2752026,
+    "keep_fixed": [
+      "global image",
+      "spatial features",
+      "parameters",
+      "training normalizer"
+    ],
+    "shuffle_together": [
+      "numerical attributes",
+      "corresponding text embedding"
+    ],
+    "metrics": [
+      "softCE",
+      "macro-F1 on unique-top",
+      "top1 flip fraction",
+      "probability total-variation distance"
+    ]
+  },
+  "resources": {
+    "images": "first 32 of same fixed hash-ranked validation subset",
+    "seed": 42,
+    "models": [
+      "R1",
+      "PROBE"
+    ],
+    "batch": 8,
+    "precision": "float32, TF32 off",
+    "warmup_batches": 2,
+    "measured_passes": 5,
+    "separate_processes": true,
+    "timing": "CUDA synchronized wall-clock, decode+features+head; load separately; image/text extraction reported separately from full pipeline",
+    "RAM": "peak process RSS sampled by psutil plus ru_maxrss; includes model load; shared libraries baseline disclosed",
+    "VRAM": "peak allocated/reserved CUDA bytes, reset after model load; model baseline also recorded"
+  },
+  "limits": [
+    "development validation selected checkpoints, not independent test",
+    "16 known train reproductions in full validation",
+    "not human-semantic/causal faithfulness",
+    "no new holdout predictions",
+    "no optimization or retraining"
+  ]
+}

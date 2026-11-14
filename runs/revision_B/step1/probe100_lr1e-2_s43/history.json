@@ -1,0 +1,93 @@
+[
+ {
+  "epoch": 1,
+  "train_loss": 1.7714064089207386,
+  "sel_soft_ce": 1.7681177854537964,
+  "amp_skipped_steps": 0,
+  "seconds": 0.6972799689974636
+ },
+ {
+  "epoch": 2,
+  "train_loss": 1.7407641507720522,
+  "sel_soft_ce": 1.7732093334197998,
+  "amp_skipped_steps": 0,
+  "seconds": 1.4107706989889266
+ },
+ {
+  "epoch": 3,
+  "train_loss": 1.7359044214608912,
+  "sel_soft_ce": 1.7608577013015747,
+  "amp_skipped_steps": 0,
+  "seconds": 2.1383180699922377
+ },
+ {
+  "epoch": 4,
+  "train_loss": 1.7340240057463936,
+  "sel_soft_ce": 1.7631338834762573,
+  "amp_skipped_steps": 0,
+  "seconds": 2.9999382039968623
+ },
+ {
+  "epoch": 5,
+  "train_loss": 1.733257200311508,
+  "sel_soft_ce": 1.7666287422180176,
+  "amp_skipped_steps": 1,
+  "seconds": 3.903684157994576
+ },
+ {
+  "epoch": 6,
+  "train_loss": 1.732575806486743,
+  "sel_soft_ce": 1.7613753080368042,
+  "amp_skipped_steps": 1,
+  "seconds": 4.787383912000223
+ },
+ {
+  "epoch": 7,
+  "train_loss": 1.7313737812501646,
+  "sel_soft_ce": 1.761170744895935,
+  "amp_skipped_steps": 0,
+  "seconds": 5.6417152939975495
+ },
+ {
+  "epoch": 8,
+  "train_loss": 1.7317688705909422,
+  "sel_soft_ce": 1.7635756731033325,
+  "amp_skipped_steps": 1,
+  "seconds": 6.3826836879889015
+ },
+ {
+  "epoch": 9,
+  "train_loss": 1.731279405296586,
+  "sel_soft_ce": 1.7629485130310059,
+  "amp_skipped_steps": 1,
+  "seconds": 7.283217039992451
+ },
+ {
+  "epoch": 10,
+  "train_loss": 1.730794119167514,
+  "sel_soft_ce": 1.7651478052139282,
+  "amp_skipped_steps": 0,
+  "seconds": 8.125371631002054
+ },
+ {
+  "epoch": 11,
+  "train_loss": 1.7313468140424113,
+  "sel_soft_ce": 1.7662079334259033,
+  "amp_skipped_steps": 1,
+  "seconds": 8.851657188992249
+ },
+ {
+  "epoch": 12,
+  "train_loss": 1.731043188569491,
+  "sel_soft_ce": 1.7648519277572632,
+  "amp_skipped_steps": 0,
+  "seconds": 9.653095193993067
+ },
+ {
+  "epoch": 13,
+  "train_loss": 1.7310718205943392,
+  "sel_soft_ce": 1.7677487134933472,
+  "amp_skipped_steps": 1,
+  "seconds": 10.654509909989429
+ }
+]

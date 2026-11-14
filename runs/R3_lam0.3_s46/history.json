@@ -1,0 +1,83 @@
+[
+ {
+  "epoch": 1,
+  "train_loss": 2.1315162240832524,
+  "val_macro_f1": 0.32269727125833025,
+  "val_accuracy": 0.49621043245653146,
+  "val_soft_ce": 1.825915109883935,
+  "amp_skipped_steps": 0,
+  "seconds": 2.96537461400294
+ },
+ {
+  "epoch": 2,
+  "train_loss": 2.063515862586675,
+  "val_macro_f1": 0.3383632033594582,
+  "val_accuracy": 0.5193936691930451,
+  "val_soft_ce": 1.8018266926491275,
+  "amp_skipped_steps": 0,
+  "seconds": 5.671989654001663
+ },
+ {
+  "epoch": 3,
+  "train_loss": 2.040208093412508,
+  "val_macro_f1": 0.3282118218488135,
+  "val_accuracy": 0.5185020062416407,
+  "val_soft_ce": 1.808258306930793,
+  "amp_skipped_steps": 1,
+  "seconds": 8.355539610005508
+ },
+ {
+  "epoch": 4,
+  "train_loss": 2.02073840241116,
+  "val_macro_f1": 0.34037511224350414,
+  "val_accuracy": 0.5211769950958538,
+  "val_soft_ce": 1.8153998503009576,
+  "amp_skipped_steps": 1,
+  "seconds": 11.023787168000126
+ },
+ {
+  "epoch": 5,
+  "train_loss": 2.0007772916618043,
+  "val_macro_f1": 0.33042082814717805,
+  "val_accuracy": 0.5109228711547035,
+  "val_soft_ce": 1.8245502934573328,
+  "amp_skipped_steps": 0,
+  "seconds": 13.746640457000467
+ },
+ {
+  "epoch": 6,
+  "train_loss": 1.9856062210804584,
+  "val_macro_f1": 0.3327170279985985,
+  "val_accuracy": 0.5100312082032992,
+  "val_soft_ce": 1.8337195179965862,
+  "amp_skipped_steps": 0,
+  "seconds": 16.342251259004115
+ },
+ {
+  "epoch": 7,
+  "train_loss": 1.9656039353005887,
+  "val_macro_f1": 0.3176126520194649,
+  "val_accuracy": 0.5037895675434686,
+  "val_soft_ce": 1.8383577057854745,
+  "amp_skipped_steps": 1,
+  "seconds": 19.03464156100381
+ },
+ {
+  "epoch": 8,
+  "train_loss": 1.9498400337294979,
+  "val_macro_f1": 0.3216207716504104,
+  "val_accuracy": 0.49398127507802053,
+  "val_soft_ce": 1.8530986545668535,
+  "amp_skipped_steps": 0,
+  "seconds": 21.795282564002264
+ },
+ {
+  "epoch": 9,
+  "train_loss": 1.931359725930597,
+  "val_macro_f1": 0.314340840291204,
+  "val_accuracy": 0.48149799375835933,
+  "val_soft_ce": 1.8721904300393593,
+  "amp_skipped_steps": 1,
+  "seconds": 24.46326104000036
+ }
+]

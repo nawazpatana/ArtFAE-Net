@@ -1,0 +1,27 @@
+{
+  "encoder_revision": "ce19dc912ca5cd21c8a653c79e251e808ccabcd1",
+  "snapshot_files": {
+    "pytorch_model.bin": {
+      "sha256": "c6032c2e0caae3dc2d4fba35535fa6307dbb49df59c7e182b1bc4b3329b81801",
+      "bytes": 1711974081
+    },
+    "config.json": {
+      "sha256": "51b1c14aabcdf639c4a0370eeda1010b773bbe1df78319c7d0f5882c22ac0ac0",
+      "bytes": 4757
+    },
+    "preprocessor_config.json": {
+      "sha256": "d253881f65322dc546df59cf925a408e5538b8ecb5a1b496cdd36af9992686d4",
+      "bytes": 316
+    },
+    "tokenizer_config.json": {
+      "sha256": "83cef1a5979147985887a84eda9cb13bae5f3f5413c74c92360f310a35361755",
+      "bytes": 844
+    }
+  },
+  "validation_cache_hashes_match_historical_lock": {
+    "features_l14/val/global.npy": "d3d50f90555a5147911c1804f691fac7c7349d20d0b28921371e4af7b477b84d",
+    "features_l14/val/attributes.npy": "035ab19cfe01ac0c876df5e7a264da5b94a1d68a877723144f4407a1f463e26e",
+    "features_l14/val/attr_text.npy": "96fcfe3f347be5d590f32d9b8c1c18660093e0940b06b3066149789fe670cc9b",
+    "features_l14/val/patches.npy": "cedc59a34951f4f6f47fce9305b61d327b9024a09c54347aa8ecf11a4b72f775"
+  }
+}

@@ -1,0 +1,9 @@
+,v1 train (seed-42 selection),v1 val,v1 test,v2 train = paper 14K,v2 val = eval val,v2 test,eval test (43K build),43K train
+v1 train (seed-42 selection),14000,0,0,9137,1965,1951,1950,10081
+v1 val,0,3000,0,1954,437,399,399,2164
+v1 test,0,0,3000,1946,396,432,432,2172
+v2 train = paper 14K,9137,1954,1946,14000,0,0,0,13997
+v2 val = eval val,1965,437,396,0,3000,0,0,0
+v2 test,1951,399,432,0,0,3000,2999,0
+eval test (43K build),1950,399,432,0,0,2999,2999,0
+43K train,10081,2164,2172,13997,0,0,0,43012

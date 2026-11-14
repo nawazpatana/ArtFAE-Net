@@ -1,0 +1,27 @@
+pos_weight {'amusement': np.float64(1.75), 'awe': np.float64(0.79), 'contentment': np.float64(0.39), 'excitement': np.float64(1.92), 'anger': np.float64(14.53), 'disgust': np.float64(4.48), 'fear': np.float64(2.58), 'sadness': np.float64(1.99), 'something_else': np.float64(1.18)}
+
+app (as shown): mean |mean prob - empirical rate| over classes 0.169; Brier 0.2067; chips/artwork (incl. top) 4.10 vs empirical #present 3.28
+  amusement       rate 0.353 mean_prob 0.460 shown 0.428 precision_when_shown 0.570
+  awe             rate 0.576 mean_prob 0.510 shown 0.535 precision_when_shown 0.710
+  contentment     rate 0.706 mean_prob 0.514 shown 0.507 precision_when_shown 0.909
+  excitement      rate 0.313 mean_prob 0.483 shown 0.460 precision_when_shown 0.455
+  anger           rate 0.090 mean_prob 0.422 shown 0.395 precision_when_shown 0.173
+  disgust         rate 0.194 mean_prob 0.445 shown 0.398 precision_when_shown 0.343
+  fear            rate 0.291 mean_prob 0.455 shown 0.415 precision_when_shown 0.530
+  sadness         rate 0.333 mean_prob 0.495 shown 0.470 precision_when_shown 0.509
+  something_else  rate 0.427 mean_prob 0.500 shown 0.488 precision_when_shown 0.515
+
+offset -log(pos_weight): mean |mean prob - empirical rate| over classes 0.019; Brier 0.1672; chips/artwork (incl. top) 2.75 vs empirical #present 3.28
+  amusement       rate 0.353 mean_prob 0.355 shown 0.273 precision_when_shown 0.651
+  awe             rate 0.576 mean_prob 0.562 shown 0.630 precision_when_shown 0.685
+  contentment     rate 0.706 mean_prob 0.677 shown 0.751 precision_when_shown 0.825
+  excitement      rate 0.313 mean_prob 0.348 shown 0.203 precision_when_shown 0.557
+  anger           rate 0.090 mean_prob 0.072 shown 0.000 precision_when_shown 0.000
+  disgust         rate 0.194 mean_prob 0.192 shown 0.058 precision_when_shown 0.694
+  fear            rate 0.291 mean_prob 0.298 shown 0.214 precision_when_shown 0.674
+  sadness         rate 0.333 mean_prob 0.363 shown 0.269 precision_when_shown 0.613
+  something_else  rate 0.427 mean_prob 0.461 shown 0.349 precision_when_shown 0.544
+train Color_Field_Painting: n=1059  mean anger share 0.0415  mean something_else 0.2663
+train Minimalism: n=737  mean anger share 0.0492  mean something_else 0.3488
+train Abstract_Expressionism: n=1447  mean anger share 0.0418  mean something_else 0.2052
+train n 43012
