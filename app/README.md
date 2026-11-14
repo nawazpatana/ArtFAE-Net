@@ -68,6 +68,24 @@ On macOS and Windows, the default torch wheel already works without a GPU.
   takes under 0.05 s.
 - The app uses the GPU automatically if PyTorch can see one; otherwise it uses the CPU.
 
+## Gallery mode (online version, no torch)
+
+`APP_MODE=gallery` runs the app without torch, transformers, CLIP or the weights. It shows the 12 example
+artworks with results precomputed by the full pipeline (`assets/precomputed/gallery.json`): both models, the
+R1 prior-correction option, the 10-viewer counts, R3 presence chips, attention maps for all nine emotions,
+the attributes, the description and sentiment. Uploading is disabled, and the Compare page uses the examples only.
+`APP_MODE` is read from the environment, then from Streamlit secrets; the default is `full`.
+
+```bash
+pip install -r ../streamlit_cloud/requirements.txt     # streamlit, numpy, pandas, pillow, plotly
+APP_MODE=gallery streamlit run app/streamlit_app.py
+```
+
+Streamlit Community Cloud uses `streamlit_cloud/streamlit_app.py` (sets `APP_MODE=gallery`) with
+`streamlit_cloud/requirements.txt`. After changing the models, the examples or the attribute code, rebuild and
+verify the precomputed file in the full environment: `HF_HUB_OFFLINE=1 python app/precompute_gallery.py`
+(compares it with live inference and fails above 1e-5).
+
 ## Pages
 
 - **Analyse:** upload a JPG, PNG or WebP, or pick one of the 12 example artworks, to see:

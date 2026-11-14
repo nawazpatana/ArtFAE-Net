@@ -68,6 +68,8 @@ python -m unittest discover -s tests  # synthetic CPU tests, no data needed
 
 `app/` is a bilingual (English / 繁體中文) Streamlit app. It shows the predicted emotion distribution, the measured attributes and ECSA attention maps for an uploaded image. The default model is R1, and R3 is available as a minority-sensitive option. Each model runs as a five-seed ensemble. Everything runs locally and uploaded images are not stored. The model weights (`app/assets/models/*/s*/best.pt`) are not in this repository; they will be released on Hugging Face. Setup: `app/README.md`.
 
+An online **gallery mode** (`APP_MODE=gallery`; entry point `streamlit_cloud/streamlit_app.py` for Streamlit Community Cloud) shows the 12 examples with precomputed results and needs no torch or weights. Uploads of new images are disabled there.
+
 > **Copyright note:** the example images in `app/assets/examples/` are WikiArt artworks. Their copyright status must be checked before this repository is ever made public.
 
 ## Study app (code only)

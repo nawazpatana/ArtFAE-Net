@@ -1,6 +1,11 @@
 """ArtFAE-Net bilingual demo (English / 繁體中文).
 
-run:  streamlit run app/streamlit_app.py
+run:  streamlit run app/streamlit_app.py                     (full: live inference, needs torch + weights)
+      APP_MODE=gallery streamlit run app/streamlit_app.py    (gallery: the 12 precomputed examples, no torch)
+
+APP_MODE comes from the environment, else from Streamlit secrets, else "full". In gallery mode torch,
+transformers and CLIP are never imported, uploads are disabled and the results come from
+app/assets/precomputed/gallery.json (app/precompute_gallery.py).
 """
 import hashlib
 import io
@@ -13,9 +18,17 @@ import streamlit.components.v1 as components
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import core  # noqa: E402  (torch-free; puts the repository's src/ on sys.path)
 import i18n  # noqa: E402
-import inference as inf  # noqa: E402
 import ui  # noqa: E402
+
+APP_MODE = core.app_mode(st.secrets)
+GALLERY = APP_MODE == "gallery"
+if GALLERY:
+    import core as inf  # noqa: E402  (same helper names as inference, without torch)
+    import gallery as precomputed  # noqa: E402  (not "gallery": that name is the gallery section below)
+else:
+    import inference as inf  # noqa: E402
 
 EMOS = inf.EMOTIONS
 GROUPS = {
@@ -52,7 +65,9 @@ def assets():
 
 
 @st.cache_data(show_spinner=False, max_entries=64)
-def analyse_bytes(data: bytes, mode: str, prior: bool) -> dict:
+def analyse_bytes(data: bytes, mode: str, prior: bool, app_mode: str = APP_MODE) -> dict:  # app_mode: cache key
+    if GALLERY:
+        return precomputed.result(data, mode=mode, prior_correction=prior)
     return inf.predict(engine(), inf.load_image(io.BytesIO(data)), mode=mode, prior_correction=prior)
 
 
@@ -124,9 +139,11 @@ def ensure_engine():
 
 
 def run(data: bytes):
+    if GALLERY:  # precomputed, nothing to load
+        return analyse_bytes(data, ss.model, ss.model == "r1" and bool(ss.prior), APP_MODE)
     ensure_engine()
     with st.spinner(tr("spinner")):
-        return analyse_bytes(data, ss.model, ss.model == "r1" and bool(ss.prior))
+        return analyse_bytes(data, ss.model, ss.model == "r1" and bool(ss.prior), APP_MODE)
 
 
 def fmt_value(name, x):
@@ -163,6 +180,10 @@ def scroll_to_results():
 
 
 def dropzone(hero: bool):
+    if GALLERY:  # no uploads online: point to the gallery instead
+        with st.container(key="gallery_mode_note"):
+            st.info(tr("gallery_mode_note"))
+        return
     with st.container(key="dropzone_hero" if hero else "dropzone_compact"):
         st.file_uploader(tr("upload"), type=["jpg", "jpeg", "png", "webp"], help=tr("upload_help"), key="upload",
                          on_change=on_upload, label_visibility="collapsed")
@@ -287,7 +308,8 @@ def details_tabs(img, r, key):
     with t_det:
         tops = ", ".join(f"s{s} {emo(EMOS[int(p.argmax())])}" for s, p in zip(inf.SEEDS, r["probs_per_seed"]))
         st.caption(tr("model_used_prior" if r["prior_correction"] else "model_used", name=tr(f"model_{r['mode']}")))
-        st.caption(tr("inference_time", seconds=r["seconds"], device=r["device"].upper()))
+        st.caption(tr("precomputed_time" if r.get("precomputed") else "inference_time", seconds=r["seconds"],
+                      device=r["device"].upper()))
         st.caption(tr("per_seed", items=tops))
         st.markdown(ui.card(f'<div class="af-desc">{ui.esc(i18n.description(L, r["description"]))}</div>',
                             tr("description")), unsafe_allow_html=True)
@@ -325,8 +347,12 @@ def aesthetics(attrs, description):
 # ---------------------------------------------------------------- compare (restyled in stage 2)
 def page_compare():
     section(tr("compare_title"), tr("compare_intro"))
-    ups = st.file_uploader(tr("compare_upload"), type=["jpg", "jpeg", "png", "webp"], accept_multiple_files=True,
-                           key="cmp_upload")
+    if GALLERY:  # examples only
+        st.info(tr("gallery_mode_note"))
+        ups = []
+    else:
+        ups = st.file_uploader(tr("compare_upload"), type=["jpg", "jpeg", "png", "webp"], accept_multiple_files=True,
+                               key="cmp_upload")
     picks = st.multiselect(tr("compare_examples"), list(range(len(EXAMPLES))), max_selections=4,
                            format_func=lambda i: caption(EXAMPLES[i]), key="cmp_examples")
     items = [(u.name, u.getvalue()) for u in ups or []] + [(caption(EXAMPLES[i]), file_bytes(EXAMPLES[i]["path"]))

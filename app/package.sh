@@ -5,7 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 STAGE=$(mktemp -d)/artfae_demo
 mkdir -p "$STAGE"/{app,artfae_balance,src/artfae/features,src/artfae/models,tests,.streamlit}
-cp app/{streamlit_app.py,inference.py,i18n.py,ui.py,README.md,requirements.txt,build_assets.py,package.sh} "$STAGE/app/"
+cp app/{streamlit_app.py,inference.py,core.py,gallery.py,precompute_gallery.py,i18n.py,ui.py,README.md,requirements.txt,build_assets.py,package.sh} "$STAGE/app/"
 cp -r app/assets "$STAGE/app/"
 cp -r app/.streamlit "$STAGE/app/"
 cp app/.streamlit/config.toml "$STAGE/.streamlit/"

@@ -63,3 +63,7 @@ study/space/dist/
 study/stimuli/
 study/precomputed/attention/
 .vscode/
+
+# --- 2026-11-14: "features*/" above is meant for feature caches; these are Python source packages ---
+!src/artfae/features/
+!artfae_demo/src/artfae/features/
