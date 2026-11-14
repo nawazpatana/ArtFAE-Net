@@ -1,57 +1,96 @@
 # ArtFAE-Net
 
-Attribute-guided, evidence-grounded emotion recognition in visual art. Research project at National Taichung University of Education (NTCU), Taiwan.
+**Do measurable attributes and spatial attention help? A pre-registered study of artwork emotion distribution prediction with frozen CLIP.**
 
-The framework takes an artwork image, measures numerical visual properties, encodes deterministic label-free descriptions with CLIP, and combines them through Attribute-Guided Fusion (AGF). Emotion-Conditioned Spatial Attention (ECSA) adds class-specific regional contributions directly to the logits. Attention remains candidate evidence; deletion/retention tests assess perturbation sensitivity.
+ArtFAE-Net predicts the distribution of emotions that viewers report for a visual artwork (the nine ArtEmis classes: amusement, awe, contentment, excitement, anger, disgust, fear, sadness, something else). It combines a frozen CLIP ViT-L/14@336 image embedding with numerical visual attributes and label-free attribute text through Attribute-Guided Fusion (AGF), and adds class-specific regional evidence with Emotion-Conditioned Spatial Attention (ECSA).
 
-## Verified status
+The main question was whether these components help. All architecture choices were made on validation data, then five hypotheses (H1–H5) were pre-registered (`runs/final_selection_v3.txt`, with SHA-256 hashes of every checkpoint, manifest and script) and tested once on a fresh holdout that no model had seen.
 
-The original baseline, checkpoint, history, and dataset are preserved. Independent CPU validation of the existing CLIP head gives macro-F1 0.303034, accuracy 0.510894, and soft CE 1.791518. This uses 2,249 unique-top artworks for hard metrics and all 3,000 for distributional metrics. The original GPU-fp16 history reports 0.301131 macro-F1; the new feature extraction uses CPU float32. These are validation findings, not held-out test results.
+## Results: pre-registered holdout
 
-The audit verifies 14,000/3,000/3,000 artwork partitions and 78,795/16,959/16,968 annotations. B3/B4/B5 now have three independent seeds: validation macro-F1 mean ± sample SD is 0.321257 ± 0.003911 / 0.333004 ± 0.001170 / 0.324391 ± 0.001723. Frozen ResNet50 completed 20 CPU epochs, with a highest logged validation macro-F1 of 0.252505; its final independent verification was declined and remains pending. Proposed M1 passed CPU smoke checks; full training is pending the booking. Detailed completion is tracked in [EXPERIMENTS.md](EXPERIMENTS.md) and the [continuation record](docs/CONTINUATION_20261022.md). GPU booking: two full days beginning October 23, 2026, interpreted in the client timezone Asia/Taipei as October 23 00:00 through October 25 00:00 (UTC+8); see `configs/shoal_booking.yaml`. The current implementation session precedes that window.
+Fresh holdout: 30,280 artworks (22,351 with a unique top emotion). Five seeds (42–46) per model; the primary contrast uses the per-seed mean. Metric: soft cross-entropy (softCE) against the human vote distribution, lower is better. Equivalence margin ±0.005. 95% bootstrap intervals; Holm-corrected p-values. Source: `runs/final_eval_v3/report.md`.
 
-## Environment and commands
+| Hypothesis | Contrast (A − B) | Δ softCE | 95% CI | Holm p | Supported |
+|---|---|---|---|---|---|
+| H1: the attribute inputs are redundant (equivalence) | NO_ATTR − R1 | +0.0017 | [+0.0012, +0.0021] | 0.0025 | yes |
+| H2: AGF-only is better than R1 | AGF_ONLY − R1 | +0.0036 | [+0.0024, +0.0047] | 1.0000 | no |
+| H3: ECSA trades softCE for macro-F1 | R1 − NO_ECSA | −0.0023 | [−0.0034, −0.0013] | 1.0000 | no |
+| H4: class weighting trades fidelity for minority recognition | WEIGHTED − R1 | +0.0019 (Δ macro-F1 +0.0176) | [+0.0011, +0.0027] | 0.0025 | yes |
+| H5: a linear probe matches the full model (equivalence) | PROBE − R1 | +0.0002 | [−0.0009, +0.0013] | 0.0025 | yes |
 
-Use `/workspace/.venv/bin/python`; no replacement environment is needed. The commands below run from the repository root. Scripts add `src` to their import path. Exact starting package versions and original artifact hashes are in `docs/phase0/`. Matplotlib was added for plots; no PyTorch or CUDA upgrades are required.
+H1 and H5 also use 90% intervals for equivalence: H1 [+0.0013, +0.0021], H5 [−0.0007, +0.0011].
+
+Per-seed means on the full holdout:
+
+| Model | softCE | KL | Brier | macro-F1 | mean anger+fear AP | neg-sentiment F1 |
+|---|---|---|---|---|---|---|
+| R1 (ArtFAE-Net, 762,249 parameters) | 1.8357 | 0.7249 | 0.1702 | 0.3607 | 0.4522 | 0.6072 |
+| NO_ATTR | 1.8374 | 0.7266 | 0.1707 | 0.3620 | 0.4538 | 0.6030 |
+| AGF_ONLY | 1.8393 | 0.7285 | 0.1706 | 0.3624 | 0.4512 | 0.6052 |
+| NO_ECSA | 1.8380 | 0.7273 | 0.1707 | 0.3633 | 0.4530 | 0.6077 |
+| WEIGHTED | 1.8376 | 0.7268 | 0.1703 | 0.3783 | 0.4517 | 0.6362 |
+| PROBE (linear, 6,921 parameters) | 1.8359 | 0.7252 | 0.1704 | 0.3558 | 0.4522 | 0.5861 |
+| MLP | 1.8363 | 0.7255 | 0.1704 | 0.3599 | 0.4522 | 0.6014 |
+| R3 (balanced sampler + presence head) | 1.8449 | 0.7342 | 0.1731 | 0.3695 | 0.4495 | 0.6366 |
+
+In short: a linear probe on the frozen CLIP embedding predicts the emotion distribution as well as the full model, the attribute inputs add almost nothing, and the two architecture effects that looked beneficial on validation (H2, H3) reversed on the holdout. Class weighting buys macro-F1 at a measurable softCE cost. Ensemble results, the artist-holdout subset (1,245 artworks by artists absent from training) and seed variability are in the same report; post-hoc analyses are in `runs/final_eval_v3_posthoc/`.
+
+## Data (not included)
+
+This repository contains **no images, no ArtEmis annotations and no derived label files**. Obtain them yourself and accept their terms:
+
+- **ArtEmis** (Achlioptas et al., CVPR 2021): emotion labels and explanations for WikiArt artworks. Download `artemis_dataset_release_v0.csv` from <https://www.artemisdataset.org/> after accepting its terms of use (non-commercial research use). Place it at `artemis_official_data/official_data/`.
+- **WikiArt images**: the artworks referenced by ArtEmis. Many are still under copyright and belong to their rights holders. WikiArt's terms of use apply. Use the image collection referenced by the ArtEmis instructions. Put the images under `archive/images/` (`clean_artemis/images` is a symlink to it).
+
+Splits and manifests are rebuilt from these sources (see Reproduce). Image file names, SHA-256 hashes and perceptual hashes in `runs/` let you check that your copy matches ours.
+
+## Reproduce
+
+Python 3.12. Use `HF_HUB_OFFLINE=1` after the first CLIP download (`openai/clip-vit-large-patch14-336`).
 
 ```bash
-/workspace/.venv/bin/python -m unittest discover -s tests -v
-/workspace/.venv/bin/python scripts/artfae.py --help
-/workspace/.venv/bin/python scripts/artfae.py audit --verify-images --output results/my_audit
-/workspace/.venv/bin/python scripts/evaluate_existing_clip.py --output results/my_clip_validation
-/workspace/.venv/bin/python scripts/artfae.py cache --output results/my_features
-/workspace/.venv/bin/python scripts/artfae.py train --cache results/my_features --config configs/B3.yaml --output results/my_b3
-/workspace/.venv/bin/python scripts/artfae.py train --cache results/my_features --config configs/m1.yaml --output results/my_m1
-/workspace/.venv/bin/python scripts/artfae.py infer --checkpoint results/my_m1/best.pt --image clean_artemis/images/ARTWORK.jpg --output results/my_prediction
-/workspace/.venv/bin/python scripts/evaluate_evidence.py --checkpoint results/my_m1/best.pt --image clean_artemis/images/ARTWORK.jpg --output results/my_evidence
-/workspace/.venv/bin/python scripts/compare_experiments.py --plots --output results/my_comparison
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -e .                      # src/artfae (torch, transformers, scikit-learn, …)
+python -m unittest discover -s tests  # synthetic CPU tests, no data needed
 ```
 
-> **Images (2026-11-06):** `data/images/` (the v1 20K image copy) was moved to quarantine in `/workspace/_to_delete/ArtFAE-Net/data/images/` (see `/workspace/_to_delete/MOVES.log`). Use `clean_artemis/images/` (49,011 cleaned images; symlink to `archive/images/`) or the v2 package `/workspace/datasets/ArtEmis-20k-v2/ArtEmis-20k-GPU/images/`. The 4 v1 images that are not in `clean_artemis/images/` are backed up in `data/images_unique_backup/` (also present in the v2 package).
+1. **Dataset cleaning and balancing**: `build_balanced_artemis.py`, `artfae_balance/`.
+2. **Frozen CLIP features**: `scripts/run_extract_l14.sh` (L/14@336) and `runs/revision_B/code/extract_holdout_features.sh` for the holdout.
+3. **Controlled ablations (validation)**: `runs/revision_B/code/train_abl.py --step 1 --conditions R1 probe … --seeds 42 43 44 45 46`; checkpoints are selected by validation softCE.
+4. **Fresh holdout**: `runs/revision_B/code/build_fresh_holdout.py` (deduplication against all previously used artworks with `phash.py`).
+5. **Pre-registered evaluation**: `runs/revision_B/code/eval_holdout.py --selection runs/final_selection_v3.txt …`, and `posthoc_holdout_metrics.py`.
 
-Use a train or validation artwork for demonstrations. Replace `ARTWORK.jpg` with an actual filename; do not select test images during development. Inference writes probabilities, measurements, structured explanations, and ECSA crop-aligned visualizations. The selected trained M1 checkpoint must exist before its inference command can run. A pretrained, untrained proposed model must never be presented as a research result.
+`PROJECT_INDEX.md` maps every folder to the claim it supports. The hashes in `runs/final_selection*.txt` record the exact files used. Checkpoints (`*.pt`), features (`*.npy`/`*.npz`) and logits are not in the repository.
 
-All output directories must be new. For CUDA, append `--device cuda --booking-start ISO_TIMESTAMP --booking-end ISO_TIMESTAMP` to supported commands. Both timestamps require timezone offsets and must bound the current time. See [TRAINING_GUIDE.md](TRAINING_GUIDE.md) for interruption and resume.
+**Model weights are not included in this repository; they will be released on Hugging Face.**
 
-## Repository
+## Demo app
 
-- `src/artfae/`: dataset validation, deterministic features, neural models, training, metrics, evidence evaluation, explanations, CLI.
-- `scripts/`: entry points, including preserved `artfae_clip_baseline.py`.
-- `configs/`: B2–B5, M1, and controlled AGF/ECSA/branch ablations.
-- `tests/`: synthetic CPU tests, including training/resume; no test artwork inputs.
-- `data/`: original read-only dataset; never committed or copied into output artifacts.
-- `results/`: separate run directories, feature shards, audit reports, predictions, checkpoints, and plots.
+`app/` is a bilingual (English / 繁體中文) Streamlit app. It shows the predicted emotion distribution, the measured attributes and ECSA attention maps for an uploaded image. The default model is R1, and R3 is available as a minority-sensitive option. Each model runs as a five-seed ensemble. Everything runs locally and uploaded images are not stored. The model weights (`app/assets/models/*/s*/best.pt`) are not in this repository; they will be released on Hugging Face. Setup: `app/README.md`.
 
-Read [DATASET.md](DATASET.md), [MODEL_ARCHITECTURE.md](MODEL_ARCHITECTURE.md), [RESEARCH_REPORT.md](RESEARCH_REPORT.md), and [COLLABORATION_GUIDE.md](COLLABORATION_GUIDE.md). Artwork images are not licensed for automatic redistribution by this project. No dataset publishing or external upload is performed.
+> **Copyright note:** the example images in `app/assets/examples/` are WikiArt artworks. Their copyright status must be checked before this repository is ever made public.
 
-A phase-by-phase execution record, saved artifacts, problems, and exact continuation commands are in [docs/PHASE_STATUS.md](docs/PHASE_STATUS.md).
+## Study app (code only)
 
-The current suite passes 38 tests, including exact CPU epoch-replay recovery, selected-checkpoint preservation, explanation consistency, and separation of tuning recipes in seed summaries. All 17,000 cached train/validation attribute vectors pass the raw-measurement checks. A resumable, prespecified validation evidence-study command is documented in [TRAINING_GUIDE.md](TRAINING_GUIDE.md); its one-artwork CPU smoke check completed, while the stable-M1 research study remains pending.
+`study/` holds a Streamlit app for a human pilot study that compares viewers' feelings with the model's predictions. The participant information and consent texts are in English and Chinese. **No participant data, stimulus images or precomputed outputs are included.** `study/private/` and the stimulus images are excluded. `study/frozen.py` verifies the frozen stimulus set by SHA-256 and refuses to start on any difference, so the app runs only with the original stimulus files. Details: `study/README.md`.
 
-## Jupyter training notebook
+## Repository layout
 
-Open [ArtFAE_Training_and_Improvement.ipynb](notebooks/ArtFAE_Training_and_Improvement.ipynb) to train the models yourself, compare controlled learning-rate/width trials, repeat seeds, run ablations, resume checkpoints, and inspect validation plots and explanations. Select the **Python (ArtFAE .venv)** kernel. See [notebook instructions](notebooks/README.md) for the first run. Default switches preview commands; GPU execution follows your recorded Shoal booking.
+| Path | Contents |
+|---|---|
+| `src/artfae/` | model (AGF, ECSA), features, training, metrics, explanations |
+| `scripts/`, `configs/`, `notebooks/` | entry points, experiment configs, training notebooks |
+| `artfae_balance/`, `build_balanced_artemis.py` | dataset cleaning and balancing |
+| `runs/` | selection files with hashes, evaluation reports, revision code (`revision_A/`, `revision_B/`) |
+| `remaining_experiments/` | reviewer follow-up experiments (faithfulness, permutation, resources) |
+| `app/`, `artfae_demo/` | demo app and an older installed copy |
+| `study/` | human study app (code only) |
+| `tests/` | unit tests |
+| `docs/` | phase records and guides |
 
-Separate model notebooks for **B1, B2, B3, B4, B5, and M1** are indexed in [notebooks/README.md](notebooks/README.md#separate-notebooks-by-model). B2 reuses its trained checkpoint; the other five provide model-specific training workflows.
-# ArtAFE
-# ArtAFE
+## Authors
+
+- **Nawazish Hussain**, AI New Media Lab, Department of Digital Content and Technology, National Taichung University of Education (NTCU), Taiwan
+- **Assoc. Prof. Shih-Yun Lu** (supervisor), AI New Media Lab, Department of Digital Content and Technology, NTCU
+
+Private repository. Please do not redistribute the code or results without the authors' permission.

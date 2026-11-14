@@ -1,0 +1,20 @@
+{
+  "unit_tests": 38,
+  "unit_tests_passed": 38,
+  "script_help_checks_passed": 9,
+  "original_artifacts_unchanged": true,
+  "train_validation_cache_artworks": 17000,
+  "validation_embedding_max_abs_difference": 0.0,
+  "gpu_computation_executed": false,
+  "test_predictions_generated": false,
+  "test_metrics_generated": false,
+  "validation_evidence_study_smoke": "complete: one validation artwork, four method/budget groups, scope smoke",
+  "cpu_partial_epoch_replay": "exact model weights, scheduler, RNG, and training-loss history verified",
+  "selected_checkpoint_resume": "self-contained new-format selection and legacy sibling recovery tested",
+  "explanation_consistency": "attribute ranges/proportions, candidate region class/bounds/mass, stable class ties, and predictive uncertainty tested",
+  "explanation_raw_attribute_vectors_checked": 17000,
+  "training_notebook": "32 cells; nbformat validation and full preview execution passed; command success/failure and GPU booking guard checked",
+  "training_notebook_model_training_executed": false,
+  "resnet_research_checkpoint_independent_verification": "pending: previously declined command not retried",
+  "protocol_note": "One test annotation record was displayed during initial schema preview; not used for training/model selection/evaluation. See docs/PHASE_STATUS.md."
+}

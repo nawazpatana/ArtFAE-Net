@@ -1,0 +1,8 @@
+{
+  "checked_artworks": {
+    "train": 14000,
+    "val": 3000
+  },
+  "invalid_measurements_detected": 0,
+  "test_split_inspected": false
+}

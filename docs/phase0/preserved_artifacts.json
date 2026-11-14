@@ -1,0 +1,7 @@
+{
+  "scripts/artfae_clip_baseline.py": "d625fe3aefa5082603a2a91c5737ecd4830fcaa75e6f97f2af241e567ae5f234",
+  "results/clip_b32_smoke/best_head.pt": "d4e3403ab99f512897630bd4ec7920c7e57189bc2930282d7c4cc233cb874d3c",
+  "results/clip_b32_smoke/training_history.json": "b1e06c5e9a009d9f759c898ba54873e21b762ac2e87e98e91b22577c41b57969",
+  "results/clip_b32_full/best_head.pt": "78fb35f0b09fe15ef9bc351525790024f1aeb6592a415eb5ee6b3f284b9305c4",
+  "results/clip_b32_full/training_history.json": "db54c1e6254caeb98d46c655a7cf4045f82c30882ad2687244e141dbb103fb8e"
+}
