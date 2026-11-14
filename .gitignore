@@ -1,0 +1,65 @@
+data/
+results/
+logs/
+figures/
+__pycache__/
+*.pyc
+*.pt
+*.pth
+*.npz
+*.npy
+.venv/
+.env*
+.aws/
+*.egg-info/
+build/
+dist/
+
+# Disposable development caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.pyo
+
+# --- 2026-11-12: keep data, packaging and large artefacts out of git ---
+# images and datasets
+archive/
+clean_artemis/images
+uploads/
+Data/
+artemis_official_data/
+*.jpg
+*.jpeg
+*.png
+!app/assets/examples/*.jpg
+# manifests with ArtEmis-derived label columns (n_*, p_*, present_*)
+runs/revision_B/fresh_holdout/holdout.csv
+runs/revision_B/fresh_holdout/holdout_candidates.csv
+# separate repository
+paper/
+# archives and bundles
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.tar.part-*
+# features, checkpoints, arrays
+features*/
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+# release packaging and caches
+.release/
+.cache/
+
+# study mode: ArtEmis-derived vote shares and pilot data, and the generated Space upload folder
+study/private/
+study/space/dist/
+
+# --- 2026-11-14: study stimulus images and attention overlays, editor settings ---
+study/stimuli/
+study/precomputed/attention/
+.vscode/
