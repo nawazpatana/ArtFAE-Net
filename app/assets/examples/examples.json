@@ -1,0 +1,230 @@
+[
+ {
+  "file": "aldemir-martins_white-cat-2001.jpg",
+  "painting": "White cat 2001",
+  "artist": "Aldemir Martins",
+  "style": "Naive Art Primitivism",
+  "val_row": 1432,
+  "annotator_top": "amusement",
+  "annotators": {
+   "amusement": 1.0,
+   "awe": 0.0,
+   "contentment": 0.0,
+   "excitement": 0.0,
+   "anger": 0.0,
+   "disgust": 0.0,
+   "fear": 0.0,
+   "sadness": 0.0,
+   "something_else": 0.0
+  }
+ },
+ {
+  "file": "peter-paul-rubens_the-victory-of-eucharistic-truth-over-heresy.jpg",
+  "painting": "The victory of eucharistic truth over heresy",
+  "artist": "Peter Paul Rubens",
+  "style": "Baroque",
+  "val_row": 320,
+  "annotator_top": "awe",
+  "annotators": {
+   "amusement": 0.0,
+   "awe": 1.0,
+   "contentment": 0.0,
+   "excitement": 0.0,
+   "anger": 0.0,
+   "disgust": 0.0,
+   "fear": 0.0,
+   "sadness": 0.0,
+   "something_else": 0.0
+  }
+ },
+ {
+  "file": "jan-siberechts_pasture-with-two-sleeping-shepherdesses.jpg",
+  "painting": "Pasture with two sleeping shepherdesses",
+  "artist": "Jan Siberechts",
+  "style": "Baroque",
+  "val_row": 288,
+  "annotator_top": "contentment",
+  "annotators": {
+   "amusement": 0.0,
+   "awe": 0.0,
+   "contentment": 1.0,
+   "excitement": 0.0,
+   "anger": 0.0,
+   "disgust": 0.0,
+   "fear": 0.0,
+   "sadness": 0.0,
+   "something_else": 0.0
+  }
+ },
+ {
+  "file": "henri-de-toulouse-lautrec_the-jockey-1899.jpg",
+  "painting": "The jockey 1899",
+  "artist": "Henri De Toulouse Lautrec",
+  "style": "Post Impressionism",
+  "val_row": 1790,
+  "annotator_top": "excitement",
+  "annotators": {
+   "amusement": 0.0,
+   "awe": 0.0,
+   "contentment": 0.0,
+   "excitement": 1.0,
+   "anger": 0.0,
+   "disgust": 0.0,
+   "fear": 0.0,
+   "sadness": 0.0,
+   "something_else": 0.0
+  }
+ },
+ {
+  "file": "david-burliuk_an-actor-1938.jpg",
+  "painting": "An actor 1938",
+  "artist": "David Burliuk",
+  "style": "Realism",
+  "val_row": 2047,
+  "annotator_top": "anger",
+  "annotators": {
+   "amusement": 0.0,
+   "awe": 0.0,
+   "contentment": 0.0,
+   "excitement": 0.0,
+   "anger": 0.8,
+   "disgust": 0.0,
+   "fear": 0.2,
+   "sadness": 0.0,
+   "something_else": 0.0
+  }
+ },
+ {
+  "file": "amedeo-modigliani_portrait-of-paul-alexandre-1909.jpg",
+  "painting": "Portrait of paul alexandre 1909",
+  "artist": "Amedeo Modigliani",
+  "style": "Expressionism",
+  "val_row": 522,
+  "annotator_top": "anger",
+  "annotators": {
+   "amusement": 0.0,
+   "awe": 0.0,
+   "contentment": 0.0,
+   "excitement": 0.0,
+   "anger": 0.6,
+   "disgust": 0.2,
+   "fear": 0.0,
+   "sadness": 0.0,
+   "something_else": 0.2
+  }
+ },
+ {
+  "file": "paul-gauguin_still-life-with-red-mullet-and-jug-1876.jpg",
+  "painting": "Still life with red mullet and jug 1876",
+  "artist": "Paul Gauguin",
+  "style": "Impressionism",
+  "val_row": 1248,
+  "annotator_top": "disgust",
+  "annotators": {
+   "amusement": 0.0,
+   "awe": 0.0,
+   "contentment": 0.0,
+   "excitement": 0.0,
+   "anger": 0.0,
+   "disgust": 0.8,
+   "fear": 0.0,
+   "sadness": 0.2,
+   "something_else": 0.0
+  }
+ },
+ {
+  "file": "jean-baptiste-simeon-chardin_rabbit-and-copper-pot.jpg",
+  "painting": "Rabbit and copper pot",
+  "artist": "Jean Baptiste Simeon Chardin",
+  "style": "Rococo",
+  "val_row": 2461,
+  "annotator_top": "disgust",
+  "annotators": {
+   "amusement": 0.0,
+   "awe": 0.0,
+   "contentment": 0.0,
+   "excitement": 0.0,
+   "anger": 0.0,
+   "disgust": 0.8,
+   "fear": 0.0,
+   "sadness": 0.2,
+   "something_else": 0.0
+  }
+ },
+ {
+  "file": "lynd-ward_not-detected-272543.jpg",
+  "painting": "Not detected 272543",
+  "artist": "Lynd Ward",
+  "style": "Expressionism",
+  "val_row": 654,
+  "annotator_top": "fear",
+  "annotators": {
+   "amusement": 0.0,
+   "awe": 0.0,
+   "contentment": 0.0,
+   "excitement": 0.0,
+   "anger": 0.0,
+   "disgust": 0.0,
+   "fear": 1.0,
+   "sadness": 0.0,
+   "something_else": 0.0
+  }
+ },
+ {
+  "file": "paula-modersohn-becker_portrait-of-rainer-maria-rilke-1906.jpg",
+  "painting": "Portrait of rainer maria rilke 1906",
+  "artist": "Paula Modersohn Becker",
+  "style": "Expressionism",
+  "val_row": 723,
+  "annotator_top": "fear",
+  "annotators": {
+   "amusement": 0.0,
+   "awe": 0.0,
+   "contentment": 0.0,
+   "excitement": 0.0,
+   "anger": 0.0,
+   "disgust": 0.0,
+   "fear": 1.0,
+   "sadness": 0.0,
+   "something_else": 0.0
+  }
+ },
+ {
+  "file": "raphael-kirchner_justine-johnstone-2.jpg",
+  "painting": "Justine johnstone 2",
+  "artist": "Raphael Kirchner",
+  "style": "Art Nouveau Modern",
+  "val_row": 152,
+  "annotator_top": "sadness",
+  "annotators": {
+   "amusement": 0.0,
+   "awe": 0.0,
+   "contentment": 0.0,
+   "excitement": 0.0,
+   "anger": 0.0,
+   "disgust": 0.0,
+   "fear": 0.0,
+   "sadness": 1.0,
+   "something_else": 0.0
+  }
+ },
+ {
+  "file": "julio-gonzalez_figure-with-balls-1938.jpg",
+  "painting": "Figure with balls 1938",
+  "artist": "Julio Gonzalez",
+  "style": "Cubism",
+  "val_row": 407,
+  "annotator_top": "something_else",
+  "annotators": {
+   "amusement": 0.2,
+   "awe": 0.0,
+   "contentment": 0.0,
+   "excitement": 0.0,
+   "anger": 0.0,
+   "disgust": 0.0,
+   "fear": 0.0,
+   "sadness": 0.0,
+   "something_else": 0.8
+  }
+ }
+]

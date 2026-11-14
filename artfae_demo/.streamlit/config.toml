@@ -1,0 +1,30 @@
+# Copied to <bundle>/.streamlit/config.toml: Streamlit reads it from the directory you run `streamlit run` in.
+# Light and dark are both defined, so the app's Settings menu offers System / Light / Dark.
+[browser]
+gatherUsageStats = false
+
+[server]
+maxUploadSize = 50
+
+[theme]
+font = "Noto Sans TC:https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap, Microsoft JhengHei, PingFang TC, sans-serif"
+headingFont = "Noto Serif TC:https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap, PMingLiU, serif"
+baseRadius = "0.9rem"
+showWidgetBorder = true
+
+[theme.light]
+primaryColor = "#8C5A3C"
+backgroundColor = "#F7F3EC"
+secondaryBackgroundColor = "#EFE8DC"
+textColor = "#2B2A28"
+borderColor = "#E6DED1"
+
+[theme.dark]
+primaryColor = "#D9A36A"
+backgroundColor = "#191816"
+secondaryBackgroundColor = "#24221F"
+textColor = "#ECE6DC"
+borderColor = "#37332E"
+
+[client]
+toolbarMode = "viewer"
