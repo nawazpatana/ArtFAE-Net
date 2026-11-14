@@ -82,6 +82,80 @@ print("ok")
     assert out.returncode == 0 and out.stdout.strip().endswith("ok"), out.stderr[-3000:]
 
 
+SWEEP = """
+import sys
+from streamlit.testing.v1 import AppTest
+ERR = {ERR!r}
+at = AppTest.from_file({entry!r}, default_timeout=120); at.run()
+assert not at.exception, at.exception
+assert not at.get("file_uploader"), "upload must be disabled"
+bad = []
+for lang in ("en", "zh"):
+    at.radio(key="lang").set_value(lang).run()
+    for mode in ("r1", "r3"):
+        at.sidebar.radio(key="model").set_value(mode).run()
+        for i in range(12):
+            at.button(key=f"ex_{{i}}").click().run()
+            errs = [e.value for e in at.error]
+            if at.exception or errs or not any("af-card af-result" in m.value for m in at.markdown):
+                bad.append((lang, mode, i, errs, [str(e.message) for e in at.exception]))
+    at.sidebar.radio(key="page").set_value("compare").run()
+    at.multiselect(key="cmp_examples").set_value([0, 4, 6, 10]).run()
+    if at.exception or at.error or sum("af-card af-result" in m.value for m in at.markdown) != 4:
+        bad.append((lang, "compare"))
+    at.sidebar.radio(key="page").set_value("analyse").run()
+assert not bad, bad
+print("swept ok")
+"""
+
+
+@pytest.mark.parametrize("start", ["repository root", "another folder"])
+def test_cloud_entry_point_renders_every_example(start, tmp_path):
+    """streamlit_cloud/streamlit_app.py as Streamlit Cloud starts it (from the repository root), and from an
+    unrelated folder: all 12 examples x EN/zh-TW x R1/R3 and Compare, without error_image or a logged failure."""
+    entry = str(ROOT / "streamlit_cloud" / "streamlit_app.py")
+    errors = [i18n.t(lang, "error_image") for lang in i18n.LANGS]
+    env = {k: v for k, v in os.environ.items() if k != "APP_MODE"}  # the entry point sets APP_MODE itself
+    out = subprocess.run([sys.executable, "-c", SWEEP.format(ERR=errors, entry=entry)], env=env,
+                         cwd=ROOT if start == "repository root" else tmp_path, capture_output=True, text=True,
+                         timeout=600)
+    assert out.returncode == 0 and out.stdout.strip().endswith("swept ok"), out.stderr[-4000:]
+    assert "analyse failed" not in out.stderr and "compare failed" not in out.stderr, out.stderr[-4000:]
+
+
+def test_error_image_is_logged_with_traceback(monkeypatch):
+    """A failure behind the friendly error_image message reaches the log with its traceback, not the page."""
+    from streamlit.testing.v1 import AppTest
+    monkeypatch.setenv("APP_MODE", "gallery")
+
+    def boom(*a, **k):
+        raise RuntimeError("boom-for-test")
+
+    monkeypatch.setattr(gallery, "result", boom)
+    import logging
+    records = []
+
+    class Grab(logging.Handler):
+        def emit(self, record):
+            records.append(record)
+
+    log = logging.getLogger("artfae.app")
+    h = Grab(); log.addHandler(h)
+    import streamlit as st
+    st.cache_data.clear()  # results are cached per process: an earlier test may hold this example already
+    try:
+        at = AppTest.from_file(str(APP / "streamlit_app.py"), default_timeout=120)
+        at.run()
+        at.button(key="ex_3").click().run()
+        assert [e.value for e in at.error] == [i18n.t("en", "error_image")]
+        assert not any("boom-for-test" in m.value for m in at.markdown)  # not shown to users
+        rec = [r for r in records if r.getMessage().startswith("analyse failed")]
+        assert rec and rec[0].exc_info and "boom-for-test" in str(rec[0].exc_info[1])
+        assert "app_mode=gallery" in rec[0].getMessage()
+    finally:
+        log.removeHandler(h)
+
+
 def uploaders(at):
     return [e for e in at.get("file_uploader")]
 

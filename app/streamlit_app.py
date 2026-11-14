@@ -9,6 +9,7 @@ app/assets/precomputed/gallery.json (app/precompute_gallery.py).
 """
 import hashlib
 import io
+import logging
 import sys
 from pathlib import Path
 
@@ -24,6 +25,16 @@ import ui  # noqa: E402
 
 APP_MODE = core.app_mode(st.secrets)
 GALLERY = APP_MODE == "gallery"
+
+# Errors behind the friendly "error_image" message go to stderr with their traceback (the Streamlit Cloud log),
+# never to the page. One handler, even though Streamlit re-executes this script on every interaction.
+LOG = logging.getLogger("artfae.app")
+if not LOG.handlers:
+    _h = logging.StreamHandler(sys.stderr)
+    _h.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s"))
+    LOG.addHandler(_h)
+    LOG.setLevel(logging.INFO)
+    LOG.propagate = False
 if GALLERY:
     import core as inf  # noqa: E402  (same helper names as inference, without torch)
     import gallery as precomputed  # noqa: E402  (not "gallery": that name is the gallery section below)
@@ -227,7 +238,10 @@ def page_analyse():
     try:
         img = inf.load_image(io.BytesIO(data))
         r = run(data)
-    except Exception:  # unreadable upload
+    except Exception:  # unreadable upload (or a failure in the pipeline: see the log)
+        LOG.exception("analyse failed: source=%s app_mode=%s model=%s prior=%s cwd=%s",
+                      src if src[0] == "example" else ("upload", ss.upload.name), APP_MODE, ss.model, ss.prior,
+                      Path.cwd())
         st.error(tr("error_image"))
         dropzone(hero=True)
         gallery()
@@ -368,6 +382,8 @@ def page_compare():
         try:
             results_.append((name, data, run(data)))
         except Exception:
+            LOG.exception("compare failed: item=%r app_mode=%s model=%s prior=%s cwd=%s", name, APP_MODE, ss.model,
+                          ss.prior, Path.cwd())
             st.error(f'{tr("error_image")} ({name})')
     cols = st.columns(len(results_), gap="medium")
     for j, (c, (name, data, r)) in enumerate(zip(cols, results_)):
