@@ -1,8 +1,10 @@
-"""Gallery mode (APP_MODE=gallery, the Streamlit Cloud version): no torch, precomputed examples, uploads disabled.
+"""Gallery mode (APP_MODE=gallery): no torch, precomputed examples, uploads disabled.
 
   pytest tests/test_gallery.py -v
-Runs without torch, transformers or the model weights: in a venv with only streamlit_cloud/requirements.txt and
-pytest. The equivalence with live inference is checked by app/precompute_gallery.py (full environment).
+Runs without torch, transformers or the model weights: in a venv with only streamlit, numpy, pandas, pillow,
+plotly and pytest. The equivalence with live inference is checked by app/precompute_gallery.py (full
+environment). The Streamlit Cloud entry point runs cloud_live by default (tests/test_cloud_live.py); here it is
+started with APP_MODE=gallery, which the entry point respects.
 """
 import os
 import subprocess
@@ -76,8 +78,7 @@ heavy = sorted(m for m in sys.modules if m.split(".")[0] in {HEAVY!r})
 assert not heavy, heavy
 print("ok")
 """
-    env = {**os.environ, "APP_MODE": "gallery"} if entry.startswith("app/") else \
-        {k: v for k, v in os.environ.items() if k != "APP_MODE"}  # the cloud entry point sets it itself
+    env = {**os.environ, "APP_MODE": "gallery"}  # the cloud entry point's own default is cloud_live
     out = subprocess.run([sys.executable, "-c", code], env=env, cwd=ROOT, capture_output=True, text=True, timeout=300)
     assert out.returncode == 0 and out.stdout.strip().endswith("ok"), out.stderr[-3000:]
 
@@ -88,7 +89,7 @@ from streamlit.testing.v1 import AppTest
 ERR = {ERR!r}
 at = AppTest.from_file({entry!r}, default_timeout=120); at.run()
 assert not at.exception, at.exception
-assert not at.get("file_uploader"), "upload must be disabled"
+assert bool(at.get("file_uploader")) == {uploads!r}, "uploads: expected {uploads}"
 bad = []
 for lang in ("en", "zh"):
     at.radio(key="lang").set_value(lang).run()
@@ -111,12 +112,12 @@ print("swept ok")
 
 @pytest.mark.parametrize("start", ["repository root", "another folder"])
 def test_cloud_entry_point_renders_every_example(start, tmp_path):
-    """streamlit_cloud/streamlit_app.py as Streamlit Cloud starts it (from the repository root), and from an
-    unrelated folder: all 12 examples x EN/zh-TW x R1/R3 and Compare, without error_image or a logged failure."""
+    """streamlit_cloud/streamlit_app.py in gallery mode, from the repository root and from an unrelated folder:
+    all 12 examples x EN/zh-TW x R1/R3 and Compare, without error_image or a logged failure."""
     entry = str(ROOT / "streamlit_cloud" / "streamlit_app.py")
     errors = [i18n.t(lang, "error_image") for lang in i18n.LANGS]
-    env = {k: v for k, v in os.environ.items() if k != "APP_MODE"}  # the entry point sets APP_MODE itself
-    out = subprocess.run([sys.executable, "-c", SWEEP.format(ERR=errors, entry=entry)], env=env,
+    env = {**os.environ, "APP_MODE": "gallery"}
+    out = subprocess.run([sys.executable, "-c", SWEEP.format(ERR=errors, entry=entry, uploads=False)], env=env,
                          cwd=ROOT if start == "repository root" else tmp_path, capture_output=True, text=True,
                          timeout=600)
     assert out.returncode == 0 and out.stdout.strip().endswith("swept ok"), out.stderr[-4000:]
@@ -244,9 +245,3 @@ def test_compare_and_about_with_examples_only(app, lang):
     at.sidebar.radio(key="page").set_value("about").run()
     assert not at.exception
     assert "1.8357" in " ".join(m.value for m in at.markdown)
-
-
-def test_cloud_requirements_have_no_torch():
-    req = (ROOT / "streamlit_cloud/requirements.txt").read_text()
-    names = {line.split("==")[0].strip().lower() for line in req.splitlines() if line.strip() and not line.startswith("#")}
-    assert names == {"streamlit", "numpy", "pandas", "pillow", "plotly"}

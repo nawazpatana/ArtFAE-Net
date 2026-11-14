@@ -1,29 +1,29 @@
 [
  {
-  "file": "aldemir-martins_white-cat-2001.jpg",
-  "painting": "White cat 2001",
-  "artist": "Aldemir Martins",
-  "style": "Naive Art Primitivism",
-  "val_row": 1432,
+  "file": "konstantin-somov_book-of-the-marquise-illustration-5-1918.jpg",
+  "painting": "Book of the marquise illustration 5 1918",
+  "artist": "Konstantin Somov",
+  "style": "Art Nouveau Modern",
+  "val_row": 107,
   "annotator_top": "amusement",
   "annotators": {
-   "amusement": 1.0,
+   "amusement": 0.8333333333333334,
    "awe": 0.0,
    "contentment": 0.0,
    "excitement": 0.0,
    "anger": 0.0,
-   "disgust": 0.0,
+   "disgust": 0.1666666666666666,
    "fear": 0.0,
    "sadness": 0.0,
    "something_else": 0.0
   }
  },
  {
-  "file": "peter-paul-rubens_the-victory-of-eucharistic-truth-over-heresy.jpg",
-  "painting": "The victory of eucharistic truth over heresy",
-  "artist": "Peter Paul Rubens",
-  "style": "Baroque",
-  "val_row": 320,
+  "file": "pietro-perugino_the-adoration-of-the-magi-1473.jpg",
+  "painting": "The adoration of the magi 1473",
+  "artist": "Pietro Perugino",
+  "style": "Early Renaissance",
+  "val_row": 501,
   "annotator_top": "awe",
   "annotators": {
    "amusement": 0.0,
@@ -38,11 +38,11 @@
   }
  },
  {
-  "file": "jan-siberechts_pasture-with-two-sleeping-shepherdesses.jpg",
-  "painting": "Pasture with two sleeping shepherdesses",
-  "artist": "Jan Siberechts",
+  "file": "pieter-de-hooch_two-women-with-a-child-in-court.jpg",
+  "painting": "Two women with a child in court",
+  "artist": "Pieter De Hooch",
   "style": "Baroque",
-  "val_row": 288,
+  "val_row": 323,
   "annotator_top": "contentment",
   "annotators": {
    "amusement": 0.0,
@@ -76,21 +76,21 @@
   }
  },
  {
-  "file": "david-burliuk_an-actor-1938.jpg",
-  "painting": "An actor 1938",
-  "artist": "David Burliuk",
-  "style": "Realism",
-  "val_row": 2047,
+  "file": "leonardo-da-vinci_studies-for-the-heads-of-two-soldiers-in-the-battle-of-anghiari.jpg",
+  "painting": "Studies for the heads of two soldiers in the battle of anghiari",
+  "artist": "Leonardo Da Vinci",
+  "style": "High Renaissance",
+  "val_row": 826,
   "annotator_top": "anger",
   "annotators": {
    "amusement": 0.0,
-   "awe": 0.0,
+   "awe": 0.2,
    "contentment": 0.0,
    "excitement": 0.0,
-   "anger": 0.8,
+   "anger": 0.4,
    "disgust": 0.0,
    "fear": 0.2,
-   "sadness": 0.0,
+   "sadness": 0.2,
    "something_else": 0.0
   }
  },
@@ -152,11 +152,11 @@
   }
  },
  {
-  "file": "lynd-ward_not-detected-272543.jpg",
-  "painting": "Not detected 272543",
-  "artist": "Lynd Ward",
-  "style": "Expressionism",
-  "val_row": 654,
+  "file": "lucas-cranach-the-elder_arrest-of-christ-1538.jpg",
+  "painting": "Arrest of christ 1538",
+  "artist": "Lucas Cranach The Elder",
+  "style": "Northern Renaissance",
+  "val_row": 1620,
   "annotator_top": "fear",
   "annotators": {
    "amusement": 0.0,
@@ -190,11 +190,11 @@
   }
  },
  {
-  "file": "raphael-kirchner_justine-johnstone-2.jpg",
-  "painting": "Justine johnstone 2",
-  "artist": "Raphael Kirchner",
-  "style": "Art Nouveau Modern",
-  "val_row": 152,
+  "file": "gerard-terborch_the-knifegrinder-s-family.jpg",
+  "painting": "The knifegrinder s family",
+  "artist": "Gerard Terborch",
+  "style": "Baroque",
+  "val_row": 256,
   "annotator_top": "sadness",
   "annotators": {
    "amusement": 0.0,
@@ -209,22 +209,22 @@
   }
  },
  {
-  "file": "julio-gonzalez_figure-with-balls-1938.jpg",
-  "painting": "Figure with balls 1938",
-  "artist": "Julio Gonzalez",
-  "style": "Cubism",
-  "val_row": 407,
+  "file": "rembrandt_portrait-of-herman-doomer-1640.jpg",
+  "painting": "Portrait of herman doomer 1640",
+  "artist": "Rembrandt",
+  "style": "Baroque",
+  "val_row": 346,
   "annotator_top": "something_else",
   "annotators": {
-   "amusement": 0.2,
+   "amusement": 0.0,
    "awe": 0.0,
    "contentment": 0.0,
    "excitement": 0.0,
    "anger": 0.0,
    "disgust": 0.0,
-   "fear": 0.0,
-   "sadness": 0.0,
-   "something_else": 0.8
+   "fear": 0.2,
+   "sadness": 0.2,
+   "something_else": 0.6
   }
  }
 ]

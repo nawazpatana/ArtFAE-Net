@@ -62,13 +62,13 @@ python -m unittest discover -s tests  # synthetic CPU tests, no data needed
 
 `PROJECT_INDEX.md` maps every folder to the claim it supports. The hashes in `runs/final_selection*.txt` record the exact files used. Checkpoints (`*.pt`), features (`*.npy`/`*.npz`) and logits are not in the repository.
 
-**Model weights are not included in this repository; they will be released on Hugging Face.**
+**Training checkpoints are not included in this repository; they will be released on Hugging Face.** The exception is the demo's ten small heads (R1 and R3, seeds 42–46, 30.6 MB in `app/assets/models/`), which the online demo needs. The CLIP backbone is downloaded from Hugging Face at a pinned revision.
 
 ## Demo app
 
-`app/` is a bilingual (English / 繁體中文) Streamlit app. It shows the predicted emotion distribution, the measured attributes and ECSA attention maps for an uploaded image. The default model is R1, and R3 is available as a minority-sensitive option. Each model runs as a five-seed ensemble. Everything runs locally and uploaded images are not stored. The model weights (`app/assets/models/*/s*/best.pt`) are not in this repository; they will be released on Hugging Face. Setup: `app/README.md`.
+`app/` is a bilingual (English / 繁體中文) Streamlit app. It shows the predicted emotion distribution, the measured attributes and ECSA attention maps for an uploaded image. The default model is R1, and R3 is available as a minority-sensitive option. Each model runs as a five-seed ensemble. Everything runs locally and uploaded images are not stored. The demo's ten heads (`app/assets/models/*/s*/best.pt`, 30.6 MB) are included; CLIP ViT-L/14@336 is downloaded on first use. Setup: `app/README.md`.
 
-An online **gallery mode** (`APP_MODE=gallery`; entry point `streamlit_cloud/streamlit_app.py` for Streamlit Community Cloud) shows the 12 examples with precomputed results and needs no torch or weights. Uploads of new images are disabled there.
+The online version on Streamlit Community Cloud (`streamlit_cloud/streamlit_app.py`, `APP_MODE=cloud_live`) shows the 12 examples with precomputed results and analyses uploads live on the CPU with CLIP's vision tower only (about 1.7 GB of memory). A torch-free **gallery mode** (`APP_MODE=gallery`) shows the examples only. See `app/README.md`.
 
 > **Copyright note:** the example images in `app/assets/examples/` are WikiArt artworks. Their copyright status must be checked before this repository is ever made public.
 

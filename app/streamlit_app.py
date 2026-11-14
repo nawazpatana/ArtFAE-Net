@@ -1,11 +1,14 @@
 """ArtFAE-Net bilingual demo (English / 繁體中文).
 
-run:  streamlit run app/streamlit_app.py                     (full: live inference, needs torch + weights)
-      APP_MODE=gallery streamlit run app/streamlit_app.py    (gallery: the 12 precomputed examples, no torch)
+run:  streamlit run app/streamlit_app.py                        (full: live inference, needs torch + weights)
+      APP_MODE=gallery streamlit run app/streamlit_app.py       (gallery: the 12 precomputed examples, no torch)
+      APP_MODE=cloud_live streamlit run app/streamlit_app.py    (Streamlit Cloud: precomputed examples + live
+                                                                 CPU inference for uploads, CLIP vision tower only)
 
 APP_MODE comes from the environment, else from Streamlit secrets, else "full". In gallery mode torch,
-transformers and CLIP are never imported, uploads are disabled and the results come from
-app/assets/precomputed/gallery.json (app/precompute_gallery.py).
+transformers and CLIP are never imported and uploads are disabled. In gallery and cloud_live the examples'
+results come from app/assets/precomputed/gallery.json (app/precompute_gallery.py). Uploads (full, cloud_live)
+are decoded in memory (core.load_upload); they are never written to disk, and file names are not logged.
 """
 import hashlib
 import io
@@ -15,7 +18,6 @@ from pathlib import Path
 
 import numpy as np
 import streamlit as st
-import streamlit.components.v1 as components
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -24,7 +26,10 @@ import i18n  # noqa: E402
 import ui  # noqa: E402
 
 APP_MODE = core.app_mode(st.secrets)
-GALLERY = APP_MODE == "gallery"
+GALLERY = APP_MODE == "gallery"          # examples only, torch-free
+CLOUD_LIVE = APP_MODE == "cloud_live"    # examples precomputed, uploads live on CPU
+PRECOMPUTED = GALLERY or CLOUD_LIVE      # the examples' results come from gallery.json
+UPLOADS = not GALLERY
 
 # Errors behind the friendly "error_image" / "error_model" messages go to stderr with their traceback (the Streamlit
 # Cloud log), never to the page. One handler, even though Streamlit re-executes this script on every interaction.
@@ -37,9 +42,10 @@ if not LOG.handlers:
     LOG.propagate = False
 if GALLERY:
     import core as inf  # noqa: E402  (same helper names as inference, without torch)
-    import gallery as precomputed  # noqa: E402  (not "gallery": that name is the gallery section below)
 else:
     import inference as inf  # noqa: E402
+if PRECOMPUTED:
+    import gallery as precomputed  # noqa: E402  (not "gallery": that name is the gallery section below)
 
 EMOS = inf.EMOTIONS
 GROUPS = {
@@ -67,6 +73,8 @@ M = ui.mode(getattr(st.context.theme, "type", None))
 # ---------------------------------------------------------------- cached resources
 @st.cache_resource(show_spinner=False)
 def engine():
+    if CLOUD_LIVE:  # ~1.5 GB: CLIP vision tower (fp32, CPU) + the 10 heads; shared by all sessions
+        return inf.load_engine(device="cpu", vision_only=True)
     return inf.load_engine()
 
 
@@ -77,9 +85,13 @@ def assets():
 
 @st.cache_data(show_spinner=False, max_entries=64)
 def analyse_bytes(data: bytes, mode: str, prior: bool, app_mode: str = APP_MODE) -> dict:  # app_mode: cache key
-    if GALLERY:
+    if PRECOMPUTED and (GALLERY or precomputed.has(data)):
         return precomputed.result(data, mode=mode, prior_correction=prior)
-    return inf.predict(engine(), inf.load_image(io.BytesIO(data)), mode=mode, prior_correction=prior)
+    return inf.predict(engine(), core.load_upload(data), mode=mode, prior_correction=prior)
+
+
+def needs_engine(data: bytes) -> bool:
+    return not (PRECOMPUTED and (GALLERY or precomputed.has(data)))
 
 
 @st.cache_data(show_spinner=False)
@@ -89,7 +101,7 @@ def thumb_uri(path: str) -> str:
 
 @st.cache_data(show_spinner=False, max_entries=16)
 def artwork_uri(data: bytes) -> str:
-    return ui.img_data_uri(inf.load_image(io.BytesIO(data)), max_side=1200)
+    return ui.img_data_uri(core.load_upload(data), max_side=1200)
 
 
 def file_bytes(path) -> bytes:
@@ -107,7 +119,9 @@ def caption(ex):
     return ui.caption_text(*parts(ex))
 
 
-st.markdown(ui.css(M, tr("drop_title"), tr("drop_sub"), tr("browse")), unsafe_allow_html=True)
+UPLOAD_TYPES = core.upload_types() if UPLOADS else []  # + HEIC/HEIF when pillow-heif is installed
+FORMATS = ("、" if L == "zh" else ", ").join(["JPG", "PNG", "WebP"] + (["HEIC"] if "heic" in UPLOAD_TYPES else []))
+st.markdown(ui.css(M, tr("drop_title"), tr("drop_sub", formats=FORMATS), tr("browse")), unsafe_allow_html=True)
 
 # ---------------------------------------------------------------- sidebar: navigation + model
 with st.sidebar:
@@ -150,25 +164,32 @@ def ensure_engine():
 
 
 def run(data: bytes):
-    if GALLERY:  # precomputed, nothing to load
-        return analyse_bytes(data, ss.model, ss.model == "r1" and bool(ss.prior), APP_MODE)
+    args = (data, ss.model, ss.model == "r1" and bool(ss.prior), APP_MODE)
+    if not needs_engine(data):  # precomputed example: nothing to load
+        return analyse_bytes(*args)
     ensure_engine()
-    with st.spinner(tr("spinner")):
-        return analyse_bytes(data, ss.model, ss.model == "r1" and bool(ss.prior), APP_MODE)
+    with st.spinner(tr("spinner_cloud" if CLOUD_LIVE else "spinner")):
+        return analyse_bytes(*args)
 
 
-def analyse_checked(data: bytes, what):
-    """Decode, then run the model; failures are logged with traceback and reported separately.
+def analyse_checked(data: bytes, what: str):
+    """Decode (in memory), then run the model; failures are logged with traceback and reported separately.
+    what names the source for the log: an example's file name, or "upload" (an upload's file name is never logged).
 
-    -> ("ok", img, r) | ("image", None, None): not decodable as an image (error_image)
+    -> ("ok", img, r) | ("too_large", None, None): over 10 MB or 50 megapixels (error_too_large)
+                      | ("image", None, None): not decodable as an image (error_image)
                       | ("model", None, None): weights missing, model loading or inference failed (error_model)
     """
     try:
-        img = inf.load_image(io.BytesIO(data))
+        img = core.load_upload(data)
+    except core.UploadTooLarge:
+        LOG.warning("upload rejected as too large: source=%s bytes=%d app_mode=%s", what, len(data), APP_MODE)
+        return "too_large", None, None
     except Exception:
-        LOG.exception("image decoding failed: source=%s app_mode=%s cwd=%s", what, APP_MODE, Path.cwd())
+        LOG.exception("image decoding failed: source=%s bytes=%d app_mode=%s cwd=%s", what, len(data), APP_MODE,
+                      Path.cwd())
         return "image", None, None
-    stage = "inference" if GALLERY or "engine_ready" in ss else "model loading"
+    stage = "inference" if not needs_engine(data) or "engine_ready" in ss else "model loading"
     try:
         r = run(data)
     except Exception:
@@ -208,7 +229,10 @@ def scroll_to_results():
     """After a new pick, bring the results (rendered at the top) into view: the click happens in the gallery below."""
     if ss.pop("scroll_results", False):
         with st.container(key="af_scroll"):
-            components.html(SCROLL_JS, height=0)
+            st.iframe(SCROLL_JS, height=1)  # same-origin iframe, hidden by .st-key-af_scroll (replaces the deprecated components.html)
+
+
+ERRORS = {"image": "error_image", "too_large": "error_too_large", "model": "error_model"}
 
 
 def dropzone(hero: bool):
@@ -217,8 +241,9 @@ def dropzone(hero: bool):
             st.info(tr("gallery_mode_note"))
         return
     with st.container(key="dropzone_hero" if hero else "dropzone_compact"):
-        st.file_uploader(tr("upload"), type=["jpg", "jpeg", "png", "webp"], help=tr("upload_help"), key="upload",
+        st.file_uploader(tr("upload"), type=UPLOAD_TYPES, help=tr("upload_help", formats=FORMATS), key="upload",
                          on_change=on_upload, label_visibility="collapsed")
+        st.caption(tr("upload_privacy"))
 
 
 def gallery():
@@ -239,7 +264,8 @@ def gallery():
                                             ui.PALETTE[M][ex["annotator_top"]],
                                             tr("card_viewers", emotion=emo(ex["annotator_top"])),
                                             tr("card_selected") if i == current else None), unsafe_allow_html=True)
-                st.button(tr("card_label", caption=cap), key=f"ex_{i}", on_click=pick_example, args=(i,))
+                st.button(tr("card_label", caption=cap), key=f"ex_{i}", on_click=pick_example, args=(i,),
+                          width="stretch")  # stretched over the whole card (ui.css)
 
 
 def page_analyse():
@@ -256,9 +282,9 @@ def page_analyse():
     else:
         example = EXAMPLES[src[1]]
         data = file_bytes(example["path"])
-    status, img, r = analyse_checked(data, src if src[0] == "example" else ("upload", ss.upload.name))
-    if status != "ok":  # "image": not decodable; "model": weights missing or the model failed (see the log)
-        st.error(tr("error_image" if status == "image" else "error_model"))
+    status, img, r = analyse_checked(data, example["file"] if example else "upload")
+    if status != "ok":  # see ERRORS; the details are in the log
+        st.error(tr(ERRORS[status]))
         dropzone(hero=True)
         gallery()
         return
@@ -381,12 +407,13 @@ def page_compare():
         st.info(tr("gallery_mode_note"))
         ups = []
     else:
-        ups = st.file_uploader(tr("compare_upload"), type=["jpg", "jpeg", "png", "webp"], accept_multiple_files=True,
-                               key="cmp_upload")
+        ups = st.file_uploader(tr("compare_upload"), type=UPLOAD_TYPES, accept_multiple_files=True,
+                               help=tr("upload_help", formats=FORMATS), key="cmp_upload")
+        st.caption(tr("upload_privacy"))
     picks = st.multiselect(tr("compare_examples"), list(range(len(EXAMPLES))), max_selections=4,
                            format_func=lambda i: caption(EXAMPLES[i]), key="cmp_examples")
-    items = [(u.name, u.getvalue()) for u in ups or []] + [(caption(EXAMPLES[i]), file_bytes(EXAMPLES[i]["path"]))
-                                                           for i in picks]
+    items = [(u.name, u.getvalue(), "upload") for u in ups or []] + \
+        [(caption(EXAMPLES[i]), file_bytes(EXAMPLES[i]["path"]), EXAMPLES[i]["file"]) for i in picks]
     if len(items) > 4:
         st.caption(tr("compare_max"))
         items = items[:4]
@@ -394,13 +421,13 @@ def page_compare():
         st.info(tr("compare_need"))
         return
     results_ = []
-    for name, data in items:
-        status, _, r = analyse_checked(data, ("compare", name))
+    for name, data, what in items:
+        status, _, r = analyse_checked(data, f"compare {what}")
         if status == "model":  # the same for every item: say it once and stop
             st.error(tr("error_model"))
             return
-        if status == "image":
-            st.error(f'{tr("error_image")} ({name})')
+        if status != "ok":
+            st.error(f'{tr(ERRORS[status])} ({name})')
             continue
         results_.append((name, data, r))
     cols = st.columns(len(results_), gap="medium")
@@ -424,7 +451,7 @@ def page_compare():
 
 @st.cache_data(show_spinner=False, max_entries=32)
 def thumbnail_bytes(data: bytes, size: int = 480) -> Image.Image:
-    im = inf.center_square(inf.load_image(io.BytesIO(data)))
+    im = inf.center_square(core.load_upload(data))
     im.thumbnail((size, size))
     return im
 

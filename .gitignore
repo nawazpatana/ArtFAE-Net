@@ -67,3 +67,8 @@ study/precomputed/attention/
 # --- 2026-11-14: "features*/" above is meant for feature caches; these are Python source packages ---
 !src/artfae/features/
 !artfae_demo/src/artfae/features/
+
+# --- 2026-11-14: demo assets needed by Streamlit Cloud (cloud_live): the 10 R1/R3 heads (s42-46) with their
+#     normalizers/configs (~30 MB) and the 27 precomputed CLIP text embeddings ---
+!app/assets/models/**
+!app/assets/text_embeddings.npz

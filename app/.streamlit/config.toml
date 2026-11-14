@@ -4,7 +4,7 @@
 gatherUsageStats = false
 
 [server]
-maxUploadSize = 50
+maxUploadSize = 10  # MB; the app also checks it (core.UPLOAD_MAX_BYTES)
 
 [theme]
 font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap, Noto Sans TC, Microsoft JhengHei, PingFang TC, sans-serif"

@@ -155,9 +155,12 @@ p, li, .stMarkdown p {{ font-size: 1rem; line-height: 1.6; }}
 [class*="st-key-card_"]:hover {{ transform: translateY(-5px); box-shadow: var(--af-lift); }}
 [class*="st-key-card_"]:has(button:focus-visible) {{ outline: 3px solid var(--af-accent); outline-offset: 3px; }}
 [class*="st-key-card_"] .stElementContainer {{ margin: 0; }}
-[class*="st-key-card_"] .stElementContainer:has([data-testid="stButton"]) {{ position: absolute; inset: 0; z-index: 3; }}
+/* the whole card is the button: its (visually hidden) st.button is stretched over image, title and artist line.
+   Streamlit sizes a button's element container to its content, which beats inset: 0, hence the explicit size. */
+[class*="st-key-card_"] .stElementContainer:has([data-testid="stButton"]) {{ position: absolute; inset: 0; z-index: 3;
+    width: 100% !important; height: 100% !important; margin: 0 !important; }}
 [class*="st-key-card_"] [data-testid="stButton"], [class*="st-key-card_"] [data-testid="stButton"] button {{
-    width: 100%; height: 100%; }}
+    width: 100% !important; height: 100% !important; min-height: 0 !important; padding: 0 !important; }}
 [class*="st-key-card_"] [data-testid="stButton"] button {{ background: transparent !important; border: none !important;
     color: transparent !important; box-shadow: none !important; cursor: pointer; }}
 [class*="st-key-card_"] [data-testid="stButton"] button:focus-visible {{ outline: none !important; }}

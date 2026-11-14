@@ -7,6 +7,7 @@ Layout: the repository (app/, src/artfae/, artfae_balance/) and the artfae_demo 
 artfae_demo/src/artfae/, artfae_demo/artfae_balance/) have the same shape, so the research modules are found
 relative to this file in both.
 """
+import io
 import json
 import os
 import sys
@@ -30,7 +31,13 @@ ASSETS = APP_DIR / "assets"
 POOL_GRID = 7
 SEEDS = [42, 43, 44, 45, 46]
 MODES = ("r1", "r3")  # r1 = default
-APP_MODES = ("full", "gallery")
+APP_MODES = ("full", "gallery", "cloud_live")
+# full        live inference for everything (local demo, GPU if available)
+# gallery     precomputed examples only, no torch, no uploads
+# cloud_live  precomputed examples + live CPU inference for uploads (CLIP vision tower only; Streamlit Cloud)
+UPLOAD_MAX_BYTES = 10 * 1024 * 1024   # 10 MB
+UPLOAD_MAX_PIXELS = 50_000_000        # decoded size guard (a 10 MB PNG can expand to gigabytes)
+DRAFT = 512                           # as artfae_balance.extract_features.load_image: im.draft("RGB", (512, 512))
 SENTIMENT = {"amusement": "positive", "awe": "positive", "contentment": "positive", "excitement": "positive",
              "anger": "negative", "disgust": "negative", "fear": "negative", "sadness": "negative",
              "something_else": "other"}
@@ -55,6 +62,48 @@ def load_image(path) -> Image.Image:
     with Image.open(path) as im:
         im.draft("RGB", (512, 512))
         return ImageOps.exif_transpose(im).convert("RGB")
+
+
+class UploadTooLarge(ValueError):
+    """More than UPLOAD_MAX_BYTES, or more than UPLOAD_MAX_PIXELS once decoded."""
+
+
+def heic_supported() -> bool:
+    """Register pillow-heif (iPhone HEIC/HEIF) with Pillow if it is installed."""
+    try:
+        from pillow_heif import register_heif_opener
+    except ImportError:
+        return False
+    register_heif_opener()
+    return True
+
+
+def upload_types() -> list:
+    return ["jpg", "jpeg", "png", "webp"] + (["heic", "heif"] if heic_supported() else [])
+
+
+def load_upload(data: bytes) -> Image.Image:
+    """Decode an uploaded image in memory (nothing is written to disk) and downscale it before inference.
+
+    JPEG goes through load_image unchanged (its draft mode decodes at the largest 1/2, 1/4 or 1/8 scale that
+    keeps both sides >= 512 px, exactly as in the training pipeline). Other formats (PNG, WebP, HEIC) are
+    reduced by the same power-of-two rule after decoding, so a large upload is analysed at the size a JPEG of
+    the same dimensions would be.
+    """
+    if len(data) > UPLOAD_MAX_BYTES:
+        raise UploadTooLarge(f"{len(data)} bytes")
+    heic_supported()
+    with Image.open(io.BytesIO(data)) as probe:  # header only: check the decoded size before decoding
+        if probe.size[0] * probe.size[1] > UPLOAD_MAX_PIXELS:
+            raise UploadTooLarge(f"{probe.size[0]}x{probe.size[1]} px")
+        is_jpeg = probe.format == "JPEG"
+    img = load_image(io.BytesIO(data))
+    if not is_jpeg:
+        w, h = img.size
+        f = next((f for f in (8, 4, 2) if w // f >= DRAFT and h // f >= DRAFT), 1)
+        if f > 1:
+            img = img.reduce(f)
+    return img
 
 
 def softmax_mean(raw_logits, delta=None):

@@ -56,21 +56,39 @@ class Engine:
     delta: np.ndarray       # log(val_prior) - log(train_prior), (9,)
     device: torch.device
     presence_offset: torch.Tensor = None  # log(pos_weight) of the training PresenceBCE, (9,)
+    text_table: dict = None  # vision-only engine: describe() sentence -> L2-normalised CLIP text embedding (768,)
 
 
 def pick_device(device=None):
     return torch.device(device or ("cuda" if torch.cuda.is_available() else "cpu"))
 
 
-def load_engine(assets=ASSETS, device=None) -> Engine:
-    from transformers import CLIPModel, CLIPProcessor
+def load_text_table(assets=ASSETS) -> dict:
+    """app/assets/text_embeddings.npz (app/build_text_embeddings.py): all 27 describe() sentences."""
+    z = np.load(Path(assets) / "text_embeddings.npz")
+    assert str(z["clip"]) == f"{CLIP_MODEL}@{CLIP_REVISION}", "text embeddings from another CLIP"
+    return {str(s): e for s, e in zip(z["sentences"], z["embeddings"])}
+
+
+def load_engine(assets=ASSETS, device=None, vision_only=False) -> Engine:
+    """Full engine (CLIP image + text towers), or vision_only=True for the memory-limited cloud_live mode:
+    CLIPVisionModelWithProjection (the same image weights and projection, without the text encoder) and the
+    precomputed text embeddings of the 27 possible descriptions."""
+    from transformers import CLIPImageProcessor, CLIPModel, CLIPProcessor, CLIPVisionModelWithProjection
     dev = pick_device(device)
     # The pinned revision ships only pytorch_model.bin. Load exactly that file: use_safetensors=False, and
     # stop transformers' background "auto_conversion" thread, which would otherwise download a 1.7 GB
     # safetensors copy from a different (unpinned) revision on every online load of a .bin checkpoint.
     os.environ.setdefault("DISABLE_SAFETENSORS_CONVERSION", "true")
-    clip = CLIPModel.from_pretrained(CLIP_MODEL, revision=CLIP_REVISION, use_safetensors=False).to(dev).eval()  # fp32
-    proc = CLIPProcessor.from_pretrained(CLIP_MODEL, revision=CLIP_REVISION, use_fast=False)
+    if vision_only:
+        clip = CLIPVisionModelWithProjection.from_pretrained(CLIP_MODEL, revision=CLIP_REVISION,
+                                                             use_safetensors=False).to(dev).eval()  # fp32
+        proc = CLIPImageProcessor.from_pretrained(CLIP_MODEL, revision=CLIP_REVISION, use_fast=False)
+        table = load_text_table(assets)
+    else:
+        clip = CLIPModel.from_pretrained(CLIP_MODEL, revision=CLIP_REVISION, use_safetensors=False).to(dev).eval()  # fp32
+        proc = CLIPProcessor.from_pretrained(CLIP_MODEL, revision=CLIP_REVISION, use_fast=False)
+        table = None
     models = {mode: [(s, *load_model(Path(assets) / f"models/{mode}/s{s}", mode, dev)) for s in SEEDS]
               for mode in MODES}
     pri = json.loads((Path(assets) / "priors.json").read_text())
@@ -78,7 +96,7 @@ def load_engine(assets=ASSETS, device=None) -> Engine:
     pres = json.loads((Path(assets) / "presence.json").read_text())
     assert pres["emotions"] == EMOTIONS
     offset = torch.tensor(pres["offset"], dtype=torch.float32, device=dev)
-    return Engine(clip, proc, models, np.asarray(pri["delta"], np.float64), dev, offset)
+    return Engine(clip, proc, models, np.asarray(pri["delta"], np.float64), dev, offset, table)
 
 
 def load_model(d: Path, mode: str, dev):
@@ -98,10 +116,16 @@ def encode(engine: Engine, img: Image.Image):
     attrs, text = compute_attributes_and_text(img)
     m, proc, dev = engine.clip, engine.processor, engine.device
     px = proc(images=[img], return_tensors="pt")["pixel_values"].to(dev)
-    vo = m.vision_model(pixel_values=px)
-    g = m.visual_projection(vo.pooler_output); g = g / g.norm(dim=-1, keepdim=True)
-    tk = proc(text=[text], padding=True, truncation=True, return_tensors="pt").to(dev)
-    t = m.get_text_features(**tk); t = t / t.norm(dim=-1, keepdim=True)
+    if engine.text_table is None:  # full CLIP
+        vo = m.vision_model(pixel_values=px)
+        g = m.visual_projection(vo.pooler_output)
+        tk = proc(text=[text], padding=True, truncation=True, return_tensors="pt").to(dev)
+        t = m.get_text_features(**tk); t = t / t.norm(dim=-1, keepdim=True)
+    else:  # vision tower only: image_embeds = visual_projection(pooler_output), the same two steps
+        vo = m(pixel_values=px)
+        g = vo.image_embeds
+        t = torch.from_numpy(engine.text_table[text][None]).to(dev)  # precomputed, already normalised
+    g = g / g.norm(dim=-1, keepdim=True)
     patches = vo.last_hidden_state[:, 1:, :]
     b, n, h = patches.shape
     side = int(round(n ** .5))

@@ -43,6 +43,11 @@ def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def has(data: bytes, assets=ASSETS) -> bool:
+    """True if data is one of the precomputed examples (byte for byte)."""
+    return sha256(data) in _data(str(assets))[1]
+
+
 def available(assets=ASSETS) -> bool:
     return (assets / FILE).exists()
 
