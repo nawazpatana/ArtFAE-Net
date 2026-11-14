@@ -123,37 +123,61 @@ def test_cloud_entry_point_renders_every_example(start, tmp_path):
     assert "analyse failed" not in out.stderr and "compare failed" not in out.stderr, out.stderr[-4000:]
 
 
-def test_error_image_is_logged_with_traceback(monkeypatch):
-    """A failure behind the friendly error_image message reaches the log with its traceback, not the page."""
+class Grab:
+    """Collect the records of the app's "artfae.app" logger (it does not propagate to the root logger)."""
+
+    def __enter__(self):
+        import logging
+
+        records = self.records = []
+
+        class H(logging.Handler):
+            def emit(self, record):
+                records.append(record)
+
+        self.log, self.h = logging.getLogger("artfae.app"), H()
+        self.log.addHandler(self.h)
+        return self
+
+    def __exit__(self, *exc):
+        self.log.removeHandler(self.h)
+
+    def find(self, prefix):
+        return [r for r in self.records if r.getMessage().startswith(prefix) and r.exc_info]
+
+
+def gallery_app_after_click(i=3):
+    import streamlit as st
     from streamlit.testing.v1 import AppTest
+    st.cache_data.clear()  # results and the example list are cached per process; earlier tests filled them
+    at = AppTest.from_file(str(APP / "streamlit_app.py"), default_timeout=120)
+    at.run()
+    at.button(key=f"ex_{i}").click().run()
+    assert not at.exception, at.exception
+    return at
+
+
+@pytest.mark.parametrize("lang", ["en", "zh"])
+def test_model_failure_reports_error_model(monkeypatch, lang):
+    """A failure after the image decoded (here: the precomputed lookup) is a model error, not an image error,
+    and its traceback goes to the log, not the page."""
     monkeypatch.setenv("APP_MODE", "gallery")
 
     def boom(*a, **k):
         raise RuntimeError("boom-for-test")
 
     monkeypatch.setattr(gallery, "result", boom)
-    import logging
-    records = []
-
-    class Grab(logging.Handler):
-        def emit(self, record):
-            records.append(record)
-
-    log = logging.getLogger("artfae.app")
-    h = Grab(); log.addHandler(h)
-    import streamlit as st
-    st.cache_data.clear()  # results are cached per process: an earlier test may hold this example already
-    try:
-        at = AppTest.from_file(str(APP / "streamlit_app.py"), default_timeout=120)
-        at.run()
-        at.button(key="ex_3").click().run()
-        assert [e.value for e in at.error] == [i18n.t("en", "error_image")]
+    with Grab() as g:
+        at = gallery_app_after_click()
+        at.radio(key="lang").set_value(lang).run()
+        assert [e.value for e in at.error] == [i18n.t(lang, "error_model")]
         assert not any("boom-for-test" in m.value for m in at.markdown)  # not shown to users
-        rec = [r for r in records if r.getMessage().startswith("analyse failed")]
-        assert rec and rec[0].exc_info and "boom-for-test" in str(rec[0].exc_info[1])
-        assert "app_mode=gallery" in rec[0].getMessage()
-    finally:
-        log.removeHandler(h)
+        rec = g.find("inference failed")
+        assert rec and "boom-for-test" in str(rec[0].exc_info[1]) and "app_mode=gallery" in rec[0].getMessage()
+        assert not g.find("image decoding failed")
+        at.sidebar.radio(key="page").set_value("compare").run()
+        at.multiselect(key="cmp_examples").set_value([0, 1]).run()
+        assert not at.exception and [e.value for e in at.error] == [i18n.t(lang, "error_model")]  # once, not per item
 
 
 def uploaders(at):

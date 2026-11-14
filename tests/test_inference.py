@@ -203,3 +203,76 @@ def test_app_ui(lang, mode):
     assert "1.8357" in html and "1.8449" in html  # fresh-holdout soft CE of R1 and R3
     assert html_escape(i18n.t(lang, "row_h_r1")) in html and i18n.t(lang, "about_changelog_h") in html and "pos_weight" in html
     assert "R1_s42–46" in " ".join(m.value for m in at.markdown)
+
+
+class Grab:
+    """Collect the records of the app's "artfae.app" logger (it does not propagate to the root logger)."""
+
+    def __enter__(self):
+        import logging
+        records = self.records = []
+
+        class H(logging.Handler):
+            def emit(self, record):
+                records.append(record)
+
+        self.log, self.h = logging.getLogger("artfae.app"), H()
+        self.log.addHandler(self.h)
+        return self
+
+    def __exit__(self, *exc):
+        self.log.removeHandler(self.h)
+
+    def find(self, prefix):
+        return [r for r in self.records if r.getMessage().startswith(prefix) and r.exc_info]
+
+
+def full_app(monkeypatch):
+    import streamlit as st
+    from streamlit.testing.v1 import AppTest
+    monkeypatch.delenv("APP_MODE", raising=False)
+    st.cache_data.clear(); st.cache_resource.clear()  # earlier tests cached results and the loaded engine
+    at = AppTest.from_file(str(APP / "streamlit_app.py"), default_timeout=600)
+    at.run()
+    assert not at.exception and at.file_uploader  # full mode: uploads available
+    return at
+
+
+@pytest.mark.parametrize("lang", ["en", "zh"])
+def test_full_mode_missing_weights_reports_error_model(monkeypatch, tmp_path, lang):
+    """Weights missing (as in a fresh clone): the real torch.load FileNotFoundError is logged with traceback and
+    the page says the model could not be loaded, never that the image is unreadable."""
+    import streamlit as st
+    real = inf.load_model
+    monkeypatch.setattr(inf, "load_model", lambda d, mode, dev: real(tmp_path / "no-weights" / Path(d).name, mode, dev))
+    try:
+        with Grab() as g:
+            at = full_app(monkeypatch)
+            at.radio(key="lang").set_value(lang).run()
+            at.button(key="ex_0").click().run()
+            assert not at.exception, at.exception
+            assert [e.value for e in at.error] == [i18n.t(lang, "error_model")]
+            assert i18n.t(lang, "error_image") not in [e.value for e in at.error]
+            rec = g.find("model loading failed")
+            assert rec and isinstance(rec[0].exc_info[1], FileNotFoundError) and "best.pt" in str(rec[0].exc_info[1])
+            assert "app_mode=full" in rec[0].getMessage() and not g.find("image decoding failed")
+            assert not any("best.pt" in m.value for m in at.markdown)  # the details stay in the log
+            at.sidebar.radio(key="page").set_value("compare").run()
+            at.multiselect(key="cmp_examples").set_value([0, 1]).run()
+            assert not at.exception and [e.value for e in at.error] == [i18n.t(lang, "error_model")]  # once
+    finally:
+        st.cache_resource.clear()  # never leave a half-initialised engine behind
+
+
+@pytest.mark.parametrize("lang", ["en", "zh"])
+def test_full_mode_undecodable_upload_reports_error_image(monkeypatch, lang):
+    """Only a real decoding failure shows error_image: an upload that is not an image (before any model load)."""
+    with Grab() as g:
+        at = full_app(monkeypatch)
+        at.radio(key="lang").set_value(lang).run()
+        at.file_uploader(key="upload").set_value(("not-an-image.jpg", b"this is not a JPEG", "image/jpeg")).run()
+        assert not at.exception, at.exception
+        assert [e.value for e in at.error] == [i18n.t(lang, "error_image")]
+        rec = g.find("image decoding failed")
+        assert rec and type(rec[0].exc_info[1]).__name__ == "UnidentifiedImageError"
+        assert not g.find("model loading failed") and not g.find("inference failed")

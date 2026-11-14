@@ -26,8 +26,8 @@ import ui  # noqa: E402
 APP_MODE = core.app_mode(st.secrets)
 GALLERY = APP_MODE == "gallery"
 
-# Errors behind the friendly "error_image" message go to stderr with their traceback (the Streamlit Cloud log),
-# never to the page. One handler, even though Streamlit re-executes this script on every interaction.
+# Errors behind the friendly "error_image" / "error_model" messages go to stderr with their traceback (the Streamlit
+# Cloud log), never to the page. One handler, even though Streamlit re-executes this script on every interaction.
 LOG = logging.getLogger("artfae.app")
 if not LOG.handlers:
     _h = logging.StreamHandler(sys.stderr)
@@ -157,6 +157,27 @@ def run(data: bytes):
         return analyse_bytes(data, ss.model, ss.model == "r1" and bool(ss.prior), APP_MODE)
 
 
+def analyse_checked(data: bytes, what):
+    """Decode, then run the model; failures are logged with traceback and reported separately.
+
+    -> ("ok", img, r) | ("image", None, None): not decodable as an image (error_image)
+                      | ("model", None, None): weights missing, model loading or inference failed (error_model)
+    """
+    try:
+        img = inf.load_image(io.BytesIO(data))
+    except Exception:
+        LOG.exception("image decoding failed: source=%s app_mode=%s cwd=%s", what, APP_MODE, Path.cwd())
+        return "image", None, None
+    stage = "inference" if GALLERY or "engine_ready" in ss else "model loading"
+    try:
+        r = run(data)
+    except Exception:
+        LOG.exception("%s failed: source=%s app_mode=%s model=%s prior=%s cwd=%s", stage, what, APP_MODE,
+                      ss.model, ss.prior, Path.cwd())
+        return "model", None, None
+    return "ok", img, r
+
+
 def fmt_value(name, x):
     return f"{x * 100:.1f}%" if name in SHARES else f"{x:.3f}"
 
@@ -235,14 +256,9 @@ def page_analyse():
     else:
         example = EXAMPLES[src[1]]
         data = file_bytes(example["path"])
-    try:
-        img = inf.load_image(io.BytesIO(data))
-        r = run(data)
-    except Exception:  # unreadable upload (or a failure in the pipeline: see the log)
-        LOG.exception("analyse failed: source=%s app_mode=%s model=%s prior=%s cwd=%s",
-                      src if src[0] == "example" else ("upload", ss.upload.name), APP_MODE, ss.model, ss.prior,
-                      Path.cwd())
-        st.error(tr("error_image"))
+    status, img, r = analyse_checked(data, src if src[0] == "example" else ("upload", ss.upload.name))
+    if status != "ok":  # "image": not decodable; "model": weights missing or the model failed (see the log)
+        st.error(tr("error_image" if status == "image" else "error_model"))
         dropzone(hero=True)
         gallery()
         return
@@ -379,12 +395,14 @@ def page_compare():
         return
     results_ = []
     for name, data in items:
-        try:
-            results_.append((name, data, run(data)))
-        except Exception:
-            LOG.exception("compare failed: item=%r app_mode=%s model=%s prior=%s cwd=%s", name, APP_MODE, ss.model,
-                          ss.prior, Path.cwd())
+        status, _, r = analyse_checked(data, ("compare", name))
+        if status == "model":  # the same for every item: say it once and stop
+            st.error(tr("error_model"))
+            return
+        if status == "image":
             st.error(f'{tr("error_image")} ({name})')
+            continue
+        results_.append((name, data, r))
     cols = st.columns(len(results_), gap="medium")
     for j, (c, (name, data, r)) in enumerate(zip(cols, results_)):
         with c:
