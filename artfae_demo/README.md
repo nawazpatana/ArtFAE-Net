@@ -1,3 +1,8 @@
+> **WARNING: Do NOT extract this bundle inside the ArtFAE-Net repository; it would overwrite tracked files
+> with this snapshot. Extract it in a separate folder.**
+
+Built from commit 9e11793 on 2026-11-14.
+
 # ArtFAE-Net demo (English / 繁體中文)
 
 A local Streamlit app that estimates how viewers might feel about an artwork, from CLIP ViT-L/14@336
@@ -68,9 +73,38 @@ On macOS and Windows, the default torch wheel already works without a GPU.
   takes under 0.05 s.
 - The app uses the GPU automatically if PyTorch can see one; otherwise it uses the CPU.
 
+## App modes (`APP_MODE`)
+
+`APP_MODE` is read from the environment, then from Streamlit secrets; the default is `full`.
+
+| mode | examples | uploads | needs |
+|---|---|---|---|
+| `full` (default) | live | live, full CLIP (GPU if available) | `requirements.txt`, weights |
+| `cloud_live` (Streamlit Cloud) | precomputed | live on the CPU, CLIP **vision tower only** | `streamlit_cloud/requirements.txt` (CPU-only torch), weights |
+| `gallery` | precomputed | disabled | streamlit, numpy, pandas, pillow, plotly (no torch) |
+
+- **Precomputed examples** (`assets/precomputed/gallery.json`, built and verified against live inference by
+  `app/precompute_gallery.py`): both models, the R1 prior correction, the 10-viewer counts, R3 presence chips,
+  attention maps for all nine emotions, attributes, description and sentiment.
+- **cloud_live** loads `CLIPVisionModelWithProjection` (the same image weights and projection, fp32, CPU) instead of the
+  full CLIP, and looks the description's text embedding up in `assets/text_embeddings.npz` (all 27 possible
+  sentences, `app/build_text_embeddings.py`). Its outputs equal the full pipeline on the CPU bit for bit
+  (`app/verify_cloud_live.py`, 20 validation images). Peak memory is about 1.7 GB.
+- Streamlit Community Cloud runs `streamlit_cloud/streamlit_app.py` (sets `APP_MODE=cloud_live`) with
+  `streamlit_cloud/requirements.txt`; `APP_MODE=gallery` in the environment switches it to the torch-free version.
+
+```bash
+APP_MODE=cloud_live streamlit run app/streamlit_app.py
+APP_MODE=gallery streamlit run app/streamlit_app.py
+```
+
+**Uploads** (full and cloud_live): JPG, PNG, WebP, and HEIC/HEIF from iPhones when `pillow-heif` is installed; at
+most 10 MB and 50 megapixels. They are decoded in memory, downscaled by the same power-of-two rule the pipeline's
+JPEG decoding uses (both sides stay at least 512 px), never written to disk, and their file names are not logged.
+
 ## Pages
 
-- **Analyse:** upload a JPG, PNG or WebP, or pick one of the 12 example artworks, to see:
+- **Analyse:** click one of the 12 example artworks, or upload a JPG, PNG, WebP or HEIC, to see:
   - the most likely emotion and its sentiment;
   - the 9-emotion distribution;
   - "Emotions viewers may also feel" (presence head; minority-sensitive model only);
@@ -93,13 +127,17 @@ Switch models and languages in the sidebar. Switch between light and dark mode i
 |---|---|
 | `app/streamlit_app.py` | the UI |
 | `app/inference.py` | the pipeline as plain functions (no Streamlit), usable from Python |
+| `app/core.py` | torch-free paths, constants, upload decoding and display helpers |
+| `app/gallery.py` | the precomputed example results (gallery and cloud_live) |
+| `app/precompute_gallery.py`, `app/build_text_embeddings.py`, `app/verify_cloud_live.py` | build and verify `gallery.json`, the 27 text embeddings, and cloud_live against the full pipeline |
 | `app/i18n.py` | all UI strings in English and zh-TW, plus the 27-sentence description table |
 | `app/ui.py` | CSS, palette, Plotly charts, HTML components |
 | `app/assets/models/r1/s42 … s46/`, `app/assets/models/r3/s42 … s46/` | the five checkpoints of each model with their `normalizer.json`, `dims.json`, `config.json` |
 | `app/assets/priors.json` | validation and training class priors, and the optional R1 logit correction |
 | `app/assets/presence.json` | the presence head's training pos_weight, undone before the sigmoid (R3) |
 | `app/assets/attr_percentiles.json` | 1,001 training quantiles per attribute, used for the percentiles |
-| `app/assets/examples/` | 12 validation artworks and their ArtEmis annotations |
+| `app/assets/examples/` | 12 validation artworks and their ArtEmis annotations; `rights_check.json` records the image-rights check (artist died before 1956, created before 1931, 2D), run with `app/check_gallery_rights.py` in the repository |
+| `app/assets/precomputed/gallery.json`, `app/assets/text_embeddings.npz` | precomputed example results; CLIP text embeddings of the 27 descriptions |
 | `app/assets/results.json` | fresh-holdout and earlier test results shown on the About page |
 | `artfae_balance/`, `src/artfae/` | the unchanged research modules the pipeline imports |
 | `tests/test_inference.py` | smoke and UI tests. The consistency check needs the research data, so it skips here. |

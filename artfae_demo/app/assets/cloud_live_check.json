@@ -1,0 +1,48 @@
+{
+ "n_images": 20,
+ "val_rows": [
+  0,
+  97,
+  193,
+  290,
+  387,
+  484,
+  580,
+  677,
+  774,
+  871,
+  967,
+  1064,
+  1161,
+  1258,
+  1354,
+  1451,
+  1548,
+  1645,
+  1741,
+  1838
+ ],
+ "settings": [
+  "r1",
+  "r1+prior",
+  "r3"
+ ],
+ "tolerance": 1e-05,
+ "max_abs_diff": {
+  "full_cpu": {
+   "probs": 0.0,
+   "maps": 0.0,
+   "presence": 0.0,
+   "raw_logits": 0.0
+  },
+  "full_gpu": {
+   "probs": 7.53637411027297e-06,
+   "maps": 0.00012171268463134766,
+   "presence": 7.569789886474609e-06,
+   "raw_logits": 0.00011539459228515625
+  }
+ },
+ "maps_identical_to_full_cpu": true,
+ "passed": true,
+ "torch": "2.13.0+cu130"
+}

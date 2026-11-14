@@ -30,25 +30,19 @@ import torch
 import torch.nn.functional as F
 from PIL import Image
 
-ROOT = Path(__file__).resolve().parents[1]
-for p in (ROOT, ROOT / "src"):
-    if str(p) not in sys.path:
-        sys.path.insert(0, str(p))
-from artfae.features.aesthetic import NAMES, normalize  # noqa: E402
-from artfae_balance import EMOTIONS  # noqa: E402
+if str(Path(__file__).resolve().parent) not in sys.path:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+# core puts the repository / bundle root and its src/ on sys.path, relative to this file
+from core import (ASSETS, EMOTIONS, MODES, NAMES, POOL_GRID, ROOT, SEEDS, SENTIMENT,  # noqa: E402,F401
+                  attention_overlay, center_square, colormap, load_examples, load_json, percentiles,
+                  sentiment_totals)
+from artfae.features.aesthetic import normalize  # noqa: E402
 from artfae_balance.extract_features import compute_attributes_and_text, load_image  # noqa: E402
 from artfae_balance.model import build_model  # noqa: E402
 from artfae.models.network import ArtFAENet  # noqa: E402
 
-ASSETS = Path(__file__).resolve().parent / "assets"
 CLIP_MODEL = "openai/clip-vit-large-patch14-336"
 CLIP_REVISION = "ce19dc912ca5cd21c8a653c79e251e808ccabcd1"
-POOL_GRID = 7
-SEEDS = [42, 43, 44, 45, 46]
-MODES = ("r1", "r3")  # r1 = default
-SENTIMENT = {"amusement": "positive", "awe": "positive", "contentment": "positive", "excitement": "positive",
-             "anger": "negative", "disgust": "negative", "fear": "negative", "sadness": "negative",
-             "something_else": "other"}
 
 __all__ = ["EMOTIONS", "NAMES", "SENTIMENT", "MODES", "Engine", "load_engine", "load_image", "predict", "predict_path",
            "sentiment_totals", "percentiles", "load_examples", "attention_overlay", "center_square"]
@@ -62,21 +56,39 @@ class Engine:
     delta: np.ndarray       # log(val_prior) - log(train_prior), (9,)
     device: torch.device
     presence_offset: torch.Tensor = None  # log(pos_weight) of the training PresenceBCE, (9,)
+    text_table: dict = None  # vision-only engine: describe() sentence -> L2-normalised CLIP text embedding (768,)
 
 
 def pick_device(device=None):
     return torch.device(device or ("cuda" if torch.cuda.is_available() else "cpu"))
 
 
-def load_engine(assets=ASSETS, device=None) -> Engine:
-    from transformers import CLIPModel, CLIPProcessor
+def load_text_table(assets=ASSETS) -> dict:
+    """app/assets/text_embeddings.npz (app/build_text_embeddings.py): all 27 describe() sentences."""
+    z = np.load(Path(assets) / "text_embeddings.npz")
+    assert str(z["clip"]) == f"{CLIP_MODEL}@{CLIP_REVISION}", "text embeddings from another CLIP"
+    return {str(s): e for s, e in zip(z["sentences"], z["embeddings"])}
+
+
+def load_engine(assets=ASSETS, device=None, vision_only=False) -> Engine:
+    """Full engine (CLIP image + text towers), or vision_only=True for the memory-limited cloud_live mode:
+    CLIPVisionModelWithProjection (the same image weights and projection, without the text encoder) and the
+    precomputed text embeddings of the 27 possible descriptions."""
+    from transformers import CLIPImageProcessor, CLIPModel, CLIPProcessor, CLIPVisionModelWithProjection
     dev = pick_device(device)
     # The pinned revision ships only pytorch_model.bin. Load exactly that file: use_safetensors=False, and
     # stop transformers' background "auto_conversion" thread, which would otherwise download a 1.7 GB
     # safetensors copy from a different (unpinned) revision on every online load of a .bin checkpoint.
     os.environ.setdefault("DISABLE_SAFETENSORS_CONVERSION", "true")
-    clip = CLIPModel.from_pretrained(CLIP_MODEL, revision=CLIP_REVISION, use_safetensors=False).to(dev).eval()  # fp32
-    proc = CLIPProcessor.from_pretrained(CLIP_MODEL, revision=CLIP_REVISION, use_fast=False)
+    if vision_only:
+        clip = CLIPVisionModelWithProjection.from_pretrained(CLIP_MODEL, revision=CLIP_REVISION,
+                                                             use_safetensors=False).to(dev).eval()  # fp32
+        proc = CLIPImageProcessor.from_pretrained(CLIP_MODEL, revision=CLIP_REVISION, use_fast=False)
+        table = load_text_table(assets)
+    else:
+        clip = CLIPModel.from_pretrained(CLIP_MODEL, revision=CLIP_REVISION, use_safetensors=False).to(dev).eval()  # fp32
+        proc = CLIPProcessor.from_pretrained(CLIP_MODEL, revision=CLIP_REVISION, use_fast=False)
+        table = None
     models = {mode: [(s, *load_model(Path(assets) / f"models/{mode}/s{s}", mode, dev)) for s in SEEDS]
               for mode in MODES}
     pri = json.loads((Path(assets) / "priors.json").read_text())
@@ -84,7 +96,7 @@ def load_engine(assets=ASSETS, device=None) -> Engine:
     pres = json.loads((Path(assets) / "presence.json").read_text())
     assert pres["emotions"] == EMOTIONS
     offset = torch.tensor(pres["offset"], dtype=torch.float32, device=dev)
-    return Engine(clip, proc, models, np.asarray(pri["delta"], np.float64), dev, offset)
+    return Engine(clip, proc, models, np.asarray(pri["delta"], np.float64), dev, offset, table)
 
 
 def load_model(d: Path, mode: str, dev):
@@ -104,10 +116,16 @@ def encode(engine: Engine, img: Image.Image):
     attrs, text = compute_attributes_and_text(img)
     m, proc, dev = engine.clip, engine.processor, engine.device
     px = proc(images=[img], return_tensors="pt")["pixel_values"].to(dev)
-    vo = m.vision_model(pixel_values=px)
-    g = m.visual_projection(vo.pooler_output); g = g / g.norm(dim=-1, keepdim=True)
-    tk = proc(text=[text], padding=True, truncation=True, return_tensors="pt").to(dev)
-    t = m.get_text_features(**tk); t = t / t.norm(dim=-1, keepdim=True)
+    if engine.text_table is None:  # full CLIP
+        vo = m.vision_model(pixel_values=px)
+        g = m.visual_projection(vo.pooler_output)
+        tk = proc(text=[text], padding=True, truncation=True, return_tensors="pt").to(dev)
+        t = m.get_text_features(**tk); t = t / t.norm(dim=-1, keepdim=True)
+    else:  # vision tower only: image_embeds = visual_projection(pooler_output), the same two steps
+        vo = m(pixel_values=px)
+        g = vo.image_embeds
+        t = torch.from_numpy(engine.text_table[text][None]).to(dev)  # precomputed, already normalised
+    g = g / g.norm(dim=-1, keepdim=True)
     patches = vo.last_hidden_state[:, 1:, :]
     b, n, h = patches.shape
     side = int(round(n ** .5))
@@ -150,56 +168,3 @@ def predict(engine: Engine, img: Image.Image, mode: str = "r1", prior_correction
 
 def predict_path(engine: Engine, path_or_file, **kw) -> dict:
     return predict(engine, load_image(path_or_file), **kw)
-
-
-def sentiment_totals(probs) -> dict:
-    out = {"positive": 0.0, "negative": 0.0, "other": 0.0}
-    for e, p in zip(EMOTIONS, probs):
-        out[SENTIMENT[e]] += float(p)
-    return out
-
-
-def percentiles(attrs, table: dict) -> np.ndarray:
-    """Mid-rank percentile (0-100) of each raw attribute within the training distribution."""
-    out = []
-    for x, q in zip(attrs, table["quantiles"]):
-        q = np.asarray(q)  # 1,001 evenly spaced training quantiles
-        lo, hi = np.searchsorted(q, x, "left"), np.searchsorted(q, x, "right")
-        out.append(100 * (lo + hi) / (2 * len(q)))  # ties (e.g. many zeros) get their mid-rank
-    return np.asarray(out)
-
-
-def load_json(name, assets=ASSETS):
-    return json.loads((Path(assets) / name).read_text(encoding="utf-8"))
-
-
-def load_examples(assets=ASSETS):
-    ex = load_json("examples/examples.json", assets)
-    for e in ex:
-        e["path"] = str(Path(assets) / "examples" / e["file"])
-    return ex
-
-
-def center_square(img: Image.Image) -> Image.Image:
-    """The region CLIP sees: shortest side resized to 336, then a centre crop."""
-    w, h = img.size
-    s = min(w, h)
-    return img.crop(((w - s) // 2, (h - s) // 2, (w - s) // 2 + s, (h - s) // 2 + s))
-
-
-def colormap(x):
-    """x in [0, 1] -> RGB, a perceptually ordered dark-violet -> amber ramp."""
-    stops = np.array([[20, 12, 40], [87, 31, 104], [173, 55, 92], [236, 120, 58], [252, 220, 140]], float)
-    pos = np.linspace(0, 1, len(stops))
-    return np.stack([np.interp(x, pos, stops[:, i]) for i in range(3)], -1)
-
-
-def attention_overlay(img: Image.Image, map7, alpha: float, size: int = 640) -> Image.Image:
-    """Centre square of img with the 7x7 map upsampled (bicubic) and blended at opacity alpha."""
-    base = center_square(img).convert("RGB").resize((size, size), Image.Resampling.LANCZOS)
-    m = np.asarray(map7, np.float64)
-    m = (m - m.min()) / max(m.max() - m.min(), 1e-12)
-    up = Image.fromarray((m * 255).astype(np.uint8)).resize((size, size), Image.Resampling.BICUBIC)
-    heat = colormap(np.asarray(up, np.float64) / 255)
-    out = (1 - alpha) * np.asarray(base, np.float64) + alpha * heat
-    return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))

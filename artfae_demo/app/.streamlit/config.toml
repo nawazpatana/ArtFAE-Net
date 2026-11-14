@@ -4,11 +4,12 @@
 gatherUsageStats = false
 
 [server]
-maxUploadSize = 50
+maxUploadSize = 10  # MB; the app also checks it (core.UPLOAD_MAX_BYTES)
 
 [theme]
-font = "Noto Sans TC:https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap, Microsoft JhengHei, PingFang TC, sans-serif"
-headingFont = "Noto Serif TC:https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap, PMingLiU, serif"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap, Noto Sans TC, Microsoft JhengHei, PingFang TC, sans-serif"
+headingFont = "Playfair Display:https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap, Noto Serif TC, PMingLiU, serif"
+baseFontSize = 16
 baseRadius = "0.9rem"
 showWidgetBorder = true
 
@@ -17,14 +18,14 @@ primaryColor = "#8C5A3C"
 backgroundColor = "#F7F3EC"
 secondaryBackgroundColor = "#EFE8DC"
 textColor = "#2B2A28"
-borderColor = "#E6DED1"
+borderColor = "#E3D9CA"
 
 [theme.dark]
 primaryColor = "#D9A36A"
 backgroundColor = "#191816"
 secondaryBackgroundColor = "#24221F"
-textColor = "#ECE6DC"
-borderColor = "#37332E"
+textColor = "#EEE8DE"
+borderColor = "#3A3631"
 
 [client]
 toolbarMode = "viewer"
