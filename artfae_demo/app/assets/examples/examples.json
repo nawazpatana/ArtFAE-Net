@@ -1,6 +1,7 @@
 [
  {
   "file": "konstantin-somov_book-of-the-marquise-illustration-5-1918.jpg",
+  "artwork_id": "Art_Nouveau_Modern/konstantin-somov_book-of-the-marquise-illustration-5-1918",
   "painting": "Book of the marquise illustration 5 1918",
   "artist": "Konstantin Somov",
   "style": "Art Nouveau Modern",
@@ -20,6 +21,7 @@
  },
  {
   "file": "pietro-perugino_the-adoration-of-the-magi-1473.jpg",
+  "artwork_id": "Early_Renaissance/pietro-perugino_the-adoration-of-the-magi-1473",
   "painting": "The adoration of the magi 1473",
   "artist": "Pietro Perugino",
   "style": "Early Renaissance",
@@ -39,6 +41,7 @@
  },
  {
   "file": "pieter-de-hooch_two-women-with-a-child-in-court.jpg",
+  "artwork_id": "Baroque/pieter-de-hooch_two-women-with-a-child-in-court",
   "painting": "Two women with a child in court",
   "artist": "Pieter De Hooch",
   "style": "Baroque",
@@ -58,6 +61,7 @@
  },
  {
   "file": "henri-de-toulouse-lautrec_the-jockey-1899.jpg",
+  "artwork_id": "Post_Impressionism/henri-de-toulouse-lautrec_the-jockey-1899",
   "painting": "The jockey 1899",
   "artist": "Henri De Toulouse Lautrec",
   "style": "Post Impressionism",
@@ -77,6 +81,7 @@
  },
  {
   "file": "leonardo-da-vinci_studies-for-the-heads-of-two-soldiers-in-the-battle-of-anghiari.jpg",
+  "artwork_id": "High_Renaissance/leonardo-da-vinci_studies-for-the-heads-of-two-soldiers-in-the-battle-of-anghiari",
   "painting": "Studies for the heads of two soldiers in the battle of anghiari",
   "artist": "Leonardo Da Vinci",
   "style": "High Renaissance",
@@ -96,6 +101,7 @@
  },
  {
   "file": "amedeo-modigliani_portrait-of-paul-alexandre-1909.jpg",
+  "artwork_id": "Expressionism/amedeo-modigliani_portrait-of-paul-alexandre-1909",
   "painting": "Portrait of paul alexandre 1909",
   "artist": "Amedeo Modigliani",
   "style": "Expressionism",
@@ -115,6 +121,7 @@
  },
  {
   "file": "paul-gauguin_still-life-with-red-mullet-and-jug-1876.jpg",
+  "artwork_id": "Impressionism/paul-gauguin_still-life-with-red-mullet-and-jug-1876",
   "painting": "Still life with red mullet and jug 1876",
   "artist": "Paul Gauguin",
   "style": "Impressionism",
@@ -134,6 +141,7 @@
  },
  {
   "file": "jean-baptiste-simeon-chardin_rabbit-and-copper-pot.jpg",
+  "artwork_id": "Rococo/jean-baptiste-simeon-chardin_rabbit-and-copper-pot",
   "painting": "Rabbit and copper pot",
   "artist": "Jean Baptiste Simeon Chardin",
   "style": "Rococo",
@@ -153,6 +161,7 @@
  },
  {
   "file": "lucas-cranach-the-elder_arrest-of-christ-1538.jpg",
+  "artwork_id": "Northern_Renaissance/lucas-cranach-the-elder_arrest-of-christ-1538",
   "painting": "Arrest of christ 1538",
   "artist": "Lucas Cranach The Elder",
   "style": "Northern Renaissance",
@@ -172,6 +181,7 @@
  },
  {
   "file": "paula-modersohn-becker_portrait-of-rainer-maria-rilke-1906.jpg",
+  "artwork_id": "Expressionism/paula-modersohn-becker_portrait-of-rainer-maria-rilke-1906",
   "painting": "Portrait of rainer maria rilke 1906",
   "artist": "Paula Modersohn Becker",
   "style": "Expressionism",
@@ -191,6 +201,7 @@
  },
  {
   "file": "gerard-terborch_the-knifegrinder-s-family.jpg",
+  "artwork_id": "Baroque/gerard-terborch_the-knifegrinder-s-family",
   "painting": "The knifegrinder s family",
   "artist": "Gerard Terborch",
   "style": "Baroque",
@@ -210,6 +221,7 @@
  },
  {
   "file": "rembrandt_portrait-of-herman-doomer-1640.jpg",
+  "artwork_id": "Baroque/rembrandt_portrait-of-herman-doomer-1640",
   "painting": "Portrait of herman doomer 1640",
   "artist": "Rembrandt",
   "style": "Baroque",

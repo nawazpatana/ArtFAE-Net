@@ -38,6 +38,15 @@ APP_MODES = ("full", "gallery", "cloud_live")
 UPLOAD_MAX_BYTES = 10 * 1024 * 1024   # 10 MB
 UPLOAD_MAX_PIXELS = 50_000_000        # decoded size guard (a 10 MB PNG can expand to gigabytes)
 DRAFT = 512                           # as artfae_balance.extract_features.load_image: im.draft("RGB", (512, 512))
+
+APP_VERSION = "1.2.0"                 # shown beside every result and written into the JSON record
+# The result card reports a dispersed distribution instead of a single top emotion when the two highest predicted
+# proportions are within this many percentage points (0.05 = 5 points), compared on the unrounded values.
+DISPERSED_MAX_GAP = 0.05
+MODEL_INFO = {  # what each demo model is, for the JSON record
+    "r1": {"name": "Emotion distribution (L/14 R1)", "checkpoints": "runs/revision_B/step1/R1_s{42..46} (softCE-selected)"},
+    "r3": {"name": "Rare-emotion sensitivity (L/14 R3)", "checkpoints": "runs/revision_B/step1/R3_s{42..46} (softCE-selected)"},
+}
 SENTIMENT = {"amusement": "positive", "awe": "positive", "contentment": "positive", "excitement": "positive",
              "anger": "negative", "disgust": "negative", "fear": "negative", "sadness": "negative",
              "something_else": "other"}
@@ -166,3 +175,50 @@ def attention_overlay(img: Image.Image, map7, alpha: float, size: int = 640) -> 
     heat = colormap(np.asarray(up, np.float64) / 255)
     out = (1 - alpha) * np.asarray(base, np.float64) + alpha * heat
     return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))
+
+
+# ---------------------------------------------------------------- result wording and reproducibility
+def top_two(probs):
+    """-> ((emotion, p), (emotion, p)) for the two highest predicted proportions."""
+    p = np.asarray(probs, np.float64)
+    a, b = np.argsort(-p, kind="stable")[:2]
+    return (EMOTIONS[a], float(p[a])), (EMOTIONS[b], float(p[b]))
+
+
+def is_dispersed(probs, max_gap: float = DISPERSED_MAX_GAP) -> bool:
+    """True when the top two predicted proportions are within max_gap (5 percentage points by default)."""
+    (_, pa), (_, pb) = top_two(probs)
+    return pa - pb <= max_gap + 1e-12
+
+
+def result_record(r: dict, *, app_mode: str, image_sha256: str | None = None, artwork_id: str | None = None,
+                  timestamp: str | None = None) -> dict:
+    """The downloadable JSON record of one result. Identifies the input by its SHA-256 (uploads) or its ArtEmis
+    artwork ID (gallery examples); the image itself is never included."""
+    from datetime import datetime, timezone
+    if (image_sha256 is None) == (artwork_id is None):
+        raise ValueError("give exactly one of image_sha256 or artwork_id")
+    probs = np.asarray(r["probs"], np.float64)
+    (a, pa), (b, pb) = top_two(probs)
+    rec = {
+        "app": "ArtFAE-Net demo", "app_version": APP_VERSION, "app_mode": app_mode,
+        "timestamp_utc": timestamp or datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "input": ({"type": "gallery_example", "artwork_id": artwork_id} if artwork_id else
+                  {"type": "upload", "sha256": image_sha256}),
+        "model": {"key": r["mode"], **MODEL_INFO[r["mode"]], "seeds": SEEDS,
+                  "ensemble": "mean of the five seeds' softmax probabilities"},
+        "calibration": {"prior_correction": bool(r["prior_correction"]),
+                        "description": "logits + log(validation prior) - log(training prior)" if r["prior_correction"]
+                        else "none (raw model outputs)"},
+        "source": "precomputed" if r.get("precomputed") else "live inference",
+        "emotion_distribution": {e: round(float(p), 6) for e, p in zip(EMOTIONS, probs)},
+        "highest": {"emotion": a, "proportion": round(pa, 6)},
+        "dispersed": {"is_dispersed": is_dispersed(probs), "threshold_points": DISPERSED_MAX_GAP * 100,
+                      "top_two": [{"emotion": a, "proportion": round(pa, 6)}, {"emotion": b, "proportion": round(pb, 6)}]},
+        "sentiment_totals": {k: round(v, 6) for k, v in sentiment_totals(probs).items()},
+    }
+    if r.get("presence") is not None:
+        rec["presence_r3"] = {"meaning": "estimated chance that at least one annotator names the emotion; a separate "
+                                         "output, not part of the distribution",
+                              "values": {e: round(float(p), 6) for e, p in zip(EMOTIONS, r["presence"])}}
+    return rec

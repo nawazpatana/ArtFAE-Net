@@ -27,7 +27,7 @@ cp artfae_balance/{__init__.py,model.py,heads.py,extract_features.py} "$STAGE/ar
 cp src/artfae/__init__.py "$STAGE/src/artfae/"
 cp src/artfae/features/{__init__.py,aesthetic.py} "$STAGE/src/artfae/features/"
 cp src/artfae/models/{__init__.py,network.py} "$STAGE/src/artfae/models/"
-cp tests/test_inference.py "$STAGE/tests/"
+cp tests/{test_inference.py,test_wording.py} "$STAGE/tests/"
 find "$STAGE" -name __pycache__ -prune -exec rm -rf {} +
 tar -C "$(dirname "$STAGE")" -czf app_bundle.tar.gz artfae_demo
 rm -rf "$(dirname "$STAGE")"

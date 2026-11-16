@@ -1,17 +1,20 @@
 > **WARNING: Do NOT extract this bundle inside the ArtFAE-Net repository; it would overwrite tracked files
 > with this snapshot. Extract it in a separate folder.**
 
-Built from commit 9e11793 on 2026-11-14.
+Built from commit 5951944 on 2026-11-16.
 
 # ArtFAE-Net demo (English / 繁體中文)
 
 A local Streamlit app that estimates how viewers might feel about an artwork, from CLIP ViT-L/14@336
 features. The sidebar offers two models, both selected by validation soft cross-entropy:
 
-- **Human-vote distribution (L/14 R1, recommended)**, the default and the paper's recommended model.
-  An optional prior correction ("Match validation class frequencies") is off by default.
-- **Minority-sensitive (L/14 R3)**: balanced sampler + presence head (λ = 0.3), raw outputs, no prior
-  correction. Only this mode shows "Emotions viewers may also feel" (calibrated presence estimates).
+- **Emotion distribution (L/14 R1, recommended)**, the default and the paper's recommended model: predicts how
+  ArtEmis annotators' votes were distributed, with the lowest soft cross-entropy on a fresh set of 30,280 ArtEmis
+  paintings. An optional prior correction ("Match validation class frequencies") is off by default.
+- **Rare-emotion sensitivity (L/14 R3)**: balanced sampler + presence head (λ = 0.3), raw outputs, no prior
+  correction. It notices rarer emotions such as anger and fear but overstates them and is less faithful to the
+  overall distribution. Only this mode shows "Other emotions annotators may name": the estimated chance that at
+  least one annotator names an emotion (a separate output, not part of the distribution).
 
 All five trained seeds (42–46) of the chosen model run on every image and their probabilities are
 averaged (a seed ensemble).
@@ -104,13 +107,20 @@ JPEG decoding uses (both sides stay at least 512 px), never written to disk, and
 
 ## Pages
 
-- **Analyse:** click one of the 12 example artworks, or upload a JPG, PNG, WebP or HEIC, to see:
-  - the most likely emotion and its sentiment;
-  - the 9-emotion distribution;
-  - "Emotions viewers may also feel" (presence head; minority-sensitive model only);
-  - the sentiment totals;
-  - the model's attention map;
-  - the 28 image measurements, with training-set percentiles.
+- **Analyse:** the upload control ("Upload or change artwork") is at the top, with a note on what the model can
+  and cannot judge; click one of the 12 example artworks or upload a JPG, PNG, WebP or HEIC to see:
+  - the highest predicted proportion, or, when the top two emotions are within 5 percentage points
+    (`core.DISPERSED_MAX_GAP`), a note that the predicted distribution is dispersed;
+  - the category of the top emotion and the summed proportions per sentiment;
+  - the full 9-emotion distribution, next to the artwork;
+  - the active settings (model, prior correction, app version) and "Download result (JSON)" (image SHA-256 or
+    artwork ID, model, mode, calibration, the 9-emotion output, timestamp; never the image);
+  - an illustrative ten-person graphic with every emotion's exact percentage;
+  - the R3 presence estimates (rare-emotion-sensitivity model only);
+  - the model's attention map, labelled as attention and not as an explanation, with the original image and a
+    side-by-side comparison of two emotions;
+  - Visual Attributes: brightness, saturation and warm/cool colour share in plain words, the other measurements
+    under "View detailed measurements".
 
   The examples come from the ArtEmis *validation* split and were chosen by annotator agreement only,
   never by model accuracy. No test images are included.
