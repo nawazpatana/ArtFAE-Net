@@ -6,6 +6,7 @@ plotly and pytest. The equivalence with live inference is checked by app/precomp
 environment). The Streamlit Cloud entry point runs cloud_live by default (tests/test_cloud_live.py); here it is
 started with APP_MODE=gallery, which the entry point respects.
 """
+from html import escape as html_escape
 import os
 import subprocess
 import sys
@@ -209,8 +210,15 @@ def test_every_example_renders(app, lang):
             assert not at.exception, (lang, mode, ex["file"], at.exception)
             r = gallery.result(Path(ex["path"]).read_bytes(), mode)
             html = " ".join(m.value for m in at.markdown)
-            assert "af-card af-result" in html and f'af-top">{i18n.emotion(lang, r["top"])}<' in html, ex["file"]
-            assert i18n.t(lang, "sentiment_summary") in html and i18n.t(lang, "ten_people") in html
+            assert "af-card af-result" in html, ex["file"]
+            if core.is_dispersed(r["probs"]):  # the dispersed message replaces the single top emotion
+                (a, _), (b, _) = core.top_two(r["probs"])
+                msg = i18n.t(lang, "dispersed_msg", a=i18n.emotion(lang, a), b=i18n.emotion(lang, b))
+                assert html_escape(msg) in html and 'af-top">' not in html, ex["file"]
+            else:
+                assert f'af-top">{i18n.emotion(lang, r["top"])}<' in html, ex["file"]
+            assert i18n.t(lang, "total_predicted") in html and i18n.t(lang, "ten_people") in html
+            assert html_escape(i18n.t(lang, "ten_people_note")) in html
             assert (i18n.t(lang, "also_feel") in html) == (mode == "r3")  # presence chips: R3 only
             assert i18n.description(lang, r["description"]) in html
             if lang == "zh":

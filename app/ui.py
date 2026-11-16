@@ -29,14 +29,14 @@ PALETTE = {
 }
 SENTIMENT_COLOURS = {"light": {"positive": "#C98A3E", "negative": "#43557F", "other": "#8F8B85"},
                      "dark": {"positive": "#E6AE68", "negative": "#8EA3D8", "other": "#AAA59E"}}
-# muted text is >= 4.5:1 against both bg and card in each mode (WCAG AA for body text)
+# muted (explanatory) text is >= 7:1 against bg, card and track in each mode (WCAG AA needs 4.5:1; tested)
 THEME = {
-    "light": {"bg": "#F7F3EC", "card": "#FFFDF9", "text": "#2B2A28", "muted": "#5C564E", "border": "#E3D9CA",
+    "light": {"bg": "#F7F3EC", "card": "#FFFDF9", "text": "#2B2A28", "muted": "#4A443D", "border": "#E3D9CA",
               "accent": "#8C5A3C", "frame": "#3B3128", "mat": "#FBF8F2", "line": "#C9BBA5",
               "shadow": "0 1px 2px rgba(60,45,30,.06), 0 10px 30px rgba(60,45,30,.10)",
               "lift": "0 2px 4px rgba(60,45,30,.08), 0 18px 40px rgba(60,45,30,.16)",
               "grid": "#E9E2D6", "track": "#EFE8DC"},
-    "dark": {"bg": "#191816", "card": "#242220", "text": "#EEE8DE", "muted": "#B9B0A3", "border": "#3A3631",
+    "dark": {"bg": "#191816", "card": "#242220", "text": "#EEE8DE", "muted": "#CFC6B9", "border": "#3A3631",
              "accent": "#D9A36A", "frame": "#0E0D0C", "mat": "#211F1D", "line": "#5A5249",
              "shadow": "0 1px 2px rgba(0,0,0,.45), 0 10px 30px rgba(0,0,0,.40)",
              "lift": "0 2px 4px rgba(0,0,0,.5), 0 18px 44px rgba(0,0,0,.55)",
@@ -70,7 +70,10 @@ html {{ font-size: 16px; }}
 h1, h2, h3, h4, .af-display {{ font-family: {SERIF} !important; letter-spacing: .005em; color: var(--af-text); }}
 .block-container, [data-testid="stMainBlockContainer"] {{ max-width: 1200px; padding: 3.6rem 2rem 5rem 2rem; }}
 p, li, .stMarkdown p {{ font-size: 1rem; line-height: 1.6; }}
-[data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] p {{ font-size: 1rem; color: var(--af-muted); }}
+[data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] p {{ font-size: 1.05rem; line-height: 1.55;
+    color: var(--af-muted); }}
+/* Streamlit draws captions at opacity .6, which would blend the muted colour below WCAG AA: draw them opaque */
+[data-testid="stCaptionContainer"] {{ opacity: 1 !important; }}
 [data-testid="stWidgetLabel"] p {{ font-size: 1rem; font-weight: 500; }}
 *:focus-visible {{ outline: 3px solid var(--af-accent) !important; outline-offset: 3px; }}
 
@@ -114,7 +117,7 @@ p, li, .stMarkdown p {{ font-size: 1rem; line-height: 1.6; }}
     box-shadow: inset 4px 0 0 var(--af-accent); }}
 .st-key-nav_box label[data-testid="stRadioOption"][data-selected="true"] p {{ font-weight: 650; }}
 [data-testid="stSidebar"] {{ border-right: 1px solid var(--af-border); }}
-[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {{ font-size: .95rem; line-height: 1.5; }}
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {{ font-size: 1rem; line-height: 1.55; }}
 
 /* ---------- drop zone as an empty picture frame ---------- */
 [class*="st-key-dropzone"] [data-testid="stFileUploaderDropzone"] {{ position: relative; display: flex;
@@ -140,6 +143,7 @@ p, li, .stMarkdown p {{ font-size: 1rem; line-height: 1.6; }}
 [class*="st-key-dropzone"] [data-testid="stFileUploaderDropzone"] button::after {{ content: {css_str(browse)};
     font-size: 1rem; font-weight: 600; color: var(--af-bg); }}
 [class*="st-key-dropzone"] [data-testid="stFileUploaderDropzone"] button:hover {{ filter: brightness(1.08); }}
+[class*="st-key-dropzone"] [data-testid="stFileUploaderDropzone"] button > * {{ display: none; }}
 [class*="st-key-dropzone"] [data-testid="stFileUploaderFile"] {{ font-size: 1rem; }}
 
 /* ---------- gallery ---------- */
@@ -173,7 +177,7 @@ p, li, .stMarkdown p {{ font-size: 1rem; line-height: 1.6; }}
 .af-cap .a {{ font-weight: 600; font-size: 1rem; line-height: 1.35; color: var(--af-text); }}
 .af-cap .t {{ font-family: {SERIF}; font-style: italic; font-size: 1rem; line-height: 1.4; color: var(--af-text);
     display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }}
-.af-tag {{ display: inline-flex; align-items: center; gap: .4rem; margin-top: .5rem; font-size: .95rem; color: var(--af-muted); }}
+.af-tag {{ display: inline-flex; align-items: center; gap: .4rem; margin-top: .5rem; font-size: 1rem; color: var(--af-muted); }}
 .af-dot {{ width: .7rem; height: .7rem; border-radius: 50%; background: var(--c); flex: 0 0 auto; }}
 .af-selected {{ position: absolute; top: .6rem; left: .6rem; z-index: 2; background: var(--af-accent); color: var(--af-bg);
     font-size: .9rem; font-weight: 600; padding: .2rem .65rem; border-radius: 999px; }}
@@ -196,7 +200,7 @@ p, li, .stMarkdown p {{ font-size: 1rem; line-height: 1.6; }}
 .af-card {{ background: var(--af-card); border: 1px solid var(--af-border); border-radius: 18px;
            box-shadow: var(--af-shadow); padding: 1.35rem 1.5rem; margin-bottom: 1rem; color: var(--af-text); }}
 .af-result {{ border-left: 7px solid var(--af-accent); padding: 1.6rem 1.8rem; }}
-.af-eyebrow {{ text-transform: uppercase; letter-spacing: .1em; font-size: .9rem; color: var(--af-muted); font-weight: 600; }}
+.af-eyebrow {{ letter-spacing: .01em; font-size: 1.05rem; color: var(--af-muted); font-weight: 600; }}
 .af-top {{ font-family: {SERIF}; font-size: clamp(2.2rem, 4.6vw, 3.2rem); line-height: 1.08; margin: .3rem 0 .25rem 0;
           color: var(--af-text); font-weight: 700; overflow-wrap: normal; word-break: keep-all; hyphens: none; }}
 .af-top::before {{ content: ""; display: inline-block; width: .42em; height: .42em; border-radius: 50%;
@@ -215,7 +219,7 @@ p, li, .stMarkdown p {{ font-size: 1rem; line-height: 1.6; }}
            font-size: 1rem; background: var(--af-track); color: var(--af-text); border-left: 5px solid var(--c); }}
 .af-chip b {{ font-weight: 600; margin-left: .35rem; color: var(--af-muted); }}
 .af-section {{ font-family: {SERIF}; font-size: 1.25rem; margin: 0 0 .65rem 0; font-weight: 600; }}
-.af-muted {{ color: var(--af-muted); font-size: 1rem; }}
+.af-muted {{ color: var(--af-muted); font-size: 1.05rem; line-height: 1.55; }}
 .af-stats {{ display: flex; gap: .7rem; flex-wrap: wrap; }}
 .af-stat {{ flex: 1 1 0; min-width: 96px; padding: .6rem .85rem; border-radius: 12px; background: var(--af-track);
            border-top: 4px solid var(--c); }}
@@ -230,7 +234,7 @@ p, li, .stMarkdown p {{ font-size: 1rem; line-height: 1.6; }}
            border-bottom: 1px dashed var(--af-border); gap: .8rem; }}
 .af-attr:last-child {{ border-bottom: none; }}
 .af-attr .n {{ font-size: 1rem; }} .af-attr .v {{ font-variant-numeric: tabular-nums; font-weight: 600; }}
-.af-attr .p {{ color: var(--af-muted); font-size: .95rem; white-space: nowrap; }}
+.af-attr .p {{ color: var(--af-muted); font-size: 1rem; }}
 .af-pbar {{ height: 4px; border-radius: 99px; background: var(--af-track); margin-top: .25rem; }}
 .af-pbar > div {{ height: 100%; border-radius: 99px; background: var(--af-muted); opacity: .7; }}
 .af-quad {{ display: grid; grid-template-columns: 1fr 1fr; gap: 4px; width: 132px; margin: .6rem 0 .2rem 0; }}
@@ -239,9 +243,51 @@ p, li, .stMarkdown p {{ font-size: 1rem; line-height: 1.6; }}
 .af-desc {{ font-family: {SERIF}; font-size: 1.15rem; line-height: 1.7; }}
 .af-meta {{ color: var(--af-muted); font-size: 1rem; margin-top: .35rem; }}
 [data-testid="stImage"] img {{ border-radius: 12px; }}
-div[data-testid="stTabs"] button p {{ font-size: 1.05rem; font-weight: 600; }}
+div[data-testid="stTabs"] button p, [data-testid="stTab"] p {{ font-size: 1.1rem !important; font-weight: 600; }}
 div[data-testid="stTabs"] {{ margin-top: .8rem; }}
 [data-testid="stExpander"] summary p {{ font-size: 1rem; font-weight: 600; }}
+
+/* ---------- milestone 1: result card wording, notes, compare grid ---------- */
+.af-card, .af-card * {{ overflow-wrap: normal; word-break: normal; hyphens: manual; }}
+.af-disp-msg {{ font-family: {SERIF}; font-size: clamp(1.3rem, 2.4vw, 1.6rem); line-height: 1.35; margin: .4rem 0 .5rem 0;
+    font-weight: 600; }}
+.af-disp-vals {{ font-size: 1.15rem; font-variant-numeric: tabular-nums; margin-bottom: .5rem; }}
+.af-disp-vals .sep {{ color: var(--af-muted); margin: 0 .3rem; }}
+.af-dv, .af-tv {{ display: inline-flex; align-items: center; gap: .35rem; white-space: nowrap; }}
+.af-disp-note {{ color: var(--af-muted); font-size: 1.05rem; line-height: 1.5; margin-bottom: .8rem; }}
+.af-cat {{ font-size: 1.05rem; font-weight: 600; margin-top: .2rem; }}
+.af-totals {{ font-size: 1.05rem; margin-top: .45rem; line-height: 1.8; font-variant-numeric: tabular-nums; }}
+.af-totals .lab {{ color: var(--af-muted); font-weight: 600; margin-right: .2rem; }}
+.af-compact .af-disp-msg {{ font-size: 1.15rem; }}
+.af-compact .af-disp-vals, .af-compact .af-cat, .af-compact .af-totals {{ font-size: 1rem; }}
+.af-zero {{ margin-top: .6rem; color: var(--af-muted); font-size: 1.05rem; line-height: 1.6; }}
+.af-zero span {{ white-space: nowrap; }}
+.af-kattr {{ padding: .35rem 0 .6rem 0; border-bottom: 1px dashed var(--af-border); }}
+.af-kattr:last-child {{ border-bottom: none; }}
+.af-kattr .af-attr {{ border-bottom: none; padding-bottom: .1rem; }}
+.af-ksent {{ font-size: 1.05rem; color: var(--af-text); line-height: 1.5; }}
+.af-note {{ background: var(--af-card); border: 1px solid var(--af-border); border-left: 6px solid var(--af-accent);
+    border-radius: 12px; padding: .9rem 1.1rem; margin-bottom: .9rem; font-size: 1.05rem; line-height: 1.55; }}
+.af-note b {{ display: block; font-size: 1.1rem; margin-bottom: .25rem; }}
+.af-attn-label {{ font-weight: 650; font-size: 1.1rem; margin: 0 0 .45rem 0; display: flex; align-items: center; gap: .45rem; }}
+.st-key-upload_bar {{ margin-bottom: 1.4rem; }}
+.st-key-dropzone_top [data-testid="stFileUploaderDropzone"] {{ min-height: 150px; padding: 1.2rem; border-width: 10px; }}
+.st-key-dropzone_top [data-testid="stFileUploaderDropzoneInstructions"]::before {{ font-size: 1.35rem; }}
+.st-key-dropzone_top [data-testid="stWidgetLabel"] p {{ font-size: 1.1rem; font-weight: 650; }}
+.af-settings {{ color: var(--af-muted); font-size: 1rem; margin: -.4rem 0 .9rem 0; line-height: 1.5; }}
+[class*="st-key-cmp_grid"] {{ display: grid !important; gap: 1.3rem !important; align-items: start; }}
+.st-key-cmp_grid_2 {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+.st-key-cmp_grid_3, .st-key-cmp_grid_4 {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}  /* 2 x 2 */
+@media (min-width: 1300px) {{ .st-key-cmp_grid_3 {{ grid-template-columns: repeat(3, minmax(0, 1fr)); }} }}
+@media (min-width: 1600px) {{ .st-key-cmp_grid_4 {{ grid-template-columns: repeat(4, minmax(0, 1fr)); }} }}
+[class*="st-key-cmp_grid"] > div {{ width: auto !important; min-width: 0; }}
+[class*="st-key-cmp_item_"] {{ min-width: 0; }}
+[class*="st-key-cmp_item_"] [data-testid="stImage"] img {{ max-height: 300px; object-fit: cover; }}
+.af-compact .af-top {{ font-size: clamp(1.45rem, 2.2vw, 1.9rem); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+.af-compact .af-totals .lab {{ display: block; }}
+.af-compact .af-totals .af-tv {{ display: flex; }}
+.af-compact .af-totals .sep {{ display: none; }}
+@media (max-width: 560px) {{ [class*="st-key-cmp_grid"] {{ grid-template-columns: minmax(0, 1fr) !important; }} }}
 
 @media (prefers-reduced-motion: reduce) {{ * {{ animation: none !important; transition: none !important; }} }}
 @media (max-width: 640px) {{
@@ -253,6 +299,8 @@ div[data-testid="stTabs"] {{ margin-top: .8rem; }}
   .af-frame img {{ max-height: 52vh; }}
   .af-result {{ padding: 1.2rem 1.25rem; }}
   .af-brand p {{ font-size: 1rem; }}
+  .af-disp-vals .sep {{ display: none; }}
+  .af-disp-vals .af-dv {{ display: flex; }}
   .st-key-lang_box label[data-testid="stRadioOption"] {{ padding: .32rem .75rem; }}
 }}
 </style>"""
@@ -326,17 +374,33 @@ def framed_artwork(src: str, alt: str, artist: str | None = None, title: str | N
             f"</div>{cap}</figure>")
 
 
-def result_card(m, emotion_key, emotion_label, prob, sentiment_key, sentiment_label, eyebrow, prob_word,
-                sentiment_word, compact=False) -> str:
-    c = PALETTE[m][emotion_key]
-    sc = SENTIMENT_COLOURS[m][sentiment_key]
-    return (f'<div class="af-card af-result{" af-compact" if compact else ""}" style="--af-accent:{c}">'
-            f'<div class="af-eyebrow">{esc(eyebrow)}</div>'
-            f'<div class="af-top">{esc(emotion_label)}</div>'
-            f'<div class="af-prob">{prob * 100:.1f}%<span>{esc(prob_word)}</span></div>'
-            f'<div class="af-bar"><div style="width:{prob * 100:.1f}%"></div></div>'
-            f'<span class="af-eyebrow">{esc(sentiment_word)}</span>&nbsp; '
-            f'<span class="af-pill" style="--af-pill:{sc}">{esc(sentiment_label)}</span></div>')
+def result_card(m, *, eyebrow, top_key, top_label, top_prob, category_text, totals_label, totals,
+                dispersed=None, compact=False, colon=": ") -> str:
+    """The main result card. Every colour comes with its label and value.
+
+    Normal: eyebrow ("Highest predicted proportion"), the top emotion and its %, a bar.
+    dispersed = (message, [(key, label, prob), (key, label, prob)], note): replaces the single top emotion when the top
+    two predicted proportions are within core.DISPERSED_MAX_GAP.
+    category_text: "Category of the top emotion: Positive"; totals: [(sentiment_key, label, value)] after totals_label.
+    """
+    c = PALETTE[m][top_key]
+    if dispersed is None:
+        body = (f'<div class="af-top">{esc(top_label)}</div>'
+                f'<div class="af-prob">{top_prob * 100:.1f}%</div>'
+                f'<div class="af-bar"><div style="width:{top_prob * 100:.1f}%"></div></div>')
+    else:
+        msg, pair, note = dispersed
+        vals = " <span class=\"sep\" aria-hidden=\"true\">|</span> ".join(
+            f'<span class="af-dv"><span class="af-dot" style="--c:{PALETTE[m][k]}" aria-hidden="true"></span>'
+            f'{esc(lab)}{esc(colon)}<b>{p * 100:.1f}%</b></span>' for k, lab, p in pair)
+        body = (f'<div class="af-disp-msg">{esc(msg)}</div><div class="af-disp-vals">{vals}</div>'
+                f'<div class="af-disp-note">{esc(note)}</div>')
+    tot = '<span class="sep" aria-hidden="true"> · </span>'.join(f'<span class="af-tv"><span class="af-dot" style="--c:{SENTIMENT_COLOURS[m][k]}" aria-hidden="true">'
+                     f'</span>{esc(lab)} <b>{v * 100:.1f}%</b></span>' for k, lab, v in totals)
+    cls = "af-card af-result" + (" af-compact" if compact else "") + (" af-dispersed" if dispersed else "")
+    return (f'<div class="{cls}" style="--af-accent:{c}"><div class="af-eyebrow">{esc(eyebrow)}</div>{body}'
+            f'<div class="af-cat">{esc(category_text)}</div>'
+            f'<div class="af-totals"><span class="lab">{esc(totals_label)}{esc(colon.rstrip())}</span> {tot}</div></div>')
 
 
 # ---------------------------------------------------------------- "if 10 people saw this"
@@ -358,11 +422,18 @@ _PERSON = ('<svg viewBox="0 0 24 34" role="img" aria-label="{label}"><title>{lab
 def people_block(m, keys, labels, counts, legend_items) -> str:
     """keys/labels/counts per emotion; icons grouped by emotion (largest first), each with its emotion as text
     label; legend_items: [(emotion_key, text)] for emotions with at least one person."""
-    order = sorted([i for i in range(len(keys)) if counts[i] > 0], key=lambda i: -counts[i])
+    order = [list(keys).index(k) for k, _ in legend_items]  # same order as the legend (the caller sorts it)
     icons = "".join(_PERSON.format(c=PALETTE[m][keys[i]], label=esc(labels[i])) for i in order for _ in range(counts[i]))
     legend = "".join(f'<span><span class="af-dot" style="--c:{PALETTE[m][k]}" aria-hidden="true"></span>{t}</span>'
                      for k, t in legend_items)
     return f'<div class="af-people">{icons}</div><div class="af-legend">{legend}</div>'
+
+
+def zero_people(probs, n: int = 10) -> list:
+    """Indices of the emotions that round to 0 of n people (people_counts), largest probability first."""
+    c = people_counts(probs, n)
+    p = np.asarray(probs, np.float64)
+    return sorted([i for i in range(len(p)) if c[i] == 0], key=lambda i: -p[i])
 
 
 def chips(m, items) -> str:
@@ -391,6 +462,13 @@ def attr_rows(rows) -> str:
                    for n, v, pl, p in rows)
 
 
+def key_attr_rows(rows) -> str:
+    """rows: [(label, value_str, sentence, percentile)]: the plain-language comparison on its own line."""
+    return "".join(f'<div class="af-kattr"><div class="af-attr"><span class="n">{esc(n)}</span><span class="v">{esc(v)}</span>'
+                   f'</div><div class="af-ksent">{esc(s)}</div><div class="af-pbar"><div style="width:{p:.0f}%"></div>'
+                   f'</div></div>' for n, v, s, p in rows)
+
+
 def quadrants(m, values) -> str:
     """values: edge densities tl, tr, bl, br in [0, 1]."""
     top = max(max(values), 1e-6)
@@ -411,7 +489,7 @@ def _layout(fig, m, height, **kw):
     return fig
 
 
-def distribution_chart(m, keys, labels, probs, sentiments, axis_title, height=360):
+def distribution_chart(m, keys, labels, probs, sentiments, axis_title, height=360, font_size=15):
     """Horizontal bars, sorted (largest on top), coloured by emotion within sentiment families."""
     order = np.argsort(probs)
     fig = go.Figure(go.Bar(
@@ -421,8 +499,9 @@ def distribution_chart(m, keys, labels, probs, sentiments, axis_title, height=36
         customdata=[sentiments[i] for i in order],
         hovertemplate="%{y} · %{customdata}<br>%{x:.1%}<extra></extra>"))
     _layout(fig, m, height, bargap=.32)
+    fig.update_layout(font=dict(size=font_size))
     fig.update_xaxes(title=dict(text=axis_title, standoff=8), tickformat=".0%", gridcolor=THEME[m]["grid"],
-                     zeroline=False, range=[0, max(probs) * 1.25], automargin=True)
+                     zeroline=False, range=[0, max(probs) * 1.3], automargin=True, nticks=5)
     fig.update_yaxes(showgrid=False, automargin=True, ticksuffix="  ")
     return fig
 
@@ -482,16 +561,26 @@ def hue_wheel(m, hist, labels, height=300):
     return fig
 
 
-def compare_chart(m, keys, labels, series, height=420):
-    """series: [(name, probs)] -> grouped bars per emotion, one shade per image."""
-    shades = [1.0, .72, .5, .34]
+SERIES = {"light": ["#8C5A3C", "#36477A", "#556338", "#B4583A"], "dark": ["#E0A86E", "#8E9FDB", "#9DB06C", "#F49A74"]}
+
+
+def compare_chart(m, keys, labels, series, axis_title="", height=None):
+    """series: [(name, probs)] -> horizontal grouped bars: one row per emotion (the label on the axis), one colour per
+    image (named in the legend), every bar with its value."""
     fig = go.Figure()
+    order = list(range(len(keys)))[::-1]  # first emotion on top
     for j, (name, p) in enumerate(series):
-        fig.add_trace(go.Bar(x=labels, y=p, name=name, marker=dict(color=[PALETTE[m][k] for k in keys],
-                                                                   opacity=shades[j], line=dict(width=0)),
-                             text=[str(j + 1)] * len(keys), textposition="outside",
-                             hovertemplate=f"{name}<br>%{{x}}: %{{y:.1%}}<extra></extra>"))
-    _layout(fig, m, height, barmode="group", bargap=.25)
-    fig.update_yaxes(tickformat=".0%", gridcolor=THEME[m]["grid"], zeroline=False, automargin=True)
-    fig.update_xaxes(showgrid=False, automargin=True)
+        fig.add_trace(go.Bar(y=[labels[i] for i in order], x=[p[i] for i in order], name=name, orientation="h",
+                             marker=dict(color=SERIES[m][j % 4], line=dict(width=0)),
+                             text=[f"{p[i] * 100:.0f}%" for i in order], textposition="outside", cliponaxis=False,
+                             hovertemplate=f"{name}<br>%{{y}}: %{{x:.1%}}<extra></extra>"))
+    height = height or 120 + 26 * len(keys) * max(len(series), 1)
+    _layout(fig, m, height, barmode="group", bargap=.22, bargroupgap=.06)
+    fig.update_traces(textfont=dict(size=13))
+    fig.update_layout(showlegend=True, legend=dict(orientation="h", yanchor="bottom", y=1.01, x=0, traceorder="normal",
+                                                   font=dict(size=14)), margin=dict(l=10, r=30, t=60, b=10))
+    top = max(float(max(p)) for _, p in series)
+    fig.update_xaxes(title=dict(text=axis_title, standoff=8), tickformat=".0%", gridcolor=THEME[m]["grid"],
+                     zeroline=False, range=[0, top * 1.22], automargin=True)
+    fig.update_yaxes(showgrid=False, automargin=True, ticksuffix="  ")
     return fig

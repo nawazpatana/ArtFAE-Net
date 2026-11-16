@@ -89,15 +89,18 @@ def test_upload_runs_live_inference(live_app, lang, fmt):
     at = live_app
     at.radio(key="lang").set_value(lang).run()
     up = at.file_uploader(key="upload")
+    assert len(at.get("file_uploader")) == 1 and up.label == i18n.t(lang, "upload_change")  # one control, at the top
     if fmt == "HEIC":
         assert ".heic" in up.allowed_type and ".heif" in up.allowed_type
-    assert i18n.t(lang, "upload_privacy") in [c.value for c in at.caption]
+    from html import escape
+    notes = " ".join(m.value for m in at.markdown)  # beside the uploader, with the scope notice
+    assert escape(i18n.t(lang, "upload_privacy")) in notes and escape(i18n.t(lang, "scope_note", emotions="")[:20]) in notes
     for mode in core.MODES:
         at.sidebar.radio(key="model").set_value(mode).run()
         at.file_uploader(key="upload").set_value((f"photo.{fmt.lower()}", upload_bytes(fmt), FORMATS[fmt])).run()
         assert not at.exception and not at.error, (at.exception, [e.value for e in at.error])
         html = " ".join(m.value for m in at.markdown)
-        assert "af-card af-result" in html and i18n.t(lang, "sentiment_summary") in html
+        assert "af-card af-result" in html and i18n.t(lang, "total_predicted") in html
         caps = [c.value for c in at.caption]
         assert any(c.startswith(i18n.t(lang, "inference_time", seconds=0, device="CPU")[:6]) and "CPU" in c for c in caps)
         assert not any("Precomputed" in c or "預先計算" in c for c in caps)  # live, not the gallery file

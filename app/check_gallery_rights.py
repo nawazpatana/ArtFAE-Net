@@ -102,7 +102,7 @@ def main():
                     continue
                 name = Path(c.image_path).name
                 title = c.painting.split("_", 1)[-1].replace("-", " ").strip()
-                rep = {"file": name, "painting": title[:1].upper() + title[1:],
+                rep = {"file": name, "artwork_id": c.artwork_id, "painting": title[:1].upper() + title[1:],
                        "artist": name.split("_")[0].replace("-", " ").title(), "style": c.art_style.replace("_", " "),
                        "val_row": int(idx), "annotator_top": e["annotator_top"],
                        "annotators": {k: float(c[f"p_{k}"]) for k in EMOTIONS}}

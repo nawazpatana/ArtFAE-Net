@@ -174,8 +174,8 @@ def test_app_ui(lang, mode):
     model_name = i18n.t(lang, f"model_{mode}")
     assert any(c.value == i18n.t(lang, "model_used", name=model_name) for c in at.caption)
     assert any(c.value == i18n.t(lang, f"model_{mode}_help") for c in at.sidebar.caption)
-    assert "af-card af-result" in html and any(f'af-top">{n}<' in html for n in names.values())
-    assert i18n.t(lang, "sentiment_summary") in html
+    assert "af-card af-result" in html and any(f'af-top">{n}<' in html for n in names.values())  # ex_10: not dispersed
+    assert i18n.t(lang, "total_predicted") in html and i18n.t(lang, "top_emotion") in html
     if mode == "r3":
         assert i18n.t(lang, "also_feel") in html and i18n.t(lang, "also_feel_r3") in html
     else:

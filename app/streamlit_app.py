@@ -12,6 +12,7 @@ are decoded in memory (core.load_upload); they are never written to disk, and fi
 """
 import hashlib
 import io
+import json
 import logging
 import sys
 from pathlib import Path
@@ -233,17 +234,35 @@ def scroll_to_results():
 
 
 ERRORS = {"image": "error_image", "too_large": "error_too_large", "model": "error_model"}
+KEY_ATTRS = ["luminance", "saturation", "warm", "cool"]  # shown first in Visual Attributes; the rest in an expander
 
 
-def dropzone(hero: bool):
-    if GALLERY:  # no uploads online: point to the gallery instead
-        with st.container(key="gallery_mode_note"):
-            st.info(tr("gallery_mode_note"))
-        return
-    with st.container(key="dropzone_hero" if hero else "dropzone_compact"):
-        st.file_uploader(tr("upload"), type=UPLOAD_TYPES, help=tr("upload_help", formats=FORMATS), key="upload",
-                         on_change=on_upload, label_visibility="collapsed")
-        st.caption(tr("upload_privacy"))
+def join_list(items):
+    return ("、" if L == "zh" else ", ").join(items)
+
+
+def scope_html():
+    return (f'<div class="af-note">{ui.esc(tr("scope_note", emotions=join_list([emo(e) for e in EMOS])))}'
+            f'<div class="af-muted" style="margin-top:.45rem">{ui.esc(tr("upload_privacy"))}</div></div>')
+
+
+def upload_bar():
+    """Top of the Analyse page: the one upload control ("Upload or change artwork") with the scope notice beside it.
+    Gallery mode has no uploads: its note and the scope notice instead."""
+    with st.container(key="upload_bar"):
+        if GALLERY:
+            with st.container(key="gallery_mode_note"):
+                st.info(tr("gallery_mode_note"))
+            st.markdown(scope_html().replace(f'<div class="af-muted" style="margin-top:.45rem">'
+                                             f'{ui.esc(tr("upload_privacy"))}</div>', ""), unsafe_allow_html=True)
+            return
+        c1, c2 = st.columns([3, 2], gap="large")
+        with c1:
+            with st.container(key="dropzone_top"):
+                st.file_uploader(tr("upload_change"), type=UPLOAD_TYPES, help=tr("upload_help", formats=FORMATS),
+                                 key="upload", on_change=on_upload)
+        with c2:
+            st.markdown(scope_html(), unsafe_allow_html=True)
 
 
 def gallery():
@@ -259,21 +278,21 @@ def gallery():
             ex = EXAMPLES[i]
             artist, title, year = parts(ex)
             cap = ui.caption_text(artist, title, year)
+            top = ex["annotator_top"]
             with st.container(key=f"card_{i}"):
-                st.markdown(ui.gallery_card(thumb_uri(ex["path"]), cap, artist, title, year,
-                                            ui.PALETTE[M][ex["annotator_top"]],
-                                            tr("card_viewers", emotion=emo(ex["annotator_top"])),
+                st.markdown(ui.gallery_card(thumb_uri(ex["path"]), cap, artist, title, year, ui.PALETTE[M][top],
+                                            tr("card_viewers", emotion=emo(top), pct=f'{ex["annotators"][top] * 100:.0f}%'),
                                             tr("card_selected") if i == current else None), unsafe_allow_html=True)
                 st.button(tr("card_label", caption=cap), key=f"ex_{i}", on_click=pick_example, args=(i,),
                           width="stretch")  # stretched over the whole card (ui.css)
 
 
 def page_analyse():
+    upload_bar()
     src = ss.source
     if src is not None and src[0] == "upload" and ss.get("upload") is None:
         src = ss.source = None
-    if src is None:  # empty state: the frame, then the collection
-        dropzone(hero=True)
+    if src is None:  # empty state: the collection under the upload bar
         gallery()
         return
     example = None
@@ -285,19 +304,64 @@ def page_analyse():
     status, img, r = analyse_checked(data, example["file"] if example else "upload")
     if status != "ok":  # see ERRORS; the details are in the log
         st.error(tr(ERRORS[status]))
-        dropzone(hero=True)
         gallery()
         return
     results(data, img, r, example)
-    section(tr("analyse_another"))
-    dropzone(hero=False)
     gallery()
+
+
+def card_html(r, compact=False):
+    """The result card: the highest predicted proportion, or the dispersed message when the top two are within
+    core.DISPERSED_MAX_GAP; then the top emotion's category and the summed proportions per sentiment."""
+    probs, top = r["probs"], r["top"]
+    (a, pa), (b, pb) = core.top_two(probs)
+    dispersed = None
+    if core.is_dispersed(probs):
+        dispersed = (tr("dispersed_msg", a=emo(a), b=emo(b)), [(a, emo(a), pa), (b, emo(b), pb)], tr("dispersed_note"))
+    sent = inf.sentiment_totals(probs)
+    return ui.result_card(M, eyebrow=tr("dispersed_eyebrow" if dispersed else "top_emotion"), top_key=top,
+                          top_label=emo(top), top_prob=float(probs.max()),
+                          category_text=tr("top_category", cat=i18n.sentiment(L, inf.SENTIMENT[top])),
+                          totals_label=tr("total_predicted"),
+                          totals=[(k, i18n.sentiment(L, k), sent[k]) for k in ("positive", "negative", "other")],
+                          dispersed=dispersed, compact=compact, colon=tr("colon"))
+
+
+def settings_html(r):
+    prior = tr("on") if r["prior_correction"] else tr("off")
+    text = tr("settings_line", model=tr("model_" + r["mode"]), prior=prior, version=core.APP_VERSION)
+    return f'<div class="af-settings">{ui.esc(text)}</div>'
+
+
+def download_record(r, data, example, key):
+    """'Download result (JSON)': the image's SHA-256 (uploads) or the artwork ID (gallery examples), never the image."""
+    rec = core.result_record(r, app_mode=APP_MODE, artwork_id=example["artwork_id"] if example else None,
+                             image_sha256=None if example else hashlib.sha256(data).hexdigest())
+    ident = example["artwork_id"].split("/")[-1] if example else rec["input"]["sha256"][:12]
+    st.download_button(tr("download_json"), data=json.dumps(rec, indent=1, ensure_ascii=False),
+                       file_name=f"artfae_{r['mode']}_{ident}.json", mime="application/json", help=tr("download_help"),
+                       key=f"dl_{key}", on_click="ignore", icon=":material/download:")
+
+
+def people_card(probs, labels):
+    counts = ui.people_counts(probs)
+    order = sorted([i for i in range(len(EMOS)) if counts[i]], key=lambda i: (-counts[i], -probs[i]))
+    legend = [(EMOS[i], (f"<b>{counts[i]}</b>&nbsp;{ui.esc(labels[i])} · {probs[i] * 100:.1f}%" if L == "en" else
+                         f"{ui.esc(labels[i])}&nbsp;<b>{counts[i]}</b>&nbsp;人・{probs[i] * 100:.1f}%")) for i in order]
+    zero = ui.zero_people(probs)
+    zero_html = ""
+    if zero:
+        items = " · ".join(f'<span><span class="af-dot" style="--c:{ui.PALETTE[M][EMOS[i]]};display:inline-block" '
+                           f'aria-hidden="true"></span> {ui.esc(labels[i])} {probs[i] * 100:.1f}%</span>' for i in zero)
+        zero_html = f'<div class="af-zero">{ui.esc(tr("zero_people", items="")).rstrip()} {items}</div>'
+    return ui.card(ui.people_block(M, EMOS, labels, counts, legend) + zero_html
+                   + f'<div class="af-muted" style="margin-top:.7rem">{ui.esc(tr("ten_people_note"))}</div>',
+                   tr("ten_people"))
 
 
 def results(data, img, r, example):
     key = hashlib.sha1(data).hexdigest()[:10]
     probs, top = r["probs"], r["top"]
-    sent = inf.sentiment_totals(probs)
     labels = [emo(e) for e in EMOS]
     sentiments = [i18n.sentiment(L, inf.SENTIMENT[e]) for e in EMOS]
     with st.container(key="results"):
@@ -310,30 +374,25 @@ def results(data, img, r, example):
                                                   example["style"]), unsafe_allow_html=True)
                 else:
                     st.markdown(ui.framed_artwork(artwork_uri(data), tr("alt_upload")), unsafe_allow_html=True)
-        with right:
-            st.markdown(ui.result_card(M, top, emo(top), float(probs.max()), inf.SENTIMENT[top],
-                                       i18n.sentiment(L, inf.SENTIMENT[top]), tr("top_emotion"), tr("probability"),
-                                       tr("sentiment")), unsafe_allow_html=True)
-            counts = ui.people_counts(probs)
-            order = sorted([i for i in range(len(EMOS)) if counts[i]], key=lambda i: -counts[i])
-            legend = [(EMOS[i], f"<b>{counts[i]}</b>&nbsp;{ui.esc(labels[i])}" if L == "en" else
-                       f"{ui.esc(labels[i])}&nbsp;<b>{counts[i]}</b>&nbsp;人") for i in order]
-            st.markdown(ui.card(ui.people_block(M, EMOS, labels, counts, legend)
-                                + f'<div class="af-muted" style="margin-top:.7rem">{ui.esc(tr("ten_people_note"))}</div>',
-                                tr("ten_people")), unsafe_allow_html=True)
-            items = [(k, i18n.sentiment(L, k), sent[k]) for k in ("positive", "negative", "other")]
-            st.markdown(ui.card(ui.stat_tiles(M, items), tr("sentiment_summary")), unsafe_allow_html=True)
-            if r["presence"] is not None:  # R3 only; R1 has no presence head
-                also = sorted([(e, emo(e), float(p)) for e, p in zip(EMOS, r["presence"]) if p > .5 and e != top],
-                              key=lambda x: -x[2])
-                inner = ui.chips(M, also) if also else f'<span class="af-muted">{ui.esc(tr("also_feel_none"))}</span>'
-                st.markdown(ui.card(inner + f'<div class="af-muted" style="margin-top:.6rem">{ui.esc(tr("also_feel_help"))}</div>'
-                                    f'<div class="af-muted" style="margin-top:.3rem">{ui.esc(tr("also_feel_r3"))}</div>',
-                                    tr("also_feel")), unsafe_allow_html=True)
+        with right:  # the card and the full distribution, next to the artwork and above everything else
+            st.markdown(card_html(r), unsafe_allow_html=True)
+            st.markdown(settings_html(r), unsafe_allow_html=True)
             st.markdown(f'<div class="af-section" style="margin-top:.4rem">{ui.esc(tr("distribution"))}</div>',
                         unsafe_allow_html=True)
             st.plotly_chart(ui.distribution_chart(M, EMOS, labels, probs, sentiments, tr("prob_axis"), height=340),
                             theme=None, config={"displayModeBar": False}, key=f"dist_{key}")
+            download_record(r, data, example, key)
+        c1, c2 = st.columns(2, gap="large")
+        with c1:
+            st.markdown(people_card(probs, labels), unsafe_allow_html=True)
+        with c2:
+            if r["presence"] is not None:  # R3 only; R1 has no presence head
+                also = sorted([(e, emo(e), float(p)) for e, p in zip(EMOS, r["presence"]) if p > .5 and e != top],
+                              key=lambda x: -x[2])
+                inner = ui.chips(M, also) if also else f'<span class="af-muted">{ui.esc(tr("also_feel_none"))}</span>'
+                st.markdown(ui.card(f'<div class="af-muted" style="margin-bottom:.6rem">{ui.esc(tr("also_feel_r3"))}</div>'
+                                    + inner + f'<div class="af-muted" style="margin-top:.6rem">{ui.esc(tr("also_feel_help"))}</div>',
+                                    tr("also_feel")), unsafe_allow_html=True)
             if example:  # validation artworks carry the real annotator votes
                 ann = np.array([example["annotators"][e] for e in EMOS])
                 st.markdown(f'<div class="af-section">{ui.esc(tr("vs_title"))}</div>', unsafe_allow_html=True)
@@ -345,20 +404,44 @@ def results(data, img, r, example):
     scroll_to_results()
 
 
+def attention_view(img, r, emotion, alpha, original=False):
+    if original:
+        return inf.center_square(img).convert("RGB").resize((640, 640), Image.Resampling.LANCZOS)
+    return inf.attention_overlay(img, r["maps"][EMOS.index(emotion)], alpha)
+
+
+def attn_label(text, emotion=None):
+    dot = (f'<span class="af-dot" style="--c:{ui.PALETTE[M][emotion]}" aria-hidden="true"></span>' if emotion else "")
+    return f'<div class="af-attn-label">{dot}{ui.esc(text)}</div>'
+
+
 def details_tabs(img, r, key):
     top = r["top"]
     t_att, t_aes, t_det = st.tabs([tr("tab_attention"), tr("tab_aesthetics"), tr("tab_details")])
     with t_att:
-        a, b = st.columns([7, 4], gap="large")
-        with b:
+        a, b = st.columns([7, 5], gap="large")
+        with b:  # the caveat first, beside the heatmap
+            st.markdown(f'<div class="af-note" style="--af-accent:#B4583A"><b>{ui.esc(tr("attention_caption"))}</b>'
+                        f'{ui.esc(tr("attention_note"))}</div>', unsafe_allow_html=True)
             sel = st.selectbox(tr("attention_emotion"), EMOS, index=EMOS.index(top), format_func=emo,
                                key=f"att_e_{key}")
-            alpha = st.slider(tr("attention_opacity"), 0.0, 1.0, 0.55, 0.05, key="att_alpha")
+            original = st.toggle(tr("attention_original"), key="att_original")
+            alpha = st.slider(tr("attention_opacity"), 0.0, 1.0, 0.55, 0.05, key="att_alpha", disabled=original)
             st.caption(tr("attention_crop"))
         with a:
-            st.image(inf.attention_overlay(img, r["maps"][EMOS.index(sel)], alpha), width="stretch",
-                     alt=tr("alt_attention", emotion=emo(sel)))
+            st.markdown(attn_label(tr("attention_original_label")) if original else
+                        attn_label(tr("attention_map_label", emotion=emo(sel)), sel), unsafe_allow_html=True)
+            st.image(attention_view(img, r, sel, alpha, original), width="stretch",
+                     alt=tr("attention_original_label") if original else tr("alt_attention", emotion=emo(sel)))
             st.caption(tr("attention_caption"))
+        section(tr("attention_compare_h"))
+        second = core.top_two(r["probs"])[1][0]
+        p1, p2 = st.columns(2, gap="large")
+        for col, k, label, default in ((p1, "a", "attention_compare_a", top), (p2, "b", "attention_compare_b", second)):
+            with col:
+                e = st.selectbox(tr(label), EMOS, index=EMOS.index(default), format_func=emo, key=f"att_cmp_{k}_{key}")
+                st.markdown(attn_label(tr("attention_map_label", emotion=emo(e)), e), unsafe_allow_html=True)
+                st.image(attention_view(img, r, e, alpha), width="stretch", alt=tr("alt_attention", emotion=emo(e)))
     with t_aes:
         aesthetics(r["attrs"], r["description"])
     with t_det:
@@ -375,45 +458,54 @@ def aesthetics(attrs, description):
     names = list(inf.NAMES)
     pct = inf.percentiles(attrs, PCT)
     val = dict(zip(names, attrs)); pc = dict(zip(names, pct))
-    st.caption(tr("aesthetics_intro", n=PCT["n_train"]))
-    rows = lambda keys: ui.attr_rows([(i18n.attribute(L, k), fmt_value(k, val[k]), pct_label(pc[k]), pc[k]) for k in keys])  # noqa: E731
-    c1, c2, c3 = st.columns(3, gap="medium")
-    with c1:
-        st.markdown(ui.card(rows(GROUPS["group_luminance"]), tr("group_luminance")), unsafe_allow_html=True)
-        st.markdown(ui.card(rows(GROUPS["group_contrast"]), tr("group_contrast")), unsafe_allow_html=True)
-    with c2:
-        st.markdown(ui.card(rows(GROUPS["group_colour"]), tr("group_colour")), unsafe_allow_html=True)
-    with c3:
-        e = GROUPS["group_edges"]
-        st.markdown(ui.card(ui.quadrants(M, [val[k] for k in e[1:]]) + rows(e), tr("group_edges")),
+    n = PCT["n_train"]
+    st.caption(tr("aesthetics_intro", n=n))
+    key_rows = [(i18n.attribute(L, k), fmt_value(k, val[k]), tr(f"pct_{k}", p=int(round(pc[k])), n=n), pc[k])
+                for k in KEY_ATTRS]
+    st.markdown(ui.card(ui.key_attr_rows(key_rows), tr("attrs_key_h")), unsafe_allow_html=True)
+    rows = lambda keys: ui.attr_rows([(i18n.attribute(L, k), fmt_value(k, val[k]),  # noqa: E731
+                                       pct_label(int(round(pc[k]))), pc[k]) for k in keys])
+    with st.expander(tr("attrs_more")):
+        c1, c2, c3 = st.columns(3, gap="medium")
+        with c1:
+            st.markdown(ui.card(rows(GROUPS["group_luminance"]), tr("group_luminance")), unsafe_allow_html=True)
+            st.markdown(ui.card(rows(GROUPS["group_contrast"]), tr("group_contrast")), unsafe_allow_html=True)
+        with c2:
+            st.markdown(ui.card(rows(GROUPS["group_colour"]), tr("group_colour")), unsafe_allow_html=True)
+        with c3:
+            e = GROUPS["group_edges"]
+            st.markdown(ui.card(ui.quadrants(M, [val[k] for k in e[1:]]) + rows(e), tr("group_edges")),
+                        unsafe_allow_html=True)
+        hb = [f"hue_bin_{i}" for i in range(8)]
+        h1, h2 = st.columns([5, 7], gap="medium")
+        with h1:
+            st.markdown(f'<div class="af-section">{ui.esc(tr("group_hue"))}</div>', unsafe_allow_html=True)
+            st.caption(tr("hue_help"))
+            st.plotly_chart(ui.hue_wheel(M, [float(val[k]) for k in hb], [i18n.attribute(L, k) for k in hb]),
+                            theme=None, config={"displayModeBar": False}, key="hue")
+        with h2:
+            st.markdown(ui.card(rows(hb)), unsafe_allow_html=True)
+        st.markdown(ui.card(f'<div class="af-desc">{ui.esc(i18n.description(L, description))}</div>', tr("description")),
                     unsafe_allow_html=True)
-    hb = [f"hue_bin_{i}" for i in range(8)]
-    h1, h2 = st.columns([5, 7], gap="medium")
-    with h1:
-        st.markdown(f'<div class="af-section">{ui.esc(tr("group_hue"))}</div>', unsafe_allow_html=True)
-        st.caption(tr("hue_help"))
-        st.plotly_chart(ui.hue_wheel(M, [float(val[k]) for k in hb], [i18n.attribute(L, k) for k in hb]),
-                        theme=None, config={"displayModeBar": False}, key="hue")
-    with h2:
-        st.markdown(ui.card(rows(hb)), unsafe_allow_html=True)
-    st.markdown(ui.card(f'<div class="af-desc">{ui.esc(i18n.description(L, description))}</div>', tr("description")),
-                unsafe_allow_html=True)
 
 
-# ---------------------------------------------------------------- compare (restyled in stage 2)
+# ---------------------------------------------------------------- compare
 def page_compare():
     section(tr("compare_title"), tr("compare_intro"))
     if GALLERY:  # examples only
         st.info(tr("gallery_mode_note"))
         ups = []
     else:
-        ups = st.file_uploader(tr("compare_upload"), type=UPLOAD_TYPES, accept_multiple_files=True,
-                               help=tr("upload_help", formats=FORMATS), key="cmp_upload")
-        st.caption(tr("upload_privacy"))
+        c1, c2 = st.columns([3, 2], gap="large")
+        with c1:
+            ups = st.file_uploader(tr("compare_upload"), type=UPLOAD_TYPES, accept_multiple_files=True,
+                                   help=tr("upload_help", formats=FORMATS), key="cmp_upload")
+        with c2:
+            st.markdown(scope_html(), unsafe_allow_html=True)
     picks = st.multiselect(tr("compare_examples"), list(range(len(EXAMPLES))), max_selections=4,
                            format_func=lambda i: caption(EXAMPLES[i]), key="cmp_examples")
-    items = [(u.name, u.getvalue(), "upload") for u in ups or []] + \
-        [(caption(EXAMPLES[i]), file_bytes(EXAMPLES[i]["path"]), EXAMPLES[i]["file"]) for i in picks]
+    items = [(u.name, u.getvalue(), "upload", None) for u in ups or []] + \
+        [(caption(EXAMPLES[i]), file_bytes(EXAMPLES[i]["path"]), EXAMPLES[i]["file"], EXAMPLES[i]) for i in picks]
     if len(items) > 4:
         st.caption(tr("compare_max"))
         items = items[:4]
@@ -421,7 +513,7 @@ def page_compare():
         st.info(tr("compare_need"))
         return
     results_ = []
-    for name, data, what in items:
+    for name, data, what, example in items:
         status, _, r = analyse_checked(data, f"compare {what}")
         if status == "model":  # the same for every item: say it once and stop
             st.error(tr("error_model"))
@@ -429,23 +521,23 @@ def page_compare():
         if status != "ok":
             st.error(f'{tr(ERRORS[status])} ({name})')
             continue
-        results_.append((name, data, r))
-    cols = st.columns(len(results_), gap="medium")
-    for j, (c, (name, data, r)) in enumerate(zip(cols, results_)):
-        with c:
-            st.image(thumbnail_bytes(data), width="stretch", alt=name)
-            st.markdown(f'<div class="af-meta">{j + 1}. {ui.esc(name)}</div>', unsafe_allow_html=True)
-            top = r["top"]
-            st.markdown(ui.result_card(M, top, emo(top), float(r["probs"].max()), inf.SENTIMENT[top],
-                                       i18n.sentiment(L, inf.SENTIMENT[top]), tr("top_emotion"), tr("probability"),
-                                       tr("sentiment"), compact=True), unsafe_allow_html=True)
-            st.plotly_chart(ui.distribution_chart(M, EMOS, [emo(e) for e in EMOS], r["probs"],
-                                                  [i18n.sentiment(L, inf.SENTIMENT[e]) for e in EMOS], tr("prob_axis"),
-                                                  height=320), theme=None, config={"displayModeBar": False},
-                            key=f"cmp_{j}")
+        results_.append((name, data, r, example))
+    labels = [emo(e) for e in EMOS]
+    sentiments = [i18n.sentiment(L, inf.SENTIMENT[e]) for e in EMOS]
+    with st.container(key=f"cmp_grid_{len(results_)}"):  # 2-4 columns; 2 x 2 on narrow screens, 1 on phones (ui.css)
+        for j, (name, data, r, example) in enumerate(results_):
+            with st.container(key=f"cmp_item_{j}"):
+                st.image(thumbnail_bytes(data), width="stretch", alt=name)
+                st.markdown(f'<div class="af-meta">{j + 1}. {ui.esc(name)}</div>', unsafe_allow_html=True)
+                st.markdown(card_html(r, compact=True), unsafe_allow_html=True)
+                st.markdown(settings_html(r), unsafe_allow_html=True)
+                st.plotly_chart(ui.distribution_chart(M, EMOS, labels, r["probs"], sentiments, tr("prob_axis"),
+                                                      height=320, font_size=13),
+                                theme=None, config={"displayModeBar": False}, key=f"cmp_{j}")
+                download_record(r, data, example, f"cmp{j}_{hashlib.sha1(data).hexdigest()[:8]}")
     st.markdown(f'<div class="af-section">{ui.esc(tr("compare_chart"))}</div>', unsafe_allow_html=True)
-    st.plotly_chart(ui.compare_chart(M, EMOS, [emo(e) for e in EMOS],
-                                     [(f"{j + 1}. {n}", r["probs"]) for j, (n, _, r) in enumerate(results_)]),
+    st.plotly_chart(ui.compare_chart(M, EMOS, labels, [(f"{j + 1}. {n}", r["probs"]) for j, (n, _, r, _) in
+                                                       enumerate(results_)], tr("prob_axis")),
                     theme=None, config={"displayModeBar": False}, key="cmp_all")
 
 

@@ -66,7 +66,7 @@ python -m unittest discover -s tests  # synthetic CPU tests, no data needed
 
 ## Demo app
 
-`app/` is a bilingual (English / 繁體中文) Streamlit app. It shows the predicted emotion distribution, the measured attributes and ECSA attention maps for an uploaded image. The default model is R1, and R3 is available as a minority-sensitive option. Each model runs as a five-seed ensemble. Everything runs locally and uploaded images are not stored. The demo's ten heads (`app/assets/models/*/s*/best.pt`, 30.6 MB) are included; CLIP ViT-L/14@336 is downloaded on first use. Setup: `app/README.md`.
+`app/` is a bilingual (English / 繁體中文) Streamlit app. It shows the predicted emotion distribution, the measured attributes and ECSA attention maps for an uploaded image. The default model is “Emotion distribution” (R1), and “Rare-emotion sensitivity” (R3) is the alternative. Each model runs as a five-seed ensemble. Everything runs locally and uploaded images are not stored. The demo's ten heads (`app/assets/models/*/s*/best.pt`, 30.6 MB) are included; CLIP ViT-L/14@336 is downloaded on first use. Setup: `app/README.md`.
 
 The online version on Streamlit Community Cloud (`streamlit_cloud/streamlit_app.py`, `APP_MODE=cloud_live`) shows the 12 examples with precomputed results and analyses uploads live on the CPU with CLIP's vision tower only (about 1.7 GB of memory). A torch-free **gallery mode** (`APP_MODE=gallery`) shows the examples only. See `app/README.md`.
 

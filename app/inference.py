@@ -1,8 +1,8 @@
 """ArtFAE-Net inference for the demo: two L/14 seed ensembles, both selected by min val soft CE.
 
-  mode "r1"  Human-vote distribution (default): L/14 R1, runs/revision_B/step1/R1_s42-46 (paper's recommended
+  mode "r1"  Emotion distribution (default): L/14 R1, runs/revision_B/step1/R1_s42-46 (paper's recommended
              model). Optional prior correction logits + log(val_prior) - log(train_prior), off by default.
-  mode "r3"  Minority-sensitive: L/14 R3 (balanced sampler + presence head, lambda 0.3),
+  mode "r3"  Rare-emotion sensitivity: L/14 R3 (balanced sampler + presence head, lambda 0.3),
              runs/revision_B/step1/R3_s42-46. Raw logits only; the prior correction is not available here.
 
 Pure functions, no Streamlit. Per image, exactly as features_l14:
