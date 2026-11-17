@@ -104,7 +104,7 @@ def main():
                 title = c.painting.split("_", 1)[-1].replace("-", " ").strip()
                 rep = {"file": name, "artwork_id": c.artwork_id, "painting": title[:1].upper() + title[1:],
                        "artist": name.split("_")[0].replace("-", " ").title(), "style": c.art_style.replace("_", " "),
-                       "val_row": int(idx), "annotator_top": e["annotator_top"],
+                       "val_row": int(idx), "annotator_top": e["annotator_top"], "n_votes": int(sum(c[f"n_{k}"] for k in EMOTIONS)),
                        "annotators": {k: float(c[f"p_{k}"]) for k in EMOTIONS}}
                 item["replacement"] = {"file": name, "artwork_id": c.artwork_id, "val_row": int(idx),
                                        "agreement": float(c[f"p_{e['annotator_top']}"]), **cev}

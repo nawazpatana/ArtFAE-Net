@@ -130,3 +130,33 @@ def test_hover_lifts_card_and_log_is_clean(server, browser):
     page.context.close()
     text = Path(log).read_text().lower()
     assert "deprecat" not in text and "will be removed" not in text and "traceback" not in text, text[-2000:]
+
+
+BROWSE_JS = """(browse) => {
+  const bs = [...document.querySelectorAll('[data-testid="stFileUploader"] button')].filter(b => {
+    const r = b.getBoundingClientRect(), s = getComputedStyle(b);
+    return r.width > 0 && r.height > 0 && s.visibility !== 'hidden' && s.display !== 'none';
+  });
+  const isBrowse = b => getComputedStyle(b, '::after').content.includes(browse) || /browse|選擇檔案/i.test(b.innerText);
+  return {browse: bs.filter(isBrowse).length, uploaders: document.querySelectorAll('[data-testid="stFileUploader"]').length,
+          remove: bs.filter(b => (b.getAttribute('aria-label') || '').startsWith('Remove')).map(b => getComputedStyle(b, '::after').content)};
+}"""
+
+
+@pytest.mark.parametrize("lang", ["en", "zh"])
+def test_exactly_one_browse_button_with_and_without_a_file(server, browser, lang):
+    url, _, mode = server
+    if mode == "gallery":
+        pytest.skip("gallery mode has no upload control")
+    page = open_page(browser, url, lang)
+    browse = i18n.t(lang, "browse")
+    before = page.evaluate(BROWSE_JS, browse)
+    assert before["uploaders"] == 1 and before["browse"] == 1, before
+    data = (ROOT / "app/assets/examples" / sorted(p.name for p in (ROOT / "app/assets/examples").glob("*.jpg"))[0]).read_bytes()
+    page.locator('[data-testid="stFileUploaderDropzoneInput"]').first.set_input_files(
+        files=[{"name": "my_photo.jpg", "mimeType": "image/jpeg", "buffer": data}])
+    page.wait_for_selector(".af-result", timeout=600_000); settle(page)
+    after = page.evaluate(BROWSE_JS, browse)
+    assert after["uploaders"] == 1 and after["browse"] == 1, after  # the file chip's Remove button is not a Browse
+    assert len(after["remove"]) == 1 and browse not in after["remove"][0], after
+    page.context.close()

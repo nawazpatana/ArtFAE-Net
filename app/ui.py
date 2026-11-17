@@ -138,13 +138,16 @@ p, li, .stMarkdown p {{ font-size: 1rem; line-height: 1.6; }}
 .st-key-dropzone_compact [data-testid="stFileUploaderDropzoneInstructions"]::before {{ font-size: 1.35rem; }}
 [class*="st-key-dropzone"] [data-testid="stFileUploaderDropzoneInstructions"]::after {{ content: {css_str(drop_sub)};
     margin-top: .45rem; font-size: 1rem; color: var(--af-muted); }}
-[class*="st-key-dropzone"] [data-testid="stFileUploaderDropzone"] button {{ font-size: 0 !important; border-radius: 999px;
+[class*="st-key-dropzone"] [data-testid="stFileUploaderDropzone"] button:is([data-testid="stBaseButton-secondary"], [data-testid="stBaseButton-borderlessIcon"]) {{ font-size: 0 !important; border-radius: 999px;
     padding: .55rem 1.3rem; background: var(--af-accent); border: none; color: transparent; }}
-[class*="st-key-dropzone"] [data-testid="stFileUploaderDropzone"] button::after {{ content: {css_str(browse)};
+[class*="st-key-dropzone"] [data-testid="stFileUploaderDropzone"] button:is([data-testid="stBaseButton-secondary"], [data-testid="stBaseButton-borderlessIcon"])::after {{ content: {css_str(browse)};
     font-size: 1rem; font-weight: 600; color: var(--af-bg); }}
-[class*="st-key-dropzone"] [data-testid="stFileUploaderDropzone"] button:hover {{ filter: brightness(1.08); }}
-[class*="st-key-dropzone"] [data-testid="stFileUploaderDropzone"] button > * {{ display: none; }}
+[class*="st-key-dropzone"] [data-testid="stFileUploaderDropzone"] button:is([data-testid="stBaseButton-secondary"], [data-testid="stBaseButton-borderlessIcon"]):hover {{ filter: brightness(1.08); }}
+[class*="st-key-dropzone"] [data-testid="stFileUploaderDropzone"] button:is([data-testid="stBaseButton-secondary"], [data-testid="stBaseButton-borderlessIcon"]) > * {{ display: none; }}
 [class*="st-key-dropzone"] [data-testid="stFileUploaderFile"] {{ font-size: 1rem; }}
+/* only the browse button above is the "Browse files" pill; the file chip's Remove button keeps its own icon */
+.af-showing {{ font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem 0; padding: .55rem .9rem; border-radius: 10px;
+    background: var(--af-track); border-left: 5px solid var(--af-accent); overflow-wrap: anywhere; }}
 
 /* ---------- gallery ---------- */
 .af-h2 {{ font-family: {SERIF}; font-size: clamp(1.4rem, 2.6vw, 1.8rem); font-weight: 600; margin: 2.2rem 0 .2rem 0; }}
@@ -506,25 +509,39 @@ def distribution_chart(m, keys, labels, probs, sentiments, axis_title, height=36
     return fig
 
 
+LEGEND_NEUTRAL = {"light": "#6B655D", "dark": "#B5ADA2"}
+
+
 def versus_chart(m, keys, labels, pred, actual, name_pred, name_actual, axis_title, height=420):
     """Predicted vs. real annotator vote shares: two bars per emotion (model solid, viewers hatched), sorted by the
-    viewers' share; a legend names both series, and every bar carries its value as text."""
+    viewers' share; every bar carries its value as text. The legend uses neutral legend-only entries (a solid and a
+    hatched swatch) so it matches the bars' fill, not one emotion's colour."""
     order = np.argsort(np.asarray(actual) + 1e-6 * np.asarray(pred))
     y = [labels[i] for i in order]
     cols = [PALETTE[m][keys[i]] for i in order]
+    hatch = dict(shape="/", fgcolor=THEME[m]["text"], fgopacity=.35, size=7)
     fig = go.Figure()
-    fig.add_trace(go.Bar(name=name_actual, y=y, x=[actual[i] for i in order], orientation="h",
-                         marker=dict(color=cols, opacity=.5, pattern=dict(shape="/", fgcolor=THEME[m]["text"],
-                                                                          fgopacity=.35, size=7)),
+    fig.add_trace(go.Bar(name=name_actual, y=y, x=[actual[i] for i in order], orientation="h", showlegend=False,
+                         offsetgroup="viewers",
+                         marker=dict(color=cols, opacity=.5, pattern=hatch),
                          text=[f"{actual[i] * 100:.0f}%" for i in order], textposition="outside", cliponaxis=False,
                          hovertemplate=f"{name_actual}<br>%{{y}}: %{{x:.0%}}<extra></extra>"))
-    fig.add_trace(go.Bar(name=name_pred, y=y, x=[pred[i] for i in order], orientation="h",
+    fig.add_trace(go.Bar(name=name_pred, y=y, x=[pred[i] for i in order], orientation="h", showlegend=False,
+                         offsetgroup="model",
                          marker=dict(color=cols, line=dict(width=0)),
                          text=[f"{pred[i] * 100:.0f}%" for i in order], textposition="outside", cliponaxis=False,
                          hovertemplate=f"{name_pred}<br>%{{y}}: %{{x:.1%}}<extra></extra>"))
+    grey = LEGEND_NEUTRAL[m]
+    # legend-only entries share their series' offsetgroup, so they take no extra slot in the grouped bars
+    fig.add_trace(go.Bar(name=name_pred, x=[None], y=[None], orientation="h", marker=dict(color=grey),
+                         showlegend=True, hoverinfo="skip", offsetgroup="model"))
+    fig.add_trace(go.Bar(name=name_actual, x=[None], y=[None], orientation="h", hoverinfo="skip", showlegend=True,
+                         offsetgroup="viewers",
+                         marker=dict(color=grey, opacity=.5, pattern=dict(shape="/", fgcolor=THEME[m]["text"],
+                                                                          fgopacity=.6, size=7))))
     _layout(fig, m, height, barmode="group", bargap=.28, bargroupgap=.08, uniformtext=dict(minsize=13, mode="show"))
     fig.update_traces(textfont=dict(size=14))
-    fig.update_layout(showlegend=True, legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0, traceorder="reversed",
+    fig.update_layout(showlegend=True, legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0, traceorder="normal",
                                                    font=dict(size=15)), margin=dict(l=10, r=24, t=40, b=10))
     top = max(max(pred), max(actual))
     fig.update_xaxes(title=dict(text=axis_title, standoff=8), tickformat=".0%", gridcolor=THEME[m]["grid"],

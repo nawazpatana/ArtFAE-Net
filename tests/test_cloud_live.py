@@ -217,3 +217,29 @@ def test_cloud_requirements():
 def test_no_deprecated_components_api():
     for f in APP.glob("*.py"):
         assert "components.v1" not in f.read_text(encoding="utf-8").replace("deprecated components.html", ""), f
+
+
+@pytest.mark.parametrize("lang", ["en", "zh"])
+def test_example_and_upload_replace_each_other(live_app, lang):
+    """Picking a gallery example clears the uploaded file; uploading replaces the example. A "Showing" line always
+    names the image the result belongs to."""
+    from html import escape
+    import ui
+    at = live_app
+    at.radio(key="lang").set_value(lang).run()
+    at.file_uploader[0].set_value(("my_photo.jpg", upload_bytes("JPEG", 2), "image/jpeg")).run()
+    html = " ".join(m.value for m in at.markdown)
+    assert f'af-showing">{escape(i18n.t(lang, "showing_upload", name="my_photo.jpg"))}<' in html
+    at.button(key="ex_5").click().run()
+    assert not at.exception and len(at.get("file_uploader")) == 1
+    assert at.file_uploader[0].value is None, "the uploaded file must be cleared when an example is picked"
+    ex = core.load_examples()[5]
+    cap = ui.caption_text(*ui.artwork_parts(ex["artist"], ex["painting"], i18n.t(lang, "untitled")))
+    html = " ".join(m.value for m in at.markdown)
+    assert f'af-showing">{escape(i18n.t(lang, "showing_example", caption=cap))}<' in html
+    assert "my_photo.jpg" not in html
+    at.file_uploader[0].set_value(("second.png", upload_bytes("PNG", 3), "image/png")).run()
+    html = " ".join(m.value for m in at.markdown)
+    assert f'af-showing">{escape(i18n.t(lang, "showing_upload", name="second.png"))}<' in html
+    assert 'class="af-selected"' not in html  # no gallery card carries the "Showing" badge any more
+

@@ -209,14 +209,27 @@ def pct_label(p):
 
 
 # ---------------------------------------------------------------- analyse
-def on_upload():
-    ss.source = ("upload", None) if ss.get("upload") is not None else None
+def upload_key() -> str:
+    """The uploader's widget key. Picking a gallery example while a file is uploaded moves to a new, empty uploader
+    (Streamlit drops the old widget and its file), so one image is selected at a time."""
+    gen = ss.get("upload_gen", 0)
+    return "upload" if gen == 0 else f"upload_{gen}"
+
+
+def uploaded():
+    return ss.get(upload_key())
+
+
+def on_upload():  # a new upload replaces the selected example
+    ss.source = ("upload", None) if uploaded() is not None else None
     ss.scroll_results = ss.source is not None
 
 
-def pick_example(i):
+def pick_example(i):  # a gallery example replaces the uploaded file
     ss.source = ("example", i)
     ss.scroll_results = True
+    if uploaded() is not None:
+        ss.upload_gen = ss.get("upload_gen", 0) + 1
 
 
 SCROLL_JS = """<script>setTimeout(() => {
@@ -260,7 +273,7 @@ def upload_bar():
         with c1:
             with st.container(key="dropzone_top"):
                 st.file_uploader(tr("upload_change"), type=UPLOAD_TYPES, help=tr("upload_help", formats=FORMATS),
-                                 key="upload", on_change=on_upload)
+                                 key=upload_key(), on_change=on_upload)
         with c2:
             st.markdown(scope_html(), unsafe_allow_html=True)
 
@@ -290,14 +303,14 @@ def gallery():
 def page_analyse():
     upload_bar()
     src = ss.source
-    if src is not None and src[0] == "upload" and ss.get("upload") is None:
+    if src is not None and src[0] == "upload" and uploaded() is None:
         src = ss.source = None
     if src is None:  # empty state: the collection under the upload bar
         gallery()
         return
     example = None
     if src[0] == "upload":
-        data = ss.upload.getvalue()
+        data = uploaded().getvalue()
     else:
         example = EXAMPLES[src[1]]
         data = file_bytes(example["path"])
@@ -365,6 +378,9 @@ def results(data, img, r, example):
     labels = [emo(e) for e in EMOS]
     sentiments = [i18n.sentiment(L, inf.SENTIMENT[e]) for e in EMOS]
     with st.container(key="results"):
+        showing = (tr("showing_example", caption=caption(example)) if example else
+                   tr("showing_upload", name=uploaded().name if uploaded() is not None else ""))
+        st.markdown(f'<div class="af-showing">{ui.esc(showing)}</div>', unsafe_allow_html=True)
         left, right = st.columns([5, 7], gap="large")
         with left:
             with st.container(key="artwork"):
@@ -396,9 +412,12 @@ def results(data, img, r, example):
             if example:  # validation artworks carry the real annotator votes
                 ann = np.array([example["annotators"][e] for e in EMOS])
                 st.markdown(f'<div class="af-section">{ui.esc(tr("vs_title"))}</div>', unsafe_allow_html=True)
+                n = int(example["n_votes"])
+                st.markdown(f'<div class="af-note"><b>{ui.esc(tr("vs_n", n=n))}</b>{ui.esc(tr("vs_few", n=n))}</div>',
+                            unsafe_allow_html=True)
                 st.caption(tr("vs_note"))
                 st.plotly_chart(ui.versus_chart(M, EMOS, labels, probs, ann, tr("vs_model"), tr("vs_people"),
-                                                tr("prob_axis")), theme=None, config={"displayModeBar": False},
+                                                tr("vs_axis")), theme=None, config={"displayModeBar": False},
                                 key=f"vs_{key}")
         details_tabs(img, r, key)
     scroll_to_results()
