@@ -246,3 +246,62 @@ def test_explanatory_text_meets_wcag_aa():
     assert '[data-testid="stCaptionContainer"] {{ opacity: 1 !important; }}'.replace("{{", "{").replace("}}", "}") in css
     sizes = [float(x) for x in re.findall(r"\.af-(?:muted|disp-note|zero|ksent|settings|note)[^{]*\{[^}]*font-size: ([\d.]+)rem", css)]
     assert sizes and min(sizes) >= 1.0, sizes
+
+
+# ---------------------------------------------------------------- model vs. real ArtEmis viewers
+def test_examples_carry_their_annotator_count():
+    import pandas as pd
+    manifest = ROOT / "data/artemis_balanced/val.csv"
+    for e in EXAMPLES:
+        n = e["n_votes"]
+        assert isinstance(n, int) and n >= 1
+        shares = np.array([e["annotators"][k] for k in core.EMOTIONS])
+        assert np.allclose(shares * n, np.round(shares * n), atol=1e-6)  # whole annotators
+    if manifest.exists():  # the research server: the count is the manifest's sum of n_<emotion>
+        v = pd.read_csv(manifest)
+        for e in EXAMPLES:
+            assert e["n_votes"] == int(sum(v.loc[e["val_row"], f"n_{k}"] for k in core.EMOTIONS))
+
+
+@pytest.mark.parametrize("lang", LANGS)
+def test_versus_chart_annotator_note(app, lang):
+    at = app
+    at.radio(key="lang").set_value(lang).run()
+    for i in (CLEAR_EX, DISPERSED_EX):
+        at.button(key=f"ex_{i}").click().run()
+        html = page_html(at)
+        n = EXAMPLES[i]["n_votes"]
+        assert escape(i18n.t(lang, "vs_n", n=n)) in html and escape(i18n.t(lang, "vs_few", n=n)) in html
+    assert i18n.t("en", "vs_n", n=5) == "Based on 5 ArtEmis annotators"
+    assert i18n.t("en", "vs_few", n=5) == "With few annotators, a share can look very certain (e.g. 100% = all 5 chose it)."
+
+
+def test_versus_chart_axis_and_neutral_legend():
+    for m in ("light", "dark"):
+        fig = ui.versus_chart(m, core.EMOTIONS, core.EMOTIONS, np.full(9, 1 / 9), np.full(9, 1 / 9), "Model",
+                              "ArtEmis viewers", i18n.t("en", "vs_axis"))
+        assert fig.layout.xaxis.title.text == "Proportion" and i18n.t("zh", "vs_axis") == "比例"
+        legend = [tr for tr in fig.data if tr.showlegend]
+        assert [tr.name for tr in legend] == ["Model", "ArtEmis viewers"]
+        for tr in legend:  # neutral swatches, not an emotion colour
+            assert tr.marker.color == ui.LEGEND_NEUTRAL[m] and tr.marker.color not in ui.PALETTE[m].values()
+        assert not legend[0].marker.pattern.shape and legend[1].marker.pattern.shape == "/"  # solid vs hatched
+        data = [tr for tr in fig.data if not tr.showlegend]
+        assert {tr.name: bool(tr.marker.pattern.shape) for tr in data} == {"ArtEmis viewers": True, "Model": False}
+
+
+@pytest.mark.parametrize("lang", LANGS)
+def test_showing_line_names_the_example(app, lang):
+    at = app
+    at.radio(key="lang").set_value(lang).run()
+    at.button(key=f"ex_{CLEAR_EX}").click().run()
+    ex = EXAMPLES[CLEAR_EX]
+    artist, title, year = ui.artwork_parts(ex["artist"], ex["painting"], i18n.t(lang, "untitled"))
+    want = i18n.t(lang, "showing_example", caption=ui.caption_text(artist, title, year))
+    assert f'af-showing">{escape(want)}<' in page_html(at)
+
+
+def test_versus_chart_legend_takes_no_bar_slot():
+    """Legend-only traces share their series' offsetgroup: the grouped bars keep exactly two slots."""
+    fig = ui.versus_chart("light", core.EMOTIONS, core.EMOTIONS, np.full(9, 1 / 9), np.full(9, 1 / 9), "M", "V", "P")
+    assert {tr.offsetgroup for tr in fig.data} == {"model", "viewers"} and len(fig.data) == 4

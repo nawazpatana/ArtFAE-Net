@@ -7,6 +7,7 @@
   "style": "Art Nouveau Modern",
   "val_row": 107,
   "annotator_top": "amusement",
+  "n_votes": 6,
   "annotators": {
    "amusement": 0.8333333333333334,
    "awe": 0.0,
@@ -27,6 +28,7 @@
   "style": "Early Renaissance",
   "val_row": 501,
   "annotator_top": "awe",
+  "n_votes": 5,
   "annotators": {
    "amusement": 0.0,
    "awe": 1.0,
@@ -47,6 +49,7 @@
   "style": "Baroque",
   "val_row": 323,
   "annotator_top": "contentment",
+  "n_votes": 5,
   "annotators": {
    "amusement": 0.0,
    "awe": 0.0,
@@ -67,6 +70,7 @@
   "style": "Post Impressionism",
   "val_row": 1790,
   "annotator_top": "excitement",
+  "n_votes": 5,
   "annotators": {
    "amusement": 0.0,
    "awe": 0.0,
@@ -87,6 +91,7 @@
   "style": "High Renaissance",
   "val_row": 826,
   "annotator_top": "anger",
+  "n_votes": 5,
   "annotators": {
    "amusement": 0.0,
    "awe": 0.2,
@@ -107,6 +112,7 @@
   "style": "Expressionism",
   "val_row": 522,
   "annotator_top": "anger",
+  "n_votes": 5,
   "annotators": {
    "amusement": 0.0,
    "awe": 0.0,
@@ -127,6 +133,7 @@
   "style": "Impressionism",
   "val_row": 1248,
   "annotator_top": "disgust",
+  "n_votes": 5,
   "annotators": {
    "amusement": 0.0,
    "awe": 0.0,
@@ -147,6 +154,7 @@
   "style": "Rococo",
   "val_row": 2461,
   "annotator_top": "disgust",
+  "n_votes": 5,
   "annotators": {
    "amusement": 0.0,
    "awe": 0.0,
@@ -167,6 +175,7 @@
   "style": "Northern Renaissance",
   "val_row": 1620,
   "annotator_top": "fear",
+  "n_votes": 5,
   "annotators": {
    "amusement": 0.0,
    "awe": 0.0,
@@ -187,6 +196,7 @@
   "style": "Expressionism",
   "val_row": 723,
   "annotator_top": "fear",
+  "n_votes": 5,
   "annotators": {
    "amusement": 0.0,
    "awe": 0.0,
@@ -207,6 +217,7 @@
   "style": "Baroque",
   "val_row": 256,
   "annotator_top": "sadness",
+  "n_votes": 5,
   "annotators": {
    "amusement": 0.0,
    "awe": 0.0,
@@ -227,6 +238,7 @@
   "style": "Baroque",
   "val_row": 346,
   "annotator_top": "something_else",
+  "n_votes": 5,
   "annotators": {
    "amusement": 0.0,
    "awe": 0.0,

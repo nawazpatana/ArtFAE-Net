@@ -101,7 +101,8 @@ def main():
             title = r.painting.split("_", 1)[-1].replace("-", " ").strip()
             examples.append({"file": name, "artwork_id": r.artwork_id, "painting": title[:1].upper() + title[1:], "artist": name.split("_")[0].replace("-", " ").title(),
                              "style": r.art_style.replace("_", " "), "val_row": int(r.name),
-                             "annotator_top": e, "annotators": {k: float(r[f"p_{k}"]) for k in EMOTIONS}})
+                             "annotator_top": e, "n_votes": int(sum(r[f"n_{k}"] for k in EMOTIONS)),
+                             "annotators": {k: float(r[f"p_{k}"]) for k in EMOTIONS}})
     (ex_dir / "examples.json").write_text(json.dumps(examples, indent=1, ensure_ascii=False))
 
     per_seed = pd.read_csv(ROOT / "runs/final_eval_v2/test_per_seed.csv")

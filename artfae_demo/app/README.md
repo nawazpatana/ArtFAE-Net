@@ -1,7 +1,7 @@
 > **WARNING: Do NOT extract this bundle inside the ArtFAE-Net repository; it would overwrite tracked files
 > with this snapshot. Extract it in a separate folder.**
 
-Built from commit 5951944 on 2026-11-16.
+Built from commit 8f3000d on 2026-11-17.
 
 # ArtFAE-Net demo (English / 繁體中文)
 
