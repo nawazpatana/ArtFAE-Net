@@ -109,13 +109,23 @@ JPEG decoding uses (both sides stay at least 512 px), never written to disk, and
   - the category of the top emotion and the summed proportions per sentiment;
   - the full 9-emotion distribution, next to the artwork;
   - the active settings (model, prior correction, app version) and "Download result (JSON)" (image SHA-256 or
-    artwork ID, model, mode, calibration, the 9-emotion output, timestamp; never the image);
+    artwork ID, model, mode, calibration, the 9-emotion output, the colour palette, timestamp; never the image);
+  - "About the emotion categories": the nine ArtEmis categories, their sentiment groups and a one-line
+    definition of each;
   - an illustrative ten-person graphic with every emotion's exact percentage;
   - the R3 presence estimates (rare-emotion-sensitivity model only);
-  - the model's attention map, labelled as attention and not as an explanation, with the original image and a
-    side-by-side comparison of two emotions;
-  - Visual Attributes: brightness, saturation and warm/cool colour share in plain words, the other measurements
-    under "View detailed measurements".
+  - the model's attention map, labelled as attention and not as an explanation, with what the map shows (one query
+    per emotion over a 7 × 7 grid of the centre square, weights summing to 100%) and an optional grid overlay;
+    a side-by-side comparison of two emotions with the maps' similarity (Pearson r of the 49 weights) and an
+    A − B difference map;
+  - Visual Attributes: the 6 dominant colours (k-means in CIELAB, deterministic; hex codes with a copy button and
+    their share of the image), brightness, saturation and warm/cool colour share in plain words, descriptive
+    aesthetic properties (colour harmony, visual balance, visual complexity, contrast; not a quality score) with
+    percentiles against the 43,012 training paintings, and the other measurements under "View detailed
+    measurements";
+  - an iconological reading after Panofsky (1939): an automatic pre-iconographic description; the title, artist,
+    date, style and genre of gallery examples (WikiArt metadata; the model does not recognise themes or symbols);
+    and a private box for the viewer's own interpretation, which is never saved, logged or downloaded.
 
   The examples come from the ArtEmis *validation* split and were chosen by annotator agreement only,
   never by model accuracy. No test images are included.
@@ -135,6 +145,9 @@ Switch models and languages in the sidebar. Switch between light and dark mode i
 | `app/core.py` | torch-free paths, constants, upload decoding and display helpers |
 | `app/gallery.py` | the precomputed example results (gallery and cloud_live) |
 | `app/precompute_gallery.py`, `app/build_text_embeddings.py`, `app/verify_cloud_live.py` | build and verify `gallery.json`, the 27 text embeddings, and cloud_live against the full pipeline |
+| `app/visual.py` | torch-free palette, descriptive aesthetic properties, attention-map similarity, difference map and grid |
+| `app/precompute_visual.py` | adds the palette and aesthetic properties to `gallery.json` (torch-free; leaves every model output unchanged) and writes `assets/examples/metadata.json` from the cached WikiArt records |
+| `app/build_aesthetic_percentiles.py` | `assets/aesthetic_percentiles.json`: quantiles of the aesthetic properties over the training paintings |
 | `app/i18n.py` | all UI strings in English and zh-TW, plus the 27-sentence description table |
 | `app/ui.py` | CSS, palette, Plotly charts, HTML components |
 | `app/assets/models/r1/s42 … s46/`, `app/assets/models/r3/s42 … s46/` | the five checkpoints of each model with their `normalizer.json`, `dims.json`, `config.json` |

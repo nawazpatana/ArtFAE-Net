@@ -39,7 +39,7 @@ UPLOAD_MAX_BYTES = 10 * 1024 * 1024   # 10 MB
 UPLOAD_MAX_PIXELS = 50_000_000        # decoded size guard (a 10 MB PNG can expand to gigabytes)
 DRAFT = 512                           # as artfae_balance.extract_features.load_image: im.draft("RGB", (512, 512))
 
-APP_VERSION = "1.2.0"                 # shown beside every result and written into the JSON record
+APP_VERSION = "1.3.0"                 # shown beside every result and written into the JSON record
 # The result card reports a dispersed distribution instead of a single top emotion when the two highest predicted
 # proportions are within this many percentage points (0.05 = 5 points), compared on the unrounded values.
 DISPERSED_MAX_GAP = 0.05
@@ -192,9 +192,9 @@ def is_dispersed(probs, max_gap: float = DISPERSED_MAX_GAP) -> bool:
 
 
 def result_record(r: dict, *, app_mode: str, image_sha256: str | None = None, artwork_id: str | None = None,
-                  timestamp: str | None = None) -> dict:
+                  timestamp: str | None = None, palette: list | None = None) -> dict:
     """The downloadable JSON record of one result. Identifies the input by its SHA-256 (uploads) or its ArtEmis
-    artwork ID (gallery examples); the image itself is never included."""
+    artwork ID (gallery examples); the image itself is never included. palette: visual.palette() of the image."""
     from datetime import datetime, timezone
     if (image_sha256 is None) == (artwork_id is None):
         raise ValueError("give exactly one of image_sha256 or artwork_id")
@@ -217,6 +217,10 @@ def result_record(r: dict, *, app_mode: str, image_sha256: str | None = None, ar
                       "top_two": [{"emotion": a, "proportion": round(pa, 6)}, {"emotion": b, "proportion": round(pb, 6)}]},
         "sentiment_totals": {k: round(v, 6) for k, v in sentiment_totals(probs).items()},
     }
+    if palette is not None:
+        rec["palette"] = {"method": "k-means (k = 6) in CIELAB on a copy downscaled to 128 px, k-means++ init, seed 0",
+                          "colours": [{"hex": c["hex"], "share": round(float(c["share"]), 6), "percent": c["percent"]}
+                                      for c in palette]}
     if r.get("presence") is not None:
         rec["presence_r3"] = {"meaning": "estimated chance that at least one annotator names the emotion; a separate "
                                          "output, not part of the distribution",

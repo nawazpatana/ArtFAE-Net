@@ -22,6 +22,7 @@ TEMPLATES = {  # dynamic key template (the variable part as {}) -> every value i
     "model_{}": MODES, "model_{}_plain": MODES, "model_{}_help": MODES, "row_h_{}": MODES,
     "pct_{}": ["luminance", "saturation", "warm", "cool"],
     "row_{}": ["baseline", "b32", "l14_r1", "primary"],
+    "aes_g_{}": ["harmony", "balance", "complexity", "contrast"], "aes_x_{}": ["harmony", "balance", "complexity", "contrast"],
 }
 APP_DIRS = [d for d in (ROOT / "app", ROOT / "artfae_demo" / "app") if (d / "i18n.py").exists()]
 

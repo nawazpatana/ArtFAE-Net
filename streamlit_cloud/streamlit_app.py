@@ -22,7 +22,7 @@ import types
 from pathlib import Path
 
 APP_DIR = Path(__file__).resolve().parents[1] / "app"
-OWN_MODULES = ("core", "i18n", "ui", "gallery", "inference")  # app/*.py modules the app imports by name
+OWN_MODULES = ("core", "i18n", "ui", "gallery", "inference", "visual")  # app/*.py modules the app imports by name
 _STATE = "_artfae_module_stamps"  # survives Streamlit's reruns: {module name: (mtime_ns, size) at import}
 
 

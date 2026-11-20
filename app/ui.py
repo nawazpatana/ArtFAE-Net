@@ -292,6 +292,42 @@ div[data-testid="stTabs"] {{ margin-top: .8rem; }}
 .af-compact .af-totals .sep {{ display: none; }}
 @media (max-width: 560px) {{ [class*="st-key-cmp_grid"] {{ grid-template-columns: minmax(0, 1fr) !important; }} }}
 
+/* second feedback round: palette, aesthetic properties, map comparison, iconology */
+.af-swatch {{ height: 64px; border-radius: 10px; border: 1px solid var(--af-border); }}
+.af-sw-pct {{ color: var(--af-muted); font-size: .98rem; margin: .3rem 0 .1rem 0; font-variant-numeric: tabular-nums; }}
+[class*="st-key-swatch_"] [data-testid="stCode"] pre, [class*="st-key-swatch_"] [data-testid="stCode"] code {{
+    font-size: .98rem !important; }}
+.af-strip {{ display: flex; height: 26px; border-radius: 8px; overflow: hidden; border: 1px solid var(--af-border); }}
+.af-strip > div {{ height: 100%; }}
+.af-strip-codes {{ color: var(--af-muted); font-size: .92rem; margin-top: .3rem; font-variant-numeric: tabular-nums;
+    word-spacing: .15rem; }}
+.af-divbar {{ height: 14px; border-radius: 7px; border: 1px solid var(--af-border); }}
+.af-divlab {{ display: flex; justify-content: space-between; gap: 1rem; color: var(--af-muted); font-size: .95rem;
+    margin-top: .25rem; }}
+.af-sim {{ font-size: 1.12rem; margin: .2rem 0 .1rem 0; }}
+.af-sim b {{ color: var(--af-text); }}
+.af-noscore {{ font-weight: 600; margin: .1rem 0 .5rem 0; }}
+.af-level {{ border-left: 4px solid var(--af-accent); padding: .1rem 0 .1rem .9rem; margin: 0 0 1.2rem 0; }}
+.af-level h4 {{ margin: 0 0 .2rem 0; font-size: 1.2rem; }}
+.af-level .x {{ color: var(--af-muted); margin: 0 0 .6rem 0; }}
+.af-meta {{ display: grid; grid-template-columns: max-content 1fr; gap: .25rem 1rem; margin: .2rem 0 .5rem 0; }}
+.af-meta dt {{ color: var(--af-muted); }}
+.af-meta dd {{ margin: 0; }}
+.af-private {{ display: inline-block; font-weight: 600; border: 1px solid var(--af-border); border-radius: 999px;
+    padding: .15rem .7rem; margin-bottom: .4rem; background: var(--af-track); }}
+.af-defs {{ display: grid; grid-template-columns: max-content 1fr; gap: .3rem 1rem; margin: .4rem 0; }}
+.af-defs dt {{ font-weight: 600; white-space: nowrap; }}
+.af-defs dd {{ margin: 0; }}
+@media (max-width: 640px) {{
+  .st-key-palette [data-testid="stHorizontalBlock"] {{ flex-wrap: nowrap !important; gap: .5rem !important; }}
+  .st-key-palette [data-testid="stColumn"] {{ min-width: 0 !important; width: auto !important; flex: 1 1 0 !important; }}
+  .st-key-palette .af-swatch {{ height: 44px; }}
+  .st-key-palette .af-sw-pct {{ font-size: .9rem; }}
+  [class*="st-key-swatch_"] [data-testid="stCode"] pre {{ padding: .55rem .5rem !important; }}
+  [class*="st-key-swatch_"] [data-testid="stCode"] code {{ font-size: .88rem !important; }}
+}}
+@media (max-width: 640px) {{ .af-meta, .af-defs {{ grid-template-columns: 1fr; gap: .05rem; }}
+    .af-meta dd, .af-defs dd {{ margin-bottom: .45rem; }} }}
 @media (prefers-reduced-motion: reduce) {{ * {{ animation: none !important; transition: none !important; }} }}
 @media (max-width: 640px) {{
   .block-container, [data-testid="stMainBlockContainer"] {{ padding: 3.4rem 16px 4rem 16px; }}
@@ -601,3 +637,33 @@ def compare_chart(m, keys, labels, series, axis_title="", height=None):
                      zeroline=False, range=[0, top * 1.22], automargin=True)
     fig.update_yaxes(showgrid=False, automargin=True, ticksuffix="  ")
     return fig
+
+
+# ---------------------------------------------------------------- second feedback round
+def swatch(hex_code: str, pct_text: str, alt: str) -> str:
+    """One palette swatch (its colour is exactly hex_code) and its share of the image."""
+    return (f'<div class="af-swatch" style="background:{esc(hex_code)}" role="img" aria-label="{esc(alt)}" '
+            f'data-hex="{esc(hex_code)}"></div><div class="af-sw-pct">{esc(pct_text)}</div>')
+
+
+def palette_strip(items) -> str:
+    """items: [(hex, share)]: one bar whose segments are as wide as each colour's share, then the hex codes."""
+    seg = "".join(f'<div style="background:{esc(h)};width:{s * 100:.2f}%" title="{esc(h)}"></div>' for h, s in items)
+    codes = " ".join(esc(h) for h, _ in items)
+    return f'<div class="af-strip" aria-hidden="true">{seg}</div><div class="af-strip-codes">{codes}</div>'
+
+
+def diverging_legend(colours, left: str, right: str) -> str:
+    """colours: RGB stops from B higher (left) to A higher (right)."""
+    stops = ", ".join(f"rgb({int(r)},{int(g)},{int(b)})" for r, g, b in colours)
+    return (f'<div class="af-divbar" style="background:linear-gradient(90deg, {stops})" aria-hidden="true"></div>'
+            f'<div class="af-divlab"><span>◀ {esc(left)}</span><span>{esc(right)} ▶</span></div>')
+
+
+def definition_list(rows, cls="af-meta") -> str:
+    """rows: [(term, description)]"""
+    return f'<dl class="{cls}">' + "".join(f"<dt>{esc(a)}</dt><dd>{esc(b)}</dd>" for a, b in rows) + "</dl>"
+
+
+def level(title: str, explanation: str, inner: str = "") -> str:
+    return f'<div class="af-level"><h4>{esc(title)}</h4><p class="x">{esc(explanation)}</p>{inner}</div>'

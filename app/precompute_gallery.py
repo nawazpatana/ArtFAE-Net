@@ -6,7 +6,8 @@ run (full environment, with weights and the CLIP cache):
 Writes app/assets/precomputed/gallery.json. For each of the 12 examples and both models it stores what the
 results page shows: the 5 seed logits (float64; probabilities, R1 prior correction, people counts and
 sentiment are derived from them exactly as in full mode), the seed-mean ECSA maps of all 9 emotions, the R3
-presence estimates, the 28 attributes and the description.
+presence estimates, the 28 attributes and the description, plus the palette and the descriptive aesthetic
+properties (app/precompute_visual.py, which can also add those two to an existing file without torch).
 
 Verification: the file is reloaded from disk through gallery.result() and compared with a second, independent
 live inference.predict() run (R1, R1 + prior correction, R3). Every array must agree within 1e-5, the
@@ -25,6 +26,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import core  # noqa: E402
 import gallery  # noqa: E402
 import inference as inf  # noqa: E402
+import precompute_visual  # noqa: E402  (palette + aesthetic properties, torch-free)
 
 TOL = 1e-5
 OUT = core.ASSETS / gallery.FILE
@@ -56,6 +58,7 @@ def build(engine, examples):
             rec[mode] = {"raw_logits": f64(r["raw_logits"]), "maps": f32(r["maps"]),
                          "presence": None if r["presence"] is None else f32(r["presence"]),
                          "seconds": round(float(r["seconds"]), 3)}
+        rec.update(precompute_visual.visual_record(core.load_upload(data)))  # as app/precompute_visual.py
         out[ex["file"]] = rec
         print(f"  computed {ex['file']}", flush=True)
     return out

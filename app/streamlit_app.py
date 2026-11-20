@@ -25,6 +25,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import core  # noqa: E402  (torch-free; puts the repository's src/ on sys.path)
 import i18n  # noqa: E402
 import ui  # noqa: E402
+import visual  # noqa: E402  (torch-free: palette, aesthetic properties, map comparison)
 
 APP_MODE = core.app_mode(st.secrets)
 GALLERY = APP_MODE == "gallery"          # examples only, torch-free
@@ -110,6 +111,27 @@ def file_bytes(path) -> bytes:
 
 
 PCT, EXAMPLES, RESULTS = assets()
+
+
+@st.cache_data(show_spinner=False)
+def assets2():  # second feedback round: aesthetic-property percentiles, example metadata (both torch-free)
+    return core.load_json("aesthetic_percentiles.json"), core.load_json("examples/metadata.json")
+
+
+AES_PCT, METADATA = assets2()
+
+
+@st.cache_data(show_spinner=False, max_entries=32)
+def visual_live(data: bytes) -> dict:
+    img = core.load_upload(data)
+    return {"palette": visual.palette(img), "aesthetic": visual.aesthetic_measures(img)}
+
+
+def visuals(data: bytes, r: dict) -> dict:
+    """Palette and aesthetic properties: precomputed for the gallery examples (gallery.json), else computed here."""
+    if r.get("palette") is not None:
+        return {"palette": r["palette"], "aesthetic": r["aesthetic"]}
+    return visual_live(data)
 
 
 def parts(ex):
@@ -347,9 +369,11 @@ def settings_html(r):
 
 
 def download_record(r, data, example, key):
-    """'Download result (JSON)': the image's SHA-256 (uploads) or the artwork ID (gallery examples), never the image."""
+    """'Download result (JSON)': the image's SHA-256 (uploads) or the artwork ID (gallery examples), never the image;
+    with the palette."""
     rec = core.result_record(r, app_mode=APP_MODE, artwork_id=example["artwork_id"] if example else None,
-                             image_sha256=None if example else hashlib.sha256(data).hexdigest())
+                             image_sha256=None if example else hashlib.sha256(data).hexdigest(),
+                             palette=visuals(data, r)["palette"])
     ident = example["artwork_id"].split("/")[-1] if example else rec["input"]["sha256"][:12]
     st.download_button(tr("download_json"), data=json.dumps(rec, indent=1, ensure_ascii=False),
                        file_name=f"artfae_{r['mode']}_{ident}.json", mime="application/json", help=tr("download_help"),
@@ -398,6 +422,7 @@ def results(data, img, r, example):
             st.plotly_chart(ui.distribution_chart(M, EMOS, labels, probs, sentiments, tr("prob_axis"), height=340),
                             theme=None, config={"displayModeBar": False}, key=f"dist_{key}")
             download_record(r, data, example, key)
+            emotion_categories()
         c1, c2 = st.columns(2, gap="large")
         with c1:
             st.markdown(people_card(probs, labels), unsafe_allow_html=True)
@@ -419,14 +444,32 @@ def results(data, img, r, example):
                 st.plotly_chart(ui.versus_chart(M, EMOS, labels, probs, ann, tr("vs_model"), tr("vs_people"),
                                                 tr("vs_axis")), theme=None, config={"displayModeBar": False},
                                 key=f"vs_{key}")
-        details_tabs(img, r, key)
+        details_tabs(img, r, key, data)
+        iconology(r, visuals(data, r), example, key)
     scroll_to_results()
 
 
-def attention_view(img, r, emotion, alpha, original=False):
+def attention_view(img, r, emotion, alpha, original=False, grid=False):
     if original:
-        return inf.center_square(img).convert("RGB").resize((640, 640), Image.Resampling.LANCZOS)
-    return inf.attention_overlay(img, r["maps"][EMOS.index(emotion)], alpha)
+        out = inf.center_square(img).convert("RGB").resize((640, 640), Image.Resampling.LANCZOS)
+    else:
+        out = inf.attention_overlay(img, r["maps"][EMOS.index(emotion)], alpha)
+    return visual.with_grid(out) if grid else out
+
+
+def attention_explain_html():
+    return f'<div class="af-note" style="--af-accent:#B4583A">{ui.esc(tr("attention_explain"))}</div>'
+
+
+def emotion_categories():
+    """'About the emotion categories': ArtEmis, the sentiment groups and one plain line per emotion."""
+    with st.expander(tr("emo_cat_h")):
+        st.markdown(f'<p>{ui.esc(tr("emo_cat_intro"))}</p>', unsafe_allow_html=True)
+        for group in ("negative", "positive", "other"):
+            rows = [(emo(e), i18n.emotion_def(L, e)) for e in EMOS if inf.SENTIMENT[e] == group]
+            st.markdown(f'<div class="af-section">{ui.esc(i18n.sentiment(L, group))}</div>'
+                        + ui.definition_list(rows, "af-defs"), unsafe_allow_html=True)
+        st.caption(tr("emo_cat_cite"))
 
 
 def attn_label(text, emotion=None):
@@ -434,7 +477,7 @@ def attn_label(text, emotion=None):
     return f'<div class="af-attn-label">{dot}{ui.esc(text)}</div>'
 
 
-def details_tabs(img, r, key):
+def details_tabs(img, r, key, data):
     top = r["top"]
     t_att, t_aes, t_det = st.tabs([tr("tab_attention"), tr("tab_aesthetics"), tr("tab_details")])
     with t_att:
@@ -442,27 +485,33 @@ def details_tabs(img, r, key):
         with b:  # the caveat first, beside the heatmap
             st.markdown(f'<div class="af-note" style="--af-accent:#B4583A"><b>{ui.esc(tr("attention_caption"))}</b>'
                         f'{ui.esc(tr("attention_note"))}</div>', unsafe_allow_html=True)
+            st.markdown(attention_explain_html(), unsafe_allow_html=True)
             sel = st.selectbox(tr("attention_emotion"), EMOS, index=EMOS.index(top), format_func=emo,
                                key=f"att_e_{key}")
             original = st.toggle(tr("attention_original"), key="att_original")
+            grid = st.toggle(tr("attention_grid"), key="att_grid")
             alpha = st.slider(tr("attention_opacity"), 0.0, 1.0, 0.55, 0.05, key="att_alpha", disabled=original)
             st.caption(tr("attention_crop"))
         with a:
             st.markdown(attn_label(tr("attention_original_label")) if original else
                         attn_label(tr("attention_map_label", emotion=emo(sel)), sel), unsafe_allow_html=True)
-            st.image(attention_view(img, r, sel, alpha, original), width="stretch",
+            st.image(attention_view(img, r, sel, alpha, original, grid), width="stretch",
                      alt=tr("attention_original_label") if original else tr("alt_attention", emotion=emo(sel)))
             st.caption(tr("attention_caption"))
         section(tr("attention_compare_h"))
         second = core.top_two(r["probs"])[1][0]
         p1, p2 = st.columns(2, gap="large")
+        chosen = []
         for col, k, label, default in ((p1, "a", "attention_compare_a", top), (p2, "b", "attention_compare_b", second)):
             with col:
                 e = st.selectbox(tr(label), EMOS, index=EMOS.index(default), format_func=emo, key=f"att_cmp_{k}_{key}")
                 st.markdown(attn_label(tr("attention_map_label", emotion=emo(e)), e), unsafe_allow_html=True)
-                st.image(attention_view(img, r, e, alpha), width="stretch", alt=tr("alt_attention", emotion=emo(e)))
+                st.image(attention_view(img, r, e, alpha, grid=grid), width="stretch",
+                         alt=tr("alt_attention", emotion=emo(e)))
+                chosen.append(e)
+        map_comparison(img, r, *chosen, grid)
     with t_aes:
-        aesthetics(r["attrs"], r["description"])
+        aesthetics(r["attrs"], r["description"], visuals(data, r))
     with t_det:
         tops = ", ".join(f"s{s} {emo(EMOS[int(p.argmax())])}" for s, p in zip(inf.SEEDS, r["probs_per_seed"]))
         st.caption(tr("model_used_prior" if r["prior_correction"] else "model_used", name=tr(f"model_{r['mode']}")))
@@ -473,7 +522,110 @@ def details_tabs(img, r, key):
                             tr("description")), unsafe_allow_html=True)
 
 
-def aesthetics(attrs, description):
+def map_comparison(img, r, ea, eb, grid=False):
+    """Similarity (Pearson r of the 49 weights), the A - B difference map and what to make of it."""
+    with st.container(key="map_compare"):
+        if ea == eb:
+            st.info(tr("cmp_same_emotion"))
+            return
+        ma, mb = r["maps"][EMOS.index(ea)], r["maps"][EMOS.index(eb)]
+        rho, label = visual.map_similarity(ma, mb)
+        names = {"very_similar": tr("sim_very_similar"), "similar": tr("sim_similar"), "different": tr("sim_different")}
+        diff, pp = visual.difference_overlay(inf.center_square(img), ma, mb)
+        if grid:
+            diff = visual.with_grid(diff, colour=(60, 60, 60))
+        d1, d2 = st.columns([7, 5], gap="large")
+        with d1:
+            st.markdown(attn_label(tr("cmp_diff_label", a=emo(ea), b=emo(eb))), unsafe_allow_html=True)
+            st.image(diff, width="stretch", alt=tr("alt_diff", a=emo(ea), b=emo(eb)))
+            st.markdown(ui.diverging_legend(visual.DIVERGING, tr("cmp_diff_b", b=emo(eb)), tr("cmp_diff_a", a=emo(ea))),
+                        unsafe_allow_html=True)
+            st.caption(tr("cmp_diff_max", pp=pp))
+        with d2:
+            r_txt = f"{rho:.2f}" if np.isfinite(rho) else "—"
+            st.markdown(f'<div class="af-sim">{ui.esc(tr("cmp_similarity", label="§", r=r_txt)).replace("§", f"<b>{ui.esc(names[label])}</b>")}</div>',
+                        unsafe_allow_html=True)
+            st.caption(tr("cmp_sim_scale"))
+            st.markdown(f'<div class="af-note"><b>{ui.esc(tr("cmp_same_region"))}</b>{ui.esc(tr("attention_explain"))}</div>',
+                        unsafe_allow_html=True)
+
+
+def palette_section(pal):
+    with st.container(key="palette"):
+        st.markdown(f'<div class="af-section">{ui.esc(tr("palette_h"))}</div>', unsafe_allow_html=True)
+        st.caption(tr("palette_note"))
+        for start in range(0, len(pal), 3):
+            cols = st.columns(3, gap="small")
+            for j, (col, c) in enumerate(zip(cols, pal[start:start + 3])):
+                pct = f'{c["percent"]:.1f}%'
+                with col:
+                    with st.container(key=f"swatch_{start + j}"):
+                        st.markdown(ui.swatch(c["hex"], tr("palette_share", pct=pct), tr("alt_swatch", hex=c["hex"], pct=pct)),
+                                    unsafe_allow_html=True)
+                        st.code(c["hex"], language=None)  # Streamlit's code block has a copy button
+        st.caption(tr("palette_copy"))
+
+
+def balance_text(k, v, sides):
+    if not k.startswith("balance_"):
+        return f"{v:.2f}"
+    kind, axis = ("lum" if "_lum_" in k else "edge"), k[-2:]
+    return f"{v:.2f} · {i18n.side(L, kind, sides[f'{kind}_{axis}'])}"
+
+
+def aesthetic_properties(meas):
+    """Descriptive aesthetic properties with training percentiles; explicitly not a quality score."""
+    vals, sides = meas["values"], meas["sides"]
+    pct = dict(zip(visual.MEASURE_NAMES, inf.percentiles([vals[k] for k in visual.MEASURE_NAMES], AES_PCT)))
+    with st.container(key="aesthetic_props"):
+        section(tr("aes_h"))
+        st.markdown(f'<div class="af-noscore">{ui.esc(tr("aes_not_score"))}</div>', unsafe_allow_html=True)
+        st.caption(tr("aes_intro", n=AES_PCT["n_train"]))
+        cols = st.columns(2, gap="medium")
+        for i, g in enumerate(visual.GROUPS):
+            rows = [(i18n.aesthetic(L, k), balance_text(k, vals[k], sides), pct_label(int(round(pct[k]))), pct[k])
+                    for k, gg in visual.MEASURES if gg == g]
+            with cols[i % 2]:
+                st.markdown(ui.card(f'<p class="af-muted" style="margin:0 0 .6rem 0">{ui.esc(tr(f"aes_x_{g}"))}</p>'
+                                    + ui.attr_rows(rows), tr(f"aes_g_{g}")), unsafe_allow_html=True)
+
+
+def iconology(r, V, example, key):
+    """Panofsky's three levels: an automatic pre-iconographic description, the metadata (gallery only) and the
+    participant's own interpretation (a text box that is never stored, logged or downloaded)."""
+    with st.container(key="iconology"):
+        section(tr("icon_h"), tr("icon_intro"))
+        pal = V["palette"]
+        a = dict(zip(inf.NAMES, r["attrs"]))
+        attrs = " · ".join(f"{i18n.attribute(L, k)} {fmt_value(k, a[k])}" for k in KEY_ATTRS)
+        order = sorted(range(len(EMOS)), key=lambda i: -r["probs"][i])
+        expr = " · ".join(f"{emo(EMOS[i])} {r['probs'][i] * 100:.1f}%" for i in order)
+        inner = (f'<div class="af-section">{ui.esc(tr("icon_l1_palette"))}</div>'
+                 + ui.palette_strip([(c["hex"], c["share"]) for c in pal])
+                 + f'<div class="af-section">{ui.esc(tr("icon_l1_attrs"))}</div>'
+                 + f'<p style="margin:.1rem 0">{ui.esc(i18n.description(L, r["description"]))}</p>'
+                 + f'<p class="af-muted" style="margin:.1rem 0">{ui.esc(attrs)}</p>'
+                 + f'<div class="af-section">{ui.esc(tr("icon_l1_expr"))}</div><p style="margin:.1rem 0">{ui.esc(expr)}</p>')
+        st.markdown(ui.level(tr("icon_l1_h"), tr("icon_l1_x"), inner), unsafe_allow_html=True)
+        if example:
+            m = METADATA[example["file"]]
+            rows = [(tr("icon_title"), m["title"]), (tr("icon_artist"), m["artist"])]
+            rows += [(tr("icon_date"), i18n.date(L, m["date"]))] if m.get("date") else []
+            rows += [(tr("icon_style"), i18n.style(L, m["style"]))] if m.get("style") else []
+            rows += [(tr("icon_genre"), i18n.genre(L, m["genre"]))] if m.get("genre") else []
+            src = (f'<div class="af-muted"><a href="{ui.esc(m["source"])}" target="_blank" rel="noopener">'
+                   f'{ui.esc(tr("icon_source"))}</a></div>') if m.get("source") else ""
+            l2 = ui.definition_list(rows) + f'<p style="margin:.4rem 0 .3rem 0"><b>{ui.esc(tr("icon_l2_note"))}</b></p>' + src
+        else:
+            l2 = f'<p style="margin:0"><b>{ui.esc(tr("icon_l2_upload"))}</b></p>'
+        st.markdown(ui.level(tr("icon_l2_h"), tr("icon_l2_x"), l2), unsafe_allow_html=True)
+        st.markdown(ui.level(tr("icon_l3_h"), tr("icon_l3_x"), f'<span class="af-private">{ui.esc(tr("icon_l3_private"))}</span>'),
+                    unsafe_allow_html=True)
+        # session memory only: not part of the JSON record, never logged or written anywhere
+        st.text_area(tr("icon_l3_box"), key=f"icon_note_{key}", max_chars=3000, height=120)
+
+
+def aesthetics(attrs, description, V):
     names = list(inf.NAMES)
     pct = inf.percentiles(attrs, PCT)
     val = dict(zip(names, attrs)); pc = dict(zip(names, pct))
@@ -482,6 +634,8 @@ def aesthetics(attrs, description):
     key_rows = [(i18n.attribute(L, k), fmt_value(k, val[k]), tr(f"pct_{k}", p=int(round(pc[k])), n=n), pc[k])
                 for k in KEY_ATTRS]
     st.markdown(ui.card(ui.key_attr_rows(key_rows), tr("attrs_key_h")), unsafe_allow_html=True)
+    palette_section(V["palette"])
+    aesthetic_properties(V["aesthetic"])
     rows = lambda keys: ui.attr_rows([(i18n.attribute(L, k), fmt_value(k, val[k]),  # noqa: E731
                                        pct_label(int(round(pc[k]))), pc[k]) for k in keys])
     with st.expander(tr("attrs_more")):
@@ -572,6 +726,8 @@ def page_about():
     section(tr("about_title"))
     R = {r["key"]: r for r in RESULTS["rows"]}
     st.markdown(ui.card(ui.esc(tr("about_method")).replace("\n\n", "<br><br>"), tr("about_method_h")), unsafe_allow_html=True)
+    emotion_categories()
+    st.markdown(ui.card(ui.esc(tr("about_panofsky")), tr("about_panofsky_h")), unsafe_allow_html=True)
     st.markdown(tr("about_models"))
     H = RESULTS["holdout"]
     st.markdown(f"### {tr('about_holdout_h')}")
