@@ -432,7 +432,10 @@ def test_visual_module_is_torch_free():
 
 
 def test_cloud_entry_reloads_the_visual_module():
-    src = (ROOT / "streamlit_cloud/streamlit_app.py").read_text(encoding="utf-8")
+    entry = ROOT / "streamlit_cloud/streamlit_app.py"
+    if not entry.exists():
+        pytest.skip("the artfae_demo bundle does not ship the Streamlit Cloud entry point")
+    src = entry.read_text(encoding="utf-8")
     assert '"visual"' in src.split("OWN_MODULES")[1].split("\n")[0]
 
 
