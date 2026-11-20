@@ -200,6 +200,11 @@ STRINGS = {
         "row_h_r3": "Rare-emotion sensitivity (L/14 R3, this demo)",
         "about_changelog_h": "Changelog",
         "about_changelog": (
+            "2026-11-20 · Second feedback round (recommendations of Assoc. Prof. Shih-Yun Lu): an explanation of the "
+            "emotion categories; the dominant colour palette (also in the JSON record); descriptive aesthetic "
+            "properties, which are not a quality score; a fuller attention explanation with an optional 7 × 7 grid; "
+            "the similarity and a difference map when comparing two emotions; an iconological reading after "
+            "Panofsky. Models and predictions are unchanged.\n\n"
             "2026-11-16 · Wording and layout (recommendations of Assoc. Prof. Shih-Yun Lu): the models are now called "
             "“Emotion distribution” (R1) and “Rare-emotion sensitivity” (R3); the card reports the highest predicted proportion, "
             "or a dispersed distribution when the top two are within 5 percentage points; the ten-person graphic is "
@@ -266,6 +271,70 @@ STRINGS = {
         "analyse_another": "Analyse another artwork",
         "alt_upload": "The artwork you uploaded",
         "alt_attention": "Attention heatmap for {emotion} over the centre square of the artwork",
+
+        # ---- second feedback round (Assoc. Prof. Shih-Yun Lu), 2026-11-20
+        "emo_cat_h": "About the emotion categories",
+        "emo_cat_intro": (
+            "The nine categories come from ArtEmis (Achlioptas et al., CVPR 2021): eight emotions plus “something "
+            "else”. The four negative emotions (anger, disgust, fear, sadness) are among Ekman's basic emotions; the "
+            "four positive ones (amusement, awe, contentment, excitement) are finer-grained forms of happiness. Each "
+            "ArtEmis annotator chose the one dominant emotion an artwork evoked in them and explained the choice in "
+            "words; every artwork has at least 5 annotators. The model predicts the share of annotators who would "
+            "choose each emotion."),
+        "emo_cat_cite": "Achlioptas, P., Ovsjanikov, M., Haydarov, K., Elhoseiny, M. & Guibas, L. (2021). ArtEmis: Affective Language for Visual Art. CVPR 2021.",
+        "palette_h": "Colour palette",
+        "palette_note": "Six dominant colours, largest share first: k-means clustering in CIELAB colour space on a downscaled copy of the image (fixed seed, so the result is always the same). Percentages are shares of the image's pixels.",
+        "palette_copy": "Each hex code has a copy button (hover over it, or tap it on a phone).",
+        "palette_share": "{pct} of the image",
+        "alt_swatch": "Colour {hex}, {pct} of the image",
+        "aes_h": "Aesthetic properties (descriptive)",
+        "aes_not_score": "These describe aesthetic properties; they are not a quality score.",
+        "aes_intro": "Measured from the pixels. Each value is compared with the {n:,} training paintings (WikiArt, ArtEmis).",
+        "aes_g_harmony": "Colour harmony",
+        "aes_g_balance": "Visual balance",
+        "aes_g_complexity": "Visual complexity",
+        "aes_g_contrast": "Contrast",
+        "aes_x_harmony": "How widely the colours spread around the colour wheel (0 = one hue family, 1 = hues all around the wheel), and how much of the colour comes in complementary pairs, opposite hues such as blue and orange (0 = none, 1 = all paired).",
+        "aes_x_balance": "How evenly brightness and detail (edges) are shared between the left and right halves and between the top and bottom halves (1.00 = equal; lower = one half dominates).",
+        "aes_x_complexity": "How much detail and colour variety there is: the share of edge pixels, and colour entropy (0 = a single colour, 1 = many colours used equally).",
+        "aes_x_contrast": "How strongly light and dark differ: the spread of brightness (RMS contrast) and the range from the darkest 5% to the brightest 5% of the image.",
+        "attention_explain": "Bright regions received higher attention weights from this emotion's query: the model compares one learned query per emotion with 49 regions (a 7 × 7 grid over the central square CLIP sees), and the weights sum to 100%. The maps are coarse, were not validated as explanations, and the attention module contributed little to the final predictions in our experiments.",
+        "attention_grid": "Show the 7 × 7 grid",
+        "cmp_similarity": "Similarity of the two maps: {label} (Pearson r = {r})",
+        "sim_very_similar": "very similar",
+        "sim_similar": "similar",
+        "sim_different": "different",
+        "cmp_sim_scale": "Pearson correlation of the 49 region weights. Very similar: r ≥ 0.9; similar: r ≥ 0.7; different: below 0.7.",
+        "cmp_same_emotion": "Both sides show the same emotion. Choose two different emotions to compare them.",
+        "cmp_diff_label": "Difference map: {a} − {b}",
+        "cmp_diff_a": "more attention for {a}",
+        "cmp_diff_b": "more attention for {b}",
+        "cmp_diff_max": "Colour scale: ±{pp:.1f} percentage points of attention weight (the largest difference).",
+        "cmp_same_region": "Emotion queries often attend to the same visually dominant region; differences between emotions are usually small.",
+        "alt_diff": "Difference between the attention maps for {a} and {b} over a grey copy of the centre square",
+        "icon_h": "Iconological reading (after Panofsky)",
+        "icon_intro": "Erwin Panofsky (Studies in Iconology, 1939) distinguished three levels of interpreting an artwork. The model can help only with the first.",
+        "icon_l1_h": "Level 1 · Pre-iconographic description (automatic)",
+        "icon_l1_x": "What can be seen without knowing the subject: forms, colours and the expressional qualities of the image.",
+        "icon_l1_palette": "Palette",
+        "icon_l1_attrs": "Visual attributes",
+        "icon_l1_expr": "Expressional qualities (the model's estimate of how ArtEmis annotators would respond)",
+        "icon_l2_h": "Level 2 · Iconographic analysis",
+        "icon_l2_x": "Identifying the subject, themes and symbols, from knowledge of art history and texts.",
+        "icon_l2_note": "Themes and symbols are identified by art-historical knowledge; the model does not recognise them.",
+        "icon_l2_upload": "Not available for uploaded images.",
+        "icon_title": "Title",
+        "icon_artist": "Artist",
+        "icon_date": "Date",
+        "icon_style": "Style",
+        "icon_genre": "Genre",
+        "icon_source": "Metadata: WikiArt",
+        "icon_l3_h": "Level 3 · Iconological interpretation",
+        "icon_l3_x": "The deeper meaning: what the work reveals about its time, its culture and its makers. This needs your own knowledge and judgement.",
+        "icon_l3_box": "Your interpretation: what deeper meaning or context do you see?",
+        "icon_l3_private": "Not saved. Only you can see it.",
+        "about_panofsky_h": "Iconological reading",
+        "about_panofsky": "The three levels of the iconological reading follow Erwin Panofsky, Studies in Iconology: Humanistic Themes in the Art of the Renaissance (New York: Oxford University Press, 1939): pre-iconographic description, iconographic analysis and iconological interpretation. Only the first level is produced automatically; the model does not recognise subjects, themes or symbols, and nothing you write in the interpretation box is saved.",
     },
     "zh": {
         "dispersed_eyebrow": "預測的情緒分布",
@@ -387,6 +456,9 @@ STRINGS = {
         "row_h_r3": "少見情緒敏感度（L/14 R3，本展示）",
         "about_changelog_h": "更新紀錄",
         "about_changelog": (
+            "2026-11-20 · 第二輪回饋（依指導教授 Shih-Yun Lu 副教授的建議）：新增情緒類別說明；主要色彩（亦寫入 JSON "
+            "紀錄）；描述性的美感屬性（並非品質評分）；更完整的注意力說明與可選的 7 × 7 網格；比較兩種情緒時顯示相似度與"
+            "差異圖；依 Panofsky 的圖像學解讀。模型與預測結果皆未改變。\n\n"
             "2026-11-16 · 介面用語與版面調整（依指導教授 Shih-Yun Lu 副教授的建議）：模型改稱「情緒分布」（R1）與「少見情緒敏感度」（R3）；"
             "結果卡片顯示預測比例最高的情緒，若前兩名相差不到 5 個百分點則改為說明分布分散；十人示意圖標明僅為示意；"
             "每個結果都附上設定與 JSON 紀錄。模型與預測結果皆未改變。\n\n"
@@ -445,8 +517,122 @@ STRINGS = {
         "analyse_another": "分析其他作品",
         "alt_upload": "您上傳的作品",
         "alt_attention": "「{emotion}」的注意力熱圖，疊於作品的中央正方形區域",
+
+        # ---- 第二輪回饋（Shih-Yun Lu 副教授），2026-11-20
+        "emo_cat_h": "關於情緒類別",
+        "emo_cat_intro": (
+            "這九個類別來自 ArtEmis（Achlioptas 等人，CVPR 2021）：八種情緒加上「其他」。四種負面情緒（憤怒、厭惡、"
+            "恐懼、悲傷）屬於 Ekman 的基本情緒；四種正面情緒（趣味、敬畏、滿足、興奮）則是較細緻的快樂形式。每位 "
+            "ArtEmis 標註者為一件作品選擇一種最主要的情緒，並以文字說明理由；每件作品至少有 5 位標註者。本模型預測的是"
+            "選擇各情緒的標註者比例。"),
+        "emo_cat_cite": "Achlioptas, P., Ovsjanikov, M., Haydarov, K., Elhoseiny, M. & Guibas, L. (2021). ArtEmis: Affective Language for Visual Art. CVPR 2021.",
+        "palette_h": "主要色彩",
+        "palette_note": "六種主要色彩，依比例由大到小排列：在縮小的圖像副本上，於 CIELAB 色彩空間進行 k-means 分群（固定亂數種子，因此結果每次相同）。百分比為該色彩在圖像像素中所占的比例。",
+        "palette_copy": "每個色碼旁都有複製按鈕（將游標移到色碼上，手機上則點一下）。",
+        "palette_share": "占圖像 {pct}",
+        "alt_swatch": "色彩 {hex}，占圖像 {pct}",
+        "aes_h": "美感屬性（描述性）",
+        "aes_not_score": "這些數值描述作品的美感屬性，並非品質評分。",
+        "aes_intro": "直接由像素量測。每個數值都與 {n:,} 件訓練畫作（WikiArt、ArtEmis）比較。",
+        "aes_g_harmony": "色彩和諧",
+        "aes_g_balance": "視覺平衡",
+        "aes_g_complexity": "視覺複雜度",
+        "aes_g_contrast": "對比",
+        "aes_x_harmony": "色彩在色相環上分布得多廣（0 = 單一色系，1 = 色相遍布整個色相環），以及有多少色彩以互補色成對出現，例如藍與橙等相對的色相（0 = 沒有，1 = 全部成對）。",
+        "aes_x_balance": "亮度與細節（邊緣）在左右兩半、上下兩半之間分布得多平均（1.00 = 相等；數值越低，表示其中一半越占優勢）。",
+        "aes_x_complexity": "細節與色彩變化有多豐富：邊緣像素的比例，以及色彩熵（0 = 只有單一色彩，1 = 多種色彩平均使用）。",
+        "aes_x_contrast": "明暗差異有多強：亮度的分散程度（均方根對比），以及從圖像最暗的 5% 到最亮的 5% 之間的範圍。",
+        "attention_explain": "明亮區域代表此情緒的查詢給予較高的注意力權重：模型以每種情緒各一個學習而得的查詢，與 49 個區域（CLIP 所看到的中央正方形上的 7 × 7 網格）比較，權重總和為 100%。這些圖較為粗略，未經驗證可作為解釋，而且在我們的實驗中，注意力模組對最終預測的貢獻很小。",
+        "attention_grid": "顯示 7 × 7 網格",
+        "cmp_similarity": "兩張圖的相似度：{label}（皮爾森相關係數 r = {r}）",
+        "sim_very_similar": "非常相似",
+        "sim_similar": "相似",
+        "sim_different": "不同",
+        "cmp_sim_scale": "以 49 個區域權重計算的皮爾森相關係數。非常相似：r ≥ 0.9；相似：r ≥ 0.7；不同：低於 0.7。",
+        "cmp_same_emotion": "兩側顯示的是同一種情緒。請選擇兩種不同的情緒進行比較。",
+        "cmp_diff_label": "差異圖：{a} − {b}",
+        "cmp_diff_a": "{a}的注意力較高",
+        "cmp_diff_b": "{b}的注意力較高",
+        "cmp_diff_max": "色階範圍：注意力權重 ±{pp:.1f} 個百分點（最大差異）。",
+        "cmp_same_region": "各情緒的查詢常常注意到同一個視覺上最顯著的區域；不同情緒之間的差異通常很小。",
+        "alt_diff": "「{a}」與「{b}」注意力圖的差異，疊於中央正方形的灰階圖上",
+        "icon_h": "圖像學解讀（依 Panofsky）",
+        "icon_intro": "Erwin Panofsky（《圖像學研究》，1939）將藝術作品的詮釋分為三個層次。本模型只能協助第一個層次。",
+        "icon_l1_h": "第一層・前圖像誌描述（自動產生）",
+        "icon_l1_x": "不需了解主題即可看到的內容：形式、色彩，以及圖像的表現性質。",
+        "icon_l1_palette": "色彩",
+        "icon_l1_attrs": "視覺屬性",
+        "icon_l1_expr": "表現性質（模型對 ArtEmis 標註者反應的估計）",
+        "icon_l2_h": "第二層・圖像誌分析",
+        "icon_l2_x": "根據藝術史與文獻知識，辨識主題、題材與象徵。",
+        "icon_l2_note": "主題與象徵須靠藝術史知識辨識；本模型無法辨識它們。",
+        "icon_l2_upload": "上傳的圖像無法提供此資訊。",
+        "icon_title": "作品名稱",
+        "icon_artist": "藝術家",
+        "icon_date": "年代",
+        "icon_style": "風格",
+        "icon_genre": "類型",
+        "icon_source": "資料來源：WikiArt",
+        "icon_l3_h": "第三層・圖像學詮釋",
+        "icon_l3_x": "更深層的意義：作品揭示了其時代、文化與創作者的哪些面向。這需要您自己的知識與判斷。",
+        "icon_l3_box": "您的詮釋：您看到了什麼更深層的意義或脈絡？",
+        "icon_l3_private": "不會儲存，只有您看得到。",
+        "about_panofsky_h": "圖像學解讀",
+        "about_panofsky": "圖像學解讀的三個層次依據 Erwin Panofsky 的《Studies in Iconology: Humanistic Themes in the Art of the Renaissance》（New York: Oxford University Press，1939）：前圖像誌描述、圖像誌分析與圖像學詮釋。只有第一層是自動產生的；本模型無法辨識主題、題材或象徵，而您在詮釋欄中輸入的內容不會被儲存。",
     },
 }
+
+
+# ---------------------------------------------------------------- second feedback round: lookup tables
+EMOTION_DEFS = {  # one plain line per emotion ("About the emotion categories")
+    "en": {"amusement": "Finding something funny, playful or light-hearted.",
+           "awe": "Wonder at something vast, powerful or sublime.",
+           "contentment": "Feeling calm, peaceful and satisfied.",
+           "excitement": "Feeling energised, thrilled or eager.",
+           "anger": "Feeling irritated, offended or outraged.",
+           "disgust": "Feeling repelled or revolted.",
+           "fear": "Feeling threatened, anxious or scared.",
+           "sadness": "Feeling sorrow, loss or melancholy.",
+           "something_else": "Another emotion, or none of the eight; ArtEmis annotators then described it in words."},
+    "zh": {"amusement": "覺得有趣、俏皮或輕鬆。",
+           "awe": "對宏大、強大或崇高的事物感到驚嘆。",
+           "contentment": "感到平靜、安詳與滿意。",
+           "excitement": "感到充滿活力、激動或期待。",
+           "anger": "感到惱怒、被冒犯或憤慨。",
+           "disgust": "感到排斥或噁心。",
+           "fear": "感到受威脅、焦慮或害怕。",
+           "sadness": "感到哀傷、失落或憂鬱。",
+           "something_else": "其他情緒，或不屬於以上八種；ArtEmis 標註者會以文字加以描述。"},
+}
+
+AESTHETIC_NAMES = {  # app/visual.py MEASURES
+    "en": {"hue_spread": "Hue spread", "complementary": "Complementary colour pairs",
+           "balance_lum_lr": "Brightness, left–right", "balance_lum_tb": "Brightness, top–bottom",
+           "balance_edge_lr": "Detail, left–right", "balance_edge_tb": "Detail, top–bottom",
+           "edge_density": "Edge density", "colour_entropy": "Colour entropy",
+           "rms_contrast": "RMS contrast", "luminance_range": "Brightness range (P95 − P5)"},
+    "zh": {"hue_spread": "色相分散度", "complementary": "互補色配對",
+           "balance_lum_lr": "亮度（左右）", "balance_lum_tb": "亮度（上下）",
+           "balance_edge_lr": "細節（左右）", "balance_edge_tb": "細節（上下）",
+           "edge_density": "邊緣密度", "colour_entropy": "色彩熵",
+           "rms_contrast": "均方根對比", "luminance_range": "亮度範圍（P95 − P5）"},
+}
+
+SIDE_NAMES = {  # (kind, side) -> the heavier half, for the balance rows
+    "en": {("lum", "left"): "left brighter", ("lum", "right"): "right brighter", ("lum", "top"): "top brighter",
+           ("lum", "bottom"): "bottom brighter", ("edge", "left"): "more detail left",
+           ("edge", "right"): "more detail right", ("edge", "top"): "more detail at the top",
+           ("edge", "bottom"): "more detail at the bottom"},
+    "zh": {("lum", "left"): "左側較亮", ("lum", "right"): "右側較亮", ("lum", "top"): "上方較亮",
+           ("lum", "bottom"): "下方較亮", ("edge", "left"): "左側細節較多", ("edge", "right"): "右側細節較多",
+           ("edge", "top"): "上方細節較多", ("edge", "bottom"): "下方細節較多"},
+}
+
+GENRE_NAMES_ZH = {"illustration": "插畫", "religious painting": "宗教畫", "genre painting": "風俗畫",
+                  "sketch and study": "素描與習作", "portrait": "肖像畫", "still life": "靜物畫"}
+STYLE_NAMES_ZH = {"Art Nouveau (Modern)": "新藝術運動", "Early Renaissance": "早期文藝復興", "Baroque": "巴洛克",
+                  "Post-Impressionism": "後印象派", "High Renaissance": "盛期文藝復興", "Expressionism": "表現主義",
+                  "Impressionism": "印象派", "Rococo": "洛可可", "Northern Renaissance": "北方文藝復興"}
 
 
 def t(lang: str, key: str, **kw) -> str:
@@ -468,3 +654,29 @@ def attribute(lang: str, name: str) -> str:
 
 def description(lang: str, text: str) -> str:
     return DESCRIPTIONS_ZH[text] if lang == "zh" else text
+
+
+def emotion_def(lang: str, e: str) -> str:
+    return EMOTION_DEFS[lang][e]
+
+
+def aesthetic(lang: str, name: str) -> str:
+    return AESTHETIC_NAMES[lang][name]
+
+
+def side(lang: str, kind: str, which: str) -> str:
+    return SIDE_NAMES[lang][(kind, which)]
+
+
+def genre(lang: str, g: str) -> str:
+    """WikiArt genre: 'genre painting' -> 'Genre painting' / 風俗畫 (unknown genres stay as WikiArt writes them)."""
+    return GENRE_NAMES_ZH.get(g, g) if lang == "zh" else g[:1].upper() + g[1:]
+
+
+def style(lang: str, s: str) -> str:
+    return STYLE_NAMES_ZH.get(s, s) if lang == "zh" else s
+
+
+def date(lang: str, d: str) -> str:
+    """'c. 1657' -> '約 1657' in zh-TW."""
+    return d.replace("c. ", "約 ") if lang == "zh" else d

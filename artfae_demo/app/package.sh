@@ -14,7 +14,7 @@ if [ -n "$(git status --porcelain -- app artfae_demo)" ]; then
 fi
 STAGE=$(mktemp -d)/artfae_demo
 mkdir -p "$STAGE"/{app,artfae_balance,src/artfae/features,src/artfae/models,tests,.streamlit}
-cp app/{streamlit_app.py,inference.py,core.py,gallery.py,precompute_gallery.py,build_text_embeddings.py,verify_cloud_live.py,i18n.py,ui.py,README.md,requirements.txt,build_assets.py,package.sh} "$STAGE/app/"
+cp app/{streamlit_app.py,inference.py,core.py,gallery.py,visual.py,precompute_gallery.py,precompute_visual.py,build_aesthetic_percentiles.py,build_text_embeddings.py,verify_cloud_live.py,i18n.py,ui.py,README.md,requirements.txt,build_assets.py,package.sh} "$STAGE/app/"
 cp -r app/assets "$STAGE/app/"
 cp -r app/.streamlit "$STAGE/app/"
 cp app/.streamlit/config.toml "$STAGE/.streamlit/"
@@ -27,7 +27,7 @@ cp artfae_balance/{__init__.py,model.py,heads.py,extract_features.py} "$STAGE/ar
 cp src/artfae/__init__.py "$STAGE/src/artfae/"
 cp src/artfae/features/{__init__.py,aesthetic.py} "$STAGE/src/artfae/features/"
 cp src/artfae/models/{__init__.py,network.py} "$STAGE/src/artfae/models/"
-cp tests/{test_inference.py,test_wording.py} "$STAGE/tests/"
+cp tests/{test_inference.py,test_wording.py,test_feedback2.py} "$STAGE/tests/"
 find "$STAGE" -name __pycache__ -prune -exec rm -rf {} +
 tar -C "$(dirname "$STAGE")" -czf app_bundle.tar.gz artfae_demo
 rm -rf "$(dirname "$STAGE")"

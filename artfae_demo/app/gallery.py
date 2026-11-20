@@ -6,6 +6,8 @@ both modes with the same code:
                           seed, optional R1 prior correction, mean over the 5 seeds)
   maps, presence, attrs   stored as computed (float32 values written with their shortest exact repr)
   description             stored text
+  palette, aesthetic      dominant colours and descriptive aesthetic properties (app/precompute_visual.py,
+                          torch-free; identical to visual.palette / visual.aesthetic_measures on the image)
 Attention overlays are drawn at view time by core.attention_overlay from the stored 7x7 maps, which is the
 same function full mode uses, so the opacity slider keeps working.
 """
@@ -17,7 +19,7 @@ import numpy as np
 from core import ASSETS, EMOTIONS, MODES, POOL_GRID, SEEDS, load_json, softmax_mean
 
 FILE = "precomputed/gallery.json"
-FORMAT = "artfae-gallery/1"
+FORMAT = "artfae-gallery/2"  # /2: + palette and aesthetic (app/precompute_visual.py)
 
 
 class NotInGallery(KeyError):
@@ -69,5 +71,6 @@ def result(data: bytes, mode: str = "r1", prior_correction: bool = False, assets
             "presence": None if m["presence"] is None else np.asarray(m["presence"], np.float32),
             "maps": np.asarray(m["maps"], np.float32).reshape(9, POOL_GRID, POOL_GRID),
             "attrs": np.asarray(ex["attrs"], np.float32), "description": ex["description"],
+            "palette": ex["palette"], "aesthetic": ex["aesthetic"],
             "top": EMOTIONS[int(p.argmax())], "mode": mode, "prior_correction": bool(prior_correction),
             "seconds": float(m["seconds"]), "device": d["device"], "precomputed": True}
