@@ -1,0 +1,13 @@
+{
+ "_note": "Curated display titles for gallery examples whose WikiArt file-name slug does not give a correct title (core.example_parts). Keyed by the unchanged ArtEmis artwork ID; only the displayed title changes (EN and zh-TW captions, cards, iconographic level). Artwork IDs, files and precomputed outputs are untouched.",
+ "titles": {
+  "Art_Nouveau_Modern/konstantin-somov_book-of-the-marquise-illustration-5-1918": {
+   "title": "The Book of the Marquise (illustration)",
+   "slug_title": "Book of the Marquise Illustration"
+  },
+  "Baroque/gerard-terborch_the-knifegrinder-s-family": {
+   "title": "The Knife Grinder's Family",
+   "slug_title": "The Knifegrinder S Family"
+  }
+ }
+}

@@ -50,7 +50,7 @@ def metadata(examples) -> dict:
     for ex in examples:
         w = works[ex["artwork_id"]]
         assert "page_error" not in w, ex["artwork_id"]
-        artist, title, slug_year = ui.artwork_parts(ex["artist"], ex["painting"], "")
+        artist, title, slug_year = core.example_parts(ex, "")  # with the curated display titles
         out[ex["file"]] = {"artwork_id": ex["artwork_id"], "title": title, "artist": artist,
                            "date": clean_date(w.get("date")) or slug_year or None, "style": w.get("style"),
                            "genre": w.get("genre"), "source": w.get("url"), "fetched_at": w.get("fetched_at")}

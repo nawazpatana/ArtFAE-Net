@@ -147,9 +147,26 @@ def load_json(name, assets=ASSETS):
 
 def load_examples(assets=ASSETS):
     ex = load_json("examples/examples.json", assets)
+    titles = display_titles(assets)
     for e in ex:
         e["path"] = str(Path(assets) / "examples" / e["file"])
+        if e["artwork_id"] in titles:
+            e["display_title"] = titles[e["artwork_id"]]
     return ex
+
+
+def display_titles(assets=ASSETS) -> dict:
+    """artwork ID -> curated display title (examples/display_titles.json), for slugs that give a wrong title."""
+    p = Path(assets) / "examples" / "display_titles.json"
+    return {k: v["title"] for k, v in load_json(p.relative_to(assets), assets)["titles"].items()} if p.exists() else {}
+
+
+def example_parts(ex: dict, untitled: str):
+    """(artist, title, year) of a gallery example: the slug rules of ui.artwork_parts, with the curated display title
+    (if any) replacing the slug title. The year still comes from the slug."""
+    import ui
+    artist, title, year = ui.artwork_parts(ex["artist"], ex["painting"], untitled)
+    return artist, ex.get("display_title") or title, year
 
 
 def center_square(img: Image.Image) -> Image.Image:

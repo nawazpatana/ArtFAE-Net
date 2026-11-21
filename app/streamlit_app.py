@@ -135,7 +135,7 @@ def visuals(data: bytes, r: dict) -> dict:
 
 
 def parts(ex):
-    return ui.artwork_parts(ex["artist"], ex["painting"], tr("untitled"))
+    return core.example_parts(ex, tr("untitled"))  # curated display title where the slug is wrong
 
 
 def caption(ex):

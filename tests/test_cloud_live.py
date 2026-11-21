@@ -234,7 +234,7 @@ def test_example_and_upload_replace_each_other(live_app, lang):
     assert not at.exception and len(at.get("file_uploader")) == 1
     assert at.file_uploader[0].value is None, "the uploaded file must be cleared when an example is picked"
     ex = core.load_examples()[5]
-    cap = ui.caption_text(*ui.artwork_parts(ex["artist"], ex["painting"], i18n.t(lang, "untitled")))
+    cap = ui.caption_text(*core.example_parts(ex, i18n.t(lang, "untitled")))
     html = " ".join(m.value for m in at.markdown)
     assert f'af-showing">{escape(i18n.t(lang, "showing_example", caption=cap))}<' in html
     assert "my_photo.jpg" not in html
