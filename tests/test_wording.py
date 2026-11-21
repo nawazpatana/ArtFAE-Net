@@ -332,6 +332,52 @@ def test_display_titles_have_no_file_name_artefacts():
     assert {meta[e["file"]]["artwork_id"]: meta[e["file"]]["title"] for e in EXAMPLES} == TITLES  # iconographic level
 
 
+ARTISTS = {  # WikiArt artist ID (unchanged, from the artwork ID) -> displayed name, the same in EN and zh-TW
+    "konstantin-somov": "Konstantin Somov", "pietro-perugino": "Pietro Perugino", "pieter-de-hooch": "Pieter de Hooch",
+    "henri-de-toulouse-lautrec": "Henri de Toulouse-Lautrec", "leonardo-da-vinci": "Leonardo da Vinci",
+    "amedeo-modigliani": "Amedeo Modigliani", "paul-gauguin": "Paul Gauguin",
+    "jean-baptiste-simeon-chardin": "Jean-Baptiste-Siméon Chardin", "lucas-cranach-the-elder": "Lucas Cranach the Elder",
+    "paula-modersohn-becker": "Paula Modersohn-Becker", "gerard-terborch": "Gerard ter Borch", "rembrandt": "Rembrandt",
+}
+
+
+def test_display_artist_names():
+    assert {core.artist_id(e) for e in EXAMPLES} == set(ARTISTS)  # IDs unchanged
+    meta = core.load_json("examples/metadata.json")
+    for ex in EXAMPLES:
+        want = ARTISTS[core.artist_id(ex)]
+        for lang in LANGS:
+            assert core.example_parts(ex, i18n.t(lang, "untitled"))[0] == want
+        assert meta[ex["file"]]["artist"] == want  # iconographic level
+        assert ex["artwork_id"].split("/")[-1].startswith(core.artist_id(ex) + "_")
+        words = want.split()
+        assert not [w for w in words if w in ("The", "De", "Da", "Van", "Ter", "Von")], want  # particles in lower case
+    assert set(core.display_artists().values()) <= set(ARTISTS.values())
+
+
+@pytest.mark.parametrize("lang", LANGS)
+def test_artist_names_shown_everywhere(app, lang):
+    """Gallery cards, the 'Showing' line, the framed artwork and Level 2, in EN and zh-TW (same Latin-script names)."""
+    at = app
+    at.radio(key="lang").set_value(lang).run()
+    html = page_html(at)
+    for name in ARTISTS.values():
+        assert escape(name) in html, name  # every gallery card
+    for bad in ("Toulouse Lautrec", "Jean Baptiste Simeon", "Modersohn Becker", "Terborch", "Cranach The Elder"):
+        assert bad not in html
+    for i, ex in enumerate(EXAMPLES):
+        want = ARTISTS[core.artist_id(ex)]
+        if want == ui.artwork_parts(ex["artist"], ex["painting"], "")[0]:
+            continue  # only the five corrected names need the results-page check
+        at.button(key=f"ex_{i}").click().run()
+        html = page_html(at)
+        cap = ui.caption_text(*core.example_parts(ex, i18n.t(lang, "untitled")))
+        assert f'af-showing">{escape(i18n.t(lang, "showing_example", caption=cap))}<' in html
+        assert f"<dd>{escape(want)}</dd>" in html
+        for bad in ("Toulouse Lautrec", "Jean Baptiste Simeon", "Modersohn Becker", "Terborch", "Cranach The Elder"):
+            assert bad not in html
+
+
 @pytest.mark.parametrize("lang", LANGS)
 def test_fixed_titles_shown_in_the_gallery_and_results(app, lang):
     at = app

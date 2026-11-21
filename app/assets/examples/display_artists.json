@@ -1,0 +1,10 @@
+{
+ "_note": "Curated display names for gallery artists whose WikiArt file-name slug loses hyphens, accents or particle case (core.example_parts). Keyed by the unchanged WikiArt artist ID (the part of the ArtEmis artwork ID before '_'); only the displayed name changes. zh-TW shows the same Latin-script names (no Chinese names are given). Artwork IDs, files and precomputed outputs are untouched.",
+ "artists": {
+  "henri-de-toulouse-lautrec": {"name": "Henri de Toulouse-Lautrec", "slug_name": "Henri de Toulouse Lautrec"},
+  "jean-baptiste-simeon-chardin": {"name": "Jean-Baptiste-Siméon Chardin", "slug_name": "Jean Baptiste Simeon Chardin"},
+  "paula-modersohn-becker": {"name": "Paula Modersohn-Becker", "slug_name": "Paula Modersohn Becker"},
+  "gerard-terborch": {"name": "Gerard ter Borch", "slug_name": "Gerard Terborch"},
+  "lucas-cranach-the-elder": {"name": "Lucas Cranach the Elder", "slug_name": "Lucas Cranach The Elder"}
+ }
+}
