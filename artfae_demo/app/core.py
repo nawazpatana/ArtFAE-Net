@@ -147,12 +147,25 @@ def load_json(name, assets=ASSETS):
 
 def load_examples(assets=ASSETS):
     ex = load_json("examples/examples.json", assets)
-    titles = display_titles(assets)
+    titles, artists = display_titles(assets), display_artists(assets)
     for e in ex:
         e["path"] = str(Path(assets) / "examples" / e["file"])
         if e["artwork_id"] in titles:
             e["display_title"] = titles[e["artwork_id"]]
+        if artist_id(e) in artists:
+            e["display_artist"] = artists[artist_id(e)]
     return ex
+
+
+def artist_id(ex: dict) -> str:
+    """The WikiArt artist ID of an example: the artwork ID's file part before '_' (e.g. 'gerard-terborch')."""
+    return ex["artwork_id"].split("/")[-1].split("_")[0]
+
+
+def display_artists(assets=ASSETS) -> dict:
+    """WikiArt artist ID -> curated display name (examples/display_artists.json), for slugs that lose hyphens etc."""
+    p = Path(assets) / "examples" / "display_artists.json"
+    return {k: v["name"] for k, v in json.loads(p.read_text(encoding="utf-8"))["artists"].items()} if p.exists() else {}
 
 
 def display_titles(assets=ASSETS) -> dict:
@@ -162,11 +175,11 @@ def display_titles(assets=ASSETS) -> dict:
 
 
 def example_parts(ex: dict, untitled: str):
-    """(artist, title, year) of a gallery example: the slug rules of ui.artwork_parts, with the curated display title
-    (if any) replacing the slug title. The year still comes from the slug."""
+    """(artist, title, year) of a gallery example: the slug rules of ui.artwork_parts, with the curated display artist
+    and title (if any) replacing the slug's. The year still comes from the slug."""
     import ui
     artist, title, year = ui.artwork_parts(ex["artist"], ex["painting"], untitled)
-    return artist, ex.get("display_title") or title, year
+    return ex.get("display_artist") or artist, ex.get("display_title") or title, year
 
 
 def center_square(img: Image.Image) -> Image.Image:

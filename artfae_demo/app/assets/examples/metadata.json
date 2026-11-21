@@ -32,7 +32,7 @@
  "henri-de-toulouse-lautrec_the-jockey-1899.jpg": {
   "artwork_id": "Post_Impressionism/henri-de-toulouse-lautrec_the-jockey-1899",
   "title": "The Jockey",
-  "artist": "Henri de Toulouse Lautrec",
+  "artist": "Henri de Toulouse-Lautrec",
   "date": "1899",
   "style": "Post-Impressionism",
   "genre": "genre painting",
@@ -72,7 +72,7 @@
  "jean-baptiste-simeon-chardin_rabbit-and-copper-pot.jpg": {
   "artwork_id": "Rococo/jean-baptiste-simeon-chardin_rabbit-and-copper-pot",
   "title": "Rabbit and Copper Pot",
-  "artist": "Jean Baptiste Simeon Chardin",
+  "artist": "Jean-Baptiste-Siméon Chardin",
   "date": "c. 1735",
   "style": "Rococo",
   "genre": "still life",
@@ -82,7 +82,7 @@
  "lucas-cranach-the-elder_arrest-of-christ-1538.jpg": {
   "artwork_id": "Northern_Renaissance/lucas-cranach-the-elder_arrest-of-christ-1538",
   "title": "Arrest of Christ",
-  "artist": "Lucas Cranach The Elder",
+  "artist": "Lucas Cranach the Elder",
   "date": "1538",
   "style": "Northern Renaissance",
   "genre": "religious painting",
@@ -92,7 +92,7 @@
  "paula-modersohn-becker_portrait-of-rainer-maria-rilke-1906.jpg": {
   "artwork_id": "Expressionism/paula-modersohn-becker_portrait-of-rainer-maria-rilke-1906",
   "title": "Portrait of Rainer Maria Rilke",
-  "artist": "Paula Modersohn Becker",
+  "artist": "Paula Modersohn-Becker",
   "date": "1906",
   "style": "Expressionism",
   "genre": "portrait",
@@ -102,7 +102,7 @@
  "gerard-terborch_the-knifegrinder-s-family.jpg": {
   "artwork_id": "Baroque/gerard-terborch_the-knifegrinder-s-family",
   "title": "The Knife Grinder's Family",
-  "artist": "Gerard Terborch",
+  "artist": "Gerard ter Borch",
   "date": "c. 1655",
   "style": "Baroque",
   "genre": "genre painting",
