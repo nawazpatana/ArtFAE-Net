@@ -296,9 +296,55 @@ def test_showing_line_names_the_example(app, lang):
     at.radio(key="lang").set_value(lang).run()
     at.button(key=f"ex_{CLEAR_EX}").click().run()
     ex = EXAMPLES[CLEAR_EX]
-    artist, title, year = ui.artwork_parts(ex["artist"], ex["painting"], i18n.t(lang, "untitled"))
+    artist, title, year = core.example_parts(ex, i18n.t(lang, "untitled"))
+    assert title == "The Book of the Marquise (illustration)" and year == "1918"  # curated display title (Somov)
     want = i18n.t(lang, "showing_example", caption=ui.caption_text(artist, title, year))
     assert f'af-showing">{escape(want)}<' in page_html(at)
+
+
+# ---------------------------------------------------------------- gallery display titles (file-name artefacts fixed)
+TITLES = {  # artwork ID (unchanged) -> displayed title
+    "Art_Nouveau_Modern/konstantin-somov_book-of-the-marquise-illustration-5-1918": "The Book of the Marquise (illustration)",
+    "Early_Renaissance/pietro-perugino_the-adoration-of-the-magi-1473": "The Adoration of the Magi",
+    "Baroque/pieter-de-hooch_two-women-with-a-child-in-court": "Two Women with a Child in Court",
+    "Post_Impressionism/henri-de-toulouse-lautrec_the-jockey-1899": "The Jockey",
+    "High_Renaissance/leonardo-da-vinci_studies-for-the-heads-of-two-soldiers-in-the-battle-of-anghiari":
+        "Studies for the Heads of Two Soldiers in the Battle of Anghiari",
+    "Expressionism/amedeo-modigliani_portrait-of-paul-alexandre-1909": "Portrait of Paul Alexandre",
+    "Impressionism/paul-gauguin_still-life-with-red-mullet-and-jug-1876": "Still Life with Red Mullet and Jug",
+    "Rococo/jean-baptiste-simeon-chardin_rabbit-and-copper-pot": "Rabbit and Copper Pot",
+    "Northern_Renaissance/lucas-cranach-the-elder_arrest-of-christ-1538": "Arrest of Christ",
+    "Expressionism/paula-modersohn-becker_portrait-of-rainer-maria-rilke-1906": "Portrait of Rainer Maria Rilke",
+    "Baroque/gerard-terborch_the-knifegrinder-s-family": "The Knife Grinder's Family",
+    "Baroque/rembrandt_portrait-of-herman-doomer-1640": "Portrait of Herman Doomer",
+}
+
+
+def test_display_titles_have_no_file_name_artefacts():
+    assert {e["artwork_id"] for e in EXAMPLES} == set(TITLES)  # artwork IDs unchanged
+    for ex in EXAMPLES:
+        artist, title, year = core.example_parts(ex, "Untitled")
+        assert title == TITLES[ex["artwork_id"]], (ex["artwork_id"], title)
+        assert not re.search(r"(?<![A-Za-z'])[B-Z](?![A-Za-z'])", title), title  # a stray single letter ("S" for 's)
+        assert title[:1].isupper() and "  " not in title
+        assert Path(ex["path"]).name == ex["artwork_id"].split("/")[1] + ".jpg"  # files keep their slug names
+    meta = core.load_json("examples/metadata.json")
+    assert {meta[e["file"]]["artwork_id"]: meta[e["file"]]["title"] for e in EXAMPLES} == TITLES  # iconographic level
+
+
+@pytest.mark.parametrize("lang", LANGS)
+def test_fixed_titles_shown_in_the_gallery_and_results(app, lang):
+    at = app
+    at.radio(key="lang").set_value(lang).run()
+    for i, want in ((0, "The Book of the Marquise (illustration)"), (10, "The Knife Grinder's Family")):
+        html = page_html(at)
+        assert escape(want) in html  # gallery card
+        assert "Knifegrinder S" not in html and "Marquise Illustration" not in html
+        at.button(key=f"ex_{i}").click().run()
+        html = page_html(at)
+        cap = ui.caption_text(*core.example_parts(EXAMPLES[i], i18n.t(lang, "untitled")))
+        assert f'af-showing">{escape(i18n.t(lang, "showing_example", caption=cap))}<' in html
+        assert f"<dd>{escape(want)}</dd>" in html  # Level 2 of the iconological reading
 
 
 def test_versus_chart_legend_takes_no_bar_slot():
